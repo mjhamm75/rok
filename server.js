@@ -41,9 +41,7 @@ var static_path = path.join(__dirname, 'public');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.json({
-    jason: 'hamm'
-  })
+  res.sendFile('index.html')
 }).listen(PORT, function(err) {
   console.log(`Listening at port: ${PORT}`);
 });
