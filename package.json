@@ -1,20 +1,18 @@
 {
-  "name": "counter-redux",
+  "name": "rok",
   "version": "0.0.0",
-  "description": "Counter example for redux",
+  "description": "Beautiful donation app",
   "main": "server.js",
   "scripts": {
+    "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/redux-devtools.git"
+    "url": "https://github.com/mjhamm75/rok.git"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gaearon/redux-devtools/issues"
-  },
-  "homepage": "https://github.com/gaearon/redux-devtools#readme",
+  "homepage": "http://to.be.determined",
   "dependencies": {
     "babel-cli": "^6.3.17",
     "babel-core": "^6.3.17",
