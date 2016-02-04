@@ -6,7 +6,7 @@ var PORT = process.env.PORT || 3000;
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var static_path = path.join(__dirname, 'public');
 
-if(!isDevelopment) {
+if(isDevelopment) {
   var WebpackDevServer = require('webpack-dev-server');
   var config = require('./webpack.config');
 
