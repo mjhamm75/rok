@@ -7,6 +7,7 @@ var isDevelopment = (process.env.NODE_ENV !== 'production');
 var static_path = path.join(__dirname, 'public');
 
 if(isDevelopment) {
+  console.log('DEV');
   var WebpackDevServer = require('webpack-dev-server');
   var config = require('./webpack.config');
 
@@ -25,6 +26,7 @@ if(isDevelopment) {
     console.log(`Listening at localhost:${PORT}`);
   });  
 } else {
+  console.log('PROD');
   var app = express();
 
   app.use(express.static(__dirname + '/public'));
