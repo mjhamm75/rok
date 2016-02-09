@@ -1,0 +1,16 @@
+.navbar {
+	display: flex;
+	background: #3A3A3A;
+	color: #A3A3A3;
+	justify-content: center;
+}
+.navbar > div {
+	padding: 10px;
+}
+.navbar > div:last-child {
+	margin-left: auto;
+}
+.navbar > div:first-child {
+	visibility: hidden;
+	margin-left: auto;
+}
