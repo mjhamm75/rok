@@ -1,3 +1,11 @@
+.navhero {
+	display: flex;
+	flex-direction: column;
+	> div {
+		align-self: center;
+	}
+}
+
 .navbar {
 	display: flex;
 	background: #3A3A3A;
