@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Sticky from 'react-sticky';
+require('!style!css!sass!./../sass/app.scss');
 
 class Home extends Component {
 	render() {

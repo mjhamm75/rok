@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-require('!style!css!./../sass/app.scss');
 
 class App extends Component {
 	render() {

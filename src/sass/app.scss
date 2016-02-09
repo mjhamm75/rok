@@ -3,20 +3,22 @@
 	background: #3A3A3A;
 	color: #A3A3A3;
 	justify-content: center;
-}
-.navbar > div {
-	padding: 10px;	
-}
-.navbar > div > a {
-	text-decoration: none;
-	color: #A3A3A3;
-}
-	
-.navbar > div:last-child {
-	margin-left: auto;			
-}
 
-.navbar > div:first-child {
-	visibility: hidden;
-	margin-left: auto;			
+	> div {
+		padding: 10px;
+
+		> a {
+			text-decoration: none;
+			color: #A3A3A3;			
+		}
+
+		&:last-child {
+			margin-left: auto;
+		}
+
+		&:first-child {
+			visibility: hidden;
+			margin-left: auto;						
+		}
+	}
 }
