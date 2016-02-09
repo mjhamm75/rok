@@ -23,12 +23,24 @@ class Home extends Component {
 				</div>
 				<Sticky>
 					<div className="navbar">
-						<div>Invisible</div>
-						<div>The Roots of Knowledge Project</div>
-						<div>About the Project</div>
-						<div>Donate</div>
-						<div>Contact Us</div>
-						<div>mailbox</div>
+						<div>
+							<a>Invisible</a>
+						</div>
+						<div>
+							<a href="/">The Roots of Knowledge Project</a>
+						</div>
+						<div>
+							<a href="/about">About the Project</a>
+						</div>
+						<div>
+							<a href="/donations">Donate</a>
+						</div>
+						<div>
+							<a href="/contact">Contact Us</a>
+						</div>
+						<div>
+							<a href="#">mailbox</a>
+						</div>
 					</div>
 				</Sticky>
 			</div>
