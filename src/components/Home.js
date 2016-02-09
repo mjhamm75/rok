@@ -9,7 +9,7 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				<img src={hand}/>
+				<div className="navimage"></div>
 				<div className="navhero">
 					<div>
 						<img src={rokLogo} />
