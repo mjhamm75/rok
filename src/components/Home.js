@@ -3,11 +3,13 @@ import Sticky from 'react-sticky';
 require('!style!css!sass!./../sass/app.scss');
 let rokLogo = require('./../imgs/rok-logo.png');
 let rok = require('./../imgs/rok.png');
+let hand = require('./../imgs/hand.png');
 
 class Home extends Component {
 	render() {
 		return (
 			<div>
+				<img src={hand}/>
 				<div className="navhero">
 					<div>
 						<img src={rokLogo} />
