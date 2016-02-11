@@ -61,6 +61,7 @@
 	        > div {
 	            background-color: white;
 	            height: 237px;
+	            padding-bottom: 40px;
 	            width: 413px;
 
 	            .text {
@@ -69,15 +70,16 @@
 	                font-family: 'Open Sans';
 	                font-weight: lighter;            
 	            }
-	            button {
+	            a {
 	                color: white;
 	                background: #a3be5f;
 	                box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
 	                display: table;
 	                font-size: 17px;
-	                height: 51px;
 	                margin: 0 auto;
-	                width: 241px;
+	                padding: 15px 30px;
+	            	text-align: center;
+	            	text-decoration: none;
 	            }
 	        }
 	    }    	
