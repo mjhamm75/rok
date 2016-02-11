@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Sticky from 'react-sticky';
 require('!style!css!sass!./../sass/app.scss');
-let rokLogo = require('./../imgs/rok-logo.png');
-let rok = require('./../imgs/rok.png');
+
+
 let hand = require('./../imgs/hand.png');
 
 class Home extends Component {
@@ -10,16 +10,18 @@ class Home extends Component {
 		return (
 			<div>
 				<div className="navimage"></div>
-				<div className="navhero">
-					<div>
-						<img src={rokLogo} />
-					</div>
-					<div>
-						<img src={rok} />
-					</div>
-					<div>
-						<div>The Roots of Knowledge art glass window showcases humanitys pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
-						<button>Sponser a piece of glass</button>
+				<div className="navhero-container">
+					<div className="navhero">
+						<div>
+							
+						</div>
+						<div>
+							
+						</div>
+						<div>
+							<div>The Roots of Knowledge art glass window showcases humanitys pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
+							<button>Sponser a piece of glass</button>
+						</div>
 					</div>
 				</div>
 				<Sticky>
