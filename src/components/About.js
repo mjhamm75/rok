@@ -3,6 +3,7 @@ import Sticky from 'react-sticky';
 let hand = require('./../imgs/hand.png');
 let rokLogo = require('./../imgs/rok-logo.png');
 let rokTitle = require('./../imgs/rok-title.png');
+let glass = require('./../imgs/desktop.stainedglass.png');
 require('!style!css!sass!./../sass/app.scss');
 
 class About extends Component {
@@ -26,29 +27,38 @@ class About extends Component {
 							</div>
 						</div>
 			    	</div>
+			    	<div className="link">
+			    		<a>OR SIMPLY DONATE</a>
+			    	</div>
 				</div>
-				<Sticky>
-					<div className="navbar">
-						<div>
-							<a>Invisible</a>
-						</div>
-						<div>
-							<a href="/">The Roots of Knowledge Project</a>
-						</div>
-						<div>
-							<a href="/about">About the Project</a>
-						</div>
-						<div>
-							<a href="/donations">Donate</a>
-						</div>
-						<div>
-							<a href="/contact">Contact Us</a>
-						</div>
-						<div>
-							<a href="#">mailbox</a>
-						</div>
+				<div className="navbar">
+					<div>
+						<a>Invisible</a>
 					</div>
-				</Sticky>
+					<div>
+						<a href="/">The Roots of Knowledge Project</a>
+					</div>
+					<div>
+						<a href="/about">About the Project</a>
+					</div>
+					<div>
+						<a href="/donations">Donate</a>
+					</div>
+					<div>
+						<a href="/contact">Contact Us</a>
+					</div>
+					<div>
+						<a href="#">mailbox</a>
+					</div>
+				</div>
+				<div className="story">
+					<div>
+						<img src={glass} />
+					</div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 			</div>
 		)
 	}
