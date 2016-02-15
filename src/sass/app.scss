@@ -182,6 +182,42 @@ body {
 }
 .addpiece {
 	display: flex;
+	.top5 {
+		margin-top: 5px;
+	}
+	.right5 {
+		margin-right: 5px;
+	}
+
+	> div {
+		display: flex;
+		flex-direction: column;
+	}
+	.hero {
+		> div {
+			flex-grow: 2;
+			> div:first-child {
+				margin-top: 90px;
+				margin-bottom: 40px;
+			}
+		}
+		justify-content: space-between;	
+		font-family: Georgia;
+		font-size: 32px;
+		text-align: center;
+
+		a {
+			color: white;
+			background: #a3be5f;
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+			display: table;
+			font-size: 17px;
+			margin: 0 auto;
+			padding: 15px 30px;
+			text-align: center;
+			text-decoration: none;
+		}
+	}
 }
 .footer {
 	background: #3a3a3a;

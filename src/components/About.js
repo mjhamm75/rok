@@ -107,26 +107,29 @@ class About extends Component {
 					<div>UVU President Matthew Holland</div>
 				</div>
 				<div className="addpiece">
-					<div>
+					<div className="right5">
 						<img src={c1r1} />
-						<img src={c1r2} />
+						<img src={c1r2} className="top5"/>
 					</div>
-					<div>
+					<div className="right5">
 						<img src={c2r1} />
-						<img src={c2r2} />
+						<img src={c2r2} className="top5" />
 					</div>
-					<div>
+					<div className="hero right5">
 						<img src={c3r1} />
-						<div> test </div>
+						<div>
+							<div>Add your piece to the story.</div>
+							<a href="donate">Sponsor a piece of glass</a>
+						</div>
 						<img src={c3r2} />
 					</div>
-					<div>
+					<div className="right5">
 						<img src={c4r1} />
-						<img src={c4r2} />
+						<img src={c4r2} className="top5" />
 					</div>
 					<div>
 						<img src={c5r1} />
-						<img src={c5r2} />
+						<img src={c5r2} className="top5" />
 					</div>
 				</div>
 				<div className="footer">
@@ -144,30 +147,30 @@ class About extends Component {
 					</div>
 					<div>
 						<div>
-							<Link>About Us</Link>
+							<Link to="about">About Us</Link>
 						</div>
 						<div>
-							<Link>Meet the Artists</Link>
+							<Link to="artists">Meet the Artists</Link>
 						</div>
 						<div>
-							<Link>Utah Valley University</Link>
+							<Link to="university">Utah Valley University</Link>
 						</div>
 						<div>
-							<Link>Donate</Link>
+							<Link to="donate">Donate</Link>
 						</div>
 					</div>
 					<div>
 						<div>
 							<img src={twitter}/>
-							<Link>Twitter</Link>
+							<Link to="twitter">Twitter</Link>
 						</div>
 						<div>
 							<img src={facebook}/>
-							<Link>Facebook</Link>
+							<Link to="facebook">Facebook</Link>
 						</div>
 						<div>
 							<img src={pinterest}/>
-							<Link>Pinterest</Link>
+							<Link to="pinterest">Pinterest</Link>
 						</div>
 					</div>
 				</div>
