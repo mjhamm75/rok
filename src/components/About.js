@@ -75,7 +75,11 @@ class About extends Component {
 						<div>has already been donated to the project by individually sponsered pieces of glass and donations.</div>
 					</div>
 				</div>
-				<div className="table"></div>
+				<div className="groupimage">
+					<div className="grouphero">
+
+					</div>
+				</div>
 			</div>
 		)
 	}
