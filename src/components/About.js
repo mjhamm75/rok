@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import Sticky from 'react-sticky';
 let hand = require('./../imgs/hand.png');
 let rokLogo = require('./../imgs/rok-logo.png');
@@ -85,6 +86,55 @@ class About extends Component {
 							</div>
 						</div>
 					</div>
+				</div>
+				<div className="quote">
+					<div>“This is a project that I believe will set the world aflame, and the world will come to see this. We have got to make this happen. This is to be a central part of the University.”</div>
+					<div>UVU President Matthew Holland</div>
+				</div>
+				<div className="addpiece">
+
+				</div>
+				<div className="footer">
+					<div>
+						<div>
+							Contact Us:
+							<br />
+							1-801-766-4111
+						</div>
+						<div>
+							3001 N Thanksgiving Way
+							<br />
+							Lehi, UT 84043
+						</div>
+					</div>
+					<div>
+						<div>
+							<Link>About Us</Link>
+						</div>
+						<div>
+							<Link>Meet the Artists</Link>
+						</div>
+						<div>
+							<Link>Utah Valley University</Link>
+						</div>
+						<div>
+							<Link>Donate</Link>
+						</div>
+					</div>
+					<div>
+						<div>
+							<Link>Twitter</Link>
+						</div>
+						<div>
+							<Link>Facebook</Link>
+						</div>
+						<div>
+							<Link>Pinterest</Link>
+						</div>
+					</div>
+				</div>
+				<div className="copywrite">
+					© 2016 Roots Media, LLC, & Holdman Studios, LLC, All Rights Reserved.
 				</div>
 			</div>
 		)
