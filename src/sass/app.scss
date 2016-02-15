@@ -73,29 +73,6 @@ body {
     }
 }
 
-.navbar {
-    background: #3a3a3a;
-    display: flex;
-    font-size: 14px;
-    justify-content: center;
-    margin-top: -75px;
-
-    > div {
-        padding: 10px;
-        > a {
-            text-decoration: none;
-            color: #a3a3a3;
-        }
-        &:last-child {
-            margin-left: auto;
-        }
-        &:first-child {
-            visibility: hidden;
-            margin-left: auto;
-        }
-    }
-}
-
 .image {
     position: relative;
 }
@@ -181,6 +158,10 @@ body {
 	}
 }
 .addpiece {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	display: flex;
 	.top5 {
 		margin-top: 5px;
