@@ -9,8 +9,8 @@ body {
     background-size: cover;
 
     .navhero {
-
 		padding: 40px 0px;
+
 	    .heroflex {
 	    	background: rgba(255,255,255, .7);
 	    	display: flex;
@@ -138,8 +138,38 @@ body {
 	background-size: cover;
 	height: 706px;
 	width: 1440px;
-	
-	.grouphero {
+	padding-top: 180px;
 
+	.grouphero {
+		background: rgba(255,255,255, .7);
+		height: 340px;
+		width: 515px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+
+		.hero {
+			background-color: white;
+			width: 470px;
+			height: 290px;
+			align-self: center;
+			display: flex;
+			flex-direction: column;
+
+			>div {
+				align-self: center;
+			}
+
+			> div:first-child {
+				margin: 50px 70px;
+				font-family: Georgia;
+				font-size: 32px;
+			}
+
+			> div:last-child {
+				font-weight: bold;
+				color: rgba(74, 144, 226, 100);	
+			}
+		}
 	}
 }

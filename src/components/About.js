@@ -77,7 +77,13 @@ class About extends Component {
 				</div>
 				<div className="groupimage">
 					<div className="grouphero">
-
+						<div className="hero">
+							<div>Building the Window</div>
+							<div>Measuring an immense 10' by 200' in length, totaling eighty panels, this art glass will impact viewers through illustrating intimate moments of time on a grand scale.</div>
+							<div>
+								<a>Watch the documentary</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
