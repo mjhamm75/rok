@@ -53,12 +53,29 @@ class About extends Component {
 				</div>
 				<div className="story">
 					<div>
-						<img src={glass} />
+						<div>
+						</div>
 					</div>
-					<div></div>
-					<div></div>
-					<div></div>
 				</div>
+				<div className="facts">
+					<div>
+						<div>80,000</div>
+						<div>pieces of glass used to create 80 panels in the UVU Library.  Actual rock, fossils, coins, meteorite, and ivory are in the window as well.</div>
+					</div>
+					<div>
+						<div>250</div>
+						<div>UVU students have already participated in various elements of the Roots of Knowledge project.</div>
+					</div>
+					<div>
+						<div>2400</div>
+						<div>pieces of glass were used to make the Alexander & Bucephalus Mosaic.</div>
+					</div>
+					<div>
+						<div>$1.5 Million</div>
+						<div>has already been donated to the project by individually sponsered pieces of glass and donations.</div>
+					</div>
+				</div>
+				<div className="table"></div>
 			</div>
 		)
 	}
