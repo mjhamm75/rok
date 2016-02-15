@@ -5,6 +5,21 @@ let hand = require('./../imgs/hand.png');
 let rokLogo = require('./../imgs/rok-logo.png');
 let rokTitle = require('./../imgs/rok-title.png');
 let glass = require('./../imgs/desktop.stainedglass.png');
+let twitter = require('./../imgs/twitter.png');
+let facebook = require('./../imgs/facebook.png');
+let pinterest = require('./../imgs/pinterest.png');
+
+let c1r1 = require('./../imgs/col1-1.png');
+let c1r2 = require('./../imgs/col1-2.png');
+let c2r1 = require('./../imgs/col2-1.png');
+let c2r2 = require('./../imgs/col2-2.png');
+let c3r1 = require('./../imgs/col3-1.png');
+let c3r2 = require('./../imgs/col3-2.png');
+let c4r1 = require('./../imgs/col4-1.png');
+let c4r2 = require('./../imgs/col4-2.png');
+let c5r1 = require('./../imgs/col5-1.png');
+let c5r2 = require('./../imgs/col5-2.png');
+
 require('!style!css!sass!./../sass/app.scss');
 
 class About extends Component {
@@ -92,7 +107,27 @@ class About extends Component {
 					<div>UVU President Matthew Holland</div>
 				</div>
 				<div className="addpiece">
-
+					<div>
+						<img src={c1r1} />
+						<img src={c1r2} />
+					</div>
+					<div>
+						<img src={c2r1} />
+						<img src={c2r2} />
+					</div>
+					<div>
+						<img src={c3r1} />
+						<div> test </div>
+						<img src={c3r2} />
+					</div>
+					<div>
+						<img src={c4r1} />
+						<img src={c4r2} />
+					</div>
+					<div>
+						<img src={c5r1} />
+						<img src={c5r2} />
+					</div>
 				</div>
 				<div className="footer">
 					<div>
@@ -123,12 +158,15 @@ class About extends Component {
 					</div>
 					<div>
 						<div>
+							<img src={twitter}/>
 							<Link>Twitter</Link>
 						</div>
 						<div>
+							<img src={facebook}/>
 							<Link>Facebook</Link>
 						</div>
 						<div>
+							<img src={pinterest}/>
 							<Link>Pinterest</Link>
 						</div>
 					</div>
