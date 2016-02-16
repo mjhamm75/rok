@@ -11,6 +11,9 @@ let coscarson = require('./../imgs/coscarson.png');
 let washington = require('./../imgs/washington.png');
 let lgroberg = require('./../imgs/lgroberg.png');
 let rwoffley = require('./../imgs/rwoffley.png');
+let holdmanIcon = require('./../imgs/holdman-icon.png');
+let uvuIcon = require('./../imgs/uvu-icon.png');
+let rootsMediaIcon = require('./../imgs/roots-media-icon.png');
 
 require('!style!css!sass!./../sass/about.scss');
 require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
@@ -129,6 +132,13 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 						</div>
 					</div>
 				</div>
+				<div className="icons">
+					<img src={holdmanIcon} />
+					<img src={uvuIcon} />
+					<img src={rootsMediaIcon} />
+				</div>
+				<div>Join in building the masterpiece of a lifetime.</div>
+				<a className="link">Sponser a piece of glass</a>
 				<Footer />
 			</div>
 		)
