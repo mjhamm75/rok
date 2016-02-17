@@ -14,16 +14,16 @@ class Nav extends Component {
 					<Link to="/">The Roots of Knowledge Project</Link>
 				</div>
 				<div>
-					<Link to="about">About the Project</Link>
+					<Link className="toggle" to="about">About the Project</Link>
 				</div>
 				<div>
-					<Link to="donations">Donate</Link>
+					<Link className="toggle" to="donations">Donate</Link>
 				</div>
 				<div>
-					<Link to="contact">Contact Us</Link>
+					<Link className="toggle" to="contact">Contact Us</Link>
 				</div>
 				<div>
-					<Link to="#">mailbox</Link>
+					<Link to="#">Bag</Link>
 				</div>
 			</div>
 		)

@@ -2,7 +2,6 @@
     background: #3a3a3a;
     display: flex;
     font-size: 14px;
-    justify-content: center;
 
     > div {
         padding: 10px;
@@ -16,6 +15,12 @@
         &:first-child {
             visibility: hidden;
             margin-left: auto;
+        }
+    }
+
+    @media(max-width: 600px) {
+        .toggle {
+            display: none;
         }
     }
 }
