@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Nav from './Nav';
+import Copywrite from './Copywrite';
 import Footer from './Footer';
 
 let library = require('./../imgs/library.png');
@@ -140,6 +141,7 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 				<div className="tagline">Join in building the masterpiece of a lifetime.</div>
 				<Link className="link" to="donations">Sponser a piece of glass</Link>
 				<Footer />
+				<Copywrite />
 			</div>
 		)
 	}
