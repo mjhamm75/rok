@@ -31,6 +31,12 @@ if(isDevelopment) {
 
   app.use(express.static(__dirname + '/public'));
 
+  app.get('/heartbeat', function(req, res) {
+    res.json({
+      is: 'running'
+    })
+  });
+  
   app.get('*', function(req, res) {
     res.sendFile('index.html', {
       root: static_path
