@@ -1,4 +1,6 @@
 .footer {
+	color: #a3a3a3;
+	font-weight: 100;
 	background: #3a3a3a;
 	display: flex;
 	justify-content: center;
@@ -15,6 +17,7 @@
 
 		> div {
 			> img {
+				width: auto;
 				float: left;
 				margin-right: 10px;
 			}
@@ -24,4 +27,5 @@
 		text-decoration: none;
 		color: #a3a3a3;
 	}
+
 }

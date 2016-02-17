@@ -47,7 +47,7 @@ class About extends Component {
 				    </div>
 				    <div className="row">
 				    	<div className="col l10 offset-l2">
-				    		<img src={library} />
+				    		<img className="library" src={library} />
 				    	</div>
 				    </div>
 				    <div className="row">
@@ -82,7 +82,7 @@ class About extends Component {
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img className="keyperson" src={tholdman} />
+							<img src={tholdman} />
 						</div>
 						<div className="col l8">
 							<span className="bold">Thomas E. Holdman</span>: Stained Glass Artist, Holdman Studios CEO
@@ -91,7 +91,7 @@ As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parent
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img className="keyperson" src={coscarson} />
+							<img src={coscarson} />
 						</div>
 						<div className="col l8">
 							<span className="bold">R. Cameron Oscarson</span>: Head Artist, Holdman Studios
@@ -115,7 +115,7 @@ Cameron Oscarson, also a native of Utah, developed his skills as an artist at a 
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img className="keyperson" src={lgroberg} />
+							<img src={lgroberg} />
 						</div>
 						<div className="col l8">
 							<span className="bold">Lee B. Groberg</span>: Executive Producer, Roots Media President & CEO
@@ -124,7 +124,7 @@ An award-winning filmmaker with over 20 years experience, producer-director Lee 
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img className="keyperson" src={rwoffley} />
+							<img src={rwoffley} />
 						</div>
 						<div className="col l8">
 							<span className="bold">Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
@@ -137,8 +137,8 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 					<img src={uvuIcon} />
 					<img src={rootsMediaIcon} />
 				</div>
-				<div className="tag">Join in building the masterpiece of a lifetime.</div>
-				<a className="link">Sponser a piece of glass</a>
+				<div className="tagline">Join in building the masterpiece of a lifetime.</div>
+				<Link className="link" to="donate">Sponser a piece of glass</Link>
 				<Footer />
 			</div>
 		)

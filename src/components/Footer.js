@@ -13,14 +13,13 @@ class Footer extends Component {
 			<div className="footer">
 					<div>
 						<div>
-							Contact Us:
-							<br />
-							1-801-766-4111
+							<div>Contact Us:</div>
+							<div>1-801-766-4111</div>
 						</div>
+						<br />
 						<div>
-							3001 N Thanksgiving Way
-							<br />
-							Lehi, UT 84043
+							<div>3001 N Thanksgiving Way</div>
+							<div>Lehi, UT 84043</div>
 						</div>
 					</div>
 					<div>
@@ -40,15 +39,15 @@ class Footer extends Component {
 					<div>
 						<div>
 							<img src={twitter}/>
-							<Link to="twitter">Twitter</Link>
+							<a href="https://twitter.com/HoldmanStudios">Twitter</a>
 						</div>
 						<div>
 							<img src={facebook}/>
-							<Link to="facebook">Facebook</Link>
+							<a href="https://www.facebook.com/holdmanglass/?fref=ts">Facebook</a>
 						</div>
 						<div>
 							<img src={pinterest}/>
-							<Link to="pinterest">Pinterest</Link>
+							<a href="https://www.pinterest.com/holdmanstudios/">Pinterest</a>
 						</div>
 					</div>
 				</div>
