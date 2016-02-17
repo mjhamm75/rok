@@ -11,19 +11,19 @@ class Nav extends Component {
 					<a>Invisible</a>
 				</div>
 				<div>
-					<a href="/">The Roots of Knowledge Project</a>
+					<Link to="/">The Roots of Knowledge Project</Link>
 				</div>
 				<div>
-					<a href="/about">About the Project</a>
+					<Link to="about">About the Project</Link>
 				</div>
 				<div>
-					<a href="/donations">Donate</a>
+					<Link to="donations">Donate</Link>
 				</div>
 				<div>
-					<a href="/contact">Contact Us</a>
+					<Link to="contact">Contact Us</Link>
 				</div>
 				<div>
-					<a href="#">mailbox</a>
+					<Link to="#">mailbox</Link>
 				</div>
 			</div>
 		)

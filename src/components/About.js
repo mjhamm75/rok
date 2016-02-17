@@ -138,7 +138,7 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 					<img src={rootsMediaIcon} />
 				</div>
 				<div className="tagline">Join in building the masterpiece of a lifetime.</div>
-				<Link className="link" to="donate">Sponser a piece of glass</Link>
+				<Link className="link" to="donations">Sponser a piece of glass</Link>
 				<Footer />
 			</div>
 		)

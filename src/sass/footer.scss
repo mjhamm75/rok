@@ -8,10 +8,11 @@
 	padding: 40px 0px;
 
 	> div {
-		margin: 0 15px;
+		margin: 0 25px;
 		display: flex;
 		flex-direction: column;
 	}
+
 	> div:last-child {
 		display: flex;
 
@@ -28,4 +29,13 @@
 		color: #a3a3a3;
 	}
 
+}
+
+@media(max-width: 600px) {
+	.footer {
+		flex-direction: column;
+		> div {
+			margin-bottom: 20px;
+		}
+	}
 }

@@ -33,7 +33,7 @@ class Footer extends Component {
 							<Link to="university">Utah Valley University</Link>
 						</div>
 						<div>
-							<Link to="donate">Donate</Link>
+							<Link to="donations">Donate</Link>
 						</div>
 					</div>
 					<div>
