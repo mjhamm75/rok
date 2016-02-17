@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Sticky from 'react-sticky';
 import Nav from './Nav';
 import Footer from './Footer';
+import Copywrite from './Copywrite';
 let hand = require('./../imgs/hand.png');
 let rokLogo = require('./../imgs/rok-logo.png');
 let rokTitle = require('./../imgs/rok-title.png');
@@ -24,7 +25,7 @@ require('!style!css!sass!./../sass/app.scss');
 class Home extends Component {
 	render() {
 		return (
-			<div>
+			<div className="home">
 				<div className="navimage">
 					<div className="navhero">
 						<div className="heroflex"> 
@@ -43,7 +44,7 @@ class Home extends Component {
 						</div>
 			    	</div>
 			    	<div className="link">
-			    		<a>OR SIMPLY DONATE</a>
+			    		<Link to="donations">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
 				<Nav />
@@ -113,9 +114,7 @@ class Home extends Component {
 					</div>
 				</div>
 				<Footer />
-				<div className="copywrite">
-					© 2016 Roots Media, LLC, & Holdman Studios, LLC, All Rights Reserved.
-				</div>
+				<Copywrite />
 			</div>
 		)
 	}
