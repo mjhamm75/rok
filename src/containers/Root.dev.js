@@ -5,6 +5,7 @@ import Home from './../components/Home';
 import About from './../components/About';
 import Donations from './../components/Donations';
 import Contact from './../components/Contact';
+import Glass from './../components/Glass';
 
 const routes = (
   <Route path="/" component={App}>
@@ -12,6 +13,7 @@ const routes = (
     <Route path="about" component={About} />
     <Route path="donations" component={Donations} />
     <Route path="contact" component={Contact} />
+    <Route path="glass" component={Glass} />
   </Route>
 )
 
