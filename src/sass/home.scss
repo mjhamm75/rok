@@ -185,6 +185,12 @@ body {
 					margin-top: 90px;
 					margin-bottom: 40px;
 				}
+
+				@media(max-width: 600px) {
+					> div:first-child {
+						margin-top: 40px;
+					}
+				}
 			}
 			justify-content: space-between;	
 			font-family: Georgia;
@@ -201,6 +207,12 @@ body {
 				padding: 15px 30px;
 				text-align: center;
 				text-decoration: none;
+			}
+
+			@media(max-width: 600px) {
+				a {
+					margin-bottom: 45px;
+				}
 			}
 		}
 	}
