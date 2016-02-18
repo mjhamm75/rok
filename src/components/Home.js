@@ -20,7 +20,7 @@ let c4r2 = require('./../imgs/col4-2.png');
 let c5r1 = require('./../imgs/col5-1.png');
 let c5r2 = require('./../imgs/col5-2.png');
 
-require('!style!css!sass!./../sass/app.scss');
+require('!style!css!sass!./../sass/home.scss');
 
 class Home extends Component {
 	render() {
@@ -88,11 +88,11 @@ class Home extends Component {
 					<div>UVU President Matthew Holland</div>
 				</div>
 				<div className="addpiece">
-					<div className="right5">
+					<div className="iphonehide right5">
 						<img src={c1r1} />
 						<img src={c1r2} className="top5"/>
 					</div>
-					<div className="right5">
+					<div className="ipadhide right5">
 						<img src={c2r1} />
 						<img src={c2r2} className="top5" />
 					</div>
@@ -104,11 +104,11 @@ class Home extends Component {
 						</div>
 						<img src={c3r2} />
 					</div>
-					<div className="right5">
+					<div className="ipadhide right5">
 						<img src={c4r1} />
 						<img src={c4r2} className="top5" />
 					</div>
-					<div>
+					<div className="iphonehide">
 						<img src={c5r1} />
 						<img src={c5r2} className="top5" />
 					</div>
