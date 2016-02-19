@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -9,7 +10,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/public/'
+    publicPath: '/'
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
@@ -21,6 +22,10 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.ejs',
+      title: 'Roots of Knowledge'
     })
   ],
   module: {
