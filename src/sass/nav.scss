@@ -25,8 +25,17 @@
     }
     .bag {
         width: 10px;
-        background: black;
-        padding: 5px;
+        background: #252525;
+        padding: 6px 8px;
         border-radius: 50%;
+    }
+    .badge {
+        background: #4A90E2;
+        border-radius: 50%;
+        color: white;
+        font-weight: 600;
+        font-size: 9px;
+        padding: 5px 2px;
+        text-align: center;
     }
 }
