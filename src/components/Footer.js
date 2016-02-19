@@ -39,15 +39,15 @@ class Footer extends Component {
 					<div>
 						<div>
 							<img src={twitter}/>
-							<a href="https://twitter.com/HoldmanStudios">Twitter</a>
+							<a href="https://twitter.com/roots_knowledge">Twitter</a>
 						</div>
 						<div>
 							<img src={facebook}/>
-							<a href="https://www.facebook.com/holdmanglass/?fref=ts">Facebook</a>
+							<a href="https://www.facebook.com/rootsofknowledge">Facebook</a>
 						</div>
 						<div>
 							<img src={pinterest}/>
-							<a href="https://www.pinterest.com/holdmanstudios/">Pinterest</a>
+							<a href="https://www.instagram.com/roots_of_knowledge/">Pinterest</a>
 						</div>
 					</div>
 				</div>
