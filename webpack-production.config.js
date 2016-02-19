@@ -25,7 +25,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './index.ejs',
-      title: 'Roots of Knowledge'
+      title: 'Roots of Knowledge',
+      mobile: true
     })
   ],
   module: {
