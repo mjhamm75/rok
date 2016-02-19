@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 let twitter = require('./../imgs/twitter.png');
 let facebook = require('./../imgs/facebook.png');
-let pinterest = require('./../imgs/pinterest.png');
+let instagram = require('./../imgs/instagram.png');
 
 require('!style!css!sass!./../sass/footer.scss');
 
@@ -46,8 +46,8 @@ class Footer extends Component {
 							<a href="https://www.facebook.com/rootsofknowledge">Facebook</a>
 						</div>
 						<div>
-							<img src={pinterest}/>
-							<a href="https://www.instagram.com/roots_of_knowledge/">Pinterest</a>
+							<img className="instagram" src={instagram}/>
+							<a href="https://www.instagram.com/roots_of_knowledge/">Instagram</a>
 						</div>
 					</div>
 				</div>
