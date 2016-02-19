@@ -5,8 +5,13 @@ require('!style!css!sass!./../sass/nav.scss');
 
 class Nav extends Component {
 	render() {
+		var fixedStyle = this.props.fixed ? {
+			position: 'fixed',
+			top: 0,
+			width: '100%'
+		} : null;
 		return (
-			<div className="navbar">
+			<div className="navbar" style={fixedStyle}>
 				<div>
 					<a>Invisible</a>
 				</div>

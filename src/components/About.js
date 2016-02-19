@@ -23,7 +23,7 @@ class About extends Component {
 	render() {
 		return (
 			<div className="about">
-				<Nav />
+				<Nav fixed="true"/>
 				<h1>About The Roots of Knowledge Project</h1>
 				<div className="container">
 					<div className="row">
