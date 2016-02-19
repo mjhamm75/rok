@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
+import bag from './../imgs/shopping-bag.png'
 require('!style!css!sass!./../sass/nav.scss');
 
 class Nav extends Component {
@@ -23,7 +23,7 @@ class Nav extends Component {
 					<Link className="toggle" to="contact">Contact Us</Link>
 				</div>
 				<div>
-					<Link to="#">Bag</Link>
+					<img className="bag" src={bag}/>
 				</div>
 			</div>
 		)
