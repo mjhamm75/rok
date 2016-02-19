@@ -12,7 +12,7 @@ render(
 	<Provider store={store} >
 		<div>
 			<Root history={browserHistory} />
-			<DevTools />
+			{process.env.NODE_ENV !== 'production' ? <DevTools /> : null}
 		</div>
 	</Provider>,
   document.getElementById('root')

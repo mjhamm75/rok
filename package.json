@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "postinstall": "webpack --config ./webpack-production.config.js --progress --colors",
-    "start": "node server.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
