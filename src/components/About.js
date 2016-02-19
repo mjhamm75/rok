@@ -134,12 +134,18 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 					</div>
 				</div>
 				<div className="icons">
-					<img src={holdmanIcon} />
-					<img src={uvuIcon} />
-					<img src={rootsMediaIcon} />
+					<a href="http://holdmanstudios.com/">
+						<img src={holdmanIcon} />
+					</a>
+					<a href="http://www.uvu.edu/oel/rootsofknowledge.html">
+						<img src={uvuIcon} />
+					</a>
+					<a href="http://grobergfilms.com">
+						<img src={rootsMediaIcon} />
+					</a>
 				</div>
 				<div className="tagline">Join in building the masterpiece of a lifetime.</div>
-				<Link className="link" to="donations">Sponser a piece of glass</Link>
+				<Link className="link" to="donations">Sponsor a piece of glass</Link>
 				<Footer />
 				<Copywrite />
 			</div>
