@@ -28,7 +28,6 @@ class Nav extends Component {
 					<Link className="toggle" to="contact">Contact Us</Link>
 				</div>
 				<div>
-					<div className="badge">1</div>
 					<img className="bag" src={bag}/>
 				</div>
 			</div>
