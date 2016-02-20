@@ -20,10 +20,8 @@ body {
 				flex-direction: column;
 				font-weight: lighter;
 			    margin: 0 auto;
-			    margin-top: 40px;
 				top: 200px;
-				width: 45%;
-				min-width: 460px;
+				width: 425px;
 
 			    > div {
 			        align-self: center;
@@ -38,9 +36,10 @@ body {
 			        margin-top: 22px;
 			        margin-bottom: 40px;
 			        > div {
-			            background-color: white;
-			            height: 237px;
-			            width: 413px;
+			            background-color: white;			           
+			            width: 90%;
+			            margin: 0 auto;
+			            padding-bottom: 30px;
 
 			            .text {
 			                margin: 0px 22px;
@@ -60,6 +59,11 @@ body {
 			            }					
 			        }
 			    }    	
+		    }
+		    @media(max-width: 600px) {
+		    	.heroflex {
+		    		width: 100%;		    		
+		    	}
 		    }
 		}
 

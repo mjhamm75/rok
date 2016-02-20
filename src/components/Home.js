@@ -4,6 +4,7 @@ import Sticky from 'react-sticky';
 import Nav from './Nav';
 import Footer from './Footer';
 import Copywrite from './Copywrite';
+
 let hand = require('./../imgs/hand.png');
 let rokLogo = require('./../imgs/rok-logo.png');
 let rokTitle = require('./../imgs/rok-title.png');
