@@ -93,6 +93,7 @@ class Home extends Component {
 						<div className="hide"></div>
 					</div>
 				</div>
+				<div className="factsTitle">ROOTS OF KNOWLEDGE FACTS</div>
 				<div className="facts">
 					<div>
 						<div>
