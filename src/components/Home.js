@@ -81,14 +81,16 @@ class Home extends Component {
 				<div className="story" style={spacer}>
 					<div>Man's story told through the beauty of stained glass</div>
 					<div>
-						<div>
+						<div className="hide"></div>
+						<div className="grow left">
 							<div>IGNITING THE FIRE</div>
 							<div>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depicts humanity’s contributions to knowledge throughout recorded history. See the wall</div>
 						</div>
-						<div>
+						<div className="grow right">
 							<div>A NEW WAY TO LEARN</div>
 							<div>The artglass window and documentary series will inspire viewers the world over as the lessons of the past will, hopefully, inspire each of us to make a better future. Watch now</div>
 						</div>
+						<div className="hide"></div>
 					</div>
 				</div>
 				<div className="facts">

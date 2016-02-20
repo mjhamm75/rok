@@ -104,12 +104,57 @@ body {
 		width: 100%;
 
 		> div:first-child {
-		    display: block;
 			font-family: Georgia;
 			font-style: italic;
 			font-size: 32px;
 			margin-top: 45px;
-		    text-align: center;
+			text-align: center;
+		}
+		> div:nth-child(2) {
+			display: flex;
+			justify-content: space-around;
+
+			> div > div:first-child {
+				color: #252525;
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+			}
+			.grow {
+				flex-grow: 1;
+				
+			}
+			.left {
+				margin-right: 10px;
+			}
+			.right {
+				margin-left: 10px;
+			}
+			@media(max-width: 992px) {
+				.hide {
+					display: none;
+				}
+				.left {
+					margin-left: 25px;
+				}
+				.right {
+					margin-right: 25px;
+				}
+			}
+
+			> div {
+				flex-basis : 145px;
+			}
+		}
+
+		@media(max-width: 600px) {
+			> div:nth-child(2) {
+				flex-direction: column;
+
+				.left {
+					margin-top: 25px;
+				}			
+			}
 		}
 	}
 
