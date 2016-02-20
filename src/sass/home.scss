@@ -160,9 +160,11 @@ body {
 
 	.facts {
 		display: flex;
+		flex-wrap: wrap;
 		color: white;
 	    background: #3a3a3a;
 		> div {
+			flex-basis: 250px;
 			margin-left: 35px;
 			margin-right: 35px;
 			margin-top: 35px;
