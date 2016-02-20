@@ -4,35 +4,8 @@ import bag from './../imgs/shopping-bag.png'
 require('!style!css!sass!./../sass/nav.scss');
 
 class Nav extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			fixed: this.props.state
-		}
-		this.handleScroll = this.handleScroll.bind(this);
-	}
-	componentDidMount() {
-    	window.addEventListener('scroll', this.handleScroll);
-	}
-
-	componentWillUnmount() {
-	    window.removeEventListener('scroll', this.handleScroll);
-	}
-
-	handleScroll() {
-		if(window.scrollY >= 596) {
-			this.setState({
-				fixed: true
-			})
-		} else {
-			this.setState({
-				fixed: false
-			})
-		}
-	}
-
 	render() {
-		var fixedStyle = this.state.fixed ? {
+		var fixedStyle = this.props.fixed ? {
 			position: 'fixed',
 			top: 0,
 			width: '100%'

@@ -77,7 +77,7 @@ class Home extends Component {
 			    		<Link to="donations">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
-				<Nav />
+				<Nav fixed={this.state.fixed} />
 				<div className="story" style={spacer}>
 					<div>Man's story told through the beauty of stained glass</div>
 					<div>
