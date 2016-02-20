@@ -195,14 +195,16 @@ body {
 	.groupimage {
 		background-image: url('./../imgs/group.png');
 		background-size: cover;
-		height: 706px;
+		height: auto;
+		width: 100%;
 		padding-top: 180px;
 
 		.grouphero {
-			background: rgba(255,255,255, .7);
+			background: rgba(255,255,255, .5);
 			height: 340px;
-			width: 515px;
+			width: 44%;
 			margin: 0 auto;
+			margin-bottom: 200px;
 			display: flex;
 			justify-content: center;
 
@@ -219,9 +221,16 @@ body {
 				}
 
 				> div:first-child {
-					margin: 50px 70px;
+					margin-top: 50px;
+					margin-bottom: 25px;
+					margin-left: 70px;
+					margin-right: 70px;
 					font-family: Georgia;
 					font-size: 32px;
+				}
+
+				> div:nth-child(2) {
+					margin: 0 16%;
 				}
 
 				> div:last-child {
