@@ -14,11 +14,9 @@ Hover state
 
 Add piece - cut off sides until we hit breakpoint
 
-Send link to Heroku site
-
 Link about artist to Holdman Studios on about page.
 
-
+F = Send link to Heroku site
 F = Where did you get the icon for the shopping cart?
 F = What is meteroirte?  Is it a mispelling?
 F = Do the icons on the about page link out to anything?
