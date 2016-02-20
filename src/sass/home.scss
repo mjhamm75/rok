@@ -98,12 +98,18 @@ body {
 	}
 
 	.story {
-		height: 1000px;
-		div:first-child {
-			background-image: url('./../imgs/desktop.stainedglass.png');
-			background-size: cover;
-			height: 706px;
-			width: 1440px;
+		background-image: url('./../imgs/desktop.stainedglass.png');
+		background-size: cover;
+		height: 600px;
+		width: 100%;
+
+		> div:first-child {
+		    display: block;
+			font-family: Georgia;
+			font-style: italic;
+			font-size: 32px;
+			margin-top: 45px;
+		    text-align: center;
 		}
 	}
 

@@ -79,10 +79,7 @@ class Home extends Component {
 				</div>
 				<Nav />
 				<div className="story" style={spacer}>
-					<div>
-						<div>
-						</div>
-					</div>
+					<div>Man's story told through the beauty of stained glass</div>
 				</div>
 				<div className="facts">
 					<div>
