@@ -52,7 +52,7 @@ class Home extends Component {
 	}
 	render() {
 		var spacer = this.state.fixed ? {
-			'margin-top': '45px'
+			'marginTop': '45px'
 		} : null;
 		return (
 			<div className="home">
