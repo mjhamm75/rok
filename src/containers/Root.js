@@ -22,7 +22,7 @@ export default class Root extends Component {
   render() {
     let history = this.props.history;
     return (
-      <Router history={history}>
+      <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
         {routes}
       </Router>
     );
