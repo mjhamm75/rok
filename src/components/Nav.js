@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import bag from './../imgs/shopping-bag.png'
+import logo from './../imgs/rok-logo-white.png';
 require('!style!css!sass!./../sass/nav.scss');
 
 class Nav extends Component {
@@ -11,13 +12,20 @@ class Nav extends Component {
 			width: '100%'
 		} : null;
 
+		var showLogo = !this.props.fixed ? {
+			display: 'none'
+		} : null;
+
 		return (
 			<div className="navbar" ref="navbar" style={fixedStyle}>
+				<div />
 				<div>
-					<a>Invisible</a>
-				</div>
-				<div>
-					<Link to="/">The Roots of Knowledge Project</Link>
+					<Link to="/">
+						<div className="logo">
+							<img style={showLogo} src={logo}/>
+							<div>The Roots of Knowledge Project</div>
+						</div>
+					</Link>
 				</div>
 				<div>
 					<Link className="toggle" to="about">About the Project</Link>

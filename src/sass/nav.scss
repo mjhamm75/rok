@@ -1,7 +1,18 @@
 .navbar {
     background: #3a3a3a;
     display: flex;
+    align-items: center;
     font-size: 14px;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        img {
+            width: 33px;
+            height: 41px;
+            margin-right: 10px;
+        }
+    }
 
     > div {
         padding: 10px;
