@@ -22,7 +22,38 @@ let c5r2 = require('./../imgs/col5-2.png');
 require('!style!css!sass!./../sass/home.scss');
 
 class Home extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			spacer: false
+		}
+		this.handleScroll = this.handleScroll.bind(this);
+	}
+	componentDidMount() {
+		if(window.innerWidth > 992) {
+			window.addEventListener('scroll', this.handleScroll);			
+		}
+	}
+
+	componentWillUnmount() {
+	    window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll() {
+		if(window.scrollY >= 596) {
+			this.setState({
+				spacer: true
+			})
+		} else {
+			this.setState({
+				spacer: false
+			})
+		}
+	}
 	render() {
+		var style = this.state.spacer ? {
+			marginTop: '45px'
+		} : null;
 		return (
 			<div className="home">
 				<div className="navimage">
@@ -47,7 +78,7 @@ class Home extends Component {
 			    	</div>
 				</div>
 				<Nav />
-				<div className="story">
+				<div className="story" style={style}>
 					<div>Man's story told through the beauty of stained glass</div>
 					<div>
 						<div className="hide"></div>
