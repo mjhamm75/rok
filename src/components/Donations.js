@@ -9,7 +9,7 @@ class Donations extends Component {
 	render() {
 		return (
 			<div className="donations">
-				<Nav />
+				<Nav fixed="true"/>
 				<div className="hero">
 					<div>Explore the wall and find a piece of glass to sponsor.</div>
 					<div>Enjoy the story along the way.</div>
