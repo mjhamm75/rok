@@ -12,13 +12,12 @@ spreadsheet with pagename and links for content
 
 Hover state
 
+Link about artist to Holdman Studios on about page.
 
 Use image until the video loads
 
-Add piece - cut off sides until we hit breakpoint
 
-Link about artist to Holdman Studios on about page.
-
+F = Add piece - cut off sides until we hit breakpoint
 F = Add logo to navbar when fixed at top of screen.
 F = Send link to Heroku site
 F = Where did you get the icon for the shopping cart?
