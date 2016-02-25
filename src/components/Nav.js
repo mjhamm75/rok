@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import bag from './../imgs/shopping-bag.png'
 import logo from './../imgs/rok-logo-white.png';
+import classNames from 'classnames';
+
 require('!style!css!sass!./../sass/nav.scss');
 
 class Nav extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			fixed: this.props.state
+			fixed: this.props.fixed
 		}
 		this.handleScroll = this.handleScroll.bind(this);
 	}
 
 	componentDidMount() {
-    	window.addEventListener('scroll', this.handleScroll);
+		if(!this.props.fixed) {
+    		window.addEventListener('scroll', this.handleScroll);			
+		}
 	}
 
 	componentWillUnmount() {
