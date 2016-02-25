@@ -12,7 +12,7 @@ class Nav extends Component {
 			width: '100%'
 		} : null;
 
-		var showLogo = !this.props.fixed ? {
+		var hideLogo = !this.props.fixed ? {
 			display: 'none'
 		} : null;
 
@@ -22,7 +22,7 @@ class Nav extends Component {
 				<div>
 					<Link to="/">
 						<div className="logo">
-							<img style={showLogo} src={logo}/>
+							<img style={hideLogo} src={logo}/>
 							<div>The Roots of Knowledge Project</div>
 						</div>
 					</Link>
