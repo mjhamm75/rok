@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import bag from './../imgs/shopping-bag.png'
 import logo from './../imgs/rok-logo-white.png';
-import classNames from 'classnames';
 
 require('!style!css!sass!./../sass/nav.scss');
 
