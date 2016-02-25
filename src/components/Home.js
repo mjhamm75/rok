@@ -49,9 +49,6 @@ class Home extends Component {
 		}
 	}
 	render() {
-		var spacer = this.state.fixed ? {
-			'marginTop': '45px'
-		} : null;
 		return (
 			<div className="home">
 				<div className="navimage">
@@ -76,7 +73,7 @@ class Home extends Component {
 			    	</div>
 				</div>
 				<Nav fixed={this.state.fixed} />
-				<div className="story" style={spacer}>
+				<div className="story">
 					<div>Man's story told through the beauty of stained glass</div>
 					<div>
 						<div className="hide"></div>

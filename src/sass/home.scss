@@ -220,6 +220,7 @@ body {
 			display: flex;
 			justify-content: center;
 			min-width: 350px;
+			max-width: 475px;
 
 			.hero {
 				background-color: white;
@@ -288,6 +289,7 @@ body {
 		img {
 			max-width: 100%;
 			height: auto;
+			overflow: hidden;
 		}
 		display: flex;
 
@@ -316,8 +318,8 @@ body {
 			> div {
 				flex-grow: 2;
 				> div:first-child {
-					margin-top: 90px;
-					margin-bottom: 40px;
+					margin-top: 10%;
+					margin-bottom: 10%;
 				}
 
 				@media(max-width: 600px) {
