@@ -5,10 +5,8 @@ import Nav from './Nav';
 import Footer from './Footer';
 import Copywrite from './Copywrite';
 
-let hand = require('./../imgs/hand.png');
 let rokLogo = require('./../imgs/rok-logo.png');
 let rokTitle = require('./../imgs/rok-title.png');
-let glass = require('./../imgs/desktop.stainedglass.png');
 
 let c1r1 = require('./../imgs/col1-1.png');
 let c1r2 = require('./../imgs/col1-2.png');
