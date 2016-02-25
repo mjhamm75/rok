@@ -5,14 +5,42 @@ import logo from './../imgs/rok-logo-white.png';
 require('!style!css!sass!./../sass/nav.scss');
 
 class Nav extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			fixed: this.props.state
+		}
+		this.handleScroll = this.handleScroll.bind(this);
+	}
+
+	componentDidMount() {
+    	window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+	    window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll() {
+		if(window.scrollY >= 596) {
+			this.setState({
+				fixed: true
+			})
+		} else {
+			this.setState({
+				fixed: false
+			})
+		}
+	}
+
 	render() {
-		var fixedStyle = this.props.fixed ? {
+		var fixedStyle = this.state.fixed ? {
 			position: 'fixed',
 			top: 0,
 			width: '100%'
 		} : null;
 
-		var hideLogo = !this.props.fixed ? {
+		var hideLogo = !this.state.fixed ? {
 			display: 'none'
 		} : null;
 

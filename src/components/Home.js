@@ -22,32 +22,6 @@ let c5r2 = require('./../imgs/col5-2.png');
 require('!style!css!sass!./../sass/home.scss');
 
 class Home extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			fixed: this.props.state
-		}
-		this.handleScroll = this.handleScroll.bind(this);
-	}
-	componentDidMount() {
-    	window.addEventListener('scroll', this.handleScroll);
-	}
-
-	componentWillUnmount() {
-	    window.removeEventListener('scroll', this.handleScroll);
-	}
-
-	handleScroll() {
-		if(window.scrollY >= 596) {
-			this.setState({
-				fixed: true
-			})
-		} else {
-			this.setState({
-				fixed: false
-			})
-		}
-	}
 	render() {
 		return (
 			<div className="home">
@@ -72,7 +46,7 @@ class Home extends Component {
 			    		<Link to="donations">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
-				<Nav fixed={this.state.fixed} />
+				<Nav />
 				<div className="story">
 					<div>Man's story told through the beauty of stained glass</div>
 					<div>
