@@ -111,10 +111,11 @@ body {
 			margin-top: 45px;
 			text-align: center;
 		}
+
 		> div:nth-child(2) {
 			display: flex;
 			justify-content: space-around;
-
+			margin-top: 30%;
 			> div > div:first-child {
 				color: #252525;
 				font-size: 18px;
@@ -147,12 +148,17 @@ body {
 				flex-basis : 145px;
 			}
 		}
+		@media(max-width: 992px) {
+			> div:nth-child(2) {
+				margin-top: 40%;			
+			}
+		}
 
 		@media(max-width: 600px) {
 			> div:nth-child(2) {
 				flex-direction: column;
-
 				.left {
+					flex-basis: 90px;
 					margin-top: 25px;
 				}			
 			}
