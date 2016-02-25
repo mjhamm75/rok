@@ -10,14 +10,26 @@ class Nav extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			fixed: this.props.fixed
+			fixed: this.props.fixed,
+			showLogo: this.props.fixed
 		}
 		this.handleScroll = this.handleScroll.bind(this);
 	}
 
 	componentDidMount() {
 		if(!this.props.fixed) {
-    		window.addEventListener('scroll', this.handleScroll);			
+    		window.addEventListener('scroll', this.handleScroll);
+    		window.addEventListener("resize", () => {
+    			if(window.innerWidth < 992) {
+    				this.setState({
+    					showLogo: true
+    				})
+    			} else {
+    				this.setState({
+    					showLogo: false
+    				})
+    			}
+    		});
 		}
 	}
 
@@ -44,7 +56,7 @@ class Nav extends Component {
 			width: '100%'
 		} : null;
 
-		var hideLogo = !this.state.fixed ? {
+		var hideLogo = !this.state.fixed && !this.state.showLogo ? {
 			display: 'none'
 		} : null;
 
