@@ -16,7 +16,8 @@ import e1 from './../imgs/e1.jpg'
 import e2 from './../imgs/e2.jpg'
 import e3 from './../imgs/e3.jpg'
 
-import Nav from './Nav.js'
+import Nav from './Nav';
+import Copywrite from './Copywrite';
 
 require('!style!css!sass!./../sass/glass.scss');
 
@@ -44,8 +45,8 @@ class Glass extends Component {
 						<img src={d3}/>
 						<img src={e3}/>
 					</div>
-
 				</div>
+				<Copywrite />
 			</div>
 		)
 	}
