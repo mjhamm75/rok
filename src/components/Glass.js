@@ -39,7 +39,7 @@ class Glass extends Component {
 	updateOverlay(src) {
 		this.setState({
 			showOverlay: true,
-			// src: src
+			src: src
 		})
 	}
 	render() {

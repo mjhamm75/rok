@@ -7,19 +7,19 @@ export default class Overlay extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			showOverlay: props.showOverlay
+			showOverlay: props.showOverlay,
+			src: props.src
 		}
 	}
 
 	componentWillReceiveProps(props) {
 		this.setState({
-			showOverlay: props.showOverlay
+			showOverlay: props.showOverlay,
+			src: props.src
 		})
 	}
 
 	render() {
-		let { src } = this.props;
-
 		let style = classNames(
 			'overlay',
 			'overlay-scale',
@@ -31,7 +31,7 @@ export default class Overlay extends Component {
 		return (
 			<div className={style}>
 				<button type="button" className="overlay-close" onClick={() => this.setState({showOverlay: false})}>Close</button>
-
+				<img src={this.state.src}/>
 			</div>
 		)
 		
