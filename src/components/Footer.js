@@ -27,7 +27,7 @@ class Footer extends Component {
 							<Link to="about">About Us</Link>
 						</div>
 						<div>
-							<Link to="artists">Meet the Artists</Link>
+							<Link to="about#artists">Meet the Artists</Link>
 						</div>
 						<div>
 							<Link to="university">Utah Valley University</Link>

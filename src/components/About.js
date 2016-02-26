@@ -20,6 +20,18 @@ require('!style!css!sass!./../sass/about.scss');
 require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
 class About extends Component {
+	componentDidMount() {
+		let anchorName = this.props.location.hash;
+		if (anchorName) {
+			anchorName = anchorName.replace("#","");
+			let anchorElement = document.getElementById(anchorName);
+
+			if(anchorElement) { 
+				anchorElement.scrollIntoViewIfNeeded();
+			}
+		}	
+	}
+
 	render() {
 		return (
 			<div className="about">
@@ -66,6 +78,7 @@ class About extends Component {
 							<img src={libraryExt} />
 						</div>
 					</div>
+					<a href="#artists" id="artists" style={{paddingTop: '100px'}}></a>
 					<div className="row">
 						<div className="col l8 offset-l2 header">
 							Holdman Studios

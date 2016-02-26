@@ -18,38 +18,53 @@ import e3 from './../imgs/e3.jpg'
 
 import Nav from './Nav';
 import Copywrite from './Copywrite';
+import Overlay from './Overlay';
 
 require('!style!css!sass!./../sass/glass.scss');
 
 class Glass extends Component {
-	componentDidMount() {
-		document.body.style.background = '#3A3A3A';
+	constructor(props) {
+		super(props);
+		this.state = {
+			src: '',
+			showOverlay: false
+		}
 	}
-	componentDidUnmount() {
+	componentDidMount() {
+		document.body.style.background = '#4A4A4A';
+	}
+	componentWillUnmount() {
 		document.body.style.background = '#FFFFFF';	
+	}
+	updateOverlay(src) {
+		this.setState({
+			showOverlay: true,
+			// src: src
+		})
 	}
 	render() {
 		return (
 			<div className="glass">
 				<Nav fixed="true"/>
+				<Overlay src={this.state.src} showOverlay={this.state.showOverlay}/>
 				<div className="image">
 					<div>
-						<img src={b1}/>
-						<img src={c1}/>
-						<img src={d1}/>
-						<img src={e1}/>
+						<img src={b1} onClick={this.updateOverlay.bind(this, b1)}/>
+						<img src={c1} onClick={this.updateOverlay.bind(this, c1)}/>
+						<img src={d1} onClick={this.updateOverlay.bind(this, d1)}/>
+						<img src={e1} onClick={this.updateOverlay.bind(this, e1)}/>
 					</div>
 					<div>
-						<img src={b2}/>
-						<img src={c2}/>
-						<img src={d2}/>
-						<img src={e2}/>
+						<img src={b2} onClick={this.updateOverlay.bind(this, b2)}/>
+						<img src={c2} onClick={this.updateOverlay.bind(this, c2)}/>
+						<img src={d2} onClick={this.updateOverlay.bind(this, d2)}/>
+						<img src={e2} onClick={this.updateOverlay.bind(this, e2)}/>
 					</div>
 					<div>
-						<img src={b3}/>
-						<img src={c3}/>
-						<img src={d3}/>
-						<img src={e3}/>
+						<img src={b3} onClick={this.updateOverlay.bind(this, b3)}/>
+						<img src={c3} onClick={this.updateOverlay.bind(this, b3)}/>
+						<img src={d3} onClick={this.updateOverlay.bind(this, b3)}/>
+						<img src={e3} onClick={this.updateOverlay.bind(this, b3)}/>
 					</div>
 				</div>
 				<Copywrite />
