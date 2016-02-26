@@ -62,9 +62,9 @@ class Glass extends Component {
 					</div>
 					<div>
 						<img src={b3} onClick={this.updateOverlay.bind(this, b3)}/>
-						<img src={c3} onClick={this.updateOverlay.bind(this, b3)}/>
-						<img src={d3} onClick={this.updateOverlay.bind(this, b3)}/>
-						<img src={e3} onClick={this.updateOverlay.bind(this, b3)}/>
+						<img src={c3} onClick={this.updateOverlay.bind(this, c3)}/>
+						<img src={d3} onClick={this.updateOverlay.bind(this, d3)}/>
+						<img src={e3} onClick={this.updateOverlay.bind(this, e3)}/>
 					</div>
 				</div>
 				<Copywrite />
