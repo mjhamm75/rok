@@ -22,6 +22,12 @@ import Copywrite from './Copywrite';
 require('!style!css!sass!./../sass/glass.scss');
 
 class Glass extends Component {
+	componentDidMount() {
+		document.body.style.background = '#3A3A3A';
+	}
+	componentDidUnmount() {
+		document.body.style.background = '#FFFFFF';	
+	}
 	render() {
 		return (
 			<div className="glass">
