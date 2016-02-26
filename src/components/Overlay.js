@@ -1,23 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 
 require('!style!css!sass!./../sass/overlay.scss');
 
-export default ({src, showOverlay}) => {
-	let style = classNames(
-		'overlay',
-		'overlay-scale',
-		{
-			'open': showOverlay
+export default class Overlay extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			showOverlay: props.showOverlay
 		}
-	)
+	}
 
-	return (
-		<div className={style}>
-			<button type="button" className="overlay-close">Close</button>
+	componentWillReceiveProps(props) {
+		this.setState({
+			showOverlay: props.showOverlay
+		})
+	}
 
-		</div>
-	)
+	render() {
+		let { src } = this.props;
+
+		let style = classNames(
+			'overlay',
+			'overlay-scale',
+			{
+				'open': this.state.showOverlay
+			}
+		)
+
+		return (
+			<div className={style}>
+				<button type="button" className="overlay-close" onClick={() => this.setState({showOverlay: false})}>Close</button>
+
+			</div>
+		)
+		
+	}
 }
 
 
