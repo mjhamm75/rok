@@ -24,7 +24,7 @@ export default class Overlay extends Component {
 			'overlay',
 			'overlay-scale',
 			{
-				'open': this.state.showOverlay
+				'open underlay': this.state.showOverlay
 			}
 		)
 
