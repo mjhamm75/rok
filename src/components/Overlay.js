@@ -30,7 +30,7 @@ export default class Overlay extends Component {
 
 		return (
 			<div className={style}>
-				<button type="button" className="overlay-close" onClick={() => this.setState({showOverlay: false})}>Close</button>
+				<button type="button" className="overlay-close" onClick={() => this.props.hide()}>Close</button>
 				<img src={this.state.src}/>
 			</div>
 		)

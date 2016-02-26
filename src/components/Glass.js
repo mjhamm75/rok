@@ -42,11 +42,16 @@ class Glass extends Component {
 			src: src
 		})
 	}
+	hideOverlay() {
+		this.setState({
+			showOverlay: false
+		})
+	}
 	render() {
 		return (
 			<div className="glass">
 				<Nav fixed="true"/>
-				<Overlay src={this.state.src} showOverlay={this.state.showOverlay}/>
+				<Overlay src={this.state.src} showOverlay={this.state.showOverlay} hide={this.hideOverlay.bind(this)}/>
 				<div className="image">
 					<div>
 						<img src={b1} onClick={this.updateOverlay.bind(this, b1)}/>
@@ -67,7 +72,7 @@ class Glass extends Component {
 						<img src={e3} onClick={this.updateOverlay.bind(this, e3)}/>
 					</div>
 				</div>
-				<Copywrite />
+				<Copywrite show={!this.state.showOverlay}/>
 			</div>
 		)
 	}
