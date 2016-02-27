@@ -9,6 +9,8 @@
 		flex-direction: column;
 		margin-top: 125px;
 		> div {
+			width: 300px;
+			text-align: center;
 
 		}
 
@@ -34,7 +36,7 @@
 
 		input {
 			height: 30px;
-			width: 250px;
+			width: 200px;
 		}
 	}
 }
