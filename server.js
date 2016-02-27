@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var express = require('express');
+var mailer = require('express-mailer');
 
 var PORT = process.env.PORT || 3000;
 var isDevelopment = (process.env.NODE_ENV !== 'production');
@@ -35,6 +36,21 @@ if(isDevelopment) {
     res.json({
       is: 'running'
     })
+  });
+
+  app.post('/email', function(req, res) {
+    
+    // mailer.extend(app, {
+    //   from: 'no-reply@example.com',
+    //   host: 'smtp.gmail.com', // hostname
+    //   secureConnection: true, // use SSL
+    //   port: 465, // port for secure SMTP
+    //   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+    //   auth: {
+    //     user: 'jhamm.business@gmail.com',
+    //     pass: 'test'
+    //   }
+    // });
   });
   
   app.get('*', function(req, res) {
