@@ -17,14 +17,18 @@ class Contact extends Component {
 						<div>3001 N Thanksgiving Way</div>
 						<div>Lehi, UT 840435</div>
 					</div>
-					<input placeholder=" Email Address"/>
-					<textarea rows="8" placeholder=" Message"/>
+					<input ref="emailAddress" placeholder=" Email Address"/>
+					<textarea ref="message" rows="8" placeholder=" Message"/>
 					<div>
-						<a>Send</a>
+						<a onClick={this.sendEmail.bind(this)}>Send</a>
 					</div>
 				</div>
 			</div>
 		)
+	}
+
+	sendEmail() {
+		
 	}
 }
 
