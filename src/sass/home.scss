@@ -105,81 +105,99 @@ body {
 	    position: relative;
 	}
 
-	.story {
-		background-image: url('./../imgs/stainedglass-desktop.png');
-		background-size: cover;
-		height: 600px;
-		width: 100%;
+	.storyWrapper {
+		background: white;
+    	height: 550px;
+		
+		.story {
+			background-image: url('./../imgs/stainedglass-desktop.png');
+			background-size: cover;
+			height: 600px;
+			width: 100%;
 
-		> div:first-child {
-			font-family: Georgia;
-			font-style: italic;
-			font-size: 32px;
-			margin-top: 45px;
-			text-align: center;
-		}
-
-		> div:nth-child(2) {
-			display: flex;
-			justify-content: space-around;
-			margin-top: 30%;
-			> div > div:first-child {
-				color: #252525;
-				font-size: 18px;
-				font-weight: bold;
+			> div:first-child {
+				font-family: Georgia;
+				font-style: italic;
+				font-size: 32px;
+				margin-top: 45px;
 				text-align: center;
 			}
-			.grow {
-				flex-grow: 1;
-				
-			}
-			.left {
-				margin-right: 10px;
-			}
-			.right {
-				margin-left: 10px;
-			}
-			@media(max-width: 992px) {
-				.hide {
-					display: none;
+
+			> div:nth-child(2) {
+				display: flex;
+				justify-content: space-around;
+				margin-top: 30%;
+				> div > div:first-child {
+					color: #252525;
+					font-size: 18px;
+					font-weight: bold;
+					text-align: center;
+				}
+				.grow {
+					flex-grow: 1;
+					
 				}
 				.left {
-					margin-left: 25px;
+					margin-right: 10px;
 				}
 				.right {
-					margin-right: 25px;
+					margin-left: 10px;
+				}
+				@media(max-width: 992px) {
+					.hide {
+						display: none;
+					}
+					.left {
+						margin-left: 25px;
+					}
+					.right {
+						margin-right: 25px;
+					}
+				}
+
+				> div {
+					flex-basis : 145px;
+				}
+			}
+			@media(max-width: 992px) {
+				> div:nth-child(2) {
+					margin-top: 40%;			
 				}
 			}
 
-			> div {
-				flex-basis : 145px;
+			@media(max-width: 600px) {
+				> div:nth-child(2) {
+					flex-direction: column;
+					.left {
+						flex-basis: 90px;
+						margin-top: 25px;
+						margin-bottom: 15px;
+					}
+					.right {
+						flex-basis: 90px;
+						margin-left: 25px;
+						margin-right: 25px;
+					}	
+				}
 			}
 		}
+		
 		@media(max-width: 992px) {
-			> div:nth-child(2) {
-				margin-top: 40%;			
+			.story {
+				background-image: url('./../imgs/stainedglass-ipad.png');
 			}
 		}
 
 		@media(max-width: 600px) {
-			> div:nth-child(2) {
-				flex-direction: column;
-				.left {
-					flex-basis: 90px;
-					margin-top: 25px;
-				}			
-			}
-		}
-	}
-	@media(max-width: 992px) {
-		.story {
-			background-image: url('./../imgs/stainedglass-ipad.png');
-		}
-	}
+			.story {
+				background-image: url('./../imgs/stainedglass-mobile.png');
+				height: 300px;
 
-	@media(max-width: 600px) {
-		.story {
-			background-image: url('./../imgs/stainedglass-mobile.png');
+				> div:first-child {
+					margin-right: 10px;
+					margin-left: 10px;
+				}
+			}
 		}
 	}
 	.factsTitle {
