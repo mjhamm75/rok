@@ -16,6 +16,9 @@ Link about artist to Holdman Studios on about page.
 
 Use image until the video loads
 
+On Mobile, building the window, the images look cut off with the hero stretching across the whole screen.
+On Mobile Story title is not spaced enough above the image.
+
 
 F = Add piece - cut off sides until we hit breakpoint
 F = Add logo to navbar when fixed at top of screen.

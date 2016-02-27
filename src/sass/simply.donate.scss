@@ -7,11 +7,23 @@
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		margin-top: 125px;
+		margin-top: 105px;
 		> div {
 			width: 300px;
 			text-align: center;
 
+			.total {
+				font-weight: 600;
+				float: left;
+			}
+			.total-amount {
+				float: right;
+			}
+
+		}
+
+		> * {
+			margin-top: 15px;
 		}
 
 		.title {
@@ -37,6 +49,12 @@
 		input {
 			height: 30px;
 			width: 200px;
+		}
+
+		@media(max-width: 600px) {
+			input {
+				width: 90%;
+			}
 		}
 	}
 }
