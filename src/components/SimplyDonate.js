@@ -9,7 +9,7 @@ class SimplyDonate extends Component {
 		super(props)
 			this.handler = StripeCheckout.configure({
 				key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-				image: '/img/documentation/checkout/marketplace.png',
+				image: './../../imgs/rok-logo.png',
 				locale: 'auto',
 				token: function(token) {
 				// Use the token to create the charge with a server-side script.
@@ -19,9 +19,9 @@ class SimplyDonate extends Component {
 	}
 	checkout() {
 		this.handler.open({
-			name: 'Stripe.com',
-			description: '2 widgets',
-			amount: 2000
+			name: 'Roots of Knowledge',
+			description: 'Donation',
+			amount: this.refs.total.value
 		});
 	}
 
@@ -35,7 +35,7 @@ class SimplyDonate extends Component {
 					<div className="title">Add your piece to the story</div>
 					<div className="inspire">Your donation will help inspire others with a masterpiece of epic size.</div>
 					<div className="amount">Donation Amount</div>
-					<input placeholder=" $ USD"/>
+					<input ref="total" placeholder=" $ USD"/>
 					<div>
 						<div className="total">Total</div>
 						<div className="total-amount">$0.00</div>
