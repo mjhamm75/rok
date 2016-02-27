@@ -95,6 +95,12 @@ body {
 		}
 	}
 
+	@media(max-width: 600px) {
+		.navimage {
+			background-image: url('./../imgs/hand-mobile.png');
+		}
+	}
+
 	.image {
 	    position: relative;
 	}
