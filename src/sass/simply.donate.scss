@@ -13,11 +13,13 @@
 			text-align: center;
 
 			.total {
-				font-weight: 600;
+				font-weight: 600;				
 				float: left;
+				margin-left: 28px;
 			}
 			.total-amount {
 				float: right;
+				margin-right: 28px;
 			}
 
 		}
@@ -46,9 +48,30 @@
 			text-align: center;
 		}
 
+		.email {
+			margin-top: 35px;
+		}
+
+		.exp-date {
+			display: flex;
+			width: 250px;
+			justify-content: space-between;
+			> div {
+				> input {
+					width: 50px;
+				}
+				> input:first-child {
+					margin-right: 10px;
+				}
+			}
+			> input {
+				width: 75px;
+			}
+		}
+
 		input {
-			height: 30px;
-			width: 200px;
+			height: 40px;
+			width: 250px;
 		}
 
 		@media(max-width: 600px) {

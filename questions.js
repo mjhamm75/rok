@@ -16,6 +16,7 @@ Link about artist to Holdman Studios on about page.
 
 Use image until the video loads
 
+Is the Total line needed on the simply donate page
 On Mobile, building the window, the images look cut off with the hero stretching across the whole screen.
 On Mobile Story title is not spaced enough above the image.
 

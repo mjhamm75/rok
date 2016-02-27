@@ -14,21 +14,21 @@ class SimplyDonate extends Component {
 					<div className="title">Add your piece to the story</div>
 					<div className="inspire">Your donation will help inspire others with a masterpiece of epic size.</div>
 					<div className="amount">Donation Amount</div>
-					<input placeholder="$ USD"/>
+					<input placeholder=" $ USD"/>
 					<div>
 						<div className="total">Total</div>
 						<div className="total-amount">$0.00</div>
 					</div>
-					<input placeholder="Email Address"/>
-					<input placeholder="Cardholder Name"/>
-					<input placeholder="Credit Card Number"/>
-					<div>
+					<input className="email" placeholder=" Email Address"/>
+					<input placeholder=" Cardholder Name"/>
+					<input placeholder=" Credit Card Number"/>
+					<div className="exp-date">
 						<div>
-							<input placeholder="mm" /><input placeholder="yy"/> 
+							<input placeholder=" mm" /><input placeholder=" yy"/> 
 						</div>
-						<input placeholder="CCV"/>
+						<input placeholder=" CCV"/>
 					</div>
-					<input placeholder="Zip Code" />
+					<input placeholder=" Zip Code" />
 					<div>
 						<a>Donate</a>
 					</div>
