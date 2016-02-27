@@ -107,7 +107,7 @@ body {
 
 	.storyWrapper {
 		background: white;
-    	height: 80%;
+    	height: 600px;
 		
 		.story {
 			background-image: url('./../imgs/stainedglass-desktop.png');
@@ -192,7 +192,7 @@ body {
 			.story {
 				background-image: url('./../imgs/stainedglass-mobile.png');
 				height: 300px;
-
+				;
 				> div:first-child {
 					margin-right: 10px;
 					margin-left: 10px;
