@@ -74,7 +74,7 @@ class Home extends Component {
 						</div>
 			    	</div>
 			    	<div className="link">
-			    		<Link to="donations">OR SIMPLY DONATE</Link>
+			    		<Link to="simply-donate">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
 				<Nav />

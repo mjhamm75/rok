@@ -1,0 +1,40 @@
+.simply-donate {
+	.black-bag {
+		width: auto;
+        height: auto;
+    }
+	.form {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin-top: 125px;
+		> div {
+
+		}
+
+		.title {
+			font-family: Georgia;
+			font-size: 24px;
+		}
+
+		.inspire {
+			font-size: 14px;
+			font-weight: 200;
+			margin-top: 15px;
+			text-align: center;
+			width: 250px;
+		}
+
+		.amount {
+			font-size: 16px;
+			font-weight: 600;
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		input {
+			height: 30px;
+			width: 250px;
+		}
+	}
+}

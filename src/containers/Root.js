@@ -7,6 +7,7 @@ import About from './../components/About';
 import Donations from './../components/Donations';
 import Contact from './../components/Contact';
 import Glass from './../components/Glass';
+import SimplyDonate from './../components/SimplyDonate';
 
 const routes = (
   <Route path="/" component={App}>
@@ -16,6 +17,7 @@ const routes = (
     <Route path="donations" component={Donations} />
     <Route path="contact" component={Contact} />
     <Route path="glass" component={Glass} />
+    <Route path="simply-donate" component={SimplyDonate} />
   </Route>
 )
 
