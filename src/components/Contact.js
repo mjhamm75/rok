@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
+import axios from 'axios';
 
 require('!style!css!sass!./../sass/contact.scss');
 
@@ -28,7 +29,13 @@ class Contact extends Component {
 	}
 
 	sendEmail() {
-		
+		axios.post('/email', {
+			email: this.refs.emailAddress,
+			message: this.refs.message
+		}).then(res => {
+			console.log("=====EMAIL======")
+			console.log(res);
+		});
 	}
 }
 
