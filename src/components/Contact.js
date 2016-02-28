@@ -30,8 +30,8 @@ class Contact extends Component {
 
 	sendEmail() {
 		axios.post('/email', {
-			email: this.refs.emailAddress,
-			message: this.refs.message
+			email: this.refs.emailAddress.value,
+			message: this.refs.message.value
 		}).then(res => {
 			console.log("=====EMAIL======")
 			console.log(res);
