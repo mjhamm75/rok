@@ -84,6 +84,15 @@ if(isDevelopment) {
   });
 
   app.post('/login', passport.authenticate('local'), function(req, res) {
+    // This is another way to login
+    
+    // passport.authenticate('local', { 
+    //     successRedirect: '/',
+    //     failureRedirect: '/login',
+    //     failureFlash: true 
+    //   })
+    // );
+
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
     res.redirect('/users/' + req.user.username);
