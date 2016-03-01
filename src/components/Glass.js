@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router'
 
 import b1 from './../imgs/b1.jpg'
 import b2 from './../imgs/b2.jpg'
@@ -37,10 +38,12 @@ class Glass extends Component {
 		document.body.style.background = '#FFFFFF';	
 	}
 	updateOverlay(src) {
-		this.setState({
-			showOverlay: true,
-			src: src
-		})
+		browserHistory.push('/pick')
+		// this.setState({
+		// 	showOverlay: true,
+		// 	src: src
+		// })
+
 	}
 	hideOverlay() {
 		this.setState({
