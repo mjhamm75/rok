@@ -9,6 +9,7 @@ import Contact from './../components/Contact';
 import Glass from './../components/Glass';
 import SimplyDonate from './../components/SimplyDonate';
 import Login from './../components/Login';
+import Admin from './../components/Admin';
 
 const routes = (
   <Route path="/" component={App}>
@@ -20,6 +21,7 @@ const routes = (
     <Route path="glass" component={Glass} />
     <Route path="simply-donate" component={SimplyDonate} />
     <Route path="login" component={Login} />
+    <Route path="admin" component={Admin} />
   </Route>
 )
 
