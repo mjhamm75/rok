@@ -3,6 +3,8 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var email = require('emailjs');
+var passport = require('passport')
+var LocalStrategy = require('passport-local').Strategy;
 
 var emailServer  = email.server.connect({
    user:    "jhamm.business", 
@@ -10,6 +12,21 @@ var emailServer  = email.server.connect({
    host:    "smtp.gmail.com", 
    ssl:     true
 });
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 var PORT = process.env.PORT || 3000;
 var isDevelopment = (process.env.NODE_ENV !== 'production');
@@ -64,8 +81,12 @@ if(isDevelopment) {
         message: 'sent'
       })
     });
+  });
 
-    
+  app.post('/login', passport.authenticate('local'), function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.redirect('/users/' + req.user.username);
   });
   
   app.get('*', function(req, res) {
