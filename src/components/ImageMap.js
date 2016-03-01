@@ -25,7 +25,19 @@ class ImageMap extends Component {
 			clearTimeout(timer);
 			timer = setTimeout(that.resize, 100);
 		};
-	} 
+	}
+
+	calculateCoords(mapping, width, height, wPercent, hPercent) {
+		return mapping.map(area => {
+			return area.split(',').map((coord, i) => {
+				if(i % 2 === 0) {
+					return parseInt(((coord/width)*100)*wPercent);
+				} else {
+					return parseInt(((coord/height)*100)*hPercent);
+				}
+			})
+		})
+	}
 
 	mouseOver(e) {
 		highlightArea(e, this.refs.canvas);
@@ -85,7 +97,7 @@ class ImageMap extends Component {
 		return this.state.mapping.map((area, i) => {
 			var id = `test${i}`
 			var refId = `area${i}`
-			return <area key={i} id={id} shape="poly" coords={area} href=""  alt="" title="" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}/>
+			return <area key={i} id={id} shape="poly" coords={area} href=""  alt="" title="" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} onClick={this.selectArea}/>
 		});
 	}
 
@@ -108,16 +120,9 @@ class ImageMap extends Component {
 		});
 	}
 
-	calculateCoords(mapping, width, height, wPercent, hPercent) {
-		return mapping.map(area => {
-			return area.split(',').map((coord, i) => {
-				if(i % 2 === 0) {
-					return parseInt(((coord/width)*100)*wPercent);
-				} else {
-					return parseInt(((coord/height)*100)*hPercent);
-				}
-			})
-		})
+	selectArea(event) {
+		event.preventDefault();
+		console.log(event.target.id)
 	}
 }
 
