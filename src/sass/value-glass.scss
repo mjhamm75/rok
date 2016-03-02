@@ -6,19 +6,25 @@
 	margin: 50px 25px;
 }
 
-.cost-container {
-	height: 300px;
+.input-container {
 	margin: 50px;
-	overflow-y: scroll;
+
+	.cost-container {
+		height: 300px;
+		width: 40%;
+		overflow-y: scroll;
+		border: 1px solid #D6D6D6;
+	}
 }
 
 .form {
 	align-items: center;
 	display: flex;
 	padding: 10px 5px;
-	width: 30%;
+	width: 100%;
 
 	> label {
+		margin-right: 10px;
 		width: 40px;
 	}
 

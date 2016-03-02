@@ -19,8 +19,10 @@ export default class ValueGlass extends Component {
 				<div className="image-container">
 					<ImageMap ref="image" source={b1} mappingName={glass} coords={coords}/>
 				</div>
-				<div className="cost-container">
-					{cost}
+				<div className="input-container">
+					<div className="cost-container">
+						{cost}
+					</div>
 				</div>
 			</div>
 		)
