@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import ImageMap from './ImageMap';
 
-import coords from './coords.js';
+// import coords from './coords.js';
 import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/value-glass.scss');
 
 export default class ValueGlass extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			coords: []
+		}
+	}
+
 	render() {
+		let coords = this.state.coords;
 		let cost = this.renderCostDOM(coords);
 		var glass = "glass";
 		return (
@@ -24,7 +32,7 @@ export default class ValueGlass extends Component {
 						{cost}
 					</div>
 					<div>
-						<textarea></textarea>
+						<textarea ref="coords" placeholder="Enter coordinates here." onChange={this.updateCoords.bind(this)}></textarea>
 					</div>
 				</div>
 			</div>
@@ -60,6 +68,16 @@ export default class ValueGlass extends Component {
 
 	mouseOut() {
 		this.refs.image.clear();
+	}
+
+	updateCoords() {
+		var coords = this.refs.coords.value.split('\n');
+		var coordsRemoveQuotes = coords.map(coord => {
+			return coord.replace(/["']/g, "");
+		});		
+		this.setState({
+			coords: coordsRemoveQuotes
+		});
 	}
 }
 
