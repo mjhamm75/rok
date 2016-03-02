@@ -27,6 +27,14 @@ class ImageMap extends Component {
 		};
 	}
 
+	componentWillReceiveProps(newProps) {
+		this.setState({
+			mapping: newProps.coords,
+			originalMapping: newProps.coords
+		})
+		this.resize()
+	}
+
 	calculateCoords(mapping, width, height, wPercent, hPercent) {
 		return mapping.map(area => {
 			return area.split(',').map((coord, i) => {

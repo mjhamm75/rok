@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ImageMap from './ImageMap';
 
-// import coords from './coords.js';
+import coords from './coords.js';
 import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/value-glass.scss');
@@ -10,7 +10,7 @@ export default class ValueGlass extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: []
+			coords: coords
 		}
 	}
 
@@ -73,7 +73,7 @@ export default class ValueGlass extends Component {
 	updateCoords() {
 		var coords = this.refs.coords.value.split('\n');
 		var coordsRemoveQuotes = coords.map(coord => {
-			return coord.replace(/["']/g, "");
+			return coord.replace(/["']/g, "").replace(/,$/, "");
 		});		
 		this.setState({
 			coords: coordsRemoveQuotes
