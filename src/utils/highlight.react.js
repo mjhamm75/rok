@@ -1,5 +1,4 @@
-export function highlightArea(e, canvas) {
-	var area = e.target;
+export function highlightArea(area, canvas) {
 	var area_options = options_from_area(area, defaults);
 	if(!area_options.neverOn && !area_options.alwaysOn) {
 		var shape = shape_from_area(area);
@@ -10,6 +9,30 @@ export function highlightArea(e, canvas) {
 export function clearCanvas(canvas) {
 	clear_canvas(canvas);
 }
+
+const defaults = {
+	fill: true,
+	fillColor: '000000',
+	fillOpacity: 0.2,
+	stroke: true,
+	strokeColor: 'ff0000',
+	strokeOpacity: 1,
+	strokeWidth: 1,
+	fade: true,
+	alwaysOn: false,
+	neverOn: false,
+	groupBy: false,
+	wrapClass: true,
+	// plenty of shadow:
+	shadow: false,
+	shadowX: 0,
+	shadowY: 0,
+	shadowRadius: 6,
+	shadowColor: '000000',
+	shadowOpacity: 0.8,
+	shadowPosition: 'outside',
+	shadowFrom: false
+};
 
 function add_shape_to(canvas, shape, coords, options, name) {
 	var i, context = canvas.getContext('2d');
@@ -125,30 +148,6 @@ function create_canvas_for(img) {
 
 function css3color(color, opacity) {
 	return 'rgba('+hex_to_decimal(color.substr(0,2))+','+hex_to_decimal(color.substr(2,2))+','+hex_to_decimal(color.substr(4,2))+','+opacity+')';
-};
-
-const defaults = {
-	fill: true,
-	fillColor: '000000',
-	fillOpacity: 0.2,
-	stroke: true,
-	strokeColor: 'ff0000',
-	strokeOpacity: 1,
-	strokeWidth: 1,
-	fade: true,
-	alwaysOn: false,
-	neverOn: false,
-	groupBy: false,
-	wrapClass: true,
-	// plenty of shadow:
-	shadow: false,
-	shadowX: 0,
-	shadowY: 0,
-	shadowRadius: 6,
-	shadowColor: '000000',
-	shadowOpacity: 0.8,
-	shadowPosition: 'outside',
-	shadowFrom: false
 };
 
 function draw_shape(context, shape, coords, x_shift, y_shift) {

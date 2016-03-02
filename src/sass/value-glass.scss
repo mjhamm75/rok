@@ -1,0 +1,30 @@
+.button-container {
+	margin: 25px;
+}
+
+.image-container {
+	margin: 50px 25px;
+}
+
+.cost-container {
+	margin: 50px;
+}
+
+.form {
+	align-items: center;
+	display: flex;
+	padding: 10px 5px;
+	width: 30%;
+
+	> label {
+		width: 40px;
+	}
+
+	> div > label {
+		margin-right: 10px;
+	}
+}
+
+.form:hover {
+	background: #BBBBBB;
+}

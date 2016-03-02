@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { highlight, highlightArea, clearCanvas } from './../utils/highlight.react.js';
+import { highlightArea, clearCanvas } from './../utils/highlight.react.js';
 
 class ImageMap extends Component {
 	constructor(props) {
 		super(props);
 		this.resize = this.resize.bind(this);
-		this.mouseOver = this.mouseOver.bind(this);
-		this.mouseOut = this.mouseOut.bind(this);
 		
 		this.state = {
-			mapping: this.props.coords,
-			originalMapping: this.props.coords,
+			canvasHeight: 'auto',
 			canvasWidth: '100%',
-			canvasHeight: 'auto'
+			disableMouseOver: false,
+			mapping: this.props.coords,
+			originalMapping: this.props.coords
 		}
 
+		this.highlightAll = this.highlightAll.bind(this);
 	}
 
 	componentDidMount() {		
@@ -39,12 +39,36 @@ class ImageMap extends Component {
 		})
 	}
 
+	clear() {
+		clearCanvas(this.refs.canvas);
+		this.setState({
+			disableMouseOver: false
+		})
+	}
+
+	highlightArea(area) {
+		highlightArea(area, this.refs.canvas);
+	}
+
+	highlightAll() {
+		this.setState({
+			disableMouseOver: true
+		});
+		[].slice.call(this.refs.map.children).forEach(area => {
+			highlightArea(area, this.refs.canvas);
+		})
+	}
+
 	mouseOver(e) {
-		highlightArea(e, this.refs.canvas);
+		if(!this.state.disableMouseOver) {
+			highlightArea(e.target, this.refs.canvas);			
+		}
 	}
 
 	mouseOut() {
-		clearCanvas(this.refs.canvas);
+		if(!this.state.disableMouseOver) {
+			clearCanvas(this.refs.canvas);			
+		}
 	}
 
 	render() {
@@ -97,7 +121,7 @@ class ImageMap extends Component {
 		return this.state.mapping.map((area, i) => {
 			var id = `test${i}`
 			var refId = `area${i}`
-			return <area key={i} id={id} shape="poly" coords={area} href=""  alt="" title="" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} onClick={this.selectArea}/>
+			return <area key={i} id={id} shape="poly" coords={area} href=""  alt="" title="" onMouseOver={this.mouseOver.bind(this)} onMouseOut={this.mouseOut.bind(this)} onClick={this.selectArea.bind(this)}/>
 		});
 	}
 
@@ -122,7 +146,19 @@ class ImageMap extends Component {
 
 	selectArea(event) {
 		event.preventDefault();
-		console.log(event.target.id)
+		let mouseDisabled = this.state.disableMouseOver;
+		if(mouseDisabled) {
+			this.setState({
+				disableMouseOver: false
+			});
+			this.refs.map.clear();
+		} else {
+			this.setState({
+				disableMouseOver: true
+			})
+			highlightArea(event.target);
+		}
+		
 	}
 }
 
