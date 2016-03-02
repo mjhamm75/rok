@@ -23,6 +23,9 @@ export default class ValueGlass extends Component {
 					<div className="cost-container">
 						{cost}
 					</div>
+					<div>
+						<textarea></textarea>
+					</div>
 				</div>
 			</div>
 		)

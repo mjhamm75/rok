@@ -10,10 +10,18 @@
 	margin: 50px;
 
 	.cost-container {
-		height: 300px;
+		float: left;
+		height: 250px;
 		width: 40%;
 		overflow-y: scroll;
 		border: 1px solid #D6D6D6;
+	}
+
+	> div > textarea {
+		border: 1px solid #D6D6D6;
+		height: 18em;
+		margin-left: 25px;
+		width: 35em;
 	}
 }
 
