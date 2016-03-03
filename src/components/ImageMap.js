@@ -31,8 +31,9 @@ class ImageMap extends Component {
 		this.setState({
 			mapping: newProps.coords,
 			originalMapping: newProps.coords
+		}, () => {
+			this.resize(newProps.coords)			
 		})
-		this.resize()
 	}
 
 	calculateCoords(mapping, width, height, wPercent, hPercent) {
@@ -133,16 +134,14 @@ class ImageMap extends Component {
 		});
 	}
 
-	resize() {
+	resize(coords) {
 		var image =  new Image();
 		image.src = this.refs.image.src;
 		let { height: fullHeight, width: fullWidth } = image;
 
 		let { height: currentHeight, width: currentWidth } = this.refs.image;
-		
 		let wPercent = currentWidth/100,
 			hPercent = currentHeight/100;
-
 		let modifiedCoords = this.calculateCoords(this.state.originalMapping, fullWidth, fullHeight, wPercent, hPercent);
 
 		this.setState({

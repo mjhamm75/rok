@@ -10,7 +10,7 @@ export default class ValueGlass extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: coords
+			coords: []
 		}
 	}
 

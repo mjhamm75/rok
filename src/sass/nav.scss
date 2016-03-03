@@ -22,6 +22,7 @@
         }
         &:last-child {
             margin-left: auto;
+            position: relative;
         }
         &:first-child {
             visibility: hidden;
@@ -34,10 +35,23 @@
             display: none;
         }
     }
-    .bag {
-        width: 10px;
-        background: #252525;
-        padding: 6px 8px;
-        border-radius: 50%;
+    .bag-wrapper {
+        position: relative;
+
+        .circle {
+            background: #4A90E2;
+            border-radius: 50%;
+            color: white;
+            height: 20px;
+            position: absolute;
+            text-align: center;
+            width: 20px;
+        }
+
+        .bag {
+            width: 55%;
+            height: auto;
+            margin-left: 10px;
+        }
     }
 }
