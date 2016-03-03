@@ -1,31 +1,33 @@
+var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var path = require('path');
-
-var webpackDevMiddleware = require("webpack-dev-middleware");
-var webpackHotMiddleware = require("webpack-hot-middleware");
-
-var webpackConfig = require('./webpack.config.js');
+var config = require('./webpack.config.js');
 
 var app = express();
+var compiler = webpack(config);
 
-var compiler = webpack(webpackConfig);
-
-app.use(webpackDevMiddleware(compiler, {
-	publicPath: webpackConfig.output.publicPath,
-	stats: {
-		colors: true, 
-		chunks: false
-	}
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
 }));
 
-app.use(webpackHotMiddleware(compiler));
+app.use(require('webpack-hot-middleware')(compiler));
+
+app.get('/test', function(req, res) {
+	res.json({
+		is: 'working'
+	})
+})
 
 app.get('*', function(req, res) {
-	var memoryFs = compiler.outputFileSystem;
-	var index = path.join(webpackConfig.output.publicPath, 'index.html');
-	var html = memoryFs.readFileSync(index);
-	res.end(html)
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000);
+app.listen(3000, 'localhost', function(err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log('Listening at http://localhost:3000');
+});
