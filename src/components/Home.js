@@ -78,8 +78,8 @@ class Home extends Component {
 			    	</div>
 				</div>
 				<Nav />
-				<div className="storyWrapper">
-					<div className="story" style={style}>
+				<div className="storyWrapper" style={style}>
+					<div className="story">
 						<div>Man's story told through the beauty of stained glass</div>
 						<div>
 							<div className="hide"></div>
