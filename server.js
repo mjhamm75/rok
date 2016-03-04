@@ -30,7 +30,7 @@ if(isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));  
 }
 
-app.get('/email', function(req, res) {
+app.post('/email', function(req, res) {
 	var emailAddress = req.body.email;
   var message = req.body.message;
   knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
@@ -46,7 +46,6 @@ app.get('/email', function(req, res) {
         subject: "ROK"
       }, function(err, message) {
         if(err) console.log(err);
-
         res.json({
           message: 'sent'
         })
