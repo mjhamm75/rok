@@ -31,20 +31,33 @@ if(isDevelopment) {
 }
 
 app.get('/email', function(req, res) {
-	var email = req.body.email;
+	var emailAddress = req.body.email;
   var message = req.body.message;
-  emailServer.send({
-    text:    message,
-    from:    "you <" + email + ">", 
-    to:      "someone <rootsofknowledgeproject.me@gmail.com>",
-    subject: "ROK"
-  }, function(err, message) {
-    if(err) console.log(err);
+  knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
+      email.server.connect({
+         user:    result.username, 
+         password:result.password, 
+         host:    "smtp.gmail.com", 
+         ssl:     true
+      }).send({
+        text:    message,
+        from:    "you <" + emailAddress + ">", 
+        to:      "someone <rootsofknowledgeproject.me@gmail.com>",
+        subject: "ROK"
+      }, function(err, message) {
+        if(err) console.log(err);
 
-    res.json({
-      message: 'sent'
-    })
-  });
+        res.json({
+          message: 'sent'
+        })
+      });
+  })
+})
+
+app.get('/test', function(req, res) {
+  knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
+    res.json(result);
+  })
 })
 
 app.get('*', function(req, res) {
