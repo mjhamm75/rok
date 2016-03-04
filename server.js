@@ -9,8 +9,8 @@ var compiler = webpack(config);
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 
 var emailServer  = email.server.connect({
-   user:    "jhamm.business", 
-   password:"neelyismywife", 
+   user:    "rootsofknowledgeproject", 
+   password:"rootsofknowledge", 
    host:    "smtp.gmail.com", 
    ssl:     true
 });
@@ -23,13 +23,13 @@ if(isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));  
 }
 
-app.post('/email', function(req, res) {
-	var email = req.body.email;
-  var message = req.body.message;
+app.get('/email', function(req, res) {
+	var email = 'rossross'
+  var message = 'testtest'
   emailServer.send({
     text:    message,
     from:    "you <" + email + ">", 
-    to:      "someone <jasonhamm.me@gmail.com>",
+    to:      "someone <rootsofknowledgeproject@gmail.com>",
     subject: "ROK"
   }, function(err, message) {
     if(err) console.log(err);
