@@ -10,9 +10,13 @@ class Pick extends Component {
 		return (
 			<div>
 				<h1>Pick</h1>
-				<ImageMap source={b1} mappingName={glass} coords={coords}/>
+				<ImageMap source={b1} mappingName={glass} coords={coords} selectArea={this.selectArea.bind(this)}/>
 			</div>
 		)
+	}
+
+	selectArea(id) {
+		console.log(id);
 	}
 }
 

@@ -158,12 +158,13 @@ class ImageMap extends Component {
 			this.setState({
 				disableMouseOver: false
 			});
-			this.refs.map.clear();
+			this.clear();
 		} else {
 			this.setState({
 				disableMouseOver: true
 			})
-			highlightArea(event.target);
+			highlightArea(event.target, this.refs.canvas);
+			this.props.selectArea(event.target.id);
 		}
 		
 	}
