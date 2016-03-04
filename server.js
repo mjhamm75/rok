@@ -24,12 +24,12 @@ if(isDevelopment) {
 }
 
 app.get('/email', function(req, res) {
-	var email = 'rossross'
-  var message = 'testtest'
+	var email = req.body.email;
+  var message = req.body.message;
   emailServer.send({
     text:    message,
     from:    "you <" + email + ">", 
-    to:      "someone <rootsofknowledgeproject@gmail.com>",
+    to:      "someone <rootsofknowledgeproject.me@gmail.com>",
     subject: "ROK"
   }, function(err, message) {
     if(err) console.log(err);
