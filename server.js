@@ -1,5 +1,6 @@
 var path = require('path');
 var express = require('express');
+var bodyParser = require('body-parser');
 var webpack = require('webpack');
 var config = require('./webpack.config.js');
 var email = require('emailjs');
@@ -22,6 +23,8 @@ var emailServer  = email.server.connect({
    ssl:     true
 });
 
+app.use(bodyParser.json());
+
 if(isDevelopment) {
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
@@ -42,7 +45,7 @@ app.post('/email', function(req, res) {
       }).send({
         text:    message,
         from:    "you <" + emailAddress + ">", 
-        to:      "someone <rootsofknowledgeproject.me@gmail.com>",
+        to:      "someone <rootsofknowledgeproject@gmail.com>",
         subject: "ROK"
       }, function(err, message) {
         if(err) console.log(err);
