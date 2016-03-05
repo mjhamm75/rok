@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
+import selectedGlass from './glass';
 
 const rootReducer = combineReducers({
-  counter
+  counter,
+  selectedGlass
 });
 
 export default rootReducer;

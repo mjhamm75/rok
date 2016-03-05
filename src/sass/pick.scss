@@ -9,3 +9,13 @@
 	text-align: center;
 	text-decoration: none;
 }
+.pieces {
+	list-style: none;
+	padding: 0;
+}
+.piece {
+	text-align: center;
+	.amount {
+		font-weight: 600;
+	}
+}
