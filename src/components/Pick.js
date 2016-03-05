@@ -19,6 +19,7 @@ class Pick extends Component {
 	}
 	addPiece() {
 		this.refs.simpleDialog.hide();
+		this.refs.imagemap.clear();
 	}
 
 	render() {
@@ -28,7 +29,7 @@ class Pick extends Component {
 		return (
 			<div>
 				<h1>Pick</h1>
-				<ImageMap source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
+				<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
 				<button onClick={() => this.refs.simpleDialog.show()}>Open Modal</button>
 				<SkyLight 
 					ref="simpleDialog" 

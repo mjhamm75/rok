@@ -55,10 +55,10 @@ class ImageMap extends Component {
 	}
 
 	clear() {
-		clearCanvas(this.refs.canvas);
 		this.setState({
 			disableMouseOver: false
-		})
+		});
+		clearCanvas(this.refs.canvas);
 	}
 
 	highlightArea(area) {
