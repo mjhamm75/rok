@@ -44,7 +44,7 @@ class ImageMap extends Component {
 				} else {
 					return parseInt(((coord/height)*100)*hPercent);
 				}
-			})
+			}).join();
 			return area;
 		})
 		return mapping;
