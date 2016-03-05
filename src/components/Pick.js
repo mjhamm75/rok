@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
 import SkyLight from 'react-skylight';
+import Nav from './Nav';
 import { updateSelectedGlass } from './../actions/GlassActions';
 import numeral from 'numeral';
 
@@ -20,17 +21,19 @@ class Pick extends Component {
 	addPiece() {
 		this.refs.simpleDialog.hide();
 		this.refs.imagemap.clear();
+		this.props.dispatch(updateSelectedGlass('test', this.state.selectedGlass.id, this.state.selectedGlass.amount));
 	}
 
 	render() {
 		var glass = "glass";
-		var pieces = this.props.selectedGlass;
-		var piecesDOM = this.renderSelectedGlass(pieces);
+		var piece = this.state.selectedGlass;
+		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
 			<div>
-				<h1>Pick</h1>
-				<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
-				<button onClick={() => this.refs.simpleDialog.show()}>Open Modal</button>
+				<Nav selectedItems={this.props.selectedItems}/>
+				<div className="imagemap">
+					<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
+				</div>
 				<SkyLight 
 					ref="simpleDialog" 
 					title="Tree of Knowledge"
@@ -44,29 +47,29 @@ class Pick extends Component {
 		)
 	}
 
-	renderSelectedGlass(pieces) {
-		return pieces.map((piece, index) => {
-			return (
-				<li className="piece" key={index}>
-					<div className="name">{piece.name} - {piece.id}</div>
-					<div className="amount">{numeral(piece.amount).format('$0')}</div>
-				</li>
-			)
-		})
+	renderSelectedGlass(piece) {
+		return (
+			<li className="piece">
+				<div className="name">{"test"} - {piece.id}</div>
+				<div className="amount">{numeral(piece.amount).format('$0')}</div>
+			</li>
+		)
 	}
 
 	selectArea(areaId) {
 		let selectedArea = this.state.coords.find(coord => {
 			return coord.id === parseInt(areaId);
 		});
-		this.props.dispatch(updateSelectedGlass('test', selectedArea.id, selectedArea.amount));
+		this.setState({
+			selectedGlass: selectedArea
+		})
 		this.refs.simpleDialog.show();
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		selectedGlass: state.selectedGlass
+		selectedItems: state.selectedItems
 	}
 }
 

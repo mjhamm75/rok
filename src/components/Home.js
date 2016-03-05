@@ -68,7 +68,7 @@ class Home extends Component {
 							<div>
 								<div>
 									<div className="text">The Roots of Knowledge art glass window showcases humanity's pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
-									<a href="/donations">Sponsor a piece of glass</a>
+									<Link to="donations">Sponsor a piece of glass</Link>
 								</div>
 							</div>
 						</div>
@@ -148,7 +148,7 @@ class Home extends Component {
 						<img src={c3r1} />
 						<div>
 							<div>Add your piece to the story.</div>
-							<a href="donate">Sponsor a piece of glass</a>
+							<Link to="donate">Sponsor a piece of glass</Link>
 						</div>
 						<img src={c3r2} />
 					</div>

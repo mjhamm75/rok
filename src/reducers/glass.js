@@ -1,6 +1,6 @@
 import { ADD_SELECTED_GLASS } from '../constants/ActionTypes';
 
-export default function selectedGlass(state = [], action) {	
+export default function selectedItems(state = [], action) {	
   switch (action.type) {
 	case ADD_SELECTED_GLASS:
 		var piece = {

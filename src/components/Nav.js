@@ -10,7 +10,8 @@ class Nav extends Component {
 		super(props);
 		this.state = {
 			fixed: this.props.fixed,
-			showLogo: this.props.fixed
+			showLogo: this.props.fixed,
+			selectedItems: this.props.selectedItems
 		}
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
@@ -26,6 +27,12 @@ class Nav extends Component {
 	componentWillUnmount() {
 	    window.removeEventListener('scroll', this.handleScroll);
 	    window.removeEventListener('resize', this.handleResize)
+	}
+
+	componentWillReceiveProps(newProps) {
+		this.setState({
+			selectedItems: newProps.selectedItems
+		})
 	}
 
 	handleScroll() {
@@ -63,6 +70,9 @@ class Nav extends Component {
 			display: 'none'
 		} : null;
 
+		var hideBag = !this.state.selectedItems || this.state.selectedItems.length === 0 ? {
+			display: 'none'
+		} : null;
 		return (
 			<div className="navbar" ref="navbar" style={fixedStyle}>
 				<div />
@@ -84,7 +94,7 @@ class Nav extends Component {
 					<Link className="toggle" to="contact">Contact Us</Link>
 				</div>
 				<div className="bag-wrapper">
-					<div className="circle">1</div>
+					<div style={hideBag} className="circle">{this.state.selectedItems.length}</div>
 					<img className="bag" src={bag}/>
 				</div>
 			</div>
