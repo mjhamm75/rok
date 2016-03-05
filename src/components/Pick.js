@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ImageMap from './ImageMap';
 import SkyLight from 'react-skylight';
 
-import coords from './coords.js';
+import coords from './coordsObj.js';
 import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/pick.scss');
@@ -29,8 +29,11 @@ class Pick extends Component {
 		)
 	}
 
-	selectArea(id) {
-		console.log(id);
+	selectArea(areaId) {
+		let selectedArea = coords.filter(coord => {
+			return coord.id === parseInt(areaId);
+		});
+		console.log(selectedArea);
 	}
 }
 

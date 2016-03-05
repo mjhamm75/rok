@@ -37,15 +37,17 @@ class ImageMap extends Component {
 	}
 
 	calculateCoords(mapping, width, height, wPercent, hPercent) {
-		return mapping.map(area => {
-			return area.split(',').map((coord, i) => {
+		mapping.forEach(area => {
+			area.coords = area.coords.split(',').map((coord, i) => {
 				if(i % 2 === 0) {
 					return parseInt(((coord/width)*100)*wPercent);
 				} else {
 					return parseInt(((coord/height)*100)*hPercent);
 				}
 			})
+			return area;
 		})
+		return mapping;
 	}
 
 	clear() {
@@ -128,9 +130,17 @@ class ImageMap extends Component {
 
 	renderArea() {
 		return this.state.mapping.map((area, i) => {
-			var id = `test${i}`
-			var refId = `area${i}`
-			return <area key={i} id={id} shape="poly" coords={area} href=""  alt="" title="" onMouseOver={this.mouseOver.bind(this)} onMouseOut={this.mouseOut.bind(this)} onClick={this.selectArea.bind(this)}/>
+			return <area 
+						key={i} 
+						id={area.id} 
+						shape="poly" 
+						coords={area.coords} 
+						href=""  
+						alt="" 
+						title="" 
+						onMouseOver={this.mouseOver.bind(this)} 
+						onMouseOut={this.mouseOut.bind(this)} 
+						onClick={this.selectArea.bind(this)}/>
 		});
 	}
 
