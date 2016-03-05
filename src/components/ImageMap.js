@@ -32,22 +32,26 @@ class ImageMap extends Component {
 			mapping: newProps.coords,
 			originalMapping: newProps.coords
 		}, () => {
-			this.resize(newProps.coords)			
+			this.resize()			
 		})
 	}
 
 	calculateCoords(mapping, width, height, wPercent, hPercent) {
-		mapping.forEach(area => {
-			area.coords = area.coords.split(',').map((coord, i) => {
+		let result = mapping.map(area => {
+			let coords = area.coords.split(',').map((coord, i) => {
 				if(i % 2 === 0) {
 					return parseInt(((coord/width)*100)*wPercent);
 				} else {
 					return parseInt(((coord/height)*100)*hPercent);
 				}
 			}).join();
-			return area;
+			return {
+				id: area.id,
+				amount: area.amount,
+				coords: coords
+			}
 		})
-		return mapping;
+		return result;
 	}
 
 	clear() {
@@ -144,7 +148,7 @@ class ImageMap extends Component {
 		});
 	}
 
-	resize(coords) {
+	resize() {
 		var image =  new Image();
 		image.src = this.refs.image.src;
 		let { height: fullHeight, width: fullWidth } = image;

@@ -5,12 +5,18 @@ import SkyLight from 'react-skylight';
 import { updateSelectedGlass } from './../actions/GlassActions';
 import numeral from 'numeral';
 
-import coords from './coordsObj.js';
+import coordsObj from './coordsObj.js';
 import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/pick.scss');
 
 class Pick extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			coords: coordsObj
+		}
+	}
 	addPiece() {
 		this.refs.simpleDialog.hide();
 	}
@@ -19,11 +25,10 @@ class Pick extends Component {
 		var glass = "glass";
 		var pieces = this.props.selectedGlass;
 		var piecesDOM = this.renderSelectedGlass(pieces);
-
 		return (
 			<div>
 				<h1>Pick</h1>
-				<ImageMap source={b1} mappingName={glass} coords={coords} selectArea={this.selectArea.bind(this)}/>
+				<ImageMap source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
 				<button onClick={() => this.refs.simpleDialog.show()}>Open Modal</button>
 				<SkyLight 
 					ref="simpleDialog" 
@@ -50,7 +55,7 @@ class Pick extends Component {
 	}
 
 	selectArea(areaId) {
-		let selectedArea = coords.find(coord => {
+		let selectedArea = this.state.coords.find(coord => {
 			return coord.id === parseInt(areaId);
 		});
 		this.props.dispatch(updateSelectedGlass('test', selectedArea.id, selectedArea.amount));
