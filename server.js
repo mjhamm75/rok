@@ -56,12 +56,6 @@ app.post('/email', function(req, res) {
   })
 })
 
-app.get('/test', function(req, res) {
-  knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
-    res.json(result);
-  })
-})
-
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
