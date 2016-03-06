@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Nav from './Nav';
 import Copywrite from './Copywrite';
@@ -9,7 +10,7 @@ class Donations extends Component {
 	render() {
 		return (
 			<div className="donations">
-				<Nav fixed="true"/>
+				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
 				<div className="hero">
 					<div>Explore the wall and find a piece of glass to sponsor.</div>
 					<div>Enjoy the story along the way.</div>
@@ -21,4 +22,10 @@ class Donations extends Component {
 	}
 }
 
-export default Donations;
+function mapStateToProps(state) {
+	return {
+		selectedItems: state.selectedItems
+	}
+}
+
+export default connect(mapStateToProps)(Donations);

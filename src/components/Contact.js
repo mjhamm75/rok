@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Nav from './Nav';
 import axios from 'axios';
 import className from 'classnames';
@@ -21,7 +22,7 @@ class Contact extends Component {
 		let buttonText = this.state.buttonDisabled ? 'Sending ...' : 'Send';
 		return (
 			<div className="contact">
-				<Nav fixed="true"/>
+				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
 				<div className="contact-form">
 					<div>Contact Us</div>
 					<div>Questions about the project? Looking for a way to donate at an executive level, or information for the press. Send us a note and we’ll get back to you soon.</div>
@@ -65,4 +66,9 @@ class Contact extends Component {
 	}
 }
 
-export default Contact;
+function mapStateToProps(state) {
+	return {
+		selectedItems: state.selectedItems
+	}
+}
+export default connect(mapStateToProps)(Contact);
