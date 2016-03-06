@@ -25,6 +25,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "body-parser": "^1.15.0",
     "classname": "0.0.0",
+    "classnames": "^2.2.3",
     "css-loader": "^0.23.1",
     "emailjs": "^1.0.4",
     "express": "^4.13.4",
