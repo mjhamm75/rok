@@ -17,6 +17,11 @@ class Cart extends Component {
 		})
 	}
 
+	shouldComponentUpdate(newProps) {
+		console.log(newProps);
+		return true;
+	}
+
 	render() {
 		let selectedItems = this.renderSelectedItems();
 		let total = this.props.selectedItems.reduce((a, b) => {
@@ -58,9 +63,7 @@ class Cart extends Component {
 	}
 
 	closeCart() {
-		this.setState({
-			show: false
-		})
+		this.props.closeCart();
 	}
 
 	removePiece(name, id) {
