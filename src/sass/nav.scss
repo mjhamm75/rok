@@ -64,7 +64,7 @@
         width: 350px;
         position: fixed;
         z-index: 2;
-        right: 0px;
+        right: -350px;
 
         .close {
             color: #9B9B9B;
@@ -119,6 +119,10 @@
             text-decoration: none;
             margin-top: 30px;
         }
+    }
+    .cart.open {
+        right: 0px;
+        transition: right .5s;
     }
 }
 
