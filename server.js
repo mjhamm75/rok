@@ -1,5 +1,6 @@
 var path = require('path');
 var express = require('express');
+var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var webpack = require('webpack');
 var config = require('./webpack.config.js');
@@ -23,6 +24,7 @@ var emailServer  = email.server.connect({
    ssl:     true
 });
 
+app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(bodyParser.json());
 
 if(isDevelopment) {
