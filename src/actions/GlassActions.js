@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router';
 import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN } from '../constants/ActionTypes';
 import axios from 'axios';
 
@@ -24,7 +25,7 @@ export function login(username, password) {
 			username: username, 
 			password: password
 		}).then(res => {
-			debugger;
+			browserHistory.push('/admin');			
 		}).catch(err => console.log(err))
 	}
 }

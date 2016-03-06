@@ -17,9 +17,17 @@ module.exports = function(passport, knex) {
 	// used to deserialize the user
 	passport.deserializeUser(function(id, done) {
 		console.log(id + "is deserialized");
-		User.findById(id, function(err, user) {
-			done(err, user);
-		});
+		knex.select().table('users').where({
+				username: username,
+				password: password
+			}).first().then(function(res) {
+				if(!res) {
+					return done(null, false, req.flash('loginMessage'), 'No user found');
+				}
+				return done(null, res);
+			}).catch(function(err) {
+				return done(err)
+			})
 	});
 
 	passport.use('local-login', new LocalStrategy({

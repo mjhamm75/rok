@@ -70,8 +70,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.post('/log-in', passport.authenticate('local-login'), function(req, res) {
-  var user = req.user;
-  res.json(user);
+  res.sendStatus(200);
 });
 
 app.get('*', function(req, res) {
