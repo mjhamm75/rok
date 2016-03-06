@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router'
 import { Link } from 'react-router';
+import Cart from './Cart';
 import bag from './../imgs/shopping-bag.png'
 import logo from './../imgs/rok-logo-white.png';
 
@@ -74,31 +76,38 @@ class Nav extends Component {
 			display: 'none'
 		} : null;
 		return (
-			<div className="navbar" ref="navbar" style={fixedStyle}>
-				<div />
-				<div>
-					<Link to="/">
-						<div className="logo">
-							<img style={hideLogo} src={logo}/>
-							<div>The Roots of Knowledge Project</div>
-						</div>
-					</Link>
-				</div>
-				<div>
-					<Link className="toggle" to="about">About the Project</Link>
-				</div>
-				<div>
-					<Link className="toggle" to="donations">Donate</Link>
-				</div>
-				<div>
-					<Link className="toggle" to="contact">Contact Us</Link>
-				</div>
-				<div className="bag-wrapper">
-					<div style={hideBag} className="circle">{this.state.selectedItems && this.state.selectedItems.length}</div>
-					<img className="bag" src={bag}/>
+			<div className="nav" ref="navbar" style={fixedStyle}>
+				<Cart selectedItems={this.state.selectedItems}/>
+				<div className="navbar">
+					<div />
+					<div>
+						<Link to="/">
+							<div className="logo">
+								<img style={hideLogo} src={logo}/>
+								<div>The Roots of Knowledge Project</div>
+							</div>
+						</Link>
+					</div>
+					<div>
+						<Link className="toggle" to="about">About the Project</Link>
+					</div>
+					<div>
+						<Link className="toggle" to="donations">Donate</Link>
+					</div>
+					<div>
+						<Link className="toggle" to="contact">Contact Us</Link>
+					</div>
+					<div className="bag-wrapper" onClick={this.showCart}>
+						<div style={hideBag} className="circle">{this.state.selectedItems && this.state.selectedItems.length}</div>
+						<img className="bag" src={bag}/>
+					</div>
 				</div>
 			</div>
 		)
+	}
+
+	showCart() {
+		console.log('show cart');
 	}
 }
 
