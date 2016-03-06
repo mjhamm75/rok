@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
+import { connect } from 'react-redux';
 
 import b1 from './../imgs/b1.jpg'
 import b2 from './../imgs/b2.jpg'
@@ -53,7 +54,7 @@ class Glass extends Component {
 	render() {
 		return (
 			<div className="glass">
-				<Nav fixed="true"/>
+				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
 				<Overlay src={this.state.src} showOverlay={this.state.showOverlay} hide={this.hideOverlay.bind(this)}/>
 				<div className="image">
 					<div>
@@ -81,4 +82,9 @@ class Glass extends Component {
 	}
 }
 
-export default Glass;
+function mapStateToProps(state) {
+	return {
+		selectedItems: state.selectedItems
+	}
+}
+export default connect(mapStateToProps)(Glass);
