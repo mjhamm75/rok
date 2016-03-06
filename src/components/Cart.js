@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
+import className from 'classnames';
 import bag from './../imgs/shopping.bag.black.png'
 import numeral from 'numeral';
 
 class Cart extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			show: this.props.show
+		}
+	}
+
+	componentWillReceiveProps(newProps) {
+		this.setState({
+			show: newProps.show
+		})
+	}
+
 	render() {
 		let selectedItems = this.renderSelectedItems();
 		let total = this.props.selectedItems.reduce((a, b) => {
 			return a + b.amount;
 		}, 0)
+
+		let cart = className('cart', {
+			'open': this.state.show
+		})
 		return (
-			<div className="cart">
+			<div className={cart}>
 				<div className="close" onClick={this.closeCart.bind(this)}>close</div>
 				<img className="bag" src={bag}/>
 				<div className="header">Add your piece to the story</div>
@@ -35,7 +53,9 @@ class Cart extends Component {
 	}
 
 	closeCart() {
-		debugger;
+		this.setState({
+			show: false
+		})
 	}
 
 	removePiece() {

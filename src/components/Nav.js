@@ -17,6 +17,7 @@ class Nav extends Component {
 		}
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
+		this.showCart = this.showCart.bind(this);
 	}
 
 	componentDidMount() {
@@ -77,7 +78,7 @@ class Nav extends Component {
 		} : null;
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.state.selectedItems}/>
+				<Cart selectedItems={this.state.selectedItems} show={this.state.showCart}/>
 				<div className="navbar">
 					<div />
 					<div>
@@ -107,7 +108,9 @@ class Nav extends Component {
 	}
 
 	showCart() {
-		console.log('show cart');
+		this.setState({
+			showCart: true
+		})
 	}
 }
 
