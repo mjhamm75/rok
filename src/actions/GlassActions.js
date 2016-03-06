@@ -1,4 +1,5 @@
-import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN } from '../constants/ActionTypes';
+import axios from 'axios';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -14,5 +15,16 @@ export function removeSelectedGlass(panelName, glassId){
 		type: REMOVE_SELECTED_GLASS,
 		panelName,
 		glassId,
+	}
+}
+
+export function login(username, password) {
+	return dispatch => {
+		axios.post('log-in', {
+			username: username, 
+			password: password
+		}).then(res => {
+			debugger;
+		}).catch(err => console.log(err))
 	}
 }
