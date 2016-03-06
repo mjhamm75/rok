@@ -78,7 +78,7 @@ class Nav extends Component {
 		} : null;
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.state.selectedItems} show={this.state.showCart}/>
+				<Cart selectedItems={this.state.selectedItems} show={this.state.showCart} removePiece={this.props.removePiece}/>
 				<div className="navbar">
 					<div />
 					<div>

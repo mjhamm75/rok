@@ -4,6 +4,7 @@ import ImageMap from './ImageMap';
 import SkyLight from 'react-skylight';
 import Nav from './Nav';
 import { updateSelectedGlass } from './../actions/GlassActions';
+import { removeSelectedGlass } from './../actions/GlassActions';
 import numeral from 'numeral';
 
 import coordsObj from './coordsObj.js';
@@ -24,13 +25,17 @@ class Pick extends Component {
 		this.props.dispatch(updateSelectedGlass('test', this.state.selectedGlass.id, this.state.selectedGlass.amount));
 	}
 
+	removePiece(name, id) {
+		this.props.dispatch(removeSelectedGlass(name, id));
+	}
+
 	render() {
 		var glass = "glass";
 		var piece = this.state.selectedGlass;
 		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
 			<div className="pick">
-				<Nav selectedItems={this.props.selectedItems}/>
+				<Nav selectedItems={this.props.selectedItems} removePiece={this.removePiece.bind(this)}/>
 				<div className="imagemap">
 					<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
 				</div>

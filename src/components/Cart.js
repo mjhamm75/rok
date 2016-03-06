@@ -26,6 +26,11 @@ class Cart extends Component {
 		let cart = className('cart', {
 			'open': this.state.show
 		})
+
+		let hideItemTotal = this.props.selectedItems.length === 0 ? {
+			display: 'none'
+		} : null;
+
 		return (
 			<div className={cart}>
 				<div className="close" onClick={this.closeCart.bind(this)}>close</div>
@@ -33,8 +38,8 @@ class Cart extends Component {
 				<div className="header">Add your piece to the story</div>
 				<div className="blurb">Your donation will help inspire others with a masterpiece of epic size.</div>
 					{selectedItems}
-				<div className="border"></div>
-				<div className="item">
+				<div className="border" style={hideItemTotal}></div>
+				<div className="item" style={hideItemTotal}>
 					<div>
 						<div>
 							Total
@@ -58,8 +63,8 @@ class Cart extends Component {
 		})
 	}
 
-	removePiece() {
-		debugger;
+	removePiece(name, id) {
+		this.props.removePiece(name, id)
 	}
 
 	renderSelectedItems() {
@@ -75,7 +80,7 @@ class Cart extends Component {
 							{numeral(item.amount).format('$0,00')}
 						</div>
 					</div>
-					<div onClick={this.removePiece.bind(this)}>x</div>
+					<div onClick={this.removePiece.bind(this, item.name, item.id)}>x</div>
 				</div>
 			)
 		});
