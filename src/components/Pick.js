@@ -29,7 +29,7 @@ class Pick extends Component {
 		var piece = this.state.selectedGlass;
 		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
-			<div>
+			<div className="pick">
 				<Nav selectedItems={this.props.selectedItems}/>
 				<div className="imagemap">
 					<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>

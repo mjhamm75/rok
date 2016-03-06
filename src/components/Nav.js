@@ -94,7 +94,7 @@ class Nav extends Component {
 					<Link className="toggle" to="contact">Contact Us</Link>
 				</div>
 				<div className="bag-wrapper">
-					<div style={hideBag} className="circle">{this.state.selectedItems.length}</div>
+					<div style={hideBag} className="circle">{this.state.selectedItems && this.state.selectedItems.length}</div>
 					<img className="bag" src={bag}/>
 				</div>
 			</div>
