@@ -81,7 +81,7 @@ app.post('/log-in', function(req, res) {
   })
 });
 
-app.post('/create-user', function(req, res) {
+app.post('/create-user', validate, function(req, res) {
   var username = req.body.username;
   console.log(username)
   var pw = req.body.password;

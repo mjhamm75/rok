@@ -52,10 +52,17 @@ export function updateToken(token) {
 }
 
 export function createNewUser(username, password) {
-	return dispatch => {
-		axios.post('/create-user', {
-			username,
-			password
+	return (dispatch, state) => {
+		axios({
+			url: '/create-user',
+			methodd: 'POST',
+			data: {
+				username,
+				password
+			},
+			headers: {
+				'x-access-token': state.token
+			}
 		}).then(res => {
 			return {
 				type: USER_CREATED
