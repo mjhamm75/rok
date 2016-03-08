@@ -66,10 +66,9 @@ app.post('/email', function(req, res) {
 
 app.post('/log-in', function(req, res) {
   knex.select().table('users').first().where({
-    username: req.body.username,
-    password: req.body.password
+    username: req.body.username
   }).then(function(user) {
-    if(user) {
+    if(user && bcrypt.compareSync(req.body.password, user.password)) {
       var token = jwt.sign(user, app.get('superSecret'), {
         expiresIn: 3600
       });
@@ -103,6 +102,12 @@ app.post('/create-user', function(req, res) {
       res.sendStatus(403);
     }
   });
+})
+
+app.get('/test', validate, function(req, res) {
+  res.json({
+    is: 'valid'
+  })
 })
 
 app.get('*', function(req, res) {
