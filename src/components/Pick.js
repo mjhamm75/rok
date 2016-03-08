@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
-import SkyLight from 'react-skylight';
+import SkyLight from './ReactSkylight';
 import Nav from './Nav';
 import { updateSelectedGlass } from './../actions/GlassActions';
 import { removeSelectedGlass } from './../actions/GlassActions';

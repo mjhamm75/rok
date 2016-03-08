@@ -1,5 +1,5 @@
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN, EMAIL_UDPATED } from '../constants/ActionTypes';
 import axios from 'axios';
 
 export function updateSelectedGlass(panelName, glassId, amount){
@@ -27,5 +27,18 @@ export function login(username, password) {
 		}).then(res => {
 			browserHistory.push('/admin');			
 		}).catch(err => console.log(err))
+	}
+}
+
+export function updateEmailCreds(username, password) {
+	return dispatch => {
+		axios.post('/update-email', {
+			username,
+			password
+		}).then(res => {
+			return {
+				type: EMAIL_UDPATED
+			}
+		}).catch(err => console.log(err));
 	}
 }
