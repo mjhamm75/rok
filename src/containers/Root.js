@@ -23,9 +23,10 @@ const routes = (
     <Route path="glass" component={Glass} />
     <Route path="simply-donate" component={SimplyDonate} />
     <Route path="login" component={Login} />
-    <Route path="admin" component={Admin} />
     <Route path="pick" component={Pick} />
-    <Route path="value-glass" component={ValueGlass} />
+    <Route path="admin" component={Admin} >
+      <Route path="value-glass" component={ValueGlass} />
+    </Route>
   </Route>
 )
 

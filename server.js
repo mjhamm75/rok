@@ -5,9 +5,12 @@ var bodyParser = require('body-parser');
 var webpack = require('webpack');
 var config = require('./webpack.config.js');
 var email = require('emailjs');
+var jwt = require('jsonwebtoken');
 
 var app = express();
-var compiler = webpack(config);
+
+var validate = require('./passport/validate')(jwt, app);
+
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 
 var connectionString = process.env.PG_CONNECTION_STRING || 'postgres://rok:rok@localhost/rok';
@@ -24,10 +27,12 @@ var emailServer  = email.server.connect({
    ssl:     true
 });
 
+app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(bodyParser.json());
 
 if(isDevelopment) {
+  var compiler = webpack(config);
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
     publicPath: config.output.publicPath
@@ -57,6 +62,24 @@ app.post('/email', function(req, res) {
       });
   })
 })
+
+app.post('/log-in', function(req, res) {
+  knex.select().table('users').first().where({
+    username: req.body.username,
+    password: req.body.password
+  }).then(function(user) {
+    if(user) {
+      var token = jwt.sign(user, app.get('superSecret'), {
+        expiresInMinutes: 60
+      });
+      res.json({
+        token: token
+      })
+    } else {
+      console.log("Invalid credentials")
+    }
+  })
+});
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
