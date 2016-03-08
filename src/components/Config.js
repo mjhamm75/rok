@@ -47,6 +47,9 @@ class Config extends Component {
 		if(password === passwordValidation) {
 			this.props.dispatch(updateEmailCreds(username, password));			
 		}
+		this.refs.username.value = '';
+		this.refs.password.value = '';
+		this.refs.passwordValidation.value = '';
 	}
 
 	createUser() {
@@ -56,6 +59,9 @@ class Config extends Component {
 		if(password === passwordValidation) {
 			this.props.dispatch(createNewUser(username, password));
 		}
+		this.refs.newuser.value = '';	
+		this.refs.newpassword.value = '';
+		this.refs.newpasswordValidation.value = '';
 	}
 }
 
