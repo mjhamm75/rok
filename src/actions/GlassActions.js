@@ -1,5 +1,5 @@
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN, EMAIL_UDPATED, UPDATE_TOKEN, USER_CREATED } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN, EMAIL_UDPATED, UPDATE_TOKEN, USER_CREATED, VALIDATE_USERNAME } from '../constants/ActionTypes';
 import axios from 'axios';
 
 export function updateSelectedGlass(panelName, glassId, amount){
@@ -55,7 +55,7 @@ export function createNewUser(username, password) {
 	return (dispatch, state) => {
 		axios({
 			url: '/create-user',
-			methodd: 'POST',
+			method: 'POST',
 			data: {
 				username,
 				password
@@ -68,5 +68,30 @@ export function createNewUser(username, password) {
 				type: USER_CREATED
 			}
 		})
+	}
+}
+
+export function checkUsername(username) {
+	return (dispatch, state) => {
+		console.log(username)
+		axios({
+			method: 'GET',
+			url: '/username',
+			params: {
+				username
+			},
+			headers: {
+				'x-access-token': state().token
+			}
+		}).then(res => {
+			dispatch(validateUsername(res.data.count))
+		})
+	}
+}
+
+function validateUsername(count) {
+	return {
+		type: VALIDATE_USERNAME,
+		count
 	}
 }

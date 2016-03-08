@@ -81,6 +81,18 @@ app.post('/log-in', function(req, res) {
   })
 });
 
+app.get('/username', validate, function(req, res) {
+  var username = req.query.username;
+  knex.select().table('users').first().where({
+    username: username
+  }).then(function(user) {
+    var count = !user ? 0 : 1
+    res.json({
+      count: count
+    })
+  });
+})
+
 app.post('/create-user', validate, function(req, res) {
   var username = req.body.username;
   console.log(username)
@@ -102,12 +114,6 @@ app.post('/create-user', validate, function(req, res) {
       res.sendStatus(403);
     }
   });
-})
-
-app.get('/test', validate, function(req, res) {
-  res.json({
-    is: 'valid'
-  })
 })
 
 app.get('*', function(req, res) {

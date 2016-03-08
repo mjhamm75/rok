@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateEmailCreds, createNewUser } from './../actions/GlassActions';
+import { updateEmailCreds, createNewUser, checkUsername } from './../actions/GlassActions';
 import className from 'classnames';
 require('!style!css!sass!./../sass/config.scss');
 
@@ -22,6 +22,11 @@ class Config extends Component {
 			error: this.state.userError
 		});
 		let showUserError = this.state.userError ? {
+			display: 'block'
+		} : {
+			display: 'none'
+		}
+		let usernameTaken = this.props.username ? {
 			display: 'block'
 		} : {
 			display: 'none'
@@ -49,7 +54,8 @@ class Config extends Component {
 					<div className={userError}>
 						<div>
 							<div>Username</div>
-							<input ref="newuser"/>
+							<input ref="newuser" onBlur={this.checkUsername.bind(this)}/>
+							<div style={usernameTaken}>Username is already taken</div>
 						</div>
 						<div>
 							<div>Password</div>
@@ -66,11 +72,16 @@ class Config extends Component {
 		)
 	}
 
+	checkUsername() {
+		let username = this.refs.newuser.value;
+		this.props.dispatch(checkUsername(username));
+	}
+
 	updateEmailCreds() {
 		var username = this.refs.username.value;
 		var password = this.refs.password.value;
 		var passwordValidation = this.refs.passwordValidation.value;
-		if(!password || password === passwordValidation) {
+		if(!password || password === passwordValidation && this.props.username) {
 			this.setState({
 				emailError: false
 			})
@@ -106,7 +117,7 @@ class Config extends Component {
 
 function mapStateToProps(state) {
 	return {
-
+		username: state.username
 	}
 }
 
