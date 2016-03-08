@@ -1,8 +1,5 @@
 var path = require('path');
 var express = require('express');
-var passport = require('passport');
-var session = require('express-session');
-var flash = require('connect-flash');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var webpack = require('webpack');
@@ -60,18 +57,6 @@ app.post('/email', function(req, res) {
       });
   })
 })
-
-require('./passport')(passport, knex);
-
-
-app.use(session({secret: 'ihopethisworks'}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-
-app.post('/log-in', passport.authenticate('local-login'), function(req, res) {
-  res.sendStatus(200);
-});
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
