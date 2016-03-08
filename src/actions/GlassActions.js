@@ -1,5 +1,5 @@
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN, EMAIL_UDPATED, UPDATE_TOKEN } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN, EMAIL_UDPATED, UPDATE_TOKEN, USER_CREATED } from '../constants/ActionTypes';
 import axios from 'axios';
 
 export function updateSelectedGlass(panelName, glassId, amount){
@@ -48,5 +48,18 @@ export function updateToken(token) {
 	return {
 		type: UPDATE_TOKEN,
 		token
+	}
+}
+
+export function createNewUser(username, password) {
+	return dispatch => {
+		axios.post('/create-user', {
+			username,
+			password
+		}).then(res => {
+			return {
+				type: USER_CREATED
+			}
+		})
 	}
 }

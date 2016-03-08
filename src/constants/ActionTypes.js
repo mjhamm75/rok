@@ -6,3 +6,4 @@ export const REMOVE_SELECTED_GLASS = 'REMOVE_SELECTED_GLASS';
 export const LOGIN = 'LOGIN';
 export const EMAIL_UPDATED = 'EMAIL_UPDATED';
 export const UPDATE_TOKEN = 'UPDATE_TOKEN';
+export const USER_CREATED = 'USER_CREATED';

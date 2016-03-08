@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateEmailCreds } from './../actions/GlassActions';
+import { updateEmailCreds, createNewUser } from './../actions/GlassActions';
 
 class Config extends Component {
 	render() {
@@ -22,6 +22,20 @@ class Config extends Component {
 					</div>
 					<a onClick={this.updateEmailCreds.bind(this)}>Update Creds</a>
 				</div>
+				<h2>Add User</h2>
+					<div>
+						<div>Username</div>
+						<input ref="newuser"/>
+					</div>
+					<div>
+						<div>Password</div>
+						<input ref="newpassword"/>
+					</div>
+					<div>
+						<div>Password</div>
+						<input ref="newpasswordValidation"/>
+					</div>
+					<a onClick={this.createUser.bind(this)}>Create User</a>
 			</div>
 		)
 	}
@@ -32,6 +46,15 @@ class Config extends Component {
 		var passwordValidation = this.refs.passwordValidation.value;
 		if(password === passwordValidation) {
 			this.props.dispatch(updateEmailCreds(username, password));			
+		}
+	}
+
+	createUser() {
+		var username = this.refs.newuser.value;
+		var password = this.refs.newpassword.value;
+		var passwordValidation = this.refs.newpasswordValidation.value;
+		if(password === passwordValidation) {
+			this.props.dispatch(createNewUser(username, password));
 		}
 	}
 }

@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var config = require('./webpack.config.js');
 var email = require('emailjs');
 var jwt = require('jsonwebtoken');
+var bcrypt = require('bcrypt-nodejs');
 
 var app = express();
 
@@ -80,6 +81,29 @@ app.post('/log-in', function(req, res) {
     }
   })
 });
+
+app.post('/create-user', function(req, res) {
+  var username = req.body.username;
+  console.log(username)
+  var pw = req.body.password;
+  var encryptePw = bcrypt.hashSync(pw);
+  knex.table('users').where({
+    username: username
+  }).then(function(result) {
+    if(result.length === 0) {
+      knex.table('users').insert({
+        username: username,
+        password: encryptePw
+      }).then(function(result) {
+        res.sendStatus(200);
+      }).catch(function(err) {
+        res.sendStatus(403);
+      })
+    } else {
+      res.sendStatus(403);
+    }
+  });
+})
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
