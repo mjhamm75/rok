@@ -70,7 +70,7 @@ app.post('/log-in', function(req, res) {
   }).then(function(user) {
     if(user) {
       var token = jwt.sign(user, app.get('superSecret'), {
-        expiresInMinutes: 60
+        expiresIn: 3600
       });
       res.json({
         token: token
