@@ -24,7 +24,7 @@ class Login extends Component {
 
 function mapStateToProps(state) {
 	return {
-
+		
 	}
 }
 

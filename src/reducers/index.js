@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import selectedItems from './glass';
+import token from './token';
 
 const rootReducer = combineReducers({
-  selectedItems
+  selectedItems,
+  token
 });
 
 export default rootReducer;
