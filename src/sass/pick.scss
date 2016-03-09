@@ -29,3 +29,49 @@
 .imagemap {
 	margin-top: 25px;
 }
+.continue-wrapper {
+	display: flex;
+	flex-direction: column;
+
+	> div {
+		text-align: center;
+		font-size: 16px;
+		font-weight: 500;
+		margin-top: 8px;
+		margin-bottom: 12px;
+	}
+}
+.add {
+	color: white;
+	cursor: pointer;
+	background: #a3be5f;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+	display: table;
+	font-size: 17px;
+	margin: 0 auto;
+	padding: 12px 30px;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 10px;
+	width: 130px;
+}
+.checkout {
+	color: white;
+	cursor: pointer;
+	background: #4A90E2;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+	display: table;
+	font-size: 17px;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 12px 30px;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 10px;
+	width: 130px;
+}
+.check {
+	width: 25px;;
+	height: auto;
+	margin: 0 auto;
+}

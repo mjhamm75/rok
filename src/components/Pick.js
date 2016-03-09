@@ -10,19 +10,23 @@ import numeral from 'numeral';
 import coordsObj from './coordsObj.js';
 import b1 from './../imgs/b1.jpg'
 
+let check = require('./../imgs/check.png');
+
 require('!style!css!sass!./../sass/pick.scss');
 
 class Pick extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: coordsObj
+			coords: coordsObj,
+			continue: false
 		}
 	}
 	addPiece() {
 		this.refs.simpleDialog.hide();
 		this.refs.imagemap.clear();
 		this.props.dispatch(updateSelectedGlass('test', this.state.selectedGlass.id, this.state.selectedGlass.amount));
+		this.refs.continueDialog.show();
 	}
 
 	removePiece(name, id) {
@@ -46,8 +50,17 @@ class Pick extends Component {
 					<ul className="pieces">
 						{piecesDOM}
 					</ul>
-		          	<a className="sky-button" onClick={this.addPiece.bind(this)}>Add Piece</a>
-		        </SkyLight>
+					<a className="sky-button" onClick={this.addPiece.bind(this)}>Add Piece</a>
+				</SkyLight>
+				<SkyLight
+					ref="continueDialog">
+					<div className="continue-wrapper">
+						<img className="check" src={check} />
+						<div>Added</div>
+						<a className="add">Add more pieces</a>
+						<a className="checkout">Checkout</a>
+					</div>
+				</SkyLight>
 			</div>
 		)
 	}
