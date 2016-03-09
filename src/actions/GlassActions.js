@@ -1,6 +1,6 @@
-import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, REMOVE_SELECTED_GLASS, LOGIN, EMAIL_UDPATED, UPDATE_TOKEN, USER_CREATED, VALIDATE_USERNAME } from '../constants/ActionTypes';
 import axios from 'axios';
+import { browserHistory } from 'react-router';
+import { ADD_SELECTED_GLASS, EMAIL_UDPATED, LOGIN, REMOVE_SELECTED_GLASS, UPDATE_TOKEN, USER_CREATED, VALIDATE_USERNAME } from '../constants/ActionTypes';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
