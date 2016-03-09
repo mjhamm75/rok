@@ -29,6 +29,10 @@ class Pick extends Component {
 		this.refs.continueDialog.show();
 	}
 
+	checkout() {
+		debugger;
+	}
+
 	removePiece(name, id) {
 		this.props.dispatch(removeSelectedGlass(name, id));
 	}
@@ -57,8 +61,8 @@ class Pick extends Component {
 					<div className="continue-wrapper">
 						<img className="check" src={check} />
 						<div>Added</div>
-						<a className="add">Add more pieces</a>
-						<a className="checkout">Checkout</a>
+						<a className="add" onClick={() => this.refs.continueDialog.hide()}>Add more pieces</a>
+						<a className="checkout" onClick={() => this.checkout()}>Checkout</a>
 					</div>
 				</SkyLight>
 			</div>
