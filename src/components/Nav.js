@@ -116,7 +116,9 @@ class Nav extends Component {
 
 	closeCart() {
 		this.setState({showCart: false});
-		this.props.resetOpenCart();
+		if(this.props.resetOpenCart) {
+			this.props.resetOpenCart();			
+		}
 	}
 }
 
