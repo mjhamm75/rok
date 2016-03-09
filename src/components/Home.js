@@ -78,7 +78,7 @@ class Home extends Component {
 			    		<Link to="simply-donate">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
-				<Nav selectedItems={this.props.selectedItems}/>
+				<Nav selectedItems={this.props.selectedItems} openCart={this.props.toggleCart}/>
 				<div className="storyWrapper" style={style}>
 					<div className="story">
 						<div>Man's story told through the beauty of stained glass</div>
@@ -170,7 +170,8 @@ class Home extends Component {
 }
 function mapStateToProps(state) {
 	return {
-		selectedItems: state.selectedItems
+		selectedItems: state.selectedItems,
+		toggleCart: state.toggleCart
 	}
 }
 export default connect(mapStateToProps)(Home);

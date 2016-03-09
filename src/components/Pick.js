@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
 import SkyLight from './ReactSkylight';
 import Nav from './Nav';
-import { updateSelectedGlass } from './../actions/GlassActions';
-import { removeSelectedGlass } from './../actions/GlassActions';
+import { removeSelectedGlass, updateSelectedGlass, openCheckout } from './../actions/GlassActions';
 import numeral from 'numeral';
 
 import coordsObj from './coordsObj.js';
@@ -21,6 +20,7 @@ class Pick extends Component {
 			coords: coordsObj,
 			continue: false
 		}
+		this.checkout = this.checkout.bind(this)
 	}
 	addPiece() {
 		this.refs.simpleDialog.hide();
@@ -30,7 +30,8 @@ class Pick extends Component {
 	}
 
 	checkout() {
-		debugger;
+		this.props.dispatch(openCheckout(true));
+		this.refs.continueDialog.hide();
 	}
 
 	removePiece(name, id) {
@@ -43,7 +44,7 @@ class Pick extends Component {
 		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
 			<div className="pick">
-				<Nav selectedItems={this.props.selectedItems} removePiece={this.removePiece.bind(this)}/>
+				<Nav selectedItems={this.props.selectedItems} removePiece={this.removePiece.bind(this)} openCart={this.props.toggleCart} resetOpenCart={this.resetOpenCart.bind(this)}/>
 				<div className="imagemap">
 					<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
 				</div>
@@ -78,6 +79,10 @@ class Pick extends Component {
 		)
 	}
 
+	resetOpenCart() {	
+		this.props.dispatch(openCheckout(false));
+	}
+
 	selectArea(areaId) {
 		let selectedArea = this.state.coords.find(coord => {
 			return coord.id === parseInt(areaId);
@@ -91,7 +96,8 @@ class Pick extends Component {
 
 function mapStateToProps(state) {
 	return {
-		selectedItems: state.selectedItems
+		selectedItems: state.selectedItems,
+		toggleCart: state.toggleCart
 	}
 }
 
