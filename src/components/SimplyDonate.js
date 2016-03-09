@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Nav from './Nav';
 import bag from './../imgs/shopping.bag.black.png';
 
@@ -9,7 +10,7 @@ class SimplyDonate extends Component {
 		super(props)
 			this.handler = StripeCheckout.configure({
 				key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-				image: './../../imgs/rok-logo.png',
+				image: '/rok-logo.png',
 				locale: 'auto',
 				token: function(token) {
 				// Use the token to create the charge with a server-side script.
@@ -21,15 +22,16 @@ class SimplyDonate extends Component {
 		this.handler.open({
 			name: 'Roots of Knowledge',
 			description: 'Donation',
-			amount: this.refs.total.value
+			amount: this.refs.total.value * 100,
+			email: this.refs.email.value
 		});
 	}
 
 	render() {
 		console.log(StripeCheckout);
 		return (
-			<div className="simply-donate">			
-				<Nav fixed="true"/>
+			<div className="simply-donate">
+				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
 				<div className="form">
 					<img className="black-bag" src={bag}/>
 					<div className="title">Add your piece to the story</div>
@@ -40,16 +42,7 @@ class SimplyDonate extends Component {
 						<div className="total">Total</div>
 						<div className="total-amount">$0.00</div>
 					</div>
-					<input className="email" placeholder=" Email Address"/>
-					<input placeholder=" Cardholder Name"/>
-					<input placeholder=" Credit Card Number"/>
-					<div className="exp-date">
-						<div>
-							<input placeholder=" mm" /><input placeholder=" yy"/> 
-						</div>
-						<input placeholder=" CCV"/>
-					</div>
-					<input placeholder=" Zip Code" />
+					<input className="email" ref="email" placeholder=" Email Address"/>
 					<div>
 						<a onClick={this.checkout.bind(this)}>Donate</a>
 					</div>
@@ -59,4 +52,9 @@ class SimplyDonate extends Component {
 	}
 }
 
-export default SimplyDonate;
+function mapStateToProps(state) {
+	return {
+		selectedItems: state.selectedItems
+	}
+}
+export default connect(mapStateToProps)(SimplyDonate);

@@ -83,6 +83,7 @@
 
 		a {
 			color: white;
+			cursor: pointer;
 			background: #a3be5f;
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
 			display: table;
@@ -92,5 +93,8 @@
 			text-align: center;
 			text-decoration: none;
 		}
+	}
+	.form:hover {
+		background: white;
 	}
 }

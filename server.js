@@ -41,6 +41,8 @@ if(isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));  
 }
 
+app.use(express.static('images'));
+
 app.post('/email', function(req, res) {
 	var emailAddress = req.body.email;
   var message = req.body.message;
