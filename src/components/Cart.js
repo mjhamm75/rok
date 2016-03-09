@@ -9,6 +9,16 @@ class Cart extends Component {
 		this.state = {
 			show: this.props.show
 		}
+		this.handler = StripeCheckout.configure({
+			key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+			image: '/rok-logo.png',
+			locale: 'auto',
+			token: function(token) {
+			// Use the token to create the charge with a server-side script.
+			// You can access the token ID with `token.id`
+			}
+		});
+		this.getTotal = this.getTotal.bind(this)
 	}
 
 	componentWillReceiveProps(newProps) {
@@ -17,11 +27,15 @@ class Cart extends Component {
 		})
 	}
 
-	render() {
-		let selectedItems = this.renderSelectedItems();
-		let total = this.props.selectedItems.reduce((a, b) => {
+	getTotal() {
+		return this.props.selectedItems.reduce((a, b) => {
 			return a + b.amount;
 		}, 0)
+	}
+
+	render() {
+		let selectedItems = this.renderSelectedItems();
+		let total = this.getTotal();
 
 		let cart = className('cart', {
 			'open': this.state.show
@@ -52,9 +66,17 @@ class Cart extends Component {
 					</div>
 					<div></div>
 				</div>
-				<a>Donate</a>
+				<a onClick={this.checkout.bind(this)}>Donate</a>
 			</div>
 		)
+	}
+
+	checkout() {
+		this.handler.open({
+			name: 'Roots of Knowledge',
+			description: 'Donation',
+			amount: this.getTotal() * 100,
+		});
 	}
 
 	closeCart() {

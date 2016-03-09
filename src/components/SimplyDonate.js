@@ -28,7 +28,6 @@ class SimplyDonate extends Component {
 	}
 
 	render() {
-		console.log(StripeCheckout);
 		return (
 			<div className="simply-donate">
 				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
