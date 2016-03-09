@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './react-skylight-styles';
+require('!style!css!sass!./skylight.scss');
 
 class SkyLight extends React.Component {
 
@@ -51,30 +51,35 @@ class SkyLight extends React.Component {
 
   render() {
     var overlay;
-
-    var dialogStyles = Object.assign({}, styles.dialogStyles, this.props.dialogStyles);
-    var overlayStyles = Object.assign({}, styles.overlayStyles, this.props.overlayStyles);
-    var closeButtonStyle = Object.assign({}, styles.closeButtonStyle, this.props.closeButtonStyle);
-    var titleStyle = Object.assign({}, styles.title, this.props.titleStyle);
+    var dialogStyles = {};
+    var overlayStyles = {};
 
     if (this.state.isVisible) {
-        overlayStyles.display = 'block';
-        dialogStyles.display = 'block';
+        overlayStyles = {
+          display : 'block'
+        };
+        dialogStyles = {
+          display: 'block'
+        };
     } else {
-        overlayStyles.display = 'none';
-        dialogStyles.display = 'none';
+        overlayStyles = {
+          display : 'none'
+        };
+        dialogStyles = {
+          display: 'none'
+        };
     }
 
     if (this.props.showOverlay) {
-        overlay = (<div onClick={() => this.onOverlayClicked()} style={overlayStyles}></div>);
+        overlay = (<div onClick={() => this.onOverlayClicked()} style={overlayStyles} className="overlay-styles"></div>);
     }
 
     return (
         <section className="skylight-wrapper">
             {overlay}
-            <div style={dialogStyles}>
-              <a onClick={() => this.hide()} role="button" style={closeButtonStyle} >&times;</a>
-              <h2 style={titleStyle}>{this.props.title}</h2>
+            <div style={dialogStyles} className="dialog-styles" >
+              <a onClick={() => this.hide()} role="button" className="close-button" >&times;</a>
+              <h2 className="title">{this.props.title}</h2>
               {this.props.children}
             </div>
         </section>
@@ -102,9 +107,6 @@ SkyLight.propTypes = {
 SkyLight.defaultProps = {
   title: '',
   showOverlay: true,
-  overlayStyles: styles.overlayStyles,
-  dialogStyles: styles.dialogStyles,
-  closeButtonStyle: styles.closeButtonStyle,
   hideOnOverlayClicked: false
 };
 
