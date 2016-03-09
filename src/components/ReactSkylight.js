@@ -75,14 +75,14 @@ class SkyLight extends React.Component {
     }
 
     return (
-        <section className="skylight-wrapper">
+        <div className="skylight-wrapper">
             {overlay}
             <div style={dialogStyles} className="dialog-styles" >
               <a onClick={() => this.hide()} role="button" className="close-button" >&times;</a>
               <h2 className="title">{this.props.title}</h2>
               {this.props.children}
             </div>
-        </section>
+        </div>
     )
   }
 }
