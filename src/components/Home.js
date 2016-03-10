@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import Sticky from 'react-sticky';
 import Nav from './Nav';
 import Footer from './Footer';
 import Copywrite from './Copywrite';
@@ -78,7 +76,7 @@ class Home extends Component {
 			    		<Link to="simply-donate">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
-				<Nav selectedItems={this.props.selectedItems}/>
+				<Nav />
 				<div className="storyWrapper" style={style}>
 					<div className="story">
 						<div>Man's story told through the beauty of stained glass</div>
@@ -168,9 +166,4 @@ class Home extends Component {
 		)
 	}
 }
-function mapStateToProps(state) {
-	return {
-		selectedItems: state.selectedItems
-	}
-}
-export default connect(mapStateToProps)(Home);
+export default Home;

@@ -17,6 +17,8 @@ Use image until the video loads
 
 On Mobile Story title is not spaced enough above the image.
 
+Combine Footer and Copywrite
+
 ross.wofley@gmail.com
 
 F = Is the Total line needed on the simply donate page

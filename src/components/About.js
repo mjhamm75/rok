@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Nav from './Nav';
 import Copywrite from './Copywrite';
@@ -36,7 +35,7 @@ class About extends Component {
 	render() {
 		return (
 			<div className="about">
-				<Nav selectedItems={this.props.selectedItems} fixed="true"/>
+				<Nav fixed="true"/>
 				<h1>About The Roots of Knowledge Project</h1>
 				<div className="container">
 					<div className="row">
@@ -167,10 +166,4 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		selectedItems: state.selectedItems
-	}
-}
-
-export default connect(mapStateToProps)(About);
+export default About;

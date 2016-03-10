@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { browserHistory } from 'react-router'
 import { Link } from 'react-router';
 import Cart from './Cart';
@@ -126,4 +127,9 @@ class Nav extends Component {
 	}
 }
 
-export default Nav;
+function mapStateToProps(state) {
+	return {
+		selectedItems: state.selectedItems
+	}
+}
+export default connect(mapStateToProps)(Nav);
