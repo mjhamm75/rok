@@ -119,6 +119,12 @@ app.post('/create-user', validate, function(req, res) {
   });
 })
 
+app.get('/heartbeat', function(req, res) {
+  res.json({
+    is: 'beating'
+  })
+})
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
