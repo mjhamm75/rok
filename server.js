@@ -13,6 +13,7 @@ var app = express();
 var validate = require('./passport/validate')(jwt, app);
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
+var PORT = process.env.PORT = 3000;
 
 var connectionString = process.env.PG_CONNECTION_STRING || 'postgres://rok:rok@localhost/rok';
 var knex = require('knex')({
@@ -122,11 +123,11 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000, 'localhost', function(err) {
+app.listen(PORT, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:3000');
+  console.log('Listening at http://localhost:' + PORT);
 });

@@ -116,7 +116,7 @@ class Nav extends Component {
 	}
 
 	thankyou() {
-		this.props.thankyou();
+		
 	}
 }
 
