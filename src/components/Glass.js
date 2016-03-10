@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
 
-import b1 from './../imgs/b1.jpg'
-import b2 from './../imgs/b2.jpg'
-import b3 from './../imgs/b3.jpg'
+import b1 from './../imgs/panel_thumbnails/B-1.jpg'
+import b2 from './../imgs/panel_thumbnails/B-2.jpg'
+import b3 from './../imgs/panel_thumbnails/B-3.jpg'
 
-import c1 from './../imgs/c1.jpg'
-import c2 from './../imgs/c2.jpg'
-import c3 from './../imgs/c3.jpg'
+import c1 from './../imgs/panel_thumbnails/C-1.jpg'
+import c2 from './../imgs/panel_thumbnails/C-2.jpg'
+import c3 from './../imgs/panel_thumbnails/C-3.jpg'
 
-import d1 from './../imgs/d1.jpg'
-import d2 from './../imgs/d2.jpg'
-import d3 from './../imgs/d3.jpg'
+import d1 from './../imgs/panel_thumbnails/D-1.jpg'
+import d2 from './../imgs/panel_thumbnails/D-2.jpg'
+import d3 from './../imgs/panel_thumbnails/D-3.jpg'
 
-import e1 from './../imgs/e1.jpg'
-import e2 from './../imgs/e2.jpg'
-import e3 from './../imgs/e3.jpg'
+import e1 from './../imgs/panel_thumbnails/E-1.jpg'
+import e2 from './../imgs/panel_thumbnails/E-2.jpg'
+import e3 from './../imgs/panel_thumbnails/E-3.jpg'
 
 import Nav from './Nav';
 import Copywrite from './Copywrite';

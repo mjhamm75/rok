@@ -14,7 +14,7 @@ class Nav extends Component {
 		this.state = {
 			fixed: this.props.fixed,
 			showLogo: this.props.fixed,
-			selectedItems: this.props.selectedItems
+			selectedItems: []
 		}
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
@@ -31,13 +31,6 @@ class Nav extends Component {
 	componentWillUnmount() {
 	    window.removeEventListener('scroll', this.handleScroll);
 	    window.removeEventListener('resize', this.handleResize)
-	}
-
-	componentWillReceiveProps(newProps) {
-		this.setState({
-			selectedItems: newProps.selectedItems,
-			showCart: newProps.openCart
-		})
 	}
 
 	handleScroll() {
@@ -75,12 +68,12 @@ class Nav extends Component {
 			display: 'none'
 		} : null;
 
-		var hideBag = !this.state.selectedItems || this.state.selectedItems.length === 0 ? {
+		var hideBag = !this.props.selectedItems || this.props.selectedItems.length === 0 ? {
 			display: 'none'
 		} : null;
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.state.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)}/>
+				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)}/>
 				<div className="navbar">
 					<div />
 					<div>
@@ -101,7 +94,7 @@ class Nav extends Component {
 						<Link className="toggle" to="contact">Contact Us</Link>
 					</div>
 					<div className="bag-wrapper" onClick={this.showCart}>
-						<div style={hideBag} className="circle">{this.state.selectedItems && this.state.selectedItems.length}</div>
+						<div style={hideBag} className="circle">{this.props.selectedItems && this.props.selectedItems.length}</div>
 						<img className="bag" src={bag}/>
 					</div>
 				</div>
@@ -129,7 +122,8 @@ class Nav extends Component {
 
 function mapStateToProps(state) {
 	return {
-		selectedItems: state.selectedItems
+		selectedItems: state.selectedItems,
+		showCart: state.openCart
 	}
 }
 export default connect(mapStateToProps)(Nav);
