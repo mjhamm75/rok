@@ -64,7 +64,7 @@ class Pick extends Component {
 						<div>Your donation will help inspire others with a masterpiece of epic size.</div>
 						<div className="share">
 							<div>Share Roots of Knowledge with others</div>
-							<div className="share-button">
+							<div className="share-button" onClick={this.shareFacebook.bind(this)}>
 								<img src={fb}/>
 								<span>Share</span>
 							</div>
@@ -116,12 +116,15 @@ class Pick extends Component {
 		this.refs.simpleDialog.show();
 	}
 
+	shareFacebook() {
+		debugger;
+	}
+
 	thankyou() {
 		this.refs.thankyou.show();
 	}
 
 	closeThankyou() {
-		this.props.dispatch(showThankYou(false));
 	}
 }
 
