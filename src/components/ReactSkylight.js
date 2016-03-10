@@ -74,6 +74,15 @@ class SkyLight extends React.Component {
         overlay = (<div onClick={() => this.onOverlayClicked()} style={overlayStyles} className="overlay-styles"></div>);
     }
 
+    let style = {};
+    if (this.props.width) {
+      dialogStyles.width = this.props.width;
+    }
+    if (this.props.marginTop) {
+      dialogStyles.marginTop = this.props.marginTop;
+    }
+
+
     return (
         <div className="skylight-wrapper">
             <div style={dialogStyles} className="dialog-styles" >

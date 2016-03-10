@@ -9,6 +9,7 @@ class Cart extends Component {
 		this.state = {
 			show: this.props.show
 		}
+		var that = this;
 		this.handler = StripeCheckout.configure({
 			key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
 			image: '/rok-logo.png',
@@ -16,6 +17,9 @@ class Cart extends Component {
 			token: function(token) {
 			// Use the token to create the charge with a server-side script.
 			// You can access the token ID with `token.id`
+			},
+			closed: function() {
+				that.props.thankyou();
 			}
 		});
 		this.getTotal = this.getTotal.bind(this)

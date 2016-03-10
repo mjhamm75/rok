@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
-import SkyLight from './ReactSkylight';
+import Skylight from './ReactSkylight';
 import Nav from './Nav';
-import { removeSelectedGlass, updateSelectedGlass, openCheckout } from './../actions/GlassActions';
+import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
 import numeral from 'numeral';
+import logo from './../imgs/rok-logo.png';
+import fb from './../imgs/facebook.png';
 
 import coordsObj from './coordsObj.js';
 import b1 from './../imgs/b1.jpg'
@@ -22,6 +24,7 @@ class Pick extends Component {
 		}
 		this.checkout = this.checkout.bind(this)
 	}
+
 	addPiece() {
 		this.refs.simpleDialog.hide();
 		this.refs.imagemap.clear();
@@ -44,11 +47,31 @@ class Pick extends Component {
 		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
 			<div className="pick">
-				<Nav selectedItems={this.props.selectedItems} removePiece={this.removePiece.bind(this)} openCart={this.props.toggleCart} resetOpenCart={this.resetOpenCart.bind(this)}/>
+				<Nav selectedItems={this.props.selectedItems} removePiece={this.removePiece.bind(this)} openCart={this.props.toggleCart} resetOpenCart={this.resetOpenCart.bind(this)} thankyou={this.thankyou.bind(this)}/>
 				<div className="imagemap">
 					<ImageMap ref="imagemap" source={b1} mappingName={glass} coords={this.state.coords} selectArea={this.selectArea.bind(this)}/>
 				</div>
-				<SkyLight 
+				<Skylight 
+					ref="thankyou"
+					width="400"
+					marginTop="-325"
+					title="Tree of Knowledge"
+					afterClose={this.closeThankyou.bind(this)}
+					hideOnOverlayClicked>
+					<div className="thankyou">
+						<img src={logo}/>
+						<div>Thank You</div>
+						<div>Your donation will help inspire others with a masterpiece of epic size.</div>
+						<div className="share">
+							<div>Share Roots of Knowledge with others</div>
+							<div className="share-button">
+								<img src={fb}/>
+								<span>Share</span>
+							</div>
+						</div>
+					</div>
+				</Skylight>
+				<Skylight 
 					ref="simpleDialog" 
 					title="Tree of Knowledge"
 					hideOnOverlayClicked>
@@ -56,8 +79,8 @@ class Pick extends Component {
 						{piecesDOM}
 					</ul>
 					<a className="sky-button" onClick={this.addPiece.bind(this)}>Add Piece</a>
-				</SkyLight>
-				<SkyLight
+				</Skylight>
+				<Skylight
 					ref="continueDialog">
 					<div className="continue-wrapper">
 						<img className="check" src={check} />
@@ -65,7 +88,7 @@ class Pick extends Component {
 						<a className="add" onClick={() => this.refs.continueDialog.hide()}>Add more pieces</a>
 						<a className="checkout" onClick={() => this.checkout()}>Checkout</a>
 					</div>
-				</SkyLight>
+				</Skylight>
 			</div>
 		)
 	}
@@ -91,6 +114,14 @@ class Pick extends Component {
 			selectedGlass: selectedArea
 		})
 		this.refs.simpleDialog.show();
+	}
+
+	thankyou() {
+		this.refs.thankyou.show();
+	}
+
+	closeThankyou() {
+		this.props.dispatch(showThankYou(false));
 	}
 }
 

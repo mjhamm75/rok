@@ -79,7 +79,7 @@ class Nav extends Component {
 		} : null;
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.state.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece}/>
+				<Cart selectedItems={this.state.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)}/>
 				<div className="navbar">
 					<div />
 					<div>
@@ -119,6 +119,10 @@ class Nav extends Component {
 		if(this.props.resetOpenCart) {
 			this.props.resetOpenCart();			
 		}
+	}
+
+	thankyou() {
+		this.props.thankyou();
 	}
 }
 
