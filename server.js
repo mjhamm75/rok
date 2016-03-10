@@ -15,7 +15,7 @@ var validate = require('./passport/validate')(jwt, app);
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT = 3000;
 
-var connectionString = process.env.PG_CONNECTION_STRING || 'postgres://rok:rok@localhost/rok';
+var connectionString = process.env.DATABASE_URL || 'postgres://rok:rok@localhost/rok';
 var knex = require('knex')({
       client: 'pg',
       connection: connectionString,
