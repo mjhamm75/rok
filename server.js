@@ -1,18 +1,18 @@
-var path = require('path');
+// var path = require('path');
 var express = require('express');
-var favicon = require('serve-favicon');
-var bodyParser = require('body-parser');
-var webpack = require('webpack');
-var config = require('./webpack.config.js');
-var email = require('emailjs');
-var jwt = require('jsonwebtoken');
-var bcrypt = require('bcrypt-nodejs');
+// var favicon = require('serve-favicon');
+// var bodyParser = require('body-parser');
+// var webpack = require('webpack');
+// var config = require('./webpack.config.js');
+// var email = require('emailjs');
+// var jwt = require('jsonwebtoken');
+// var bcrypt = require('bcrypt-nodejs');
 
 var app = express();
 
-var validate = require('./passport/validate')(jwt, app);
+// var validate = require('./passport/validate')(jwt, app);
 
-var isDevelopment = (process.env.NODE_ENV !== 'production');
+// var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT || 3000;
 
 // var connectionString = process.env.DATABASE_URL || 'postgres://rok:rok@localhost/rok';
