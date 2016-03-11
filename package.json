@@ -4,7 +4,6 @@
   "description": "Beautiful donation app",
   "main": "server.js",
   "scripts": {
-    "postinstall": "webpack --config ./webpack-production.config.js --progress --colors",
     "start": "node server.js"
   },
   "repository": {
