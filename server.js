@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var webpack = require('webpack');
 var config = require('./webpack.config.js');
-var email = require('emailjs');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt-nodejs');
 
@@ -14,24 +13,14 @@ var validate = require('./passport/validate')(jwt, app);
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT || 3000;
+var config = require('./config.js')
+var knex = config.knex;
 
-var connectionString = process.env.DATABASE_URL || 'postgres://rok:rok@localhost/rok';
-var knex = require('knex')({
-      client: 'pg',
-      connection: connectionString,
-      debug: false
-  });
-
-var emailServer  = email.server.connect({
-   user:    "rootsofknowledgeproject", 
-   password:"rootsofknowledge", 
-   host:    "smtp.gmail.com", 
-   ssl:     true
-});
 
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(express.static('public'));
+app.use(express.static('images'));
 app.use(bodyParser.json());
 
 if(isDevelopment) {
@@ -43,13 +32,11 @@ if(isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));  
 }
 
-app.use(express.static('images'));
-
 app.post('/email', function(req, res) {
 	var emailAddress = req.body.email;
   var message = req.body.message;
   knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
-      email.server.connect({
+      config.email.server.connect({
          user:    result.username, 
          password:result.password, 
          host:    "smtp.gmail.com", 
@@ -138,5 +125,5 @@ app.listen(PORT, function(err) {
     return;
   }
 
-  console.log('Listening on PORTtt: ' + PORT);
+  console.log('Listening on PORT: ' + PORT);
 });
