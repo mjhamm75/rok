@@ -1,29 +1,28 @@
-var path = require('path');
-var express = require('express');
-var email = require('emailjs');
-var favicon = require('serve-favicon');
-var bodyParser = require('body-parser');
-var webpack = require('webpack');
-var config = require('./webpack.config.js');
-var email = require('emailjs');
-var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt-nodejs');
+var bodyParser = require('body-parser');
+var express = require('express');
+var favicon = require('serve-favicon');
+var jwt = require('jsonwebtoken');
+var path = require('path');
 
 var app = express();
-
-var validate = require('./passport/validate')(jwt, app);
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT = 3000;
 
 var knex = require('./config.js').knex;
+var validate = require('./passport/validate')(jwt, app);
+var q = require('./db/queries.js')(knex);
 
 
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(bodyParser.json());
+app.use(express.static('images'));
 
 if(isDevelopment) {
+  var webpack = require('webpack');
+  var config = require('./webpack.config.js');
   var compiler = webpack(config);
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
@@ -32,23 +31,10 @@ if(isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));  
 }
 
-app.use(express.static('images'));
-
+var sendEmail = require('./db/email.js');
 app.post('/email', function(req, res) {
-	var emailAddress = req.body.email;
-  var message = req.body.message;
-  knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
-      email.server.connect({
-         user:    result.username, 
-         password:result.password, 
-         host:    "smtp.gmail.com", 
-         ssl:     true
-      }).send({
-        text:    message,
-        from:    "you <" + emailAddress + ">", 
-        to:      "someone <rootsofknowledgeproject@gmail.com>",
-        subject: "ROK"
-      }, function(err, message) {
+  q.getEmailAddress().then(function(user) {
+      sendEmail(user.username, user.password, req.body.message, req.body.email, function(err, result) {
         if(err) console.log(err);
         res.json({
           message: 'sent'
