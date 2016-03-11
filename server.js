@@ -129,11 +129,11 @@ app.get('/heartbeat', function(req, res) {
 //   res.sendFile(path.join(__dirname, 'index.html'));
 // });
 
-app.listen(PORT, 'localhost', function(err) {
+app.listen(PORT, 'host', function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:' + PORT);
+  console.log('Listening on PORT: ' + PORT);
 });
