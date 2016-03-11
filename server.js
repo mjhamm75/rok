@@ -8,7 +8,7 @@ var path = require('path');
 var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
-var PORT = process.env.PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var knex = require('./config.js').knex;
 var validate = require('./db/validate')(jwt, app);
