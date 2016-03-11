@@ -18,6 +18,7 @@ app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(bodyParser.json());
 app.use(express.static('images'));
+app.use(express.static('public'));
 
 if(isDevelopment) {
   var webpack = require('webpack');
