@@ -62,7 +62,7 @@ export function createNewUser(username, password) {
 				password
 			},
 			headers: {
-				'x-access-token': state.token
+				'x-access-token': state().token
 			}
 		}).then(res => {
 			return {

@@ -100,14 +100,14 @@ class Config extends Component {
 		var username = this.refs.newuser.value;
 		var password = this.refs.newpassword.value;
 		var passwordValidation = this.refs.newpasswordValidation.value;
-		if(!password ||password === passwordValidation) {
+		if(!password || password === passwordValidation) {
 			this.setState({
-				userError: false
+				userError: true
 			})
 			this.props.dispatch(createNewUser(username, password));
 		}
 		this.setState({
-				userError: true
+				userError: false
 		})
 		this.refs.newuser.value = '';	
 		this.refs.newpassword.value = '';
