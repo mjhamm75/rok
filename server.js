@@ -80,7 +80,9 @@ app.post('/log-in', function(req, res) {
         token: token
       })
     } else {
-      console.log("Invalid credentials")
+      res.json({
+        invalid: 'credentials'
+      })
     }
   })
 });
