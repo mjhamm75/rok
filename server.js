@@ -31,7 +31,7 @@ if(isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));  
 }
 
-var sendEmail = require('./db/email.js');
+var sendEmail = require('./db/helper.js').sendEmail;
 app.post('/email', function(req, res) {
   q.getEmailAddress().then(function(user) {
       sendEmail(user.username, user.password, req.body.message, req.body.email, function(err, result) {
@@ -43,11 +43,10 @@ app.post('/email', function(req, res) {
   })
 })
 
-app.post('/log-in', function(req, res) {
-  knex.select().table('users').first().where({
-    username: req.body.username
-  }).then(function(user) {
-    if(user && bcrypt.compareSync(req.body.password, user.password)) {
+var comparePasswords = require('./db/helper.js').comparePasswords;
+app.post('/log-in', function(req, res) {  
+  q.checkForUsername(req.body.username).then(function(user) {
+    if(user && comparePasswords(req.body.password, user.password)) {
       var token = jwt.sign(user, app.get('superSecret'), {
         expiresIn: 3600
       });

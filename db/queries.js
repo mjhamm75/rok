@@ -3,7 +3,14 @@ module.exports = function(knex) {
 		return knex.select().table('email').orderBy('id', 'desc').first();
 	}
 
+	function checkForUsername(username) {
+		return knex.select().table('users').first().where({
+			username: username
+		})
+	}
+
 	return {
-		getEmailAddress: getEmailAddress
+		getEmailAddress: getEmailAddress,
+		checkForUsername: checkForUsername
 	}
 }
