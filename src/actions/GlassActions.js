@@ -25,7 +25,6 @@ export function login(username, password) {
 			username: username, 
 			password: password
 		}).then(res => {
-			debugger;
 			browserHistory.push('/admin');
 			return dispatch(updateToken(res.data.token));
 		}).catch(err => console.log(err))

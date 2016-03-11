@@ -11,7 +11,7 @@ var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT = 3000;
 
 var knex = require('./config.js').knex;
-var validate = require('./passport/validate')(jwt, app);
+var validate = require('./db/validate')(jwt, app);
 var q = require('./db/queries.js')(knex);
 
 app.set('superSecret', 'thisismysecretpassword')
@@ -49,19 +49,15 @@ app.post('/log-in', function(req, res) {
       var token = jwt.sign(user, app.get('superSecret'), {
         expiresIn: 3600
       });
-      console.log("token: ", token)
       res.json({
         token: token
       })
     } else {
-      res.json({
-        invalid: 'credentials'
-      })
+      console.log("Invalid credentials")
     }
   })
 });
 
-var q = require('./db/queries.js')(knex);
 app.get('/username', validate, function(req, res) {
   q.checkForUsername(req.query.username).then(function(user) {
     res.json({
@@ -86,29 +82,9 @@ app.post('/create-user', validate, function(req, res) {
   });
 })
 
-app.get('/heartbeat', function(req, res) {
-  res.json({
-    is: 'beating'
-  })
-})
-
-if(isDevelopment) {
-  var webpack = require('webpack');
-  var webpackConfig = require('./webpack.config.js');
-  var compiler = webpack(webpackConfig);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath
-  }));
-  app.use(require('webpack-hot-middleware')(compiler));  
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
-  });
-} else {
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  });
-}
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.listen(PORT, function(err) {
   if (err) {
@@ -116,5 +92,5 @@ app.listen(PORT, function(err) {
     return;
   }
 
-  console.log('Listening on PORT: ' + PORT);
+  console.log('Listening on PORT:' + PORT);
 });

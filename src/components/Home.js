@@ -161,7 +161,6 @@ class Home extends Component {
 					</div>
 				</div>
 				<Footer />
-				<Copywrite />
 			</div>
 		)
 	}

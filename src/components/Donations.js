@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Nav from './Nav';
-import Copywrite from './Copywrite';
+import Footer from './Footer';
 
 require('!style!css!sass!./../sass/donations.scss');
 
@@ -15,7 +15,7 @@ class Donations extends Component {
 					<div>Enjoy the story along the way.</div>
 					<Link to="glass">Select a piece of glass</Link>
 				</div>
-				<Copywrite />
+				<Footer />
 			</div>
 		)
 	}

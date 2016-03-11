@@ -160,7 +160,6 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 				<div className="tagline">Join in building the masterpiece of a lifetime.</div>
 				<Link className="link" to="donations">Sponsor a piece of glass</Link>
 				<Footer />
-				<Copywrite />
 			</div>
 		)
 	}

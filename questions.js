@@ -21,6 +21,8 @@ Combine Footer and Copywrite
 
 ross.wofley@gmail.com
 
+update npm dependencies
+
 F = Is the Total line needed on the simply donate page
 F = On Mobile, building the window, the images look cut off with the hero stretching across the whole screen.
 F = Add piece - cut off sides until we hit breakpoint
