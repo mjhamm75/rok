@@ -9,8 +9,16 @@ module.exports = function(knex) {
 		})
 	}
 
+	function createUser(username, encryptedPw) {
+		return knex.table('users').insert({
+			username: username,
+			password: encryptedPw
+		})
+	}
+
 	return {
 		getEmailAddress: getEmailAddress,
-		checkForUsername: checkForUsername
+		checkForUsername: checkForUsername,
+		createUser: createUser
 	}
 }

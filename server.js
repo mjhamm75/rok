@@ -14,7 +14,6 @@ var knex = require('./config.js').knex;
 var validate = require('./passport/validate')(jwt, app);
 var q = require('./db/queries.js')(knex);
 
-
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(bodyParser.json());
@@ -60,30 +59,21 @@ app.post('/log-in', function(req, res) {
 });
 
 app.get('/username', validate, function(req, res) {
-  var username = req.query.username;
-  knex.select().table('users').first().where({
-    username: username
-  }).then(function(user) {
-    var count = !user ? 0 : 1
+  q.checkForUsername(req.query.username).then(function(user) {
     res.json({
-      count: count
+      count: !user ? 0 : 1
     })
   });
 })
 
 app.post('/create-user', validate, function(req, res) {
   var username = req.body.username;
-  console.log(username)
-  var pw = req.body.password;
-  var encryptePw = bcrypt.hashSync(pw);
-  knex.table('users').where({
-    username: username
-  }).then(function(result) {
-    if(result.length === 0) {
-      knex.table('users').insert({
-        username: username,
-        password: encryptePw
-      }).then(function(result) {
+  console.log('username: ', username);
+  var encryptePw = bcrypt.hashSync(req.body.password);
+  console.log('pw', encryptePw);
+  q.checkForUsername(username).then(function(result) {
+    if(!result || result.length === 0) {
+      q.createUser(username, encryptePw).then(function(result) {
         res.sendStatus(200);
       }).catch(function(err) {
         res.sendStatus(403);
