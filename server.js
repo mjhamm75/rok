@@ -31,6 +31,7 @@ var emailServer  = email.server.connect({
 
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
+app.use(express.static('public'));
 app.use(bodyParser.json());
 
 if(isDevelopment) {
@@ -126,7 +127,7 @@ app.get('/heartbeat', function(req, res) {
 })
 
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, function(err) {
