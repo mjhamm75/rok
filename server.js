@@ -2,20 +2,17 @@ var path = require('path');
 var express = require('express');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
-var webpack = require('webpack');
-var config = require('./webpack.config.js');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt-nodejs');
 
 var app = express();
 
 var validate = require('./passport/validate')(jwt, app);
-
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT || 3000;
-var config = require('./config.js')
-var knex = config.knex;
 
+var knex = require('./config').knex;
+var email = require('./config').email;
 
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
@@ -23,20 +20,11 @@ app.use(express.static('public'));
 app.use(express.static('images'));
 app.use(bodyParser.json());
 
-if(isDevelopment) {
-  var compiler = webpack(config);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: config.output.publicPath
-  }));
-  app.use(require('webpack-hot-middleware')(compiler));  
-}
-
 app.post('/email', function(req, res) {
 	var emailAddress = req.body.email;
   var message = req.body.message;
   knex.select().table('email').orderBy('id', 'desc').first().then(function(result) {
-      config.email.server.connect({
+      email.server.connect({
          user:    result.username, 
          password:result.password, 
          host:    "smtp.gmail.com", 
@@ -63,6 +51,7 @@ app.post('/log-in', function(req, res) {
       var token = jwt.sign(user, app.get('superSecret'), {
         expiresIn: 3600
       });
+      console.log("token: ", token)
       res.json({
         token: token
       })
@@ -74,31 +63,20 @@ app.post('/log-in', function(req, res) {
   })
 });
 
+var q = require('./db/queries.js')(knex);
 app.get('/username', validate, function(req, res) {
-  var username = req.query.username;
-  knex.select().table('users').first().where({
-    username: username
-  }).then(function(user) {
-    var count = !user ? 0 : 1
+  q.validateUsername(req.query.username).then(function(user) {
     res.json({
-      count: count
+      count: !user ? 0 : 1
     })
   });
 })
 
 app.post('/create-user', validate, function(req, res) {
-  var username = req.body.username;
-  console.log(username)
-  var pw = req.body.password;
-  var encryptePw = bcrypt.hashSync(pw);
-  knex.table('users').where({
-    username: username
-  }).then(function(result) {
+  var encryptePw = bcrypt.hashSync(req.body.password);
+  q.validateUsername(req.query.username).then(function(result) {
     if(result.length === 0) {
-      knex.table('users').insert({
-        username: username,
-        password: encryptePw
-      }).then(function(result) {
+      q.insertNewUser(username.encryptePw).then(function(result) {
         res.sendStatus(200);
       }).catch(function(err) {
         res.sendStatus(403);
@@ -115,9 +93,23 @@ app.get('/heartbeat', function(req, res) {
   })
 })
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+if(isDevelopment) {
+  var webpack = require('webpack');
+  var webpackConfig = require('./webpack.config.js');
+  var compiler = webpack(webpackConfig);
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath
+  }));
+  app.use(require('webpack-hot-middleware')(compiler));  
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
+} else {
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+}
 
 app.listen(PORT, function(err) {
   if (err) {

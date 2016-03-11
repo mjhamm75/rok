@@ -16,5 +16,5 @@ var emailServer  = email.server.connect({
 
 module.exports = {
 	knex: knex,
-	email: emailServer;
+	email: emailServer
 }
