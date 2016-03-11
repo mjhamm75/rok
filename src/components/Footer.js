@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import Copywrite from './Copywrite';
 
 let twitter = require('./../imgs/twitter.png');
 let facebook = require('./../imgs/facebook.png');
@@ -52,9 +53,7 @@ class Footer extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="copywrite">
-						© 2016 Roots Media, LLC, & Holdman Studios, LLC, All Rights Reserved.
-					</div>
+					<Copywrite />
 				</div>
 		)
 	}
