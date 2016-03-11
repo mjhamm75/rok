@@ -16,10 +16,10 @@ On Mobile Story title is not spaced enough above the image.
 
 ross.wofley@gmail.com
 
-update npm dependencies
 
 F = captcha
 		Check paypal, square guidelines for best practices
+F = update npm dependencies
 F = Combine Footer and Copywrite
 F = Is the Total line needed on the simply donate page
 F = On Mobile, building the window, the images look cut off with the hero stretching across the whole screen.
