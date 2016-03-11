@@ -1,5 +1,6 @@
 var path = require('path');
 var express = require('express');
+var email = require('emailjs');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var webpack = require('webpack');
@@ -15,19 +16,8 @@ var validate = require('./passport/validate')(jwt, app);
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var PORT = process.env.PORT = 3000;
 
-var connectionString = process.env.PG_CONNECTION_STRING || 'postgres://rok:rok@localhost/rok';
-var knex = require('knex')({
-      client: 'pg',
-      connection: connectionString,
-      debug: false
-  });
+var knex = require('./config.js').knex;
 
-var emailServer  = email.server.connect({
-   user:    "rootsofknowledgeproject", 
-   password:"rootsofknowledge", 
-   host:    "smtp.gmail.com", 
-   ssl:     true
-});
 
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
