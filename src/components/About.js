@@ -70,7 +70,7 @@ class About extends Component {
 				    </div>
 					<div className="row">
 				    	<div className="col l8 offset-l2">
-				    		UVU is set to become the largest university in the State of Utah with over 37,000 enrolled students and 1,800,000 alumni. UVU will educate through its “Roots of Knowledge” curriculum as well be home to this magnificent piece of art. This will fan the fire in the hearts of tens of thousands, both student and the public.
+				    		UVU has become the largest university if the State of Utah with over 33,000 enrolled students and 1,800,000 alumni. UVU will educate through its “Roots of Knowledge” curriculum as well be home to this magnificent piece of art. This will fan the fire in the hearts of tens of thousands, both student and the public.
 				    	</div>
 				    </div>
 					<div className="row">
@@ -86,7 +86,7 @@ class About extends Component {
 					</div>
 					<div className="row">
 						<div className="col l8 offset-l2">
-							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” See the Wall
+							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” <Link to="donations">See the Wall</Link>
 						</div>
 					</div>
 					<div className="row">
@@ -100,6 +100,7 @@ class About extends Component {
 						</div>
 						<div className="col l8">
 							<span className="bold">Thomas E. Holdman</span>: Stained Glass Artist, Holdman Studios CEO
+							<br />
 As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parents’ garage. He has since created stained glass displayed in all 50 states and worldwide for commercial buildings, private residences, and public art features. Tom’s creations are also found in many religious institutions including 40 LDS temples, and Catholic and Protestant Sanctuaries. Mr. Holdman is the recipient of The Best of State Statue Award, the Governor’s Visual Artist Award, the Star award, etc. He and his art have been featured in the LDS Ensign Magazine, USA Today and the New York Times. He also founded The Art Institute at Thanksgiving Point
 						</div>
 					</div>
@@ -109,6 +110,7 @@ As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parent
 						</div>
 						<div className="col l8">
 							<span className="bold">R. Cameron Oscarson</span>: Head Artist, Holdman Studios
+							<br />
 Cameron Oscarson, also a native of Utah, developed his skills as an artist at a young age and attended Dixie State College on scholarship, then Brigham Young University, receiving a BFA with an emphasis in painting and drawing. He joined Holdman Studios in 2003 and his natural artistic talent has been invaluable to the studios’ accomplishments and projects, including “Roots of Knowledge.” As an award-winning artist himself, Mr. Oscarson has worked on many of his own creative endeavors, including illustrations for children’s books and other commissioned works.
 						</div>
 					</div>
@@ -133,6 +135,7 @@ Cameron Oscarson, also a native of Utah, developed his skills as an artist at a 
 						</div>
 						<div className="col l8">
 							<span className="bold">Lee B. Groberg</span>: Executive Producer, Roots Media President & CEO
+							<br />
 An award-winning filmmaker with over 20 years experience, producer-director Lee Groberg has an impressive filmography in the production of historical documentaries, including a growing list of accolades from the film and television industry. Mr. Groberg has developed long-term relationships with many national and international television networks and affiliates. He enjoys associations with leading historical scholars and authorities from around the world. Lee holds an MBA in international business management. Telly Award, Aurora Award, US International Film Festival, PEARL Award, George Washington Medal of Honor, CINE Golden Eagle, Houston International Film Festival, Special Jury Remi Award.
 						</div>
 					</div>
@@ -142,6 +145,7 @@ An award-winning filmmaker with over 20 years experience, producer-director Lee 
 						</div>
 						<div className="col l8">
 							<span className="bold">Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
+							<br />
 For the past 20 years, Ross has served as COO and Corporate Counsel in the media and high/tech industry. He is an active member of the Utah State Bar, having received his Juris Doctorate from J. Reuben Clark Law School where he graduated Cum Laude. Ross served eight years in the United States Air Force and a T-37 instructor pilot and NATO F-111f fighter and instructor pilot. He worked for WordPerfect Corporation as Director of Marketing and Director of Channel Marketing.
 						</div>
 					</div>

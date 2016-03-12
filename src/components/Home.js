@@ -113,7 +113,7 @@ class Home extends Component {
 						</div>
 						<div>
 							<div>$1.5 Million</div>
-							<div>has already been donated to the project by individually sponsered pieces of glass and donations.</div>
+							<div>has already been donated to the project by individually sponsored pieces of glass and donations.</div>
 						</div>
 					</div>
 				</div>

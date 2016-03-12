@@ -25,7 +25,7 @@ class Contact extends Component {
 				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
 				<div className="contact-form">
 					<div>Contact Us</div>
-					<div>Questions about the project? Looking for a way to donate at an executive level, or information for the press. Send us a note and we’ll get back to you soon.</div>
+					<div>Questions about the project? Looking for a way to donate at an executive level, or information for the press? Send us a note and we’ll get back to you soon.</div>
 					<div>1-801-555-5555</div>
 					<div>
 						<div>Roots of Knowledge</div>
