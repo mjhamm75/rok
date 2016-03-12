@@ -98,17 +98,17 @@ class Home extends Component {
 				<div className="facts">
 					<div>
 						<div>
-							<div>80,000</div>
+							<div>80,000+</div>
 							<div>pieces of glass used to create 80 panels in the UVU Library.  Actual rock, fossils, coins, meteorite, and ivory are in the window as well.</div>
 						</div>
 						<div>
-							<div>250</div>
+							<div>300+</div>
 							<div>UVU students have already participated in various elements of the Roots of Knowledge project.</div>
 						</div>
 					</div>
 					<div>
 						<div>
-							<div>2400</div>
+							<div>2400+</div>
 							<div>pieces of glass were used to make the Alexander & Bucephalus Mosaic.</div>
 						</div>
 						<div>
