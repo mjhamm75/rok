@@ -144,7 +144,9 @@ class ImageMap extends Component {
 						title="" 
 						onMouseOver={this.mouseOver.bind(this)} 
 						onMouseOut={this.mouseOut.bind(this)} 
-						onClick={this.selectArea.bind(this)}/>
+						onClick={this.selectArea.bind(this)}
+						onTouchStart={this.selectArea.bind(this)}
+						/>
 		});
 	}
 
