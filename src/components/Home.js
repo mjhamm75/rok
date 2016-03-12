@@ -88,7 +88,7 @@ class Home extends Component {
 							</div>
 							<div className="grow right">
 								<div>A NEW WAY TO LEARN</div>
-								<div>The artglass window and documentary series will inspire viewers the world over as the lessons of the past will, hopefully, inspire each of us to make a better future. Watch now</div>
+								<div>The artglass window and documentary series will inspire viewers the world over as the lessons of the past will, hopefully, inspire each of us to make a better future. <a href="https://vimeo.com/123640824">Watch now</a></div>
 							</div>
 							<div className="hide"></div>
 						</div>
