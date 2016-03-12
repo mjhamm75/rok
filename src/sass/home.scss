@@ -169,6 +169,11 @@ body {
 					margin-top: 40%;			
 				}
 			}
+			@media(min-width: 1650px) {
+				> div:nth-child(2) {
+					margin-top: 22%;
+				}
+			}
 
 			@media(max-width: 600px) {
 				> div:nth-child(2) {
