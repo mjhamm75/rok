@@ -159,6 +159,11 @@ body {
 					flex-basis : 145px;
 				}
 			}
+			@media(min-width: 1350px) {
+				> div:nth-child(2) {
+					margin-top: 25%;
+				}
+			}
 			@media(max-width: 992px) {
 				> div:nth-child(2) {
 					margin-top: 40%;			
