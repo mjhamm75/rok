@@ -147,7 +147,7 @@ class Home extends Component {
 						<img src={c3r1} />
 						<div>
 							<div>Add your piece to the story.</div>
-							<Link to="donate">Sponsor a piece of glass</Link>
+							<Link to="donations">Sponsor a piece of glass</Link>
 						</div>
 						<img src={c3r2} />
 					</div>
