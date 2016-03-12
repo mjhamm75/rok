@@ -123,7 +123,7 @@ class Nav extends Component {
 function mapStateToProps(state) {
 	return {
 		selectedItems: state.selectedItems,
-		showCart: state.openCart
+		showCart: state.toggleCart
 	}
 }
 export default connect(mapStateToProps)(Nav);
