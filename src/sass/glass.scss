@@ -4,10 +4,11 @@
 		> div {
 			display: flex;
 			> img {
-				width: 350px;
+				border: 3px solid #4A4A4A;;
+				cursor: pointer;
 				height: auto;
 				margin: 5px 5px;
-				border: 3px solid #4A4A4A;;
+				width: 350px;
 			}
 
 			> img:hover { 
