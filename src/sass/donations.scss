@@ -1,21 +1,18 @@
 .donations {
+	align-items: center;
 	background-image: url('./../imgs/wall-exterior.png');
 	background-position: cover cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
+	display: flex;
 	height: 100%;
-
-	.nav {
-		position: static !important;
-	}
-
+	justify-content: center;
 	.hero {
 		min-width: 275px;
 		max-width: 400px;
 		min-height: 290px;
 		background: white;
-		margin: 12% auto;
 		height: 40%; 
 		width: 40%;
 		padding: 2% 2%;

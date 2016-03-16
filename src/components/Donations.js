@@ -8,12 +8,14 @@ require('!style!css!sass!./../sass/donations.scss');
 class Donations extends Component {
 	render() {
 		return (
-			<div className="donations">
+			<div>
 				<Nav fixed="true" />
-				<div className="hero">
-					<div>Explore the wall and find a piece of glass to sponsor.</div>
-					<div>Enjoy the story along the way.</div>
-					<Link to="glass">Select a piece of glass</Link>
+				<div className="donations">
+					<div className="hero">
+						<div>Explore the wall and find a piece of glass to sponsor.</div>
+						<div>Enjoy the story along the way.</div>
+						<Link to="glass">Select a piece of glass</Link>
+					</div>
 				</div>
 				<Footer />
 			</div>
