@@ -21,15 +21,23 @@ require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
 class About extends Component {
 	componentDidMount() {
-		let anchorName = this.props.location.hash;
-		if (anchorName) {
-			anchorName = anchorName.replace("#","");
+		this.scrollToHash(this.props.location.hash);
+	}
+
+	componentWillReceiveProps() {		
+		this.scrollToHash(this.props.location.hash);	
+	}
+
+	scrollToHash(hash) {
+		if (hash) {
+			let anchorName = hash.replace("#","");
 			let anchorElement = document.getElementById(anchorName);
+			let offset = anchorElement.offsetTop;
 
 			if(anchorElement) { 
-				anchorElement.scrollIntoViewIfNeeded();
+				window.scrollTo(0, offset);
 			}
-		}	
+		}
 	}
 
 	render() {
@@ -63,7 +71,7 @@ class About extends Component {
 				    		<img className="library" src={library} />
 				    	</div>
 				    </div>
-				    <div className="row">
+				    <div id="uvu" className="row">
 				    	<div className="col l8 offset-l2 header">
 				    		Utah Valley University
 				    	</div>
@@ -78,8 +86,7 @@ class About extends Component {
 							<img src={libraryExt} />
 						</div>
 					</div>
-					<a href="#artists" id="artists" style={{paddingTop: '100px'}}></a>
-					<div className="row">
+					<div id="artists" className="row">
 						<div className="col l8 offset-l2 header">
 							Holdman Studios
 						</div>

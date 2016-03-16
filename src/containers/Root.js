@@ -31,12 +31,17 @@ const routes = (
     </Route>
   </Route>
 )
+function scrollToTop() {
+  if(window.location.hash.length === 0) {
+    window.scrollTo(0, 0)
+  }
+}
 
 export default class Root extends Component {
   render() {
     let history = this.props.history;
     return (
-      <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
+      <Router onUpdate={() => scrollToTop()} history={history}>
         {routes}
       </Router>
     );
