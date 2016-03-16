@@ -14,6 +14,11 @@
 				border: 3px solid white;
 				cursor: hand;
 			}
+
+			@media(max-width: 600px) {
+				width: 350px;
+				height: 10%;
+			}
 		}		
 	}
 }
