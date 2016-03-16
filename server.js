@@ -22,6 +22,7 @@ app.use(express.static('images'));
 app.use(express.static('public'));
 
 if(isDevelopment) {
+  console.log("DEV");
   var webpack = require('webpack');
   var config = require('./webpack.config.js');
   var compiler = webpack(config);
@@ -30,6 +31,8 @@ if(isDevelopment) {
     publicPath: config.output.publicPath
   }));
   app.use(require('webpack-hot-middleware')(compiler));  
+} else {
+  console.log("PROD");
 }
 
 var sendEmail = require('./db/helper.js').sendEmail;
