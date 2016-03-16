@@ -135,6 +135,7 @@ class ImageMap extends Component {
 	renderArea() {
 		return this.state.mapping.map((area, i) => {
 			return <area 
+						style={{cursor: 'pointer'}}
 						key={i} 
 						id={area.id} 
 						shape="poly" 
