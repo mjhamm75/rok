@@ -76,7 +76,6 @@ class Glass extends Component {
 						<img src={e3} onClick={this.updateOverlay.bind(this, e3)}/>
 					</div>
 				</div>
-				<Copywrite show={!this.state.showOverlay}/>
 			</div>
 		)
 	}
