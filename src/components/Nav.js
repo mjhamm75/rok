@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { browserHistory } from 'react-router'
 import { Link } from 'react-router';
 import Cart from './Cart';
+import { charge } from './../actions/GlassActions';
 import bag from './../imgs/shopping-bag.png'
 import logo from './../imgs/rok-logo-white.png';
 
@@ -73,7 +74,7 @@ class Nav extends Component {
 		} : null;
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)}/>
+				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)} charge={this.charge.bind(this)}/>
 				<div className="navbar">
 					<div />
 					<div>
@@ -117,6 +118,10 @@ class Nav extends Component {
 
 	thankyou() {
 		
+	}
+
+	charge(token, amount) {
+		this.props.dispatch(charge(token, amount));
 	}
 }
 

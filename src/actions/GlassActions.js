@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, EMAIL_UDPATED, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, VALIDATE_USERNAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, CHARGE, EMAIL_UDPATED, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, VALIDATE_USERNAME } from '../constants/ActionTypes';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -100,5 +100,23 @@ export function openCheckout(shouldOpen) {
 	return {
 		type: OPEN_CART,
 		shouldOpen
+	}
+}
+
+export function charge(token, amount) {
+	return dispatch => {
+		axios.post('/charge', {
+			token,
+			amount
+		}).then(result => {
+			dispatch(chargeComplete(result.data))
+		})
+	}
+}
+
+function chargeComplete(charged) {
+	return {
+		type: CHARGE,
+		charged
 	}
 }

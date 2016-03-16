@@ -15,8 +15,10 @@ class Cart extends Component {
 			image: '/rok-logo.png',
 			locale: 'auto',
 			token: function(token) {
-			// Use the token to create the charge with a server-side script.
-			// You can access the token ID with `token.id`
+				that.props.charge({
+					token: token,
+					amount: that.getTotal() * 100,
+				});
 			},
 			closed: function() {
 				that.props.thankyou();

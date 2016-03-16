@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var jwt = require('jsonwebtoken');
 var path = require('path');
 
+var stripe = require('stripe')("sk_test_ckJgTbiJKpW0CRNr8kSPnKIW");
 var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
@@ -80,6 +81,26 @@ app.post('/create-user', validate, function(req, res) {
     } else {
       res.sendStatus(403);
     }
+  });
+})
+
+app.post('/charge', function(req, res) {
+  var token = req.body.token;
+  var amount = req.body.amount;
+  var charge = stripe.charges.create({
+    amount: amount, // amount in cents, again
+    currency: "usd",
+    source: token,
+    description: "Example charge"
+  }, function(err, charge) {
+    if (err && err.type === 'StripeCardError') {
+      res.json({
+        charged: true
+      })
+    }
+    res.json({
+      charged: true
+    })
   });
 })
 
