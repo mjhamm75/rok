@@ -35,6 +35,9 @@ export default class ValueGlass extends Component {
 				</div>
 				<div dangerouslySetInnerHTML={{__html: this.state.svg}}></div>
 				<div className="input-container">
+					<div>
+						<input ref="glassTitle" placeholder="Glass title"/>
+					</div>
 					<div className="cost-container">
 						{cost}
 					</div>
@@ -42,8 +45,20 @@ export default class ValueGlass extends Component {
 						<textarea ref="coords" placeholder="Enter coordinates here." onChange={this.updateCoords.bind(this)}></textarea>
 					</div>
 				</div>
+				<button onClick={this.saveSVG.bind(this)}>Save Mapping</button>
 			</div>
 		)
+	}
+
+	saveSVG() {
+		let svg = zepto('svg').parent().html();
+		let title = this.refs.glassTitle;
+
+	}
+
+	updateAmount(id, event) {
+		var path = zepto(`[id='${id}']`);
+		path.attr('value', event.target.value);
 	}
 
 	renderCostDOM(paths) {
@@ -53,7 +68,7 @@ export default class ValueGlass extends Component {
 					<label>{i}</label>
 					<div>
 						<label>Amount</label>
-						<input />
+						<input onChange={this.updateAmount.bind(this, i)}/>
 					</div>
 				</div>
 			)
@@ -61,11 +76,13 @@ export default class ValueGlass extends Component {
 	}
 
 	clear() {
-		this.refs.image.clear();
+		let allPaths = zepto('svg *');
+		allPaths.removeClass('hover');
 	}
 
 	highlight() {
-		
+		let glassWithValue = zepto('svg [value]');
+		glassWithValue.addClass('hover');
 	}
 
 	mouseOver(index) {
