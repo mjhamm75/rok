@@ -65,7 +65,8 @@
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-dev-server": "^1.9.0",
-    "webpack-hot-middleware": "^2.7.1"
+    "webpack-hot-middleware": "^2.7.1",
+    "zepto": "^1.0.1"
   },
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.0",

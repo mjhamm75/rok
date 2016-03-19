@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ImageMap from './ImageMap';
 
+import zepto from 'npm-zepto';
+
 import coords from './coords.js';
 import b1 from './../imgs/b1.jpg'
 
@@ -13,6 +15,12 @@ export default class ValueGlass extends Component {
 			paths: [],
 			svg: "<div>Image will be here</div>"
 		}
+	}
+
+	componentDidUpdate() {
+		zepto('svg').on('mouseover', 'path', (e) => {
+			
+		})
 	}
 
 	render() {
@@ -41,7 +49,7 @@ export default class ValueGlass extends Component {
 	renderCostDOM(paths) {
 		return paths.map((coord, i) => {
 			return (
-				<div className="form" key={i} onMouseOver={this.mouseOver.bind(this, i)} onMouseOut={this.mouseOut.bind(this)}>
+				<div className="form" key={i} onMouseOver={this.mouseOver.bind(this, i)} onMouseOut={this.mouseOut.bind(this, i)}>
 					<label>{i}</label>
 					<div>
 						<label>Amount</label>
@@ -60,30 +68,28 @@ export default class ValueGlass extends Component {
 		this.refs.image.highlightAll();
 	}
 
-	mouseOver(index, event) {
-		let area = [].slice.call(this.refs.image.refs.map.children)[index];
-		this.refs.image.highlightArea(area);
+	mouseOver(index) {
+		zepto(`[id='${index}']`).addClass('hover');
 	}
 
-	mouseOut() {
-		this.refs.image.clear();
+	mouseOut(index) {
+		zepto(`[id='${index}']`).removeClass('hover');
+	}
+
+	addIdsToPaths(children) {
+		for (var i = 0; i < children.length; ++i) {
+			children[i].id = i;
+		}
 	}
 
 	updateCoords() {
-		// var coords = this.refs.coords.value.split('\n');
-		// var coordsRemoveQuotes = coords.map(coord => {
-		// 	return coord.replace(/["']/g, "").replace(/,$/, "");
-		// });		
-		// this.setState({
-		// 	coords: coordsRemoveQuotes
-		// });
 		var parser = new DOMParser();
 		var html = parser.parseFromString(this.refs.coords.value, 'text/html');
-		// if(html.body.children) console.log(html.body.children[0].children);
 		let children = html.body.children[0].children;
+		this.addIdsToPaths(children);
 		let childrenArr = [].slice.call(children)
 		this.setState({
-			svg: this.refs.coords.value,
+			svg: html.body.children[0].outerHTML,
 			paths: childrenArr
 		})
 	}
