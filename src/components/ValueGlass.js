@@ -65,7 +65,7 @@ export default class ValueGlass extends Component {
 	}
 
 	highlight() {
-		this.refs.image.highlightAll();
+		
 	}
 
 	mouseOver(index) {
