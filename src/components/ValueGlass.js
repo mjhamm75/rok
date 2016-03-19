@@ -10,7 +10,8 @@ export default class ValueGlass extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: []
+			coords: [],
+			svg: "<div>Image will be here</div>"
 		}
 	}
 
@@ -24,9 +25,7 @@ export default class ValueGlass extends Component {
 					<button onClick={this.highlight.bind(this)}>Highlight</button>
 					<button onClick={this.clear.bind(this)}>Clear</button>
 				</div>
-				<div className="image-container">
-					<ImageMap ref="image" source={b1} mappingName={glass} coords={coords}/>
-				</div>
+				<div dangerouslySetInnerHTML={{__html: this.state.svg}}></div>
 				<div className="input-container">
 					<div className="cost-container">
 						{cost}
@@ -71,13 +70,16 @@ export default class ValueGlass extends Component {
 	}
 
 	updateCoords() {
-		var coords = this.refs.coords.value.split('\n');
-		var coordsRemoveQuotes = coords.map(coord => {
-			return coord.replace(/["']/g, "").replace(/,$/, "");
-		});		
+		// var coords = this.refs.coords.value.split('\n');
+		// var coordsRemoveQuotes = coords.map(coord => {
+		// 	return coord.replace(/["']/g, "").replace(/,$/, "");
+		// });		
+		// this.setState({
+		// 	coords: coordsRemoveQuotes
+		// });
 		this.setState({
-			coords: coordsRemoveQuotes
-		});
+			svg: this.refs.coords.value
+		})
 	}
 }
 

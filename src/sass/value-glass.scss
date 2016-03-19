@@ -44,3 +44,17 @@
 .form:hover {
 	background: #BBBBBB;
 }
+
+svg {
+	stroke-opacity: 0;
+}
+
+svg path{
+	fill:none;
+    stroke:black;
+    pointer-events:all;
+}
+
+svg path:hover {
+    fill: #fce57e;
+}
