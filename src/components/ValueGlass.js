@@ -10,14 +10,14 @@ export default class ValueGlass extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: [],
+			paths: [],
 			svg: "<div>Image will be here</div>"
 		}
 	}
 
 	render() {
-		let coords = this.state.coords;
-		let cost = this.renderCostDOM(coords);
+		let paths = this.state.paths;
+		let cost = this.renderCostDOM(paths);
 		var glass = "glass";
 		return (
 			<div>
@@ -38,8 +38,8 @@ export default class ValueGlass extends Component {
 		)
 	}
 
-	renderCostDOM(coords) {
-		return coords.map((coord, i) => {
+	renderCostDOM(paths) {
+		return paths.map((coord, i) => {
 			return (
 				<div className="form" key={i} onMouseOver={this.mouseOver.bind(this, i)} onMouseOut={this.mouseOut.bind(this)}>
 					<label>{i}</label>
@@ -77,8 +77,14 @@ export default class ValueGlass extends Component {
 		// this.setState({
 		// 	coords: coordsRemoveQuotes
 		// });
+		var parser = new DOMParser();
+		var html = parser.parseFromString(this.refs.coords.value, 'text/html');
+		// if(html.body.children) console.log(html.body.children[0].children);
+		let children = html.body.children[0].children;
+		let childrenArr = [].slice.call(children)
 		this.setState({
-			svg: this.refs.coords.value
+			svg: this.refs.coords.value,
+			paths: childrenArr
 		})
 	}
 }
