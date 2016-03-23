@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
-import { connect } from 'react-redux';
 
 import b1 from './../imgs/panel_thumbnails/B-1.jpg'
 import b2 from './../imgs/panel_thumbnails/B-2.jpg'
@@ -19,19 +18,10 @@ import e2 from './../imgs/panel_thumbnails/E-2.jpg'
 import e3 from './../imgs/panel_thumbnails/E-3.jpg'
 
 import Nav from './Nav';
-import Copywrite from './Copywrite';
-import Overlay from './Overlay';
 
 require('!style!css!sass!./../sass/glass.scss');
 
-class Glass extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			src: '',
-			showOverlay: false
-		}
-	}
+export default class Glass extends Component {
 	componentDidMount() {
 		document.body.style.background = '#4A4A4A';
 	}
@@ -40,22 +30,11 @@ class Glass extends Component {
 	}
 	updateOverlay(src) {
 		browserHistory.push('/pick')
-		// this.setState({
-		// 	showOverlay: true,
-		// 	src: src
-		// })
-
-	}
-	hideOverlay() {
-		this.setState({
-			showOverlay: false
-		})
 	}
 	render() {
 		return (
 			<div className="glass">
-				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
-				<Overlay src={this.state.src} showOverlay={this.state.showOverlay} hide={this.hideOverlay.bind(this)}/>
+				<Nav fixed="true"/>
 				<div className="image">
 					<div>
 						<img src={b1} onClick={this.updateOverlay.bind(this, b1)}/>
@@ -80,10 +59,3 @@ class Glass extends Component {
 		)
 	}
 }
-
-function mapStateToProps(state) {
-	return {
-		selectedItems: state.selectedItems
-	}
-}
-export default connect(mapStateToProps)(Glass);

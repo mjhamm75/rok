@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ImageMap from './ImageMap';
+import { connect } from 'react-redux';
 
 import { saveSVG } from './../actions/GlassActions';
 
@@ -10,7 +11,7 @@ import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/value-glass.scss');
 
-export default class ValueGlass extends Component {
+class ValueGlass extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -50,14 +51,14 @@ export default class ValueGlass extends Component {
 		let svg = zepto('svg').parent().html();
 		let title = this.refs.glassTitle.value;
 		let paths = this.preparePathsToSave(this.state.paths);
-		this.dispatch(saveSVG(svg, title, paths));
+		this.props.dispatch(saveSVG(svg, title, paths));
 	}
 
 	preparePathsToSave(paths) {
 		return paths.map(path => {
 			return {
 				id: path.id,
-				value: path.value
+				amount: path.value
 			}
 		});
 	}
@@ -119,6 +120,4 @@ export default class ValueGlass extends Component {
 	}
 }
 
-
-
-
+export default connect()(ValueGlass);

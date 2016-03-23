@@ -7,3 +7,4 @@ export const USER_CREATED = 'USER_CREATED';
 export const VALIDATE_USERNAME = 'VALIDATE_USERNAME';
 export const OPEN_CART = 'OPEN_CART';
 export const CHARGE = 'CHARGE';
+export const SVG_SAVED = 'SVG_SAVED';

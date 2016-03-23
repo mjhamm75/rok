@@ -110,12 +110,15 @@ app.post('/charge', function(req, res) {
 
 app.post('/svg', function(req, res) {
   var svg = req.body.svg;
-  console.log(svg)
   var title = req.body.title;
-  console.log(title)
   var paths = req.body.paths;
-  console.log(paths)
-  q.createSvg(title, svg)
+  q.createSVG(title, svg).then(function(svgId) {
+    q.insertSvgPaths(svgId, paths).then(function(result) {
+      res.json({
+        is: 'inserted'
+      })
+    })
+  })
 })
 
 app.get('*', function(req, res) {
