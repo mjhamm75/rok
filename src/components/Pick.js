@@ -42,7 +42,15 @@ class Pick extends Component {
 	}
 
 	render() {
-		return (<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>)
+		return (
+			<div>
+				<Nav fixed="true"/>
+				<div className="svg">
+					<div>{this.props.svg.title}</div>
+					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
+				</div>
+			</div>
+		)
 	}
 
 	renderSelectedGlass(piece) {
