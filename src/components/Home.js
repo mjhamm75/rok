@@ -125,7 +125,7 @@ class Home extends Component {
 								<div>Measuring an immense 10' by 200' in length, totaling eighty panels, this art glass will impact viewers through illustrating intimate moments of time on a grand scale.</div>
 							</div>
 							<div>
-								<a>Watch the documentary</a>
+								<a href="https://vimeo.com/123640824">Watch now</a>
 							</div>
 						</div>
 					</div>

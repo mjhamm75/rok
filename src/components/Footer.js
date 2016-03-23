@@ -16,7 +16,7 @@ class Footer extends Component {
 						<div>
 							<div>
 								<div>Contact Us:</div>
-								<div>1-801-766-4111</div>
+								<div>801-766-4111</div>
 							</div>
 							<br />
 							<div>
