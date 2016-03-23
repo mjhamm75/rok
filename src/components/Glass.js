@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
+import { connect } from 'react-redux';
+
+import { getSvg } from './../actions/GlassActions'
 
 import b1 from './../imgs/panel_thumbnails/B-1.jpg'
 import b2 from './../imgs/panel_thumbnails/B-2.jpg'
@@ -21,14 +24,15 @@ import Nav from './Nav';
 
 require('!style!css!sass!./../sass/glass.scss');
 
-export default class Glass extends Component {
+class Glass extends Component {
 	componentDidMount() {
 		document.body.style.background = '#4A4A4A';
 	}
 	componentWillUnmount() {
 		document.body.style.background = '#FFFFFF';	
 	}
-	updateOverlay(src) {
+	updateOverlay(svgId) {
+		this.props.dispatch(getSvg(svgId))
 		browserHistory.push('/pick')
 	}
 	render() {
@@ -37,7 +41,7 @@ export default class Glass extends Component {
 				<Nav fixed="true"/>
 				<div className="image">
 					<div>
-						<img src={b1} onClick={this.updateOverlay.bind(this, b1)}/>
+						<img src={b1} onClick={this.updateOverlay.bind(this, 13)}/>
 						<img src={c1} onClick={this.updateOverlay.bind(this, c1)}/>
 						<img src={d1} onClick={this.updateOverlay.bind(this, d1)}/>
 						<img src={e1} onClick={this.updateOverlay.bind(this, e1)}/>
@@ -59,3 +63,5 @@ export default class Glass extends Component {
 		)
 	}
 }
+
+export default connect()(Glass);

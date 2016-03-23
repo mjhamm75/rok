@@ -121,6 +121,15 @@ app.post('/svg', function(req, res) {
   })
 })
 
+app.get('/svg/:id', function(req, res) {
+  var id = req.params.id;
+  q.getSVG(id).then(function(svg) {
+    res.json({
+      svg: svg[0]
+    })
+  })
+})
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

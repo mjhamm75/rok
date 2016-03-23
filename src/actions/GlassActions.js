@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, CHARGE, EMAIL_UDPATED, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, CHARGE, EMAIL_UDPATED, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, SVG_RETREIVED, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -137,5 +137,21 @@ export function saveSVG(svg, title, paths) {
 			dispatch(svgSaved())
 		})
 		
+	}
+}
+
+function svgRetrieved(svg) {
+	return {
+		type: SVG_RETREIVED,
+		svg
+	}
+}
+
+export function getSvg(svgId) {
+	return dispatch => {
+		axios.get(`/svg/${svgId}`)
+			.then(svg => {
+				dispatch(svgRetrieved(svg.data.svg))
+			});
 	}
 }

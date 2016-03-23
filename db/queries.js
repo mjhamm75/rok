@@ -41,11 +41,19 @@ module.exports = function(knex) {
 			.insert(formattedPath)
 	}
 
+	function getSVG(svgId) {
+		return knex.table('svg')
+			.where({
+				id: svgId
+			});
+	}
+
 	return {
 		getEmailAddress: getEmailAddress,
 		checkForUsername: checkForUsername,
 		createUser: createUser,
 		createSVG: createSVG,
-		insertSvgPaths: insertSvgPaths
+		insertSvgPaths: insertSvgPaths,
+		getSVG: getSVG
 	}
 }
