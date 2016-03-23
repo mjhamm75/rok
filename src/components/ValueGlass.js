@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ImageMap from './ImageMap';
 
+import { saveSVG } from './../actions/GlassActions';
+
 import zepto from 'npm-zepto';
 
 import coords from './coords.js';
@@ -15,12 +17,6 @@ export default class ValueGlass extends Component {
 			paths: [],
 			svg: "<div>Image will be here</div>"
 		}
-	}
-
-	componentDidUpdate() {
-		zepto('svg').on('mouseover', 'path', (e) => {
-			
-		})
 	}
 
 	render() {
@@ -52,13 +48,24 @@ export default class ValueGlass extends Component {
 
 	saveSVG() {
 		let svg = zepto('svg').parent().html();
-		let title = this.refs.glassTitle;
+		let title = this.refs.glassTitle.value;
+		let paths = this.preparePathsToSave(this.state.paths);
+		this.dispatch(saveSVG(svg, title, paths));
+	}
 
+	preparePathsToSave(paths) {
+		return paths.map(path => {
+			return {
+				id: path.id,
+				value: path.value
+			}
+		});
 	}
 
 	updateAmount(id, event) {
 		var path = zepto(`[id='${id}']`);
 		path.attr('value', event.target.value);
+		this.state.paths[id].value = event.target.value;
 	}
 
 	renderCostDOM(paths) {

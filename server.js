@@ -108,6 +108,16 @@ app.post('/charge', function(req, res) {
   });
 })
 
+app.post('/svg', function(req, res) {
+  var svg = req.body.svg;
+  console.log(svg)
+  var title = req.body.title;
+  console.log(title)
+  var paths = req.body.paths;
+  console.log(paths)
+  q.createSvg(title, svg)
+})
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

@@ -120,3 +120,11 @@ function chargeComplete(charged) {
 		charged
 	}
 }
+
+export function saveSVG(svg, title, paths) {
+	axios.post('/svg', {
+		svg,
+		title,
+		paths
+	})
+}

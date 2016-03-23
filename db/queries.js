@@ -16,6 +16,13 @@ module.exports = function(knex) {
 		})
 	}
 
+	function createSVG(title, svg) {
+		return knex.table('svg').insert({
+			title: title,
+			svg: svg
+		})
+	}
+
 	return {
 		getEmailAddress: getEmailAddress,
 		checkForUsername: checkForUsername,
