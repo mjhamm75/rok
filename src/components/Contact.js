@@ -26,7 +26,7 @@ class Contact extends Component {
 				<div className="contact-form">
 					<div>Contact Us</div>
 					<div>Questions about the project? Looking for a way to donate at an executive level, or information for the press? Send us a note and we’ll get back to you soon.</div>
-					<div>1-801-555-5555</div>
+					<div>801-766-4111</div>
 					<div>
 						<div>Roots of Knowledge</div>
 						<div>3001 N Thanksgiving Way</div>

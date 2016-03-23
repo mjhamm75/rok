@@ -108,7 +108,7 @@ class About extends Component {
 						<div className="col l8">
 							<span className="bold">Thomas E. Holdman</span>: Stained Glass Artist, Holdman Studios CEO
 							<br />
-As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parents’ garage. He has since created stained glass displayed in all 50 states and worldwide for commercial buildings, private residences, and public art features. Tom’s creations are also found in many religious institutions including 40 LDS temples, and Catholic and Protestant Sanctuaries. Mr. Holdman is the recipient of The Best of State Statue Award, the Governor’s Visual Artist Award, the Star award, etc. He and his art have been featured in the LDS Ensign Magazine, USA Today and the New York Times. He also founded The Art Institute at Thanksgiving Point
+As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parents’ garage. He has since created stained glass displayed in all 50 states and worldwide for commercial buildings, private residences, and public art features. Tom’s creations are also found in many religious institutions including 40 LDS temples, and Catholic and Protestant Sanctuaries. Mr. Holdman is the recipient of The Best of State Statue Award, the Governor’s Visual Artist Award, the Star award, etc. He and his art have been featured in the LDS Ensign Magazine, USA Today and the New York Times. He also founded The Art Institute at Thanksgiving Point.
 						</div>
 					</div>
 					<div className="row">
@@ -128,7 +128,7 @@ Cameron Oscarson, also a native of Utah, developed his skills as an artist at a 
 					</div>
 					<div className="row">
 						<div className="col l8 offset-l2">
-							Renowned documentary filmmaker, Lee Groberg will spread the flame across  the world, reaching millions through the four episode series “The Roots of Knowledge, Man’s enduring Quest.” Though the medium of film, Lee will inspire the world with the story told through the art glass masterpiece. Watch now
+							Renowned documentary filmmaker, Lee Groberg will spread the flame across  the world, reaching millions through the four episode series “The Roots of Knowledge, Man’s enduring Quest.” Though the medium of film, Lee will inspire the world with the story told through the art glass masterpiece. <a href="https://vimeo.com/123640824">Watch now</a>
 						</div>
 					</div>
 					<div className="row">
