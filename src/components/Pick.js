@@ -90,7 +90,8 @@ class Pick extends Component {
 
 function mapStateToProps(state) {
 	return {
-		svg: state.svg,
+		svg: state.svg.svg,
+		paths: state.svg.paths,
 		toggleCart: state.toggleCart
 	}
 }

@@ -48,12 +48,20 @@ module.exports = function(knex) {
 			});
 	}
 
+	function getPaths(svgId) {
+		return knex.table('path')
+			.where({
+				svg_id: svgId
+			});
+	}
+
 	return {
 		getEmailAddress: getEmailAddress,
 		checkForUsername: checkForUsername,
 		createUser: createUser,
 		createSVG: createSVG,
 		insertSvgPaths: insertSvgPaths,
-		getSVG: getSVG
+		getSVG: getSVG,
+		getPaths: getPaths
 	}
 }

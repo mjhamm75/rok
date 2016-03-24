@@ -151,7 +151,7 @@ export function getSvg(svgId) {
 	return dispatch => {
 		axios.get(`/svg/${svgId}`)
 			.then(svg => {
-				dispatch(svgRetrieved(svg.data.svg))
+				dispatch(svgRetrieved(svg.data))
 			});
 	}
 }

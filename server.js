@@ -4,6 +4,7 @@ var express = require('express');
 var favicon = require('serve-favicon');
 var jwt = require('jsonwebtoken');
 var path = require('path');
+var async = require('async');
 
 var stripe = require('stripe')("sk_test_ckJgTbiJKpW0CRNr8kSPnKIW");
 var app = express();
@@ -121,13 +122,25 @@ app.post('/svg', function(req, res) {
   })
 })
 
-app.get('/svg/:id', function(req, res) {
+app.get('/svg/:id', function(req, res) {  
   var id = req.params.id;
-  q.getSVG(id).then(function(svg) {
+  async.parallel([
+    function(callback) {
+      q.getSVG(id).then(function(svg) {
+          callback(null, svg[0]);
+      })
+    },
+    function(callback) {
+      q.getPaths(id).then(function(paths) {
+        callback(null, paths)
+      })
+    }
+  ], function(err, results) {
     res.json({
-      svg: svg[0]
+      svg: results[0],
+      paths: results[1]
     })
-  })
+  });
 })
 
 app.get('*', function(req, res) {
