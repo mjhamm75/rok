@@ -44,7 +44,7 @@ class About extends Component {
 		return (
 			<div className="about">
 				<Nav fixed="true"/>
-				<h1>About The Roots of Knowledge Project</h1>
+				<h1>About the Roots of Knowledge Project</h1>
 				<div className="container">
 					<div className="row">
 						<div className="col l8 offset-l2">
@@ -158,13 +158,13 @@ For the past 20 years, Ross has served as COO and Corporate Counsel in the media
 					</div>
 				</div>
 				<div className="icons">
-					<a href="http://holdmanstudios.com/">
+					<a target="_blank" href="http://holdmanstudios.com/">
 						<img src={holdmanIcon} />
 					</a>
-					<a href="http://www.uvu.edu/oel/rootsofknowledge.html">
+					<a target="_blank" href="http://www.uvu.edu/oel/rootsofknowledge.html">
 						<img src={uvuIcon} />
 					</a>
-					<a href="http://grobergfilms.com">
+					<a target="_blank" href="http://grobergfilms.com">
 						<img src={rootsMediaIcon} />
 					</a>
 				</div>

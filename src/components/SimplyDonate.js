@@ -41,7 +41,7 @@ class SimplyDonate extends Component {
 						<div className="total">Total</div>
 						<div className="total-amount">$0.00</div>
 					</div>
-					<input className="email" ref="email" placeholder=" Email Address"/>
+					<input className="email" ref="email" placeholder=" email address"/>
 					<div>
 						<a onClick={this.checkout.bind(this)}>Donate</a>
 					</div>
