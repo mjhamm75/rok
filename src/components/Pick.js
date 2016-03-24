@@ -7,6 +7,7 @@ import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } 
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
+import zepto from 'npm-zepto';
 
 import coordsObj from './coordsObj.js';
 import b1 from './../imgs/b1.jpg'
@@ -23,6 +24,10 @@ class Pick extends Component {
 			continue: false
 		}
 		this.checkout = this.checkout.bind(this)
+	}
+
+	componentDidUpdate() {
+		console.log(zepto);
 	}
 
 	addPiece() {
@@ -42,9 +47,20 @@ class Pick extends Component {
 	}
 
 	render() {
+		var piece = this.state.selectedGlass;
+		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
 			<div>
 				<Nav fixed="true"/>
+				<Skylight 
+					ref="simpleDialog" 
+					title="Tree of Knowledge"
+					hideOnOverlayClicked>
+					<ul className="pieces">
+						{piecesDOM}
+					</ul>
+					<a className="sky-button" onClick={this.addPiece.bind(this)}>Add Piece</a>
+				</Skylight>
 				<div className="svg">
 					<div>{this.props.svg.title}</div>
 					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
