@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 
 import { saveSVG } from './../actions/GlassActions';
 
-import zepto from 'npm-zepto';
-
 import coords from './coords.js';
 import b1 from './../imgs/b1.jpg'
 
@@ -48,7 +46,7 @@ class ValueGlass extends Component {
 	}
 
 	saveSVG() {
-		let svg = zepto('svg').parent().html();
+		let svg = document.getElementsByTagName('svg') [0].outerHTML;
 		let title = this.refs.glassTitle.value;
 		let paths = this.preparePathsToSave(this.state.paths);
 		this.props.dispatch(saveSVG(svg, title, paths));
@@ -64,8 +62,8 @@ class ValueGlass extends Component {
 	}
 
 	updateAmount(id, event) {
-		var path = zepto(`[id='${id}']`);
-		path.attr('value', event.target.value);
+		var path = document.querySelectorAll(`[id='${id}']`)[0];
+		path.setAttribute('value', event.target.value);
 		this.state.paths[id].value = event.target.value;
 	}
 
@@ -84,21 +82,27 @@ class ValueGlass extends Component {
 	}
 
 	clear() {
-		let allPaths = zepto('svg *');
-		allPaths.removeClass('hover');
+		let allPaths = document.querySelectorAll('svg path');
+		for(let i = 0; i < allPaths.length; i++) {
+			allPaths[i].setAttribute('class', '');
+		}
 	}
 
 	highlight() {
-		let glassWithValue = zepto('svg [value]');
-		glassWithValue.addClass('hover');
+		let glassWithValue = document.querySelectorAll('[value]');
+		for(let i = 0; i < glassWithValue.length; i++) {
+			glassWithValue[i].setAttribute('class', 'hover');
+		}
 	}
 
 	mouseOver(index) {
-		zepto(`[id='${index}']`).addClass('hover');
+		var path = document.querySelectorAll(`[id='${index}']`)[0];
+		path.setAttribute('class', 'hover');
 	}
 
 	mouseOut(index) {
-		zepto(`[id='${index}']`).removeClass('hover');
+		var path = document.querySelectorAll(`[id='${index}']`)[0];
+		path.setAttribute('class', '');
 	}
 
 	addIdsToPaths(children) {
