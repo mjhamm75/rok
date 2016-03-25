@@ -21,11 +21,11 @@ require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
 class About extends Component {
 	componentDidMount() {
-		this.scrollToHash(this.props.location.hash);
+		this.scrollToHash(window.location.hash.substr(1));
 	}
 
-	componentWillReceiveProps() {		
-		this.scrollToHash(this.props.location.hash);	
+	componentWillReceiveProps() {
+		this.scrollToHash(window.location.hash.substr(1));
 	}
 
 	scrollToHash(hash) {
