@@ -8,7 +8,6 @@ import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } 
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
-import zepto from 'npm-zepto';
 
 import back from './../imgs/back.arrow.png'
 
@@ -45,11 +44,13 @@ class Pick extends Component {
 			setTimeout(function() {
 				that.props.paths.forEach(path => {
 					if(path.amount) {
-						zepto(`[id='${path.path_id}']`).addClass('purchased');
+						let el = document.querySelectorAll(`[id='${path.path_id}']`);
+						el.className += 'purchased';
 					}
-				})
+				});
 
-				zepto('svg path').on('click', function(e) {
+				let el = document.getElementsByTagName('svg')[0];
+				el.onclick = function(e) {
 					if(e.target.attributes.customer) {
 						return false;
 					}
@@ -59,7 +60,7 @@ class Pick extends Component {
 						amount: parseInt(e.target.attributes.value.value)
 					})
 					that.refs.simpleDialog.show();
-				})
+				}
 			}, 100);
 		}
 	}
