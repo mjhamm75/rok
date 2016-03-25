@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
 import Skylight from './ReactSkylight';
@@ -27,6 +28,13 @@ class Pick extends Component {
 			amount: null
 		}
 		this.checkout = this.checkout.bind(this)
+	}
+
+	componentDidMount() {
+		document.body.style.background = '#4A4A4A';
+	}
+	componentWillUnmount() {
+		document.body.style.background = '#FFFFFF';	
 	}
 
 	componentDidUpdate() {
@@ -70,10 +78,11 @@ class Pick extends Component {
 		var piece = this.state.selectedGlass;
 		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
-			<div>
+			<div className="pick">
 				<Nav fixed="true" resetOpenCart={this.resetOpenCart.bind(this)}/>
 				<div className="svg">
-					<div>{this.props.svg.title}</div>
+					<div className="back" onClick={() => browserHistory.push('/glass')}>Back</div>
+					<div className="title">{this.props.svg.title}</div>
 					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
 				</div>
 				<Skylight 
