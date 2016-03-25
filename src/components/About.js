@@ -20,6 +20,28 @@ require('!style!css!sass!./../sass/about.scss');
 require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
 class About extends Component {
+	constructor(props) {
+		super(props);
+		var deferImage = function(element) {
+			var i, len, attr;
+			var img = new Image();
+			var placehold = element.children[0];
+
+			element.className+= ' is-loading';
+
+			img.onload = function() {
+				element.className = element.className.replace('is-loading', 'is-loaded');
+				element.replaceChild(img, placehold);
+			};
+
+			for (i = 0, len = placehold.attributes.length; i < len; i++) {
+				attr = placehold.attributes[i];
+				if (attr.name.match(/^data-/)) {
+					img.setAttribute(attr.name.replace('data-', ''), attr.value);
+				}
+			}
+		}
+	}
 	componentDidMount() {
 		this.scrollToHash(window.location.hash.substr(1));
 	}
@@ -68,7 +90,9 @@ class About extends Component {
 				    </div>
 				    <div className="row">
 				    	<div className="col l10 offset-l2">
-				    		<img className="library" src={library} />
+				    		<div className="defer-image image-ratio:16x9">
+				    			<img className="library" src={library} />
+				    		</div>
 				    	</div>
 				    </div>
 				    <div id="uvu" className="row">
@@ -83,7 +107,9 @@ class About extends Component {
 				    </div>
 					<div className="row">
 						<div className="col l8 offset-l2">
-							<img src={libraryExt} />
+							<div className="defer-image image-ratio:16x9">
+								<img src={libraryExt} />
+							</div>
 						</div>
 					</div>
 					<div id="artists" className="row">
@@ -98,7 +124,9 @@ class About extends Component {
 					</div>
 					<div className="row">
 						<div className="col l8 offset-l2">
-							<img src={holdmanStudios} />
+							<div className="defer-image image-ratio:16x9">
+								<img src={holdmanStudios} />
+							</div>
 						</div>
 					</div>
 					<div className="row">
