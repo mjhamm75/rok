@@ -21,19 +21,39 @@ class Pick extends Component {
 		super(props);
 		this.state = {
 			coords: coordsObj,
-			continue: false
+			continue: false,
+			glassName: null,
+			imageId: null,
+			amount: null
 		}
 		this.checkout = this.checkout.bind(this)
 	}
 
 	componentDidUpdate() {
-		console.log(zepto);
+		var that = this;
+		if(this.props.paths.length > 0) {
+			setTimeout(function() {
+				that.props.paths.forEach(path => {
+					if(path.amount) {
+						zepto(`[id='${path.path_id}']`).addClass('purchased');
+					}
+				})
+
+				zepto('svg path').on('click', function(e) {
+					that.setState({
+						glassName: 'glass',
+						imageId: parseInt(e.target.attributes.id.value),
+						amount: parseInt(e.target.attributes.value.value)
+					})
+					that.refs.simpleDialog.show();
+				})
+			}, 100);
+		}
 	}
 
-	addPiece() {
+	addPiece(glassName, id, amount) {
 		this.refs.simpleDialog.hide();
-		this.refs.imagemap.clear();
-		this.props.dispatch(updateSelectedGlass('test', this.state.selectedGlass.id, this.state.selectedGlass.amount));
+		this.props.dispatch(updateSelectedGlass(this.state.glassName, this.state.id, this.state.amount));
 		this.refs.continueDialog.show();
 	}
 
@@ -51,7 +71,11 @@ class Pick extends Component {
 		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		return (
 			<div>
-				<Nav fixed="true"/>
+				<Nav fixed="true" resetOpenCart={this.resetOpenCart.bind(this)}/>
+				<div className="svg">
+					<div>{this.props.svg.title}</div>
+					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
+				</div>
 				<Skylight 
 					ref="simpleDialog" 
 					title="Tree of Knowledge"
@@ -61,10 +85,15 @@ class Pick extends Component {
 					</ul>
 					<a className="sky-button" onClick={this.addPiece.bind(this)}>Add Piece</a>
 				</Skylight>
-				<div className="svg">
-					<div>{this.props.svg.title}</div>
-					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
-				</div>
+				<Skylight
+					ref="continueDialog">
+					<div className="continue-wrapper">
+						<img className="check" src={check} />
+						<div>Added</div>
+						<a className="add" onClick={() => this.refs.continueDialog.hide()}>Add more pieces</a>
+						<a className="checkout" onClick={() => this.checkout()}>Checkout</a>
+					</div>
+				</Skylight>
 			</div>
 		)
 	}
