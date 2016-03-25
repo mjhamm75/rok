@@ -10,6 +10,8 @@ import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
 import zepto from 'npm-zepto';
 
+import back from './../imgs/back.arrow.png'
+
 import coordsObj from './coordsObj.js';
 import b1 from './../imgs/b1.jpg'
 
@@ -48,6 +50,9 @@ class Pick extends Component {
 				})
 
 				zepto('svg path').on('click', function(e) {
+					if(e.target.attributes.customer) {
+						return false;
+					}
 					that.setState({
 						glassName: 'glass',
 						imageId: parseInt(e.target.attributes.id.value),
@@ -81,7 +86,7 @@ class Pick extends Component {
 			<div className="pick">
 				<Nav fixed="true" resetOpenCart={this.resetOpenCart.bind(this)}/>
 				<div className="svg">
-					<div className="back" onClick={() => browserHistory.push('/glass')}>Back</div>
+					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="title">{this.props.svg.title}</div>
 					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
 				</div>
