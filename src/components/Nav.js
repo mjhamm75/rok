@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { browserHistory } from 'react-router'
 import { Link } from 'react-router';
 import Cart from './Cart';
+import ShoppingBagIcon from './ShoppingBagIcon';
 import { charge } from './../actions/GlassActions';
-import bag from './../imgs/shopping-bag.png'
 import logo from './../imgs/rok-logo-white.png';
 
 require('!style!css!sass!./../sass/nav.scss');
@@ -94,10 +94,7 @@ class Nav extends Component {
 					<div>
 						<Link className="toggle" to="contact">Contact Us</Link>
 					</div>
-					<div className="bag-wrapper" onClick={this.showCart}>
-						<div style={hideBag} className="circle">{this.props.selectedItems && this.props.selectedItems.length}</div>
-						<img className="bag" src={bag}/>
-					</div>
+					<ShoppingBagIcon selectedItems={this.props.selectedItems} showCart={this.showCart} hideBag={hideBag}/>
 				</div>
 			</div>
 		)

@@ -6,7 +6,7 @@
 	margin-top: 30px;
 
 	.glass {
-		flex-basis: 90%;
+		flex-basis: 85%;
 		.title {
 			text-align: center;
 			color: #a3a3a3;
@@ -32,6 +32,12 @@
 		height: 15px;
 		padding: 5px 8px;
 
+	}
+
+	.bag {
+		flex-basis: 8%;
+		margin-right: 5px;
+		text-align: right;
 	}
 }
 .svg {

@@ -5,6 +5,7 @@ import ImageMap from './ImageMap';
 import Skylight from './ReactSkylight';
 import Info from './Info';
 import Nav from './Nav';
+import ShoppingBagIcon from './ShoppingBagIcon';
 import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
@@ -106,6 +107,7 @@ class Pick extends Component {
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
 					<img className="info" src={infoIcon} onClick={this.showInfo.bind(this, true)}/>
+					<ShoppingBagIcon />
 				</div>
 				<Skylight 
 					ref="simpleDialog" 
