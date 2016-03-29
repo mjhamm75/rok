@@ -11,9 +11,11 @@ import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
 
 import back from './../imgs/back.arrow.png'
-import info from './../imgs/info.png'
+import infoIcon from './../imgs/info.png'
 
 import mapping from './mapping';
+
+import info from './pick.info.js';
 
 let check = require('./../imgs/check.png');
 
@@ -97,13 +99,13 @@ class Pick extends Component {
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
-				<Info show={this.state.show} showInfo={this.showInfo.bind(this)}/>
+				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
 				<div className="pick">					
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="glass">
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
-					<img className="info" src={info} onClick={this.showInfo.bind(this, true)}/>
+					<img className="info" src={infoIcon} onClick={this.showInfo.bind(this, true)}/>
 				</div>
 				<Skylight 
 					ref="simpleDialog" 

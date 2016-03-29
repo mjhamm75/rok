@@ -1001,5 +1001,40 @@ module.exports = {
         text: 'The Sermon on the Mount is a collection of early teachings, including the Lord’s Prayer and the Beatitudes, preached by Jesus Christ on a hill overlooking the Sea of Galilee. It is recorded in the Gospel of Matthew in the New Testament. '
       }
     ]
+  },
+  j3: {
+    info: [
+      {
+        text: 'Lady making yarn or thread with early spindle. A spindle is a straight spike usually made from wood used for spinning, twisting fibers such as wool, flax, hemp, cotton into yarn. '
+      },
+      {
+        title: 'The Delphic Hymns',
+        text: 'Two musical compositions from Ancient Greece, dating between c.138 to 128 BC, regarded as the earliest known examples of notated music in the western world. The hymns were addressed to Apollo, the god of music, and were inscribed upon stone fragments from the south outer wall of the Athenian treasury at Delphi.  '
+      },
+      {
+        title: 'Hypocaust Fragment',
+        text: 'Thought to be invented by the Roman engineer Sergius Orata, hypocausts were applied to a system of underfloor heating for buildings, houses and baths. Floors were raised above ground level by pillars, or pilae stacks, with hot air flowing through flues.'
+      },
+      {
+        title: 'Early Bagpipe',
+        text: 'A musical instrument consisting of two or more single or double-reed pipes, the reeds being set in motion by wind fed by arm pressure on an animal skin rubberized cloth bag. Variations of the bagpipe have origins in the Middle East and were used in the Greco-Roman world before spreading and developing throughout the rest of Europea and the British Isles.'
+      },
+      {
+        title: 'Chinese Compass',
+        text: 'Invented between the 2nd century BC and 1st century AD, the Chinese put iron to use with their understanding of its magnetic powers when in contact with lodestone. The Chinese compass had a model of a ladle-and-bowl, and was initially used for Feng Shui, the layout of buildings, before being employed for naval navigation. It is possible Chinese compasses made their way to Europe via Arab traders.'
+      },
+      {
+        title: 'Oware',
+        text: 'Related to Mancala, Oware was a strategy board game, involving pebbles or seeds in pits, found in West Africa and believed to have originated in Aken on the Gulf of Guinea.'
+      },
+      {
+        title: 'Remnants from Jerusalem',
+        text: 'Seashells gathered at Galilee, shards of pottery from the Levant, and Roman coins bearing the profiles of Trajan and Antonius Pius, along with a bronze prutah coin used in Judaea or, as is it more commonly called, a “widow’s mite.”'
+      },
+      {
+        title: 'Warrior Pottery Vessel.',
+        text: 'An artifact from the pre-Incan Moche civilization, located in what is today the northern Peruvian coast, dated from about 100-800 AD. Objects of warfare were regular motifs in Moche art, with this sculpture bearing a shield and club, and such pots were used as symbolic guardians for high-status tombs.'
+      }
+    ]
   }
 }
