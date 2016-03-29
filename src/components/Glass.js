@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
 
-import { getSvg } from './../actions/GlassActions'
+import { getPathInfo } from './../actions/GlassActions'
 
 import b1 from './../imgs/panel_thumbnails/B-1.jpg'
 import b2 from './../imgs/panel_thumbnails/B-2.jpg'
@@ -32,8 +32,7 @@ class Glass extends Component {
 		document.body.style.background = '#FFFFFF';	
 	}
 	updateOverlay(svgId) {
-		this.props.dispatch(getSvg(svgId))
-		browserHistory.push('/pick')
+		browserHistory.push('/pick/b1');
 	}
 	render() {
 		return (

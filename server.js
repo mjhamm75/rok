@@ -137,7 +137,7 @@ app.get('/svg/:id', function(req, res) {
     }
   ], function(err, results) {
     res.json({
-      svg: results[0],
+      // svg: results[0],
       paths: results[1]
     })
   });

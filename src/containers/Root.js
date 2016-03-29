@@ -24,7 +24,7 @@ const routes = (
     <Route path="glass" component={Glass} />
     <Route path="simply-donate" component={SimplyDonate} />
     <Route path="login" component={Login} />
-    <Route path="pick" component={Pick} />
+    <Route path="pick/*" component={Pick} />
     <Route path="admin" component={Admin}>
       <Route path="config" component={Config} />
       <Route path="value-glass" component={ValueGlass} />

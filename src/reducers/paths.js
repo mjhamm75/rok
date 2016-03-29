@@ -1,12 +1,9 @@
 import { SVG_RETREIVED } from '../constants/ActionTypes';
 
-export default function svg(state = {
-	svg: {},
-	paths: []
-}, action) {
+export default function paths(state=[], action) {
 	switch (action.type) {
 		case SVG_RETREIVED:
-			return action.svg;
+			return action.paths;
 		default:;
 			return state;
 	}

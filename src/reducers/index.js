@@ -4,12 +4,12 @@ import token from './token';
 import username from './username';
 import toggleCart from './toggleCart';
 import charge from './charge';
-import svg from './svg';
+import paths from './paths';
 
 const rootReducer = combineReducers({
 	charge,
 	selectedItems,
-	svg,
+	paths,
 	token,
 	toggleCart,
 	username

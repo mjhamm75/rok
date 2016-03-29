@@ -134,24 +134,24 @@ export function saveSVG(svg, title, paths) {
 			title,
 			paths
 		}).then(result => {
-			dispatch(svgSaved())
+			dispatch(svgSaved());
 		})
 		
 	}
 }
 
-function svgRetrieved(svg) {
+function svgRetrieved(paths) {
 	return {
 		type: SVG_RETREIVED,
-		svg
+		paths
 	}
 }
 
-export function getSvg(svgId) {
+export function getPathInfo(svgId) {
 	return dispatch => {
-		axios.get(`/svg/${svgId}`)
-			.then(svg => {
-				dispatch(svgRetrieved(svg.data))
+		axios.get(`/paths/${svgId}`)
+			.then(paths => {
+				dispatch(svgRetrieved(paths.data))
 			});
 	}
 }

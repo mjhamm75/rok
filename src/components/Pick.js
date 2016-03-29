@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
 import Skylight from './ReactSkylight';
+import Info from './Info';
 import Nav from './Nav';
 import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
 import numeral from 'numeral';
@@ -10,9 +11,9 @@ import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
 
 import back from './../imgs/back.arrow.png'
+import info from './../imgs/info.png'
 
-import coordsObj from './coordsObj.js';
-import b1 from './../imgs/b1.jpg'
+import mapping from './mapping';
 
 let check = require('./../imgs/check.png');
 
@@ -22,11 +23,11 @@ class Pick extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: coordsObj,
 			continue: false,
 			glassName: null,
 			imageId: null,
-			amount: null
+			amount: null,
+			glass: mapping[this.props.routeParams.splat]
 		}
 		this.checkout = this.checkout.bind(this)
 	}
@@ -80,16 +81,29 @@ class Pick extends Component {
 		this.props.dispatch(removeSelectedGlass(name, id));
 	}
 
+	clickSvg(e) {
+		this.addPiece('test', e.target.id, e.target.amount)
+	}
+
+	showInfo(show) {
+		this.setState({
+			show: show
+		})
+	}
+
 	render() {
-		var piece = this.state.selectedGlass;
-		var piecesDOM = piece ? this.renderSelectedGlass(piece) : null
+		let piece = this.state.selectedGlass;
+		let piecesDOM = piece ? this.renderSelectedGlass(piece) : null
+		let GlassComponent = this.state.glass;
 		return (
-			<div className="pick">
-				<Nav fixed="true" resetOpenCart={this.resetOpenCart.bind(this)}/>
-				<div className="svg">
+			<div>
+				<Info show={this.state.show} showInfo={this.showInfo.bind(this)}/>
+				<div className="pick">					
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
-					<div className="title">{this.props.svg.title}</div>
-					<div dangerouslySetInnerHTML={{__html: this.props.svg.svg}}></div>
+					<div className="glass">
+						<GlassComponent click={this.clickSvg.bind(this)}/>
+					</div>
+					<img className="info" src={info} onClick={this.showInfo.bind(this, true)}/>
 				</div>
 				<Skylight 
 					ref="simpleDialog" 
@@ -150,8 +164,7 @@ class Pick extends Component {
 
 function mapStateToProps(state) {
 	return {
-		svg: state.svg.svg,
-		paths: state.svg.paths,
+		paths: state.paths,
 		toggleCart: state.toggleCart
 	}
 }

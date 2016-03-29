@@ -1,0 +1,43 @@
+.pick-info {
+    background: #4A4A4A;
+	color: #a3a3a3;
+	cursor: default;
+    height: 100vh;
+    position: fixed;
+    right: -300px;
+    top: 0px;
+    transition: right .5s;
+    width: 300px;
+    z-index: 2;
+
+    .close {
+    	background: #232323;
+    	border-radius: 50%;
+    	cursor: pointer;
+    	margin: 4px 4px;
+    	padding: 4px 2px;
+    }
+
+    .block {
+    	margin-left: 15px;
+    	margin-bottom: 10px;
+    }
+
+    .title {
+    	margin-top: 40px;
+    	text-align: left;
+    	font-weight: 600;
+    }
+
+    .bold {
+    	font-weight: 600;
+    }
+
+    .blurb {
+    	margin-left: 15px;
+    }
+}
+.pick-info.open {
+    right: 0px;
+    transition: right .5s;
+}
