@@ -101,7 +101,12 @@ class Pick extends Component {
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
-				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={() => this.setState({ showCart: false })}/>
+				<Cart 
+					selectedItems={this.props.selectedItems} 
+					show={this.props.showCart || this.state.showCart} 
+					closeCart={() => this.setState({ showCart: false })}
+					removePiece={this.removePiece.bind(this)}
+					/>
 				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
 				<div className="pick">					
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>

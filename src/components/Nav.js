@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router'
 import { Link } from 'react-router';
+import { removeSelectedGlass } from './../actions/GlassActions';
 import Cart from './Cart';
 import ShoppingBagIcon from './ShoppingBagIcon';
 import { charge } from './../actions/GlassActions';
@@ -57,6 +58,10 @@ class Nav extends Component {
 		}
 	}
 
+	removePiece(name, id) {
+		this.props.dispatch(removeSelectedGlass(name, id));
+	}	
+
 	render() {
 		var fixedStyle = this.state.fixed ? {
 			position: 'fixed',
@@ -70,7 +75,13 @@ class Nav extends Component {
 
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={() => this.setState({showCart: false}) } removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)} charge={this.charge.bind(this)}/>
+				<Cart 
+					selectedItems={this.props.selectedItems} 
+					show={this.props.showCart || this.state.showCart} 
+					closeCart={() => this.setState({showCart: false}) } 
+					removePiece={this.removePiece.bind(this)} 
+					thankyou={this.thankyou.bind(this)} 
+					charge={this.charge.bind(this)}/>
 				<div className="navbar">
 					<div />
 					<div>
