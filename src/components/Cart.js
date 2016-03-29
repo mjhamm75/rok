@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import className from 'classnames';
 import bag from './../imgs/shopping.bag.black.png'
 import numeral from 'numeral';
+
 require('!style!css!sass!./../sass/cart.scss');
 
 class Cart extends Component {
@@ -54,7 +55,7 @@ class Cart extends Component {
 
 		return (
 			<div className={cart}>
-				<div className="close" onClick={this.closeCart.bind(this)}>close</div>
+				<div className="close" onClick={() => this.props.closeCart() }>close</div>
 				<img className="bag" src={bag}/>
 				<div className="header">Add your piece to the story</div>
 				<div className="blurb">Your donation will help inspire others with a masterpiece of epic size.</div>
@@ -86,14 +87,6 @@ class Cart extends Component {
 		});
 	}
 
-	closeCart() {
-		this.props.closeCart();
-	}
-
-	removePiece(name, id) {
-		this.props.removePiece(name, id)
-	}
-
 	renderSelectedItems() {
 		return this.props.selectedItems.map((item, index) => {
 			return (
@@ -107,7 +100,7 @@ class Cart extends Component {
 							{numeral(item.amount).format('$0,00')}
 						</div>
 					</div>
-					<div onClick={this.removePiece.bind(this, item.name, item.id)}>x</div>
+					<div onClick={() => this.props.removePiece(item.name, item.id)}>x</div>
 				</div>
 			)
 		});

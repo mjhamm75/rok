@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import ImageMap from './ImageMap';
 import { connect } from 'react-redux';
 
 import { saveSVG } from './../actions/GlassActions';
-
-import coords from './coords.js';
 import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/value-glass.scss');

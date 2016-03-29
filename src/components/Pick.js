@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import ImageMap from './ImageMap';
 import Skylight from './ReactSkylight';
 import Info from './Info';
 import Cart from './Cart';
