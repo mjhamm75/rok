@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ImageMap from './ImageMap';
 import Skylight from './ReactSkylight';
 import Info from './Info';
+import Cart from './Cart';
 import Nav from './Nav';
 import ShoppingBagIcon from './ShoppingBagIcon';
 import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
@@ -26,11 +27,12 @@ class Pick extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			amount: null,
 			continue: false,
+			glass: mapping[this.props.routeParams.splat],
 			glassName: null,
 			imageId: null,
-			amount: null,
-			glass: mapping[this.props.routeParams.splat]
+			showCart: false
 		}
 		this.checkout = this.checkout.bind(this)
 	}
@@ -100,14 +102,15 @@ class Pick extends Component {
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
+				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={() => this.setState({ showCart: false })}/>
 				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
 				<div className="pick">					
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="glass">
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
-					<img className="info" src={infoIcon} onClick={this.showInfo.bind(this, true)}/>
-					<ShoppingBagIcon />
+					<img className="info" src={infoIcon} onClick={() => this.setState({show: true})}/>
+					<ShoppingBagIcon selectedItems={this.props.selectedItems} showCart={() => this.setState({showCart: true}) } />
 				</div>
 				<Skylight 
 					ref="simpleDialog" 
@@ -169,6 +172,7 @@ class Pick extends Component {
 function mapStateToProps(state) {
 	return {
 		paths: state.paths,
+		selectedItems: state.selectedItems,
 		toggleCart: state.toggleCart
 	}
 }

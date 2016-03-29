@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import className from 'classnames';
 import bag from './../imgs/shopping.bag.black.png'
 import numeral from 'numeral';
+require('!style!css!sass!./../sass/cart.scss');
 
 class Cart extends Component {
 	constructor(props) {

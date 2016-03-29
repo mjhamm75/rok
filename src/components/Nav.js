@@ -19,7 +19,6 @@ class Nav extends Component {
 		}
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
-		this.showCart = this.showCart.bind(this);
 	}
 
 	componentDidMount() {
@@ -69,12 +68,9 @@ class Nav extends Component {
 			display: 'none'
 		} : null;
 
-		var hideBag = !this.props.selectedItems || this.props.selectedItems.length === 0 ? {
-			display: 'none'
-		} : null;
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={this.closeCart.bind(this)} removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)} charge={this.charge.bind(this)}/>
+				<Cart selectedItems={this.props.selectedItems} show={this.props.showCart || this.state.showCart} closeCart={() => this.setState({showCart: false}) } removePiece={this.props.removePiece} thankyou={this.thankyou.bind(this)} charge={this.charge.bind(this)}/>
 				<div className="navbar">
 					<div />
 					<div>
@@ -94,23 +90,10 @@ class Nav extends Component {
 					<div>
 						<Link className="toggle" to="contact">Contact Us</Link>
 					</div>
-					<ShoppingBagIcon selectedItems={this.props.selectedItems} showCart={this.showCart} hideBag={hideBag}/>
+					<ShoppingBagIcon selectedItems={this.props.selectedItems} showCart={() => this.setState({showCart: true}) } />
 				</div>
 			</div>
 		)
-	}
-
-	showCart() {
-		this.setState({
-			showCart: true
-		})
-	}
-
-	closeCart() {
-		this.setState({showCart: false});
-		if(this.props.resetOpenCart) {
-			this.props.resetOpenCart();			
-		}
 	}
 
 	thankyou() {

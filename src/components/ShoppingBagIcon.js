@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import bag from './../imgs/shopping-bag.png'
+require('!style!css!sass!./../sass/shopping.bag.scss');
 
 class ShoppingBagIcon extends Component {
 	render() {
+		var hideBag = !this.props.selectedItems || this.props.selectedItems.length === 0 ? {
+			display: 'none'
+		} : null;
+
 		return (
 			<div className="bag-wrapper" onClick={this.props.showCart}>
-				<div style={this.props.hideBag} className="circle">{this.props.selectedItems && this.props.selectedItems.length}</div>
+				<div style={hideBag} className="circle">{this.props.selectedItems && this.props.selectedItems.length}</div>
 				<img className="bag" src={bag}/>
 			</div>
 		)
