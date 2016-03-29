@@ -11,20 +11,20 @@ class Cart extends Component {
 			show: this.props.show
 		}
 		var that = this;
-		// this.handler = StripeCheckout.configure({
-		// 	key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-		// 	image: '/rok-logo.png',
-		// 	locale: 'auto',
-		// 	token: function(token) {
-		// 		that.props.charge({
-		// 			token: token,
-		// 			amount: that.getTotal() * 100,
-		// 		});
-		// 	},
-		// 	closed: function() {
-		// 		that.props.thankyou();
-		// 	}
-		// });
+		this.handler = StripeCheckout.configure({
+			key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+			image: '/rok-logo.png',
+			locale: 'auto',
+			token: function(token) {
+				that.props.charge({
+					token: token,
+					amount: that.getTotal() * 100,
+				});
+			},
+			closed: function() {
+				that.props.thankyou();
+			}
+		});
 		this.getTotal = this.getTotal.bind(this)
 	}
 
