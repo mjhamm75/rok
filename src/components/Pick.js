@@ -14,9 +14,9 @@ import fb from './../imgs/facebook.png';
 import back from './../imgs/back.arrow.png'
 import infoIcon from './../imgs/info.png'
 
-import mapping from './mapping';
+import mapping from './../mappings/mapping';
 
-import info from './pick.info.js';
+import info from './../mappings/pick.info.js';
 
 let check = require('./../imgs/check.png');
 
