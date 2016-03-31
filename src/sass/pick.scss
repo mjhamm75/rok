@@ -16,6 +16,12 @@
 		}		
 	}
 
+	@media(max-width: 750px) {
+		.glass {
+			min-width: 500px;
+		}
+	}
+
 	.back {
 	    background: #232323;
 		cursor: pointer;
