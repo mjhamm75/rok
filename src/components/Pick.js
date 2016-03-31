@@ -33,7 +33,8 @@ class Pick extends Component {
 			imageId: null,
 			showCart: false
 		}
-		this.checkout = this.checkout.bind(this)
+		this.checkout = this.checkout.bind(this);
+		this.showCart = this.showCart.bind(this);
 	}
 
 	componentDidMount() {
@@ -95,6 +96,10 @@ class Pick extends Component {
 		})
 	}
 
+	showCart(showCart) {
+		this.props.dispatch(openCheckout(showCart));
+	}
+
 	render() {
 		let piece = this.state.selectedGlass;
 		let piecesDOM = piece ? this.renderSelectedGlass(piece) : null
@@ -103,8 +108,8 @@ class Pick extends Component {
 			<div>
 				<Cart 
 					selectedItems={this.props.selectedItems} 
-					show={this.props.showCart || this.state.showCart} 
-					closeCart={() => this.setState({ showCart: false })}
+					show={this.props.showCart} 
+					closeCart={() => this.showCart(false)}
 					removePiece={this.removePiece.bind(this)}
 					/>
 				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
@@ -114,7 +119,7 @@ class Pick extends Component {
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
 					<img className="info" src={infoIcon} onClick={() => this.setState({show: true})}/>
-					<ShoppingBagIcon selectedItems={this.props.selectedItems} showCart={() => this.setState({showCart: true}) } />
+					<ShoppingBagIcon selectedItems={this.props.selectedItems} onClick={() => this.showCart(true) } />
 				</div>
 				<Skylight 
 					ref="simpleDialog" 
@@ -177,7 +182,7 @@ function mapStateToProps(state) {
 	return {
 		paths: state.paths,
 		selectedItems: state.selectedItems,
-		toggleCart: state.toggleCart
+		showCart: state.toggleCart
 	}
 }
 

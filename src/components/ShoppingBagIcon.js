@@ -9,7 +9,7 @@ class ShoppingBagIcon extends Component {
 		} : null;
 
 		return (
-			<div className="bag-wrapper" onClick={this.props.showCart}>
+			<div className="bag-wrapper" onClick={this.props.onClick}>
 				<div style={hideBag} className="circle">{this.props.selectedItems && this.props.selectedItems.length}</div>
 				<img className="bag" src={bag}/>
 			</div>
