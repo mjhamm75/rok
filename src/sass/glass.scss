@@ -14,6 +14,25 @@
 				border: 3px solid white;
 				cursor: hand;
 			}
-		}		
+		}
 	}
+}
+.desktop {
+	display: block;
+}
+.mobile {
+	display: none;
+
+	img {
+		margin-bottom: 15px;
+	}
+}
+
+@media(max-width: 730px) {
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}	
 }
