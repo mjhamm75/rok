@@ -5,7 +5,7 @@ import { removeSelectedGlass } from './../actions/GlassActions';
 import { Link } from 'react-router';
 import Cart from './Cart';
 import ShoppingBagIcon from './ShoppingBagIcon';
-import { charge } from './../actions/GlassActions';
+import { charge, openCheckout } from './../actions/GlassActions';
 import logo from './../imgs/rok-logo-white.png';
 
 require('!style!css!sass!./../sass/nav.scss');
@@ -32,6 +32,10 @@ class Nav extends Component {
 	componentWillUnmount() {
 	    window.removeEventListener('scroll', this.handleScroll);
 	    window.removeEventListener('resize', this.handleResize)
+	}
+
+	showCart(showCart) {
+		this.props.dispatch(openCheckout(showCart));
 	}
 
 	handleScroll() {
@@ -75,13 +79,13 @@ class Nav extends Component {
 
 		return (
 			<div className="nav" ref="navbar" style={fixedStyle}>
-				<Cart 
+				<Cart
 					charge={this.charge.bind(this)}
-					closeCart={() => this.setState({showCart: false}) } 
-					removePiece={this.removePiece.bind(this)} 
-					selectedItems={this.props.selectedItems} 
-					show={this.props.showCart || this.state.showCart} 
-					thankyou={this.thankyou.bind(this)} 
+					closeCart={() => this.showCart(false) }
+					removePiece={this.removePiece.bind(this)}
+					selectedItems={this.props.selectedItems}
+					show={this.props.showCart}
+					thankyou={this.thankyou.bind(this)}
 				/>
 				<div className="navbar">
 					<div />
@@ -102,14 +106,17 @@ class Nav extends Component {
 					<div>
 						<Link className="toggle" to="contact">Contact Us</Link>
 					</div>
-					<ShoppingBagIcon selectedItems={this.props.selectedItems} showCart={() => this.setState({showCart: true}) } />
+					<ShoppingBagIcon
+						onClick={() => this.showCart(true) }
+						selectedItems={this.props.selectedItems}
+					/>
 				</div>
 			</div>
 		)
 	}
 
 	thankyou() {
-		
+
 	}
 
 	charge(token, amount) {
