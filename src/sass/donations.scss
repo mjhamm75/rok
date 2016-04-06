@@ -1,7 +1,6 @@
 .donations {
 	align-items: center;
 	background-image: url('./../imgs/wall-exterior.png');
-	background-position: cover cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -13,7 +12,7 @@
 		max-width: 400px;
 		min-height: 290px;
 		background: white;
-		height: 40%; 
+		height: 40%;
 		width: 40%;
 		padding: 2% 2%;
 		display: flex;
@@ -43,5 +42,11 @@
 			text-decoration: none;
 			margin-top: 30px;
 		}
+	}
+}
+@media(max-width: 600px) {
+	.donations {
+		background-position-y: -150px;
+		background-position-x: -130px;
 	}
 }
