@@ -5,7 +5,34 @@ class SkyLight extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = { isVisible: false };
+    this.state = {
+      isVisible: false,
+      orientation: null
+    };
+    this.handleOrientation = this.handleOrientation.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("orientationchange", this.handleOrientation);
+    this.handleOrientation();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("orientationchange", this.handleOrientation);
+  }
+
+  handleOrientation() {
+    if (window.matchMedia("(orientation: portrait)").matches) {
+       this.setState({
+         orientation: 'portrait'
+       })
+    }
+
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      this.setState({
+        orientation: 'landscape'
+      })
+    }
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -82,15 +109,22 @@ class SkyLight extends React.Component {
       dialogStyles.marginTop = this.props.marginTop;
     }
 
+    let mobile = window.screen.width <= 600 ? true : false;
 
+    if(mobile && this.state.orientation === 'landscape') {
+      dialogStyles.marginTop = '-375px'
+    }
+    
     return (
-        <div className="skylight-wrapper">
+        <div className="skylight-mobile">
+          <div className="skylight-wrapper">
             <div style={dialogStyles} className="dialog-styles" >
               <a onClick={() => this.hide()} role="button" className="close-button" >&times;</a>
               <h2 className="title">{this.props.title}</h2>
               {this.props.children}
             </div>
             {overlay}
+          </div>
         </div>
     )
   }
