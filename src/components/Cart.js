@@ -74,7 +74,7 @@ class Cart extends Component {
 					</div>
 					<div></div>
 				</div>
-				<a onClick={this.checkout.bind(this)}>Donate</a>
+				<a className="donate-button" onClick={this.checkout.bind(this)}>Donate</a>
 			</div>
 		)
 	}

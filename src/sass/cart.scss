@@ -1,27 +1,25 @@
 .cart {
     background: white;
     height: 100vh;
-    width: 350px;
+    overflow-y: auto;
     position: fixed;
-    z-index: 2;
     right: -350px;
-    top: 0px;
-    transition: right .5s;
-
+    top: 0;
+    transition: right 0.5s;
+    width: 350px;
+    z-index: 2;
     .close {
         color: #9B9B9B;
         cursor: pointer;
         margin: 10px;
         text-align: right;
     }
-
     .bag {
         display: block;
         height: auto;
         margin: 0 auto;
         width: 7%;
     }
-
     .header {
         color: #3A3A3A;
         font-family: Georgia;
@@ -29,7 +27,6 @@
         margin-top: 10px;
         text-align: center;
     }
-
     .blurb {
         border-bottom: solid 1px #EFEFEF;
         font-weight: lighter;
@@ -38,16 +35,12 @@
         text-align: center;
         width: 250px;
     }
-
     .total {
         border-bottom: solid 1px #EFEFEF;
-        margin: 0 auto;
-        margin-top: 15px;
+        margin: 15px auto 0;
         width: 250px;
-
         display: flex;
     }
-
     a {
         color: white;
         cursor: pointer;
@@ -63,6 +56,6 @@
     }
 }
 .cart.open {
-    right: 0px;
-    transition: right .5s;
+    right: 0;
+    transition: right 0.5s;
 }
