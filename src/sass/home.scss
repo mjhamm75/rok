@@ -120,14 +120,23 @@ body {
                 display: flex;
                 justify-content: space-around;
                 margin-top: 30%;
-                > div > div:first-child {
+                > div {
+
+                } > div:first-child {
                     color: #252525;
                     font-size: 18px;
-                    font-weight: bold;
+                    font-weight: 700;
+                    margin-bottom: 10px;
                     text-align: center;
+                }
+                @media(min-width: 1200px) {
+                  > div {
+                    flex-basis: 295px;
+                  }
                 }
                 .grow {
                     flex-grow: 1;
+                    line-height: 26px;
                 }
                 .left {
                     margin-right: 10px;
@@ -212,6 +221,12 @@ body {
         padding-top: 20px;
         padding-left: 30px;
     }
+    @media(min-width: 1200px) {
+      .factsTitle {
+        padding-top: 35px;
+        padding-left: 100px;
+      }
+    }
     .facts {
         color: white;
         background: #3a3a3a;
@@ -236,6 +251,11 @@ body {
         @media(max-width: 600px) {
             flex-direction: column;
         }
+    }
+    @media(min-width: 1200px) {
+      .facts {
+        padding: 0 75px;
+      }
     }
     .groupimage {
         background-image: url('./../imgs/group-comp.jpg');
@@ -269,6 +289,12 @@ body {
                     align-self: center;
                     a {
                         font-weight: 100;
+                    }
+
+                    @media(min-width: 1200px) {
+                      a {
+                        padding: 15px 30px;
+                      }
                     }
                 }
                 > div:first-child {
