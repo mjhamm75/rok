@@ -14,7 +14,7 @@
 			text-align: center;
 
 			.total {
-				font-weight: 600;				
+				font-weight: 600;
 				float: left;
 				margin-left: 28px;
 			}
@@ -92,6 +92,12 @@
 			padding: 12px 30px;
 			text-align: center;
 			text-decoration: none;
+		}
+		a:hover {
+			background: #829B43;
+		}
+		a:active {
+			box-shadow: none;
 		}
 	}
 	.form:hover {

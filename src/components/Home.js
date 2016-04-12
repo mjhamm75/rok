@@ -30,7 +30,7 @@ class Home extends Component {
 	}
 	componentDidMount() {
 		if(window.innerWidth > 992) {
-			window.addEventListener('scroll', this.handleScroll);			
+			window.addEventListener('scroll', this.handleScroll);
 		}
 	}
 
@@ -57,7 +57,7 @@ class Home extends Component {
 			<div className="home">
 				<div className="navimage">
 					<div className="navhero">
-						<div className="heroflex"> 
+						<div className="heroflex">
 							<div>
 								<img src={rokLogo} />
 							</div>

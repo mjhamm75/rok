@@ -14,7 +14,7 @@ body {
 	img {
 		width: 100%;
 		height: auto;
-	}	
+	}
 	.library {
 		width: auto;
 	}
@@ -73,6 +73,12 @@ body {
 		text-decoration: none;
 		margin-top: 40px;
 		margin-bottom: 100px;
+	}
+	.link:hover {
+		background: #829B43;
+	}
+	.link:active {
+		box-shadow: none;
 	}
 }
 .no-js .defer-image {

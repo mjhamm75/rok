@@ -42,6 +42,12 @@
 			text-decoration: none;
 			margin-top: 30px;
 		}
+		a:hover {
+			background: #829B43;
+		}
+		a:active {
+			box-shadow: none;
+		}
 	}
 }
 @media(max-width: 600px) {

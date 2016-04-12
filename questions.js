@@ -8,6 +8,10 @@ spreadsheet with pagename and links for content
 
 Hover state
 
+Open Sans on all buttons
+
+
+
 Link about artist to Holdman Studios on about page.
 
 Use image until the video loads
