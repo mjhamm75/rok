@@ -6,21 +6,15 @@ Where to host video from?
 
 spreadsheet with pagename and links for content
 
-Hover state
-
-Open Sans on all buttons
-
-
-
 Link about artist to Holdman Studios on about page.
 
 Use image until the video loads
 
-On Mobile Story title is not spaced enough above the image.
-
 ross.wofley@gmail.com
 
 
+F - Hover state
+F - Open Sans on all buttons
 F = captcha
 		Check paypal, square guidelines for best practices
 F = update npm dependencies
