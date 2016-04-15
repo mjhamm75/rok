@@ -29,15 +29,17 @@ class About extends Component {
 	}
 
 	scrollToHash(hash) {
-		if (hash) {
-			let anchorName = hash.replace("#","");
-			let anchorElement = document.getElementById(anchorName);
-			let offset = anchorElement.offsetTop;
+		setTimeout(() => {
+			if (hash) {
+				let anchorName = hash.replace("#","");
+				let anchorElement = document.getElementById(anchorName);
+				let offset = anchorElement.offsetTop;
 
-			if(anchorElement) {
-				window.scrollTo(0, offset);
-			}
-		}
+				if(anchorElement) {
+					window.scrollTo(0, offset);
+				}
+			}			
+		}, 250);
 	}
 
 	render() {
