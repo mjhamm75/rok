@@ -31,6 +31,7 @@ const routes = (
     </Route>
   </Route>
 )
+
 function scrollToTop() {
   if(window.location.hash.length === 0) {
     window.scrollTo(0, 0)

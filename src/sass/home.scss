@@ -121,9 +121,7 @@ body {
                 display: flex;
                 justify-content: space-around;
                 margin-top: 30%;
-                > div {
-
-                } > div:first-child {
+                > div:first-child {
                     color: #252525;
                     font-size: 18px;
                     font-weight: 700;
@@ -136,14 +134,22 @@ body {
                   }
                 }
                 .grow {
-                    flex-grow: 1;
                     line-height: 26px;
+                    flex-basis: 350px;
                 }
                 .left {
                     margin-right: 10px;
+                    > div:first-child {
+                        font-weight: 600;
+                        text-align: center;
+                    }
                 }
                 .right {
                     margin-left: 10px;
+                    > div:first-child {
+                        font-weight: 600;
+                        text-align: center;
+                    }
                 }
                 @media(max-width: 992px) {
                     .hide {
