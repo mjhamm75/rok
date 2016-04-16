@@ -38,6 +38,8 @@ class ValueGlass extends Component {
 					</div>
 				</div>
 				<button onClick={this.saveSVG.bind(this)}>Save Mapping</button>
+				<br />
+				<textarea className="svg" value={this.state.processedSvg}/>
 			</div>
 		)
 	}
@@ -46,6 +48,9 @@ class ValueGlass extends Component {
 		let svg = document.getElementsByTagName('svg') [0].outerHTML;
 		let title = this.refs.glassTitle.value;
 		let paths = this.preparePathsToSave(this.state.paths);
+		this.setState({
+			processedSvg: svg
+		})
 		this.props.dispatch(saveSVG(svg, title, paths));
 	}
 

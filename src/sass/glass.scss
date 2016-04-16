@@ -3,6 +3,7 @@
 		margin-top: 75px;
 		> div {
 			display: flex;
+			flex-direction: column;
 			> img {
 				border: 3px solid #4A4A4A;;
 				cursor: pointer;
@@ -20,7 +21,7 @@
 	}
 }
 .desktop {
-	display: block;
+	display: flex;
 }
 .mobile {
 	display: none;
