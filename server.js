@@ -32,7 +32,7 @@ if(isDevelopment) {
     noInfo: true,
     publicPath: config.output.publicPath
   }));
-  app.use(require('webpack-hot-middleware')(compiler));  
+  app.use(require('webpack-hot-middleware')(compiler));
 } else {
   console.log("PROD");
 }
@@ -50,7 +50,7 @@ app.post('/email', function(req, res) {
 })
 
 var comparePasswords = require('./db/helper.js').comparePasswords;
-app.post('/log-in', function(req, res) {  
+app.post('/log-in', function(req, res) {
   q.checkForUsername(req.body.username).then(function(user) {
     if(user && comparePasswords(req.body.password, user.password)) {
       var token = jwt.sign(user, app.get('superSecret'), {
@@ -122,7 +122,7 @@ app.post('/svg', function(req, res) {
   })
 })
 
-app.get('/svg/:id', function(req, res) {  
+app.get('/svg/:id', function(req, res) {
   var id = req.params.id;
   async.parallel([
     function(callback) {
