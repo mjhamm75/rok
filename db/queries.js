@@ -16,29 +16,28 @@ module.exports = function(knex) {
 		})
 	}
 
-	function createSVG(title, svg) {
+	function createSVG(title) {
 		return knex.table('svg')
 			.returning('id')
 			.insert({
-				title: title,
-				svg: svg
+				title: title
 			})
 	}
 
 	function formatPaths(svgId, paths) {
 		return paths.map(function(path) {
 			return {
-				svg_id: parseInt(svgId),
 				path_id: parseInt(path.id),
+				svg_id: parseInt(svgId),
 				amount: isNaN(parseFloat(path.amount)) ? null : parseFloat(path.amount)
 			}
 		});
 	}
 
 	function insertSvgPaths(svgId, paths) {
-		var formattedPath = formatPaths(svgId, paths);
+		var formattedPaths = formatPaths(svgId, paths);
 		return knex.table('path')
-			.insert(formattedPath)
+			.insert(formattedPaths)
 	}
 
 	function getSVG(svgId) {

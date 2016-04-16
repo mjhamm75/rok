@@ -113,7 +113,7 @@ app.post('/svg', function(req, res) {
   var svg = req.body.svg;
   var title = req.body.title;
   var paths = req.body.paths;
-  q.createSVG(title, svg).then(function(svgId) {
+  q.createSVG(title).then(function(svgId) {
     q.insertSvgPaths(svgId, paths).then(function(result) {
       res.json({
         is: 'inserted'

@@ -22,7 +22,7 @@ export function removeSelectedGlass(panelName, glassId){
 export function login(username, password) {
 	return dispatch => {
 		axios.post('log-in', {
-			username: username, 
+			username: username,
 			password: password
 		}).then(res => {
 			browserHistory.push('/admin');
@@ -127,16 +127,15 @@ function svgSaved() {
 	}
 }
 
-export function saveSVG(svg, title, paths) {
+export function saveSVG(title, paths) {
 	return dispatch => {
 		axios.post('/svg', {
-			svg,
 			title,
 			paths
 		}).then(result => {
 			dispatch(svgSaved());
 		})
-		
+
 	}
 }
 

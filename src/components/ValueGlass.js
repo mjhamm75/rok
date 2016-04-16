@@ -49,9 +49,10 @@ class ValueGlass extends Component {
 		let title = this.refs.glassTitle.value;
 		let paths = this.preparePathsToSave(this.state.paths);
 		this.setState({
-			processedSvg: svg
+			processedSvg: svg,
+			paths
 		})
-		this.props.dispatch(saveSVG(svg, title, paths));
+		this.props.dispatch(saveSVG(title, paths));
 	}
 
 	preparePathsToSave(paths) {
@@ -98,18 +99,20 @@ class ValueGlass extends Component {
 	}
 
 	mouseOver(index) {
-		var path = document.querySelectorAll(`[id='${index}']`)[0];
+		var path = document.querySelectorAll(`[id='${index + 1}']`)[0];
 		path.setAttribute('class', 'hover');
 	}
 
 	mouseOut(index) {
-		var path = document.querySelectorAll(`[id='${index}']`)[0];
+		var path = document.querySelectorAll(`[id='${index + 1}']`)[0];
 		path.setAttribute('class', '');
 	}
 
 	addIdsToPaths(children) {
 		for (var i = 0; i < children.length; ++i) {
-			children[i].id = i;
+			if(i > 0) {
+				children[i].id = i;
+			}
 		}
 	}
 
