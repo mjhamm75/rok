@@ -74,7 +74,7 @@ class ValueGlass extends Component {
 		return paths.map((coord, i) => {
 			return (
 				<div className="form" key={i} onMouseOver={this.mouseOver.bind(this, i)} onMouseOut={this.mouseOut.bind(this, i)}>
-					<label>{i}</label>
+					<label>{i + 1}</label>
 					<div>
 						<label>Amount</label>
 						<input onChange={this.updateAmount.bind(this, i)}/>
