@@ -41,7 +41,7 @@ class Pick extends Component {
 		document.body.style.background = '#4A4A4A';
 	}
 	componentWillUnmount() {
-		document.body.style.background = '#FFFFFF';	
+		document.body.style.background = '#FFFFFF';
 	}
 
 	componentDidUpdate() {
@@ -106,14 +106,14 @@ class Pick extends Component {
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
-				<Cart 
-					selectedItems={this.props.selectedItems} 
-					show={this.props.showCart} 
+				<Cart
+					selectedItems={this.props.selectedItems}
+					show={this.props.showCart}
 					closeCart={() => this.showCart(false)}
 					removePiece={this.removePiece.bind(this)}
 					/>
 				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
-				<div className="pick">					
+				<div className="pick">
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="glass">
 						<GlassComponent click={this.clickSvg.bind(this)}/>
@@ -121,8 +121,8 @@ class Pick extends Component {
 					<img className="info" src={infoIcon} onClick={() => this.setState({show: true})}/>
 					<ShoppingBagIcon selectedItems={this.props.selectedItems} onClick={() => this.showCart(true) } />
 				</div>
-				<Skylight 
-					ref="simpleDialog" 
+				<Skylight
+					ref="simpleDialog"
 					title="Tree of Knowledge"
 					hideOnOverlayClicked>
 					<ul className="pieces">
@@ -152,7 +152,7 @@ class Pick extends Component {
 		)
 	}
 
-	resetOpenCart() {	
+	resetOpenCart() {
 		this.props.dispatch(openCheckout(false));
 	}
 

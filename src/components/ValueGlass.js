@@ -113,7 +113,8 @@ class ValueGlass extends Component {
 		var html = parser.parseFromString(this.refs.coords.value, 'text/html');
 		let children = html.body.children[0].children;
 		this.addIdsToPaths(children);
-		let childrenArr = [].slice.call(children)
+		let childrenArr = [].slice.call(children);
+		childrenArr.shift();
 		this.setState({
 			svg: html.body.children[0].outerHTML,
 			paths: childrenArr

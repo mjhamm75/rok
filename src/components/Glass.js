@@ -29,10 +29,10 @@ class Glass extends Component {
 		document.body.style.background = '#4A4A4A';
 	}
 	componentWillUnmount() {
-		document.body.style.background = '#FFFFFF';	
+		document.body.style.background = '#FFFFFF';
 	}
 	updateOverlay(svgId) {
-		browserHistory.push('/pick/b1');
+		browserHistory.push(`/pick/${svgId}`);
 	}
 	render() {
 		return (
@@ -40,13 +40,13 @@ class Glass extends Component {
 				<Nav fixed="true"/>
 				<div className="image desktop">
 					<div>
-						<img src={b1} onClick={this.updateOverlay.bind(this, 13)}/>
+						<img src={b1} onClick={this.updateOverlay.bind(this, 'b1')}/>
 						<img src={c1} onClick={this.updateOverlay.bind(this, c1)}/>
 						<img src={d1} onClick={this.updateOverlay.bind(this, d1)}/>
 						<img src={e1} onClick={this.updateOverlay.bind(this, e1)}/>
 					</div>
 					<div>
-						<img src={b2} onClick={this.updateOverlay.bind(this, b2)}/>
+						<img src={b2} onClick={this.updateOverlay.bind(this, 'b2')}/>
 						<img src={c2} onClick={this.updateOverlay.bind(this, c2)}/>
 						<img src={d2} onClick={this.updateOverlay.bind(this, d2)}/>
 						<img src={e2} onClick={this.updateOverlay.bind(this, e2)}/>
