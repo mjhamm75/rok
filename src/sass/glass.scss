@@ -4,10 +4,10 @@
 		> div {
 			display: flex;
 			flex-direction: column;
+			flex-shrink: 0;
 			> img {
 				border: 3px solid #4A4A4A;;
 				cursor: pointer;
-				flex-shrink: 0;
 				height: auto;
 				width: 30vw;
 				margin: 5px 5px;
