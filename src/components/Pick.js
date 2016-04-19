@@ -87,7 +87,7 @@ class Pick extends Component {
 	}
 
 	clickSvg(e) {
-		this.addPiece('test', e.target.id, e.target.amount)
+		this.addPiece('test', e.target.id)
 	}
 
 	showInfo(show) {

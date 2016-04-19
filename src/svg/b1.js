@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class b3 extends Component {
   render() {
     return (
-      <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 1440 643" enable-background="new 0 0 1440 643">
+      <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 1440 643" enable-background="new 0 0 1440 643" onClick={this.props.click}>
       	<image overflow="visible" width="2578" height="1132" xlinkHref="/B-1.png" transform="matrix(0.5586 0 0 0.5695 0 -3.096276e-02)">
       	</image>
       	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1400,643h33.9v-48.3c-0.1-0.1-0.2-0.2-0.3-0.3
