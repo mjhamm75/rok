@@ -10,8 +10,8 @@ class b3 extends Component {
         <rect x="3538.5" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="541.2" height="52.6" id="2"></rect>
         <rect x="3466.5" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="68.6" height="52.6" id="3"></rect>
         <rect x="2922.1" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="541" height="52.6" id="4"></rect>
-        <rect x="2377.3" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="541.4" height="52.6" id="5" class=""></rect>
-        <rect x="2305.3" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="68.6" height="52.6" id="6" class=""></rect>
+        <rect x="2377.3" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="541.4" height="52.6" id="5"></rect>
+        <rect x="2305.3" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="68.6" height="52.6" id="6"></rect>
         <rect x="1761.3" y="2627.9" fill="none" stroke="#000000" stroke-miterlimit="10" width="540.6" height="52.6" id="7"></rect>
         <path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1410.1,2686.5l347.8-6v-52.6l-150.2,6c-9.4,5.5-19.2,8.9-29.4,9.4
           l-0.7,0c-38.8,1.6-61.6-13.5-126.2,20.4c-1.6,0.9-3.2,1.8-4.9,2.6C1435.6,2672.1,1423.5,2678.8,1410.1,2686.5z" id="8"></path>

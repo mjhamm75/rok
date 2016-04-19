@@ -13,11 +13,11 @@ class a1 extends Component {
       	<polygon fill="none" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" points="2005.6,884 2445,905 2287.9,545.1
       		1762.6,465.7 " id="3"></polygon>
       	<polygon fill="none" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" points="1600,885 2003.7,884 1760.5,465.3
-      		1199.8,380 " id="4" class=""></polygon>
+      		1199.8,380 " id="4"></polygon>
       	<polygon fill="none" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" points="1344.4,886 1597.9,885 1197.4,379.6
-      		803.2,314.4 " id="5" class=""></polygon>
+      		803.2,314.4 " id="5"></polygon>
       	<path fill="none" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M837.2,884l505,2L800.5,314l-295.9-49.1
-      		c76.7,118.9,110.1,244,53.2,419.9L837.2,884z" id="6" class=""></path>
+      		c76.7,118.9,110.1,244,53.2,419.9L837.2,884z" id="6"></path>
       	<path fill="none" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M465.1,886l369.3-2L557.3,686.4
       		c-0.7,2.2-1.4,4.4-2.2,6.6c-20,59.6-37.3,90.2-59.8,137.1C483.8,854.2,474.9,863,465.1,886z" id="7"></path>
       	<path fill="none" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M96.5,886h366.7c9.9-23.3,18.9-32.2,30.6-56.6
