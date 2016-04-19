@@ -71,9 +71,9 @@ class Pick extends Component {
 		}
 	}
 
-	addPiece(glassName, id, amount) {
+	addPiece(glassName, id) {
 		this.refs.simpleDialog.hide();
-		this.props.dispatch(updateSelectedGlass(this.state.glassName, this.state.id, this.state.amount));
+		this.props.dispatch(updateSelectedGlass(glassName, id));
 		this.refs.continueDialog.show();
 	}
 
@@ -87,6 +87,7 @@ class Pick extends Component {
 	}
 
 	clickSvg(e) {
+		if(!e.target.id) return;
 		this.addPiece('test', e.target.id)
 	}
 

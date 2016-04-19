@@ -42,7 +42,7 @@ class Cart extends Component {
 	}
 
 	render() {
-		let selectedItems = this.renderSelectedItems();
+		let selectedItems = this.renderSelectedItems(this.props.selectedItems);
 		let total = this.getTotal();
 
 		let cart = className('cart', {
@@ -87,8 +87,8 @@ class Cart extends Component {
 		});
 	}
 
-	renderSelectedItems() {
-		return this.props.selectedItems.map((item, index) => {
+	renderSelectedItems(selectedItems) {
+		return selectedItems.map((item, index) => {
 			return (
 				<div className="item" key={index}>
 					<div>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class b3 extends Component {
   render() {
     return (
-      <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 1440 643" enable-background="new 0 0 1440 643" onClick={this.props.click}>
+      <svg version="1.1" x="0px" y="0px" viewBox="0 0 1440 643" enable-background="new 0 0 1440 643" onClick={this.props.click}>
       	<image overflow="visible" width="2578" height="1132" xlinkHref="/B-1.png" transform="matrix(0.5586 0 0 0.5695 0 -3.096276e-02)">
       	</image>
       	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1400,643h33.9v-48.3c-0.1-0.1-0.2-0.2-0.3-0.3
@@ -1367,11 +1367,11 @@ class b3 extends Component {
       	<rect x="906.7" y="0.1" fill="none" stroke="#000000" stroke-miterlimit="10" width="174.4" height="22.1" id="314"></rect>
       	<rect x="734.1" y="0.1" fill="none" stroke="#000000" stroke-miterlimit="10" width="174.5" height="22.1" id="315"></rect>
       	<rect x="711.9" y="0.1" fill="none" stroke="#000000" stroke-miterlimit="10" width="22.1" height="22.1" id="316"></rect>
-      	<rect x="537.5" y="0.1" fill="none" stroke="#000000" stroke-width="0.9275" stroke-miterlimit="10" width="174.3" height="20" id="317"></rect>
-      	<rect x="364" y="0.1" fill="none" stroke="#000000" stroke-width="0.9537" stroke-miterlimit="10" width="174.4" height="20.1" id="318"></rect>
+      	<rect x="537.5" y="0.1" fill="none" stroke="#000000" strokeWidth="0.9275" stroke-miterlimit="10" width="174.3" height="20" id="317"></rect>
+      	<rect x="364" y="0.1" fill="none" stroke="#000000" strokeWidth="0.9537" stroke-miterlimit="10" width="174.4" height="20.1" id="318"></rect>
       	<rect x="341.8" y="0.1" fill="none" stroke="#000000" stroke-miterlimit="10" width="22.1" height="22.1" id="319"></rect>
-      	<rect x="167.3" y="0.1" fill="none" stroke="#000000" stroke-width="0.9558" stroke-miterlimit="10" width="174.4" height="20.2" id="320"></rect>
-      	<rect x="3.1" y="0.1" fill="none" stroke="#000000" stroke-width="0.9771" stroke-miterlimit="10" width="157.1" height="21.1" id="321"></rect>
+      	<rect x="167.3" y="0.1" fill="none" stroke="#000000" strokeWidth="0.9558" stroke-miterlimit="10" width="174.4" height="20.2" id="320"></rect>
+      	<rect x="3.1" y="0.1" fill="none" stroke="#000000" strokeWidth="0.9771" stroke-miterlimit="10" width="157.1" height="21.1" id="321"></rect>
       </svg>
     )
   }
