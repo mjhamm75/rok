@@ -49,6 +49,10 @@ svg {
 	stroke-opacity: 0;
 }
 
+svg {
+	pointer-events: visible;
+}
+
 svg path{
 	fill:none;
   stroke:black;
