@@ -85,16 +85,16 @@ class ValueGlass extends Component {
 	}
 
 	clear() {
-		let allPaths = document.querySelectorAll('svg path');
-		for(let i = 0; i < allPaths.length; i++) {
-			allPaths[i].setAttribute('class', '');
+		let pathsWithId = document.querySelectorAll('[id]');
+		for(let i = 0; i < pathsWithId.length; i++) {
+			pathsWithId[i].setAttribute('class', '');
 		}
 	}
 
 	highlight() {
-		let glassWithValue = document.querySelectorAll('[value]');
-		for(let i = 0; i < glassWithValue.length; i++) {
-			glassWithValue[i].setAttribute('class', 'hover');
+		let pathWithId = document.querySelectorAll('[id]');
+		for(let i = 0; i < pathWithId.length; i++) {
+			pathWithId[i].setAttribute('class', 'hover');
 		}
 	}
 
