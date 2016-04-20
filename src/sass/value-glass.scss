@@ -51,11 +51,19 @@ svg {
 
 svg path{
 	fill:none;
-    stroke:black;
-    pointer-events:all;
+  stroke:black;
+  pointer-events:all;
 }
 
 svg path:hover {
+    fill:  rgba(73,143,226,0.80);
+}
+
+svg rect:hover {
+    fill:  rgba(73,143,226,0.80);
+}
+
+svg polygon:hover {
     fill:  rgba(73,143,226,0.80);
 }
 
