@@ -4,7 +4,7 @@ export default function paths(state=[], action) {
 	switch (action.type) {
 		case SVG_RETREIVED:
 			return action.paths;
-		default:;
+		default:
 			return state;
 	}
 }
