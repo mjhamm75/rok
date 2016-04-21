@@ -47,6 +47,16 @@ class Pick extends Component {
 
 	componentDidUpdate() {
 		var that = this;
+		if(this.props.paths.length > 0) {
+			let purchasedGlass = this.props.paths.filter(path => {
+				return path.customer !== null;
+			})
+
+			purchasedGlass.forEach(glass => {
+				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
+				el[0].setAttribute('class', 'purchased');
+			});
+		}
 		// if(this.props.paths.length > 0) {
 		// 	setTimeout(function() {
 		// 		that.props.paths.forEach(path => {

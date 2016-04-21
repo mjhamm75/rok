@@ -80,7 +80,9 @@ svg polygon:hover {
 	fill:  rgba(73,143,226,0.80);
 }
 .purchased {
+	cursor: default;
 	fill:  rgba(73,143,226,0.80);
+	pointer-events: none;
 }
 .svg {
 	margin-top: 15px;
