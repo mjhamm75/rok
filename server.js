@@ -109,6 +109,14 @@ app.post('/charge', function(req, res) {
   });
 })
 
+app.get('/svgs', function(req, res) {
+  q.getSVGs().then(function(svgs) {
+    res.json({
+      svgs: svgs
+    })
+  });
+})
+
 app.post('/svg', function(req, res) {
   var svg = req.body.svg;
   var title = req.body.title;

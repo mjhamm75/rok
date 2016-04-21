@@ -9,3 +9,4 @@ export const OPEN_CART = 'OPEN_CART';
 export const CHARGE = 'CHARGE';
 export const SVG_SAVED = 'SVG_SAVED';
 export const SVG_RETREIVED = 'SVG_RETREIVED';
+export const SVGS_RETRIEVED = 'SVGS_RETRIEVED';

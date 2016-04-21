@@ -11,6 +11,7 @@ import SimplyDonate from './../components/SimplyDonate';
 import Login from './../components/Login';
 import Admin from './../components/Admin';
 import Pick from './../components/Pick';
+import CreatePaths from './../components/CreatePaths';
 import ValueGlass from './../components/ValueGlass';
 import Config from './../components/Config';
 
@@ -27,6 +28,7 @@ const routes = (
     <Route path="pick/*" component={Pick} />
     <Route path="admin" component={Admin}>
       <Route path="config" component={Config} />
+      <Route path="create-paths" component={CreatePaths} />
       <Route path="value-glass" component={ValueGlass} />
     </Route>
   </Route>

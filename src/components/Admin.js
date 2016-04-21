@@ -9,6 +9,7 @@ export default class Admin extends Component {
 		return (
 			<div className="admin">
 				<Link to="/admin/config">Config</Link>
+				<Link to="/admin/create-paths">Create Paths</Link>
 				<Link to="/admin/value-glass">Value Glass</Link>
 				{this.props.children}
 			</div>

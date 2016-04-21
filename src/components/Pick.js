@@ -45,7 +45,7 @@ class Pick extends Component {
 		document.body.style.background = '#FFFFFF';
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(prevProps, prevState) {
 		var that = this;
 		if(this.props.paths.length > 0) {
 			let purchasedGlass = this.props.paths.filter(path => {
@@ -63,7 +63,7 @@ class Pick extends Component {
 				let el = document.querySelectorAll(`[id='${glass.id}']`);
 				el[0].setAttribute('class', 'purchased');
 			})
-		}
+		}	
 	}
 
 	addPiece(glassName, id, amount) {

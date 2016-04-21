@@ -47,6 +47,10 @@ module.exports = function(knex) {
 			});
 	}
 
+	function getSVGs() {
+		return knex.select().table('svg');
+	}
+
 	function getPaths(title) {
 		return knex.from('path')
 			.innerJoin('svg', 'path.svg_id', 'svg.id')
@@ -62,6 +66,7 @@ module.exports = function(knex) {
 		createSVG: createSVG,
 		insertSvgPaths: insertSvgPaths,
 		getSVG: getSVG,
+		getSVGs: getSVGs,
 		getPaths: getPaths
 	}
 }
