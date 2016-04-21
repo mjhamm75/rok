@@ -160,6 +160,11 @@ app.get('/paths/:svgTitle', function(req, res) {
   })
 })
 
+app.post('/paths/:svgTitle', function(req, res) {
+  console.log(req.params.svgTitle);
+  console.log(req.body.paths);
+})
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

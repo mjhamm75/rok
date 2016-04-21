@@ -12,3 +12,10 @@ GRANT ALL PRIVILEGES ON SEQUENCE svg_id_seq TO rok;
 CREATE TABLE PATH(id serial, svg_id integer references svg(id), path_id integer, amount decimal(12, 2), customer varchar(50));
 GRANT ALL PRIVILEGES ON TABLE path TO rok;
 GRANT ALL PRIVILEGES ON SEQUENCE path_id_seq TO rok;
+
+UPDATE PATH p set
+  amount = d.amount
+from (VALUES
+  (62, 100)
+) AS d(path_id, amount) WHERE p.svg_id = (SELECT id FROM SVG s WHERE title = 'b1')
+AND p.path_id = d.path_id;

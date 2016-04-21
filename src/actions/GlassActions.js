@@ -146,9 +146,9 @@ function svgRetrieved(paths) {
 	}
 }
 
-export function getPathInfo(svgId) {
+export function getPathInfo(svgName) {
 	return dispatch => {
-		axios.get(`/paths/${svgId}`)
+		axios.get(`/paths/${svgName}`)
 			.then(paths => {
 				dispatch(svgRetrieved(paths.data.paths))
 			});
@@ -168,5 +168,16 @@ function svgsRetrieved(svgs) {
 	return {
 		type: SVGS_RETRIEVED,
 		svgs
+	}
+}
+
+export function saveAmounts(glassName, paths) {
+	return dispatch => {
+		axios.post(`/svg/${glassName}`, {
+			paths
+		}).then(res => {
+			debugger;
+			console.log(res);
+		})
 	}
 }

@@ -1,3 +1,5 @@
+import Null from '../svg/null.js';
+
 import a1 from '../svg/a1.js';
 import a2 from '../svg/a2.js';
 import a3 from '../svg/a3.js';
@@ -7,6 +9,7 @@ import b2 from '../svg/b2.js';
 import b3 from '../svg/b3.js';
 
 module.exports = {
+	null: Null,
 	a1,
 	a2,
 	a3,
