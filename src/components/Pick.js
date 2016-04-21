@@ -90,7 +90,7 @@ class Pick extends Component {
 	clickSvg(e) {
 		if(!e.target.id) return;
 		let glassPath = this.props.paths.find(path => path.path_id === parseInt(e.target.id));
-		this.addPiece(this.props.glassName, glassPath.id, glassPath.amount || 0);
+		this.addPiece(this.state.glassName, glassPath.id, glassPath.amount || 0);
 	}
 
 	showInfo(show) {
