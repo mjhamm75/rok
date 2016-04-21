@@ -165,7 +165,6 @@ export function getSvgs() {
 }
 
 function svgsRetrieved(svgs) {
-	debugger;
 	return {
 		type: SVGS_RETRIEVED,
 		svgs

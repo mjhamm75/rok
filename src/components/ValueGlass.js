@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getSvgs } from '../actions/GlassActions';
+require('!style!css!sass!./../sass/value-glass.scss');
 
 class ValueGlass extends Component {
   constructor(props) {
@@ -9,9 +10,15 @@ class ValueGlass extends Component {
     props.dispatch(getSvgs());
   }
 
+  showPaths() {
+    debugger;
+  }
+
   renderSvgs() {
-    return this.props.svgs.map(svg => {
-      return <li>{svg.title}</li>
+    return this.props.svgs.map((svg, index) => {
+      return (
+          <li key={index} onClick={this.showPaths.bind(this)}>{svg.title}</li>
+      )
     });
   }
 
