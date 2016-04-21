@@ -29,7 +29,7 @@ class Pick extends Component {
 			amount: null,
 			continue: false,
 			glass: mapping[this.props.routeParams.splat],
-			glassName: null,
+			glassName: this.props.routeParams.splat,
 			imageId: null,
 			showCart: false
 		}
@@ -47,34 +47,34 @@ class Pick extends Component {
 
 	componentDidUpdate() {
 		var that = this;
-		if(this.props.paths.length > 0) {
-			setTimeout(function() {
-				that.props.paths.forEach(path => {
-					if(path.amount) {
-						let el = document.querySelectorAll(`[id='${path.path_id}']`);
-						el.className += 'purchased';
-					}
-				});
-
-				let el = document.getElementsByTagName('svg')[0];
-				el.onclick = function(e) {
-					if(e.target.attributes.customer) {
-						return false;
-					}
-					that.setState({
-						glassName: 'glass',
-						imageId: parseInt(e.target.attributes.id.value),
-						amount: parseInt(e.target.attributes.value.value)
-					})
-					that.refs.simpleDialog.show();
-				}
-			}, 100);
-		}
+		// if(this.props.paths.length > 0) {
+		// 	setTimeout(function() {
+		// 		that.props.paths.forEach(path => {
+		// 			if(path.amount) {
+		// 				let el = document.querySelectorAll(`[id='${path.path_id}']`);
+		// 				el.className += 'purchased';
+		// 			}
+		// 		});
+		//
+		// 		let el = document.getElementsByTagName('svg')[0];
+		// 		el.onclick = function(e) {
+		// 			if(e.target.attributes.customer) {
+		// 				return false;
+		// 			}
+		// 			that.setState({
+		// 				glassName: 'glass',
+		// 				imageId: parseInt(e.target.attributes.id.value),
+		// 				amount: parseInt(e.target.attributes.value.value)
+		// 			})
+		// 			that.refs.simpleDialog.show();
+		// 		}
+		// 	}, 100);
+		// }
 	}
 
-	addPiece(glassName, id) {
+	addPiece(glassName, id, amount) {
 		this.refs.simpleDialog.hide();
-		this.props.dispatch(updateSelectedGlass(glassName, id));
+		this.props.dispatch(updateSelectedGlass(glassName, id, amount));
 		this.refs.continueDialog.show();
 	}
 
@@ -89,7 +89,8 @@ class Pick extends Component {
 
 	clickSvg(e) {
 		if(!e.target.id) return;
-		this.addPiece('test', e.target.id)
+		let glassPath = this.props.paths.find(path => path.path_id === parseInt(e.target.id));
+		this.addPiece(this.props.glassName, glassPath.id, glassPath.amount || 0);
 	}
 
 	showInfo(show) {
