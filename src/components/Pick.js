@@ -57,29 +57,13 @@ class Pick extends Component {
 				el[0].setAttribute('class', 'purchased');
 			});
 		}
-		// if(this.props.paths.length > 0) {
-		// 	setTimeout(function() {
-		// 		that.props.paths.forEach(path => {
-		// 			if(path.amount) {
-		// 				let el = document.querySelectorAll(`[id='${path.path_id}']`);
-		// 				el.className += 'purchased';
-		// 			}
-		// 		});
-		//
-		// 		let el = document.getElementsByTagName('svg')[0];
-		// 		el.onclick = function(e) {
-		// 			if(e.target.attributes.customer) {
-		// 				return false;
-		// 			}
-		// 			that.setState({
-		// 				glassName: 'glass',
-		// 				imageId: parseInt(e.target.attributes.id.value),
-		// 				amount: parseInt(e.target.attributes.value.value)
-		// 			})
-		// 			that.refs.simpleDialog.show();
-		// 		}
-		// 	}, 100);
-		// }
+		if(this.props.selectedItems.length > 0) {
+			let selectedGlass = this.props.selectedItems.filter(item => item.name === this.state.glassName);
+			selectedGlass.forEach(glass => {
+				let el = document.querySelectorAll(`[id='${glass.id}']`);
+				el[0].setAttribute('class', 'purchased');
+			})
+		}
 	}
 
 	addPiece(glassName, id, amount) {
@@ -100,7 +84,7 @@ class Pick extends Component {
 	clickSvg(e) {
 		if(!e.target.id) return;
 		let glassPath = this.props.paths.find(path => path.path_id === parseInt(e.target.id));
-		this.addPiece(this.state.glassName, glassPath.id, glassPath.amount || 0);
+		this.addPiece(this.state.glassName, glassPath.path_id, glassPath.amount || 0);
 	}
 
 	showInfo(show) {
