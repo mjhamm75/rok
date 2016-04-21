@@ -6,13 +6,12 @@ Where to host video from?
 
 spreadsheet with pagename and links for content
 
-Link about artist to Holdman Studios on about page.
-
 Use image until the video loads
 
 ross.wofley@gmail.com
 
 
+F - Link about artist to Holdman Studios on about page.
 F - Hover state
 F - Open Sans on all buttons
 F = captcha

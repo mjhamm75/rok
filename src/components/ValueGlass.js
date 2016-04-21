@@ -10,14 +10,14 @@ class ValueGlass extends Component {
     props.dispatch(getSvgs());
   }
 
-  showPaths() {
-    debugger;
+  getSvgAndPaths() {
+    this.dispatch(getSvgAndPaths());
   }
 
   renderSvgs() {
     return this.props.svgs.map((svg, index) => {
       return (
-          <li key={index} onClick={this.showPaths.bind(this)}>{svg.title}</li>
+          <li key={index} onClick={this.getSvgAndPaths.bind(this)}>{svg.title}</li>
       )
     });
   }
