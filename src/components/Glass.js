@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
 
-import { getPathInfo } from './../actions/GlassActions'
-
 import a1 from './../imgs/panel_thumbnails/A-1.jpg'
 import a2 from './../imgs/panel_thumbnails/A-2.jpg'
 import a3 from './../imgs/panel_thumbnails/A-3.jpg'

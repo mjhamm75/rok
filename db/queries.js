@@ -47,10 +47,11 @@ module.exports = function(knex) {
 			});
 	}
 
-	function getPaths(svgId) {
-		return knex.table('path')
+	function getPaths(title) {
+		return knex.from('path')
+			.innerJoin('svg', 'path.svg_id', 'svg.id')
 			.where({
-				svg_id: svgId
+				'svg.title': title
 			});
 	}
 

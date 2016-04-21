@@ -150,7 +150,7 @@ export function getPathInfo(svgId) {
 	return dispatch => {
 		axios.get(`/paths/${svgId}`)
 			.then(paths => {
-				dispatch(svgRetrieved(paths.data))
+				dispatch(svgRetrieved(paths.data.paths))
 			});
 	}
 }

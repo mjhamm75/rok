@@ -51,6 +51,11 @@ svg {
 
 svg {
 	pointer-events: visible;
+	cursor: pointer;
+}
+svg img:hover {
+	backface-visibility: hidden;
+	opacity: 0;
 }
 
 svg path{

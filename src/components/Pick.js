@@ -6,7 +6,7 @@ import Info from './Info';
 import Cart from './Cart';
 import Nav from './Nav';
 import ShoppingBagIcon from './ShoppingBagIcon';
-import { removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
+import { getPathInfo, removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
@@ -35,6 +35,7 @@ class Pick extends Component {
 		}
 		this.checkout = this.checkout.bind(this);
 		this.showCart = this.showCart.bind(this);
+		this.props.dispatch(getPathInfo(this.props.routeParams.splat));
 	}
 
 	componentDidMount() {

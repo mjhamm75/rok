@@ -143,6 +143,15 @@ app.get('/svg/:id', function(req, res) {
   });
 })
 
+app.get('/paths/:svgTitle', function(req, res) {
+  var title = req.params.svgTitle;
+  q.getPaths(title).then(paths => {
+    res.json({
+      paths
+    })
+  })
+})
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
