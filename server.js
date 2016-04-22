@@ -125,7 +125,7 @@ app.get('/svgs', function(req, res) {
   });
 })
 
-app.post('/svg', function(req, res) {
+app.post('/svg', validate, function(req, res) {
   var svg = req.body.svg;
   var title = req.body.title;
   var paths = req.body.paths;
@@ -168,7 +168,7 @@ app.get('/paths/:svgTitle', function(req, res) {
   })
 })
 
-app.post('/paths/:svgTitle', function(req, res) {
+app.post('/paths/:svgTitle', validate, function(req, res) {
   q.getSvgByTitle(req.params.svgTitle)
     .then(svg => {
       q.updateSvgPaths(svg[0].id, req.body.paths)

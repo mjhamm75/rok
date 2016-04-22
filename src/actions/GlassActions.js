@@ -174,11 +174,17 @@ function svgsRetrieved(svgs) {
 }
 
 export function saveAmounts(glassName, paths) {
-	return dispatch => {
-		axios.post(`/paths/${glassName}`, {
-			paths
+	return (dispatch, state) => {
+		axios({
+			url: `/paths/${glassName}`,
+			method: 'POST',
+			data: {
+				paths
+			},
+			headers: {
+				'x-access-token': state().token
+			}
 		}).then(res => {
-			debugger;
 			console.log(res);
 		})
 	}
