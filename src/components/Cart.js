@@ -37,7 +37,7 @@ class Cart extends Component {
 
 	getTotal() {
 		return this.props.selectedItems.reduce((a, b) => {
-			return a + b.amount;
+			return a + parseFloat(b.amount);
 		}, 0)
 	}
 
