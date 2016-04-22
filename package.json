@@ -39,6 +39,7 @@
     "html-webpack-plugin": "^2.9.0",
     "jsonwebtoken": "^5.7.0",
     "knex": "^0.10.0",
+    "knex-logger": "^0.1.0",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.4.2",
     "numeral": "^1.5.3",

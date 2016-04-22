@@ -173,7 +173,7 @@ function svgsRetrieved(svgs) {
 
 export function saveAmounts(glassName, paths) {
 	return dispatch => {
-		axios.post(`/svg/${glassName}`, {
+		axios.post(`/paths/${glassName}`, {
 			paths
 		}).then(res => {
 			debugger;

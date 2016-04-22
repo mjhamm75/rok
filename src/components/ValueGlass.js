@@ -83,11 +83,12 @@ class ValueGlass extends Component {
         amount: that.refs[path.path_id].value
       }
     })
-    this.props.dispatch(this.saveAmounts(this.state.svg, pathsWithAmount));
+    this.props.dispatch(saveAmounts(this.state.svg, pathsWithAmount));
   }
 }
 
 function mapStateToProps(state) {
+  debugger;
   return {
     paths: state.paths,
     svgs: state.svgs

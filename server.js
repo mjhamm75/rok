@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var jwt = require('jsonwebtoken');
 var path = require('path');
 var async = require('async');
+var knexLogger = require('knex-logger');
 
 var stripe = require('stripe')("sk_test_ckJgTbiJKpW0CRNr8kSPnKIW");
 var app = express();
@@ -16,6 +17,7 @@ var knex = require('./config.js').knex;
 var validate = require('./db/validate')(jwt, app);
 var q = require('./db/queries.js')(knex);
 
+app.use(knexLogger(knex));
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(express.static('images'));
@@ -161,8 +163,15 @@ app.get('/paths/:svgTitle', function(req, res) {
 })
 
 app.post('/paths/:svgTitle', function(req, res) {
-  console.log(req.params.svgTitle);
-  console.log(req.body.paths);
+  q.getSvgByTitle(req.params.svgTitle)
+    .then(svg => {
+      q.updateSvgPaths(svg[0].id, req.body.paths)
+        .then(result => {
+          res.json({
+            is: 'updated'
+          })
+        })
+    })
 })
 
 app.get('*', function(req, res) {

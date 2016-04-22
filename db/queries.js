@@ -26,8 +26,9 @@ module.exports = function(knex) {
 
 	function formatPaths(svgId, paths) {
 		return paths.map(function(path) {
+			var id = path.id || path.path_id;
 			return {
-				path_id: parseInt(path.id),
+				path_id: parseInt(id),
 				svg_id: parseInt(svgId),
 				amount: isNaN(parseFloat(path.amount)) ? null : parseFloat(path.amount)
 			}
@@ -40,11 +41,32 @@ module.exports = function(knex) {
 			.insert(formattedPaths)
 	}
 
+	function updateSvgPaths(svgId, paths) {
+		var formattedPaths = formatPaths(svgId, paths);
+		return Promise.all(formattedPaths.map(function(path) {
+			return knex.table('path')
+				.where({
+					path_id: path.path_id,
+					svg_id: svgId
+				})
+				.update({
+					amount: path.amount
+				})
+		}))
+	}
+
 	function getSVG(svgId) {
 		return knex.table('svg')
 			.where({
 				id: svgId
 			});
+	}
+
+	function getSvgByTitle(title) {
+		return knex.table('svg')
+			.where({
+				title: title
+			})
 	}
 
 	function getSVGs() {
@@ -67,6 +89,8 @@ module.exports = function(knex) {
 		insertSvgPaths: insertSvgPaths,
 		getSVG: getSVG,
 		getSVGs: getSVGs,
-		getPaths: getPaths
+		getPaths: getPaths,
+		getSvgByTitle: getSvgByTitle,
+		updateSvgPaths: updateSvgPaths
 	}
 }
