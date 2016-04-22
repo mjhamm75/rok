@@ -92,8 +92,10 @@ app.post('/create-user', validate, function(req, res) {
 })
 
 app.post('/charge', function(req, res) {
-  var token = req.body.token;
   var amount = req.body.amount;
+  var email = req.body.email;
+  var token = req.body.token;
+  var selectedItems = req.body.selectedItems;
   var charge = stripe.charges.create({
     amount: amount, // amount in cents, again
     currency: "usd",
@@ -102,12 +104,16 @@ app.post('/charge', function(req, res) {
   }, function(err, charge) {
     if (err && err.type === 'StripeCardError') {
       res.json({
-        charged: true
+        charged: false
       })
+    } else {
+      q.updateSvgPathsPurchaser(selectedItems, email)
+        .then(update => {
+          res.json({
+            charged: true
+          })
+        })
     }
-    res.json({
-      charged: true
-    })
   });
 })
 

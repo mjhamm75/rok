@@ -55,6 +55,33 @@ module.exports = function(knex) {
 		}))
 	}
 
+	function updateSvgPathsPurchaser(selectedItems, email) {
+		return Promise.all(selectedItems.map(function(item) {
+			getSvgByTitle(item.name)
+				.then(function(svg) {
+					return knex.table('path')
+						.where({
+							'path_id': item.id,
+							'svg_id': svg[0].id
+						})
+						.update({
+							customer: email
+						})
+				});
+		}))
+	}
+
+	function updateSvgPath(svgId, pathId, email) {
+		return knex.table('path')
+			.where({
+				path_id: pathId,
+				svg_id: svgId
+			})
+			.update({
+				customer: email
+			})
+	}
+
 	function getSVG(svgId) {
 		return knex.table('svg')
 			.where({
@@ -91,6 +118,8 @@ module.exports = function(knex) {
 		getSVGs: getSVGs,
 		getPaths: getPaths,
 		getSvgByTitle: getSvgByTitle,
-		updateSvgPaths: updateSvgPaths
+		updateSvgPath: updateSvgPath,
+		updateSvgPaths: updateSvgPaths,
+		updateSvgPathsPurchaser: updateSvgPathsPurchaser
 	}
 }

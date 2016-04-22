@@ -103,11 +103,13 @@ export function openCheckout(shouldOpen) {
 	}
 }
 
-export function charge(token, amount) {
+export function charge(token, amount, email, selectedItems) {
 	return dispatch => {
 		axios.post('/charge', {
+			amount,
+			email,
 			token,
-			amount
+			selectedItems
 		}).then(result => {
 			dispatch(chargeComplete(result.data))
 		})

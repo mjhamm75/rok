@@ -119,8 +119,8 @@ class Nav extends Component {
 
 	}
 
-	charge(token, amount) {
-		this.props.dispatch(charge(token, amount));
+	charge(token, amount, email, selecteItems) {
+		this.props.dispatch(charge(token, amount, email, selecteItems));
 	}
 }
 

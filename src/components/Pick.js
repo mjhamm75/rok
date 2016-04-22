@@ -6,7 +6,7 @@ import Info from './Info';
 import Cart from './Cart';
 import Nav from './Nav';
 import ShoppingBagIcon from './ShoppingBagIcon';
-import { getPathInfo, removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
+import { charge, getPathInfo, removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
@@ -63,7 +63,7 @@ class Pick extends Component {
 				let el = document.querySelectorAll(`[id='${glass.id}']`);
 				el[0].setAttribute('class', 'purchased');
 			})
-		}	
+		}
 	}
 
 	addPiece(glassName, id, amount) {
@@ -97,6 +97,10 @@ class Pick extends Component {
 		this.props.dispatch(openCheckout(showCart));
 	}
 
+	charge(token, amount, email, selectedItems) {
+		this.props.dispatch(charge(token, amount, email, selectedItems));
+	}
+
 	render() {
 		let piece = this.state.selectedGlass;
 		let piecesDOM = piece ? this.renderSelectedGlass(piece) : null
@@ -104,10 +108,11 @@ class Pick extends Component {
 		return (
 			<div>
 				<Cart
-					selectedItems={this.props.selectedItems}
-					show={this.props.showCart}
+					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false)}
 					removePiece={this.removePiece.bind(this)}
+					selectedItems={this.props.selectedItems}
+					show={this.props.showCart}
 					/>
 				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
 				<div className="pick">
