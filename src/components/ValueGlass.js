@@ -50,7 +50,10 @@ class ValueGlass extends Component {
           onMouseOver={this.onHoverListItem.bind(this, path.path_id)}
         >
           <div>{path.path_id}</div>
-          <input ref={path.path_id}/>
+          <input
+            defaultValue={path.amount}
+            ref={path.path_id}
+          />
         </li>
       )
     })
@@ -88,7 +91,6 @@ class ValueGlass extends Component {
 }
 
 function mapStateToProps(state) {
-  debugger;
   return {
     paths: state.paths,
     svgs: state.svgs
