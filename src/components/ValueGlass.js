@@ -60,7 +60,6 @@ class ValueGlass extends Component {
   }
 
   render() {
-    console.log(mapping)
     let Svg = mapping[this.state.svg];
     return (
       <div className="value-glass">

@@ -45,6 +45,19 @@ class Pick extends Component {
 		document.body.style.background = '#FFFFFF';
 	}
 
+	diff(arr1, arr2) {
+		return arr1.filter(function(i) {return arr2.indexOf(i) < 0;});
+	}
+
+	componentWillReceiveProps(newProps) {
+		let diff = this.diff(this.props.selectedItems, newProps.selectedItems);
+		if(diff.length > 0) {
+			let id = diff[0].id
+			let el = document.querySelectorAll(`[id='${id}']`);
+			el[0].setAttribute('class', '');
+		}
+	}
+
 	componentDidUpdate(prevProps, prevState) {
 		var that = this;
 		if(this.props.paths.length > 0) {
