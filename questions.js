@@ -10,9 +10,6 @@ Use image until the video loads
 
 ross.wofley@gmail.com
 
-Remove glass from Cart needs to unhighlight
-
-
 F - Link about artist to Holdman Studios on about page.
 F - Hover state
 F - Open Sans on all buttons
