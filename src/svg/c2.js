@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class c2 extends Component {
   render() {
     return (
-      <svg version="1.1" x="0px" y="0px" viewBox="0 0 4680 3600" enable-background="new 0 0 4680 3600">
+      <svg version="1.1" x="0px" y="0px" viewBox="0 0 4680 3600" enable-background="new 0 0 4680 3600"  onClick={this.props.click}>
         <image display="block" overflow="visible" width="2556" height="1695" xlinkHref="/C-2.jpg" transform="matrix(1 0 0 1 9 10)">
         </image>
         <path fill="none" stroke="#010101" stroke-width="0.57" stroke-miterlimit="10" d="M2217.4,1702.4h329v-32.7c-9,0.1-11,1.6-13.1,3.2
@@ -5517,3 +5517,6 @@ class c2 extends Component {
     )
   }
 }
+
+
+export default c2;
