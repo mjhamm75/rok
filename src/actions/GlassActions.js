@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, CHARGE, EMAIL_UDPATED, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, SVG_RETREIVED, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, AMOUNT_SAVED, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, SVG_RETREIVED, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -188,9 +188,28 @@ function svgsRetrieved(svgs) {
 	}
 }
 
+function showSpinner() {
+	return {
+		type: SHOW_SPINNER
+	}
+}
+
+function hideSpinner() {
+	return {
+		type: HIDE_SPINNER
+	}
+}
+
+function amountsSaved() {
+	return {
+		type: AMOUNT_SAVED
+	}
+}
+
 export function saveAmounts(glassName, paths) {
 	var token = localStorage['token'];
 	return (dispatch, state) => {
+		dispatch(showSpinner())
 		axios({
 			url: `/paths/${glassName}`,
 			method: 'POST',
@@ -201,6 +220,8 @@ export function saveAmounts(glassName, paths) {
 				'x-access-token': token
 			}
 		}).then(res => {
+			dispatch(hideSpinner())
+			dispatch(amountsSaved())
 			console.log(res);
 		})
 	}

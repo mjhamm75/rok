@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPathInfo, saveAmounts } from '../actions/GlassActions';
 import mapping from '../mappings/mapping.js';
+import Spinner from 'react-spinkit';
 
 import { getSvgs } from '../actions/GlassActions';
 require('!style!css!sass!./../sass/value-glass.scss');
@@ -26,7 +27,9 @@ class ValueGlass extends Component {
   renderSvgs() {
     return this.props.svgs.map((svg, index) => {
       return (
-          <li key={index} onClick={this.getSvgAndPaths.bind(this, svg.title)}>{svg.title}</li>
+          <li
+            key={index}
+            onClick={this.getSvgAndPaths.bind(this, svg.title)}>{svg.title}</li>
       )
     });
   }
@@ -62,14 +65,23 @@ class ValueGlass extends Component {
           <input
             value={path.amount}
             ref={path.path_id}
+            onChange={this.updateInput.bind(this, path.path_id)}
           />
         </li>
       )
     })
   }
 
+  updateInput(id, e) {
+    this.props.paths[id - 1].amount = e.currentTarget.value
+    this.forceUpdate();
+  }
+
   render() {
     let Svg = mapping[this.state.svg];
+    let showSpinner = !this.props.showSpinner ? ({
+      display: 'none'
+    }) : null;
     return (
       <div className="value-glass">
         <div className="radios">
@@ -99,6 +111,7 @@ class ValueGlass extends Component {
         <ul className="path-list flex">
           {this.renderPaths(this.props.paths)}
         </ul>
+        <Spinner style={showSpinner} spinnerName='three-bounce' />
         <button onClick={this.saveAmounts.bind(this)}>Save Amounts</button>
       </div>
     )
@@ -125,7 +138,8 @@ class ValueGlass extends Component {
 function mapStateToProps(state) {
   return {
     paths: state.paths,
-    svgs: state.svgs
+    svgs: state.svgs,
+    showSpinner: state.spinner
   }
 }
 

@@ -26,11 +26,14 @@ module.exports = {
       loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, '..', '..', 'src')
     }, {
-      test: /\.(png|jpg)$/, 
+      test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
     },{
       test: /\.scss$/,
       loaders: ["style", "css", "sass"]
+    },{
+      test: /\.css$/,
+      loaders: ["style", "css"]
     }]
   }
 };
