@@ -1,4 +1,13 @@
 .value-glass {
+  .radios {
+      input {
+        width: 20px;
+      }
+      span {
+        margin-right: 10px;
+      }
+  }
+
   margin-left: 25px;
   ul {
     cursor: pointer;

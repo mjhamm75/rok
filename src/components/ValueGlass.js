@@ -10,7 +10,8 @@ class ValueGlass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      svg: null
+      svg: null,
+      color: 'blue'
     }
     props.dispatch(getSvgs());
   }
@@ -32,7 +33,8 @@ class ValueGlass extends Component {
 
   onHoverListItem(id) {
     let el = document.querySelectorAll(`[id='${id}']`)[0];
-    el.setAttribute('class', 'hover');
+    let color = this.state.color === 'blue' ? 'hover' : 'hover-red'
+    el.setAttribute('class', color);
   }
 
   onHoverOutListItem(id) {
@@ -70,6 +72,24 @@ class ValueGlass extends Component {
     let Svg = mapping[this.state.svg];
     return (
       <div className="value-glass">
+        <div className="radios">
+          <label>Highlight Color</label>
+          <br/>
+          <input
+            checked={this.state.color === 'blue'}
+            name="color"
+            onChange={this.updateColor.bind(this, 'blue')}
+            type="radio"
+            value="blue"
+          /><span>Blue</span>
+          <input
+            checked={this.state.color === 'red'}
+            name="color"
+            onChange={this.updateColor.bind(this, 'red')}
+            type="radio"
+            value="red"
+          /><span>Red</span>
+        </div>
         <ul className="svg-list">
           {this.renderSvgs()}
         </ul>
@@ -82,6 +102,12 @@ class ValueGlass extends Component {
         <button onClick={this.saveAmounts.bind(this)}>Save Amounts</button>
       </div>
     )
+  }
+
+  updateColor(color) {
+    this.setState({
+      color: color
+    })
   }
 
   saveAmounts() {
