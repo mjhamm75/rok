@@ -153,7 +153,7 @@ class Pick extends Component {
 							<input type="checkbox"
 								checked={this.state.showSponsered}
 								onClick={this.updateShowSponsered.bind(this)}
-							/>Sponsered
+							/>Sponsored
 						</div>
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
