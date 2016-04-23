@@ -8,6 +8,16 @@
 	.glass {
 		flex-basis: 85%;
 		min-width: 800px;
+
+		.checkbox {
+			float: right;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			> input {
+				margin-right: 5px;
+			}
+		}
+
 		.title {
 			text-align: center;
 			color: #a3a3a3;

@@ -31,7 +31,8 @@ class Pick extends Component {
 			glass: mapping[this.props.routeParams.splat],
 			glassName: this.props.routeParams.splat,
 			imageId: null,
-			showCart: false
+			showCart: false,
+			showSponsered: false
 		}
 		this.checkout = this.checkout.bind(this);
 		this.showCart = this.showCart.bind(this);
@@ -60,7 +61,18 @@ class Pick extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		var that = this;
-		if(this.props.paths.length > 0) {
+		if(!this.state.showSponsered) {
+			let purchasedGlass = this.props.paths.filter(path => {
+				return path.customer !== null;
+			})
+
+			purchasedGlass.forEach(glass => {
+				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
+				el[0].setAttribute('class', '');
+			});
+		}
+
+		if(this.props.paths.length > 0 && this.state.showSponsered) {
 			let purchasedGlass = this.props.paths.filter(path => {
 				return path.customer !== null;
 			})
@@ -114,6 +126,12 @@ class Pick extends Component {
 		this.props.dispatch(charge(token, amount, email, selectedItems));
 	}
 
+	updateShowSponsered(e) {
+		this.setState({
+			showSponsered: e.currentTarget.checked
+		})
+	}
+
 	render() {
 		let piece = this.state.selectedGlass;
 		let piecesDOM = piece ? this.renderSelectedGlass(piece) : null
@@ -131,6 +149,12 @@ class Pick extends Component {
 				<div className="pick">
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="glass">
+						<div className="checkbox">
+							<input type="checkbox"
+								checked={this.state.showSponsered}
+								onClick={this.updateShowSponsered.bind(this)}
+							/>Sponsered
+						</div>
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
 					<img className="info" src={infoIcon} onClick={() => this.setState({show: true})}/>
