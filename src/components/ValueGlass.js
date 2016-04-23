@@ -40,8 +40,15 @@ class ValueGlass extends Component {
     el.setAttribute('class', '');
   }
 
+  sortById(a, b) {
+    if(a.path_id > b.path_id) return 1;
+    if(a.path_id < b.path_id) return -1;
+    if(a.path_id = b.path_id) return 1;
+    return
+  }
+
   renderPaths(paths) {
-    return paths.map((path, index) => {
+    return paths.sort(this.sortById).map((path, index) => {
       return (
         <li
           key={path.path_id}
@@ -51,7 +58,7 @@ class ValueGlass extends Component {
         >
           <div>{path.path_id}</div>
           <input
-            defaultValue={path.amount}
+            value={path.amount}
             ref={path.path_id}
           />
         </li>
@@ -63,13 +70,13 @@ class ValueGlass extends Component {
     let Svg = mapping[this.state.svg];
     return (
       <div className="value-glass">
-        <ul className="list">
+        <ul className="svg-list">
           {this.renderSvgs()}
         </ul>
         <div className="resize">
           <Svg />
         </div>
-        <ul className="list flex">
+        <ul className="path-list flex">
           {this.renderPaths(this.props.paths)}
         </ul>
         <button onClick={this.saveAmounts.bind(this)}>Save Amounts</button>

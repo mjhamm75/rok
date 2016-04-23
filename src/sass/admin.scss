@@ -1,7 +1,7 @@
 .admin {
 	margin-top: 25px;
 	margin-left: 25px;
-	
+
 	a {
 		color: white;
 		background: #a3be5f;
@@ -11,5 +11,8 @@
 		padding: 8px 30px;
 		text-decoration: none;
 		margin-top: 10px;
+	}
+	.flex {
+		display: flex;
 	}
 }

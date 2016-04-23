@@ -8,10 +8,16 @@ export default class Admin extends Component {
 	render() {
 		return (
 			<div className="admin">
-				<Link to="/admin/config">Config</Link>
-				<Link to="/admin/create-paths">Create Paths</Link>
-				<Link to="/admin/value-glass">Value Glass</Link>
-				{this.props.children}
+				<div>
+						<div className="flex">
+							<div>
+								<Link to="/admin/config">Config</Link>
+								<Link to="/admin/create-paths">Create Paths</Link>
+								<Link to="/admin/value-glass">Value Glass</Link>
+							</div>
+							{this.props.children}
+						</div>
+				</div>
 			</div>
 		)
 	}
