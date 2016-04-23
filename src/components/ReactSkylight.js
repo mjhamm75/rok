@@ -114,12 +114,16 @@ class SkyLight extends React.Component {
     if(mobile && this.state.orientation === 'landscape') {
       dialogStyles.marginTop = '-375px'
     }
-    
+
+    let closeButtonStyle = this.props.hideCloseButton ? {
+      display: 'none'
+    } : null;
+
     return (
         <div className="skylight-mobile">
           <div className="skylight-wrapper">
             <div style={dialogStyles} className="dialog-styles" >
-              <a onClick={() => this.hide()} role="button" className="close-button" >&times;</a>
+              <a style={closeButtonStyle} onClick={() => this.hide()} role="button" className="close-button" >&times;</a>
               <h2 className="title">{this.props.title}</h2>
               {this.props.children}
             </div>

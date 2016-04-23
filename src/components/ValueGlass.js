@@ -121,11 +121,9 @@ class ValueGlass extends Component {
           {this.renderPaths(this.props.paths)}
         </ul>
         <Skylight
-					ref="success">
-					<div>
-            Success
-					</div>
-				</Skylight>
+					ref="success"
+          hideCloseButton={true}
+          title="Success" />
         <Spinner style={showSpinner} spinnerName='three-bounce' />
         <button onClick={this.saveAmounts.bind(this)}>Save Amounts</button>
       </div>
