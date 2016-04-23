@@ -26,6 +26,7 @@ export function login(username, password) {
 			password: password
 		}).then(res => {
 			browserHistory.push('/admin');
+			localStorage['token'] = res.data.token;
 			return dispatch(updateToken(res.data.token));
 		}).catch(err => console.log(err))
 	}
@@ -53,6 +54,7 @@ export function updateToken(token) {
 
 export function createNewUser(username, password) {
 	return (dispatch, state) => {
+		var token = localStorage['token'];
 		axios({
 			url: '/create-user',
 			method: 'POST',
@@ -61,7 +63,7 @@ export function createNewUser(username, password) {
 				password
 			},
 			headers: {
-				'x-access-token': state().token
+				'x-access-token': token
 			}
 		}).then(res => {
 			return {
@@ -73,7 +75,7 @@ export function createNewUser(username, password) {
 
 export function checkUsername(username) {
 	return (dispatch, state) => {
-		console.log(username)
+		var token = localStorage['token'];
 		axios({
 			method: 'GET',
 			url: '/username',
@@ -81,7 +83,7 @@ export function checkUsername(username) {
 				username
 			},
 			headers: {
-				'x-access-token': state().token
+				'x-access-token': token
 			}
 		}).then(res => {
 			dispatch(validateUsername(res.data.count))
@@ -131,6 +133,7 @@ function svgSaved() {
 
 export function saveSVG(title, paths) {
 	return (dispatch, state) => {
+		var token = localStorage['token'];
 		axios({
 			method: 'POST',
 			url: '/svg',
@@ -139,7 +142,7 @@ export function saveSVG(title, paths) {
 				paths
 			},
 			headers: {
-				'x-access-token': state().token
+				'x-access-token': token
 			}
 		}).then(result => {
 			dispatch(svgSaved());
@@ -166,10 +169,15 @@ export function getPathInfo(svgName) {
 
 export function getSvgs() {
 	return dispatch => {
-		axios.get('/svgs')
-			.then(svgs => {
-				dispatch(svgsRetrieved(svgs.data.svgs));
-			})
+		var token = localStorage['token'];
+		axios.get('/svgs', {
+			headers: {
+				'x-access-token': token
+			}
+		})
+		.then(svgs => {
+			dispatch(svgsRetrieved(svgs.data.svgs));
+		})
 	}
 }
 
@@ -181,7 +189,7 @@ function svgsRetrieved(svgs) {
 }
 
 export function saveAmounts(glassName, paths) {
-	debugger;
+	var token = localStorage['token'];
 	return (dispatch, state) => {
 		axios({
 			url: `/paths/${glassName}`,
@@ -190,7 +198,7 @@ export function saveAmounts(glassName, paths) {
 				paths
 			},
 			headers: {
-				'x-access-token': state().token
+				'x-access-token': token
 			}
 		}).then(res => {
 			console.log(res);

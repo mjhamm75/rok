@@ -117,7 +117,7 @@ app.post('/charge', function(req, res) {
   });
 })
 
-app.get('/svgs', function(req, res) {
+app.get('/svgs', validate, function(req, res) {
   q.getSVGs().then(function(svgs) {
     res.json({
       svgs: svgs
