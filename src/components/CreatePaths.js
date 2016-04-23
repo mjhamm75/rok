@@ -25,13 +25,13 @@ class ValueGlass extends Component {
 					<button onClick={this.highlight.bind(this)}>Highlight</button>
 					<button onClick={this.clear.bind(this)}>Clear</button>
 				</div>
-				<div dangerouslySetInnerHTML={{__html: this.state.svg}}></div>
+				<div className="svg" dangerouslySetInnerHTML={{__html: this.state.svg}}></div>
 				<div className="input-container">
 					<div>
 						<input ref="glassTitle" placeholder="Glass title"/>
-					</div>
-					<div className="cost-container">
-						{cost}
+						<div className="cost-container">
+							{cost}
+						</div>
 					</div>
 					<div>
 						<textarea ref="coords" placeholder="Enter coordinates here." onChange={this.updateCoords.bind(this)}></textarea>
