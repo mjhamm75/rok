@@ -1,4 +1,42 @@
-
+input[type="checkbox"].ff-checkbox {
+    display:block;
+    -webkit-appearance: none;
+    ms--appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    border-radius:500px;
+    border:1px solid #232323;
+    background-color:#4A4A4A;
+    height:42px;
+    width:42px;
+    float:left;
+    margin-right:20px;
+    cursor:pointer;
+    margin-top:-12px;
+}
+input[type="checkbox"].ff-checkbox {
+    border-radius:0;
+    height:20px;
+		margin-top: 0px;
+    width:20px;
+}
+input[type="checkbox"].ff-checkbox:checked,
+input[type="checkbox"].ff-checkbox:checked:active {
+    background-color: #A3BE5F;
+    border-color: #252525;
+}
+input[type="checkbox"].ff-checkbox:after {
+    content: '\2714';
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+    left: 3px;
+    color: #4A4A4A;
+}
+input[type="checkbox"].ff-checkbox:checked:after {
+    color:#FFFFFF;
+}
 .pick {
 	background: rgb(74, 74, 74);
 	display: flex;
@@ -12,9 +50,12 @@
 		.checkbox {
 			float: right;
 			margin-right: 15px;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 			> input {
 				margin-right: 5px;
+			}
+			> label {
+				color: #9B9B9B;
 			}
 		}
 

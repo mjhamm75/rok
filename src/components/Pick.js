@@ -149,11 +149,15 @@ class Pick extends Component {
 				<div className="pick">
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="glass">
-						<div className="checkbox">
-							<input type="checkbox"
+						<div className="checkbox ff-checkboxes">
+					    <label>Sponsored</label>
+					    <input
+								type="checkbox"
+								id="checkbox-1-1"
+								className="ff-checkbox"
 								checked={this.state.showSponsered}
 								onClick={this.updateShowSponsered.bind(this)}
-							/>Sponsored
+							/>
 						</div>
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
