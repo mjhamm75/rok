@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, AMOUNT_SAVED, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, SVG_RETREIVED, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, SVG_RETREIVED, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -200,9 +200,12 @@ function hideSpinner() {
 	}
 }
 
-function amountsSaved() {
-	return {
-		type: AMOUNT_SAVED
+export function amountsSavedToggle() {
+	return dispatch => {
+		dispatch({type: POPUP_ON})
+		setTimeout(() => {
+			dispatch({type: POPUP_OFF})
+		}, 1000)
 	}
 }
 
@@ -221,7 +224,7 @@ export function saveAmounts(glassName, paths) {
 			}
 		}).then(res => {
 			dispatch(hideSpinner())
-			dispatch(amountsSaved())
+			dispatch(amountsSavedToggle())
 			console.log(res);
 		})
 	}

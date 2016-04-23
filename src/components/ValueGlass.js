@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getPathInfo, saveAmounts } from '../actions/GlassActions';
 import mapping from '../mappings/mapping.js';
 import Spinner from 'react-spinkit';
+import Skylight from './ReactSkylight';
 
 import { getSvgs } from '../actions/GlassActions';
 require('!style!css!sass!./../sass/value-glass.scss');
@@ -50,6 +51,14 @@ class ValueGlass extends Component {
     if(a.path_id < b.path_id) return -1;
     if(a.path_id = b.path_id) return 1;
     return
+  }
+
+  componentWillReceiveProps(newProps) {
+    if(newProps.popup) {
+      this.refs.success.show();
+    } else {
+      this.refs.success.hide();
+    }
   }
 
   renderPaths(paths) {
@@ -111,6 +120,12 @@ class ValueGlass extends Component {
         <ul className="path-list flex">
           {this.renderPaths(this.props.paths)}
         </ul>
+        <Skylight
+					ref="success">
+					<div>
+            Success
+					</div>
+				</Skylight>
         <Spinner style={showSpinner} spinnerName='three-bounce' />
         <button onClick={this.saveAmounts.bind(this)}>Save Amounts</button>
       </div>
@@ -137,6 +152,7 @@ class ValueGlass extends Component {
 
 function mapStateToProps(state) {
   return {
+    popup: state.popup,
     paths: state.paths,
     svgs: state.svgs,
     showSpinner: state.spinner

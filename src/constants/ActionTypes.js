@@ -12,4 +12,5 @@ export const SHOW_SPINNER = 'SHOW_SPINNER';
 export const SVG_SAVED = 'SVG_SAVED';
 export const SVG_RETREIVED = 'SVG_RETREIVED';
 export const SVGS_RETRIEVED = 'SVGS_RETRIEVED';
-export const AMOUNT_SAVED = 'AMOUNT_SAVED';
+export const POPUP_ON = 'POPUP_ON';
+export const POPUP_OFF = 'POPUP_OFF';
