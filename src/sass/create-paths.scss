@@ -91,8 +91,9 @@ svg polygon:hover {
 	fill: rgba(255, 0, 0, 0.80);
 }
 .purchased {
+	border: 1px solid #A3BE5F;
 	cursor: default;
-	fill:  rgba(73,143,226,0.80);
+	fill:  rgba(130,155,67,0.33);
 	pointer-events: none;
 }
 .svg {
