@@ -16,10 +16,12 @@ body {
 		height: auto;
 	}
 	.library {
+		height: 40%;
 		width: auto;
 	}
 	@media(max-width: 600px) {
 		.library {
+			height: auto;
 			width: 100%
 		}
 	}
