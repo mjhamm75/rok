@@ -8,6 +8,7 @@ import paths from './paths';
 import popup from './popup';
 import spinner from './spinner';
 import svgs from './svg';
+import svgTitle from './svgTitle';
 
 const rootReducer = combineReducers({
 	charge,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
 	paths,
 	popup,
 	spinner,
+	svgTitle,
 	svgs,
 	token,
 	toggleCart,

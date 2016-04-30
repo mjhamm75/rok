@@ -67,7 +67,7 @@ module.exports = function(knex) {
 						.update({
 							customer: email
 						})
-				});
+				})
 		}))
 	}
 

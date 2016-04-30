@@ -20,7 +20,7 @@ class Cart extends Component {
 				that.props.charge(token.id, that.getTotal() * 100, token.email, that.props.selectedItems);
 			},
 			closed: function() {
-				that.props.thankyou();
+				
 			}
 		});
 		this.getTotal = this.getTotal.bind(this)

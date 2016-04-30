@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, OPEN_CART, REMOVE_SELECTED_GLASS, SVG_RETREIVED, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, CLEAR_CART, REMOVE_SELECTED_GLASS, UPDATE_PATHS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME, OPEN_CART, UPDATE_SVG_NAME } from '../constants/ActionTypes';
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -105,15 +105,27 @@ export function openCheckout(shouldOpen) {
 	}
 }
 
+export function clearCart() {
+	return {
+		type: CLEAR_CART,
+	}
+}
+
 export function charge(token, amount, email, selectedItems) {
-	return dispatch => {
+	return (dispatch, state) => {
+		let svgTitle = state().svgTitle;
 		axios.post('/charge', {
 			amount,
 			email,
 			token,
+			svgTitle,
 			selectedItems
 		}).then(result => {
-			dispatch(chargeComplete(result.data))
+			axios.get(`/paths/${svgTitle}`).then(paths => {
+				dispatch(clearCart());
+				dispatch(updatePaths(paths.data.paths))
+				dispatch(chargeComplete(true))
+			})
 		})
 	}
 }
@@ -151,10 +163,17 @@ export function saveSVG(title, paths) {
 	}
 }
 
-function svgRetrieved(paths) {
+function updatePaths(paths) {
 	return {
-		type: SVG_RETREIVED,
+		type: UPDATE_PATHS,
 		paths
+	}
+}
+
+function updateSvgName(svgName) {
+	return {
+		type: UPDATE_SVG_NAME,
+		svgName
 	}
 }
 
@@ -162,7 +181,8 @@ export function getPathInfo(svgName) {
 	return dispatch => {
 		axios.get(`/paths/${svgName}`)
 			.then(paths => {
-				dispatch(svgRetrieved(paths.data.paths))
+				dispatch(updatePaths(paths.data.paths));
+				dispatch(updateSvgName(svgName));
 			});
 	}
 }

@@ -96,6 +96,7 @@ app.post('/charge', function(req, res) {
   var email = req.body.email;
   var token = req.body.token;
   var selectedItems = req.body.selectedItems;
+  var svgTitle = req.body.svgTitle;
   var charge = stripe.charges.create({
     amount: amount, // amount in cents, again
     currency: "usd",
