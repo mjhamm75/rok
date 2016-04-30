@@ -1,6 +1,13 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, CLEAR_CART, REMOVE_SELECTED_GLASS, UPDATE_PATHS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME, OPEN_CART, UPDATE_SVG_NAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, CHARGE_BUTTON_ENABLED, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, CLEAR_CART, REMOVE_SELECTED_GLASS, UPDATE_PATHS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME, OPEN_CART, UPDATE_SVG_NAME } from '../constants/ActionTypes';
+
+export function chargeButtonEnabled(isEnabled) {
+		return {
+			type: CHARGE_BUTTON_ENABLED,
+			enabled: isEnabled
+		}
+}
 
 export function updateSelectedGlass(panelName, glassId, amount){
 	return {
@@ -123,8 +130,9 @@ export function charge(token, amount, email, selectedItems) {
 		}).then(result => {
 			axios.get(`/paths/${svgTitle}`).then(paths => {
 				dispatch(clearCart());
-				dispatch(updatePaths(paths.data.paths))
-				dispatch(chargeComplete(true))
+				dispatch(updatePaths(paths.data.paths));
+				dispatch(chargeComplete(true));
+				dispatch(chargeButtonEnabled(true));
 			})
 		})
 	}

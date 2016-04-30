@@ -9,9 +9,11 @@ import popup from './popup';
 import spinner from './spinner';
 import svgs from './svg';
 import svgTitle from './svgTitle';
+import chargeButtonEnabled from './chargeButtonEnabled';
 
 const rootReducer = combineReducers({
 	charge,
+	chargeButtonEnabled,
 	selectedItems,
 	paths,
 	popup,

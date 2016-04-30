@@ -20,7 +20,7 @@ class Cart extends Component {
 				that.props.charge(token.id, that.getTotal() * 100, token.email, that.props.selectedItems);
 			},
 			closed: function() {
-				
+
 			}
 		});
 		this.getTotal = this.getTotal.bind(this)
@@ -50,6 +50,10 @@ class Cart extends Component {
 			display: 'none'
 		} : null;
 
+		let donateButton = className('donate-button', {
+			'disabled': !this.props.chargeButtonEnabled
+		})
+
 		return (
 			<div className={cart}>
 				<div className="close" onClick={() => this.props.closeCart() }>close</div>
@@ -71,17 +75,20 @@ class Cart extends Component {
 					</div>
 					<div></div>
 				</div>
-				<a className="donate-button" onClick={this.checkout.bind(this)}>Donate</a>
+				<a className={donateButton} onClick={this.checkout.bind(this)}>Donate</a>
 			</div>
 		)
 	}
 
 	checkout() {
-		this.handler.open({
-			name: 'Roots of Knowledge',
-			description: 'Donation',
-			amount: this.getTotal() * 100,
-		});
+		if(this.props.chargeButtonEnabled) {
+			this.handler.open({
+				name: 'Roots of Knowledge',
+				description: 'Donation',
+				amount: this.getTotal() * 100,
+			});
+			this.props.disableDonateButton();
+		}
 	}
 
 	renderSelectedItems(selectedItems) {

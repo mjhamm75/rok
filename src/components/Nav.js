@@ -5,7 +5,7 @@ import { removeSelectedGlass } from './../actions/GlassActions';
 import { Link } from 'react-router';
 import Cart from './Cart';
 import ShoppingBagIcon from './ShoppingBagIcon';
-import { charge, openCheckout } from './../actions/GlassActions';
+import { charge, chargeButtonEnabled, openCheckout } from './../actions/GlassActions';
 import logo from './../imgs/rok-logo-white.png';
 
 require('!style!css!sass!./../sass/nav.scss');
@@ -82,6 +82,8 @@ class Nav extends Component {
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false) }
+					chargeButtonEnabled={this.props.chargeButtonEnabled}
+					disableDonateButton={this.disableDonateButton.bind(this)}
 					removePiece={this.removePiece.bind(this)}
 					selectedItems={this.props.selectedItems}
 					show={this.props.showCart}
@@ -119,6 +121,10 @@ class Nav extends Component {
 
 	}
 
+	disableDonateButton() {
+		this.props.dispatch(chargeButtonEnabled(false));
+	}
+
 	charge(token, amount, email, selecteItems) {
 		this.props.dispatch(charge(token, amount, email, selecteItems));
 	}
@@ -126,6 +132,7 @@ class Nav extends Component {
 
 function mapStateToProps(state) {
 	return {
+	chargeButtonEnabled: state.chargeButtonEnabled,
 		selectedItems: state.selectedItems,
 		showCart: state.toggleCart
 	}

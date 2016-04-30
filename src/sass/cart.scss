@@ -57,6 +57,11 @@
     .donate-button {
         margin-bottom: 100px;
     }
+    .donate-button.disabled {
+        background: #B8BBAF;
+        box-shadow: none;
+        pointer-events: none;
+    }
 }
 .cart.open {
     right: 0;

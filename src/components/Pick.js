@@ -6,7 +6,7 @@ import Info from './Info';
 import Cart from './Cart';
 import Nav from './Nav';
 import ShoppingBagIcon from './ShoppingBagIcon';
-import { charge, getPathInfo, removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
+import { charge, chargeButtonEnabled, getPathInfo, removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
@@ -37,6 +37,10 @@ class Pick extends Component {
 		this.checkout = this.checkout.bind(this);
 		this.showCart = this.showCart.bind(this);
 		this.props.dispatch(getPathInfo(this.props.routeParams.splat));
+	}
+
+	disableDonateButton() {
+		this.props.dispatch(chargeButtonEnabled(false));
 	}
 
 	componentDidMount() {
@@ -161,6 +165,8 @@ class Pick extends Component {
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false)}
+					chargeButtonEnabled={this.props.chargeButtonEnabled}
+					disableDonateButton={this.disableDonateButton.bind(this)}
 					removePiece={this.removePiece.bind(this)}
 					selectedItems={this.props.selectedItems}
 					show={this.props.showCart}
@@ -243,6 +249,7 @@ class Pick extends Component {
 
 function mapStateToProps(state) {
 	return {
+		chargeButtonEnabled: state.chargeButtonEnabled,
 		paths: state.paths,
 		selectedItems: state.selectedItems,
 		showCart: state.toggleCart

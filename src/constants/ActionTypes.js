@@ -16,3 +16,4 @@ export const POPUP_ON = Symbol();
 export const POPUP_OFF = Symbol();
 export const CLEAR_CART = Symbol();
 export const UPDATE_SVG_NAME = Symbol();
+export const CHARGE_BUTTON_ENABLED = Symbol();
