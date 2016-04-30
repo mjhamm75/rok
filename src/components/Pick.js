@@ -31,6 +31,7 @@ class Pick extends Component {
 			glass: mapping[this.props.routeParams.splat],
 			glassName: this.props.routeParams.splat,
 			imageId: null,
+			info: info[this.props.routeParams.splat] || [],
 			showCart: false,
 			showSponsered: false
 		}
@@ -171,7 +172,12 @@ class Pick extends Component {
 					selectedItems={this.props.selectedItems}
 					show={this.props.showCart}
 					/>
-				<Info info={info["b1"]} show={this.state.show} showInfo={this.showInfo.bind(this)}/>
+				<Info
+					info={this.state.info}
+					show={this.state.show}
+					showInfo={this.showInfo.bind(this)}
+					title={this.state.glassName}
+				/>
 				<div className="pick">
 					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
 					<div className="glass">
