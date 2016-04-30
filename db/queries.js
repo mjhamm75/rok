@@ -1,4 +1,10 @@
 module.exports = function(knex) {
+	function donate(email, amount) {
+		return knex.table('donation').insert({
+			email: email,
+			amount: amount
+		})
+	}
 	function getEmailAddress() {
 		return knex.select().table('email').orderBy('id', 'desc').first();
 	}
@@ -113,6 +119,7 @@ module.exports = function(knex) {
 		checkForUsername: checkForUsername,
 		createUser: createUser,
 		createSVG: createSVG,
+		donate: donate,
 		insertSvgPaths: insertSvgPaths,
 		getSVG: getSVG,
 		getSVGs: getSVGs,

@@ -91,6 +91,31 @@ app.post('/create-user', validate, function(req, res) {
   });
 })
 
+app.post('/donate', function(req, res) {
+  var total = req.body.total;
+  var email = req.body.email;
+  var token = req.body.token;
+  var charge = stripe.charges.create({
+    total: total,
+    currency: "usd",
+    source: token,
+    description: "Donation"
+  }, function(err, charge) {
+    if (err && err.type === 'StripeCardError') {
+      res.json({
+        charged: false
+      })
+    } else {
+      q.donate(email, total)
+        .then(function(result) {
+          res.json({
+            charge: true
+          })
+        })
+    }
+  });
+})
+
 app.post('/charge', function(req, res) {
   var amount = req.body.amount;
   var email = req.body.email;
@@ -101,7 +126,7 @@ app.post('/charge', function(req, res) {
     amount: amount, // amount in cents, again
     currency: "usd",
     source: token,
-    description: "Example charge"
+    description: "Sponser Glass"
   }, function(err, charge) {
     if (err && err.type === 'StripeCardError') {
       res.json({

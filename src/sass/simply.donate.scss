@@ -99,6 +99,11 @@
 		a:active {
 			box-shadow: none;
 		}
+		a.disabled {
+			background: #B8BBAF;
+			box-shadow: none;
+			pointer-events: none;
+		}
 	}
 	.form:hover {
 		background: white;

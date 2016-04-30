@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import className from 'classnames';
 import Nav from './Nav';
 import bag from './../imgs/shopping.bag.black.png';
+import { donate, chargeButtonEnabled } from '../actions/GlassActions';
 
 require('!style!css!sass!./../sass/simply.donate.scss');
 
 class SimplyDonate extends Component {
 	constructor(props) {
 		super(props)
-			this.handler = StripeCheckout.configure({
-				key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-				image: '/rok-logo.png',
-				locale: 'auto',
-				token: function(token) {
-				// Use the token to create the charge with a server-side script.
-				// You can access the token ID with `token.id`
-				}
-			});
+		var that = this;
+		this.handler = StripeCheckout.configure({
+			key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+			image: '/rok-logo.png',
+			locale: 'auto',
+			token: function(token) {
+				that.props.dispatch(donate(token.id, that.refs.total * 100, token.email));
+			}
+		});
 	}
 	checkout() {
+		this.props.dispatch(chargeButtonEnabled(false));
 		this.handler.open({
 			name: 'Roots of Knowledge',
 			description: 'Donation',
@@ -28,6 +31,9 @@ class SimplyDonate extends Component {
 	}
 
 	render() {
+		let disabled = className({
+			disabled: !this.props.chargeButtonEnabled
+		})
 		return (
 			<div className="simply-donate">
 				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
@@ -43,7 +49,7 @@ class SimplyDonate extends Component {
 					</div>
 					<input className="email" ref="email" placeholder=" email address"/>
 					<div>
-						<a onClick={this.checkout.bind(this)}>Donate</a>
+						<a className={disabled} onClick={this.checkout.bind(this)}>Donate</a>
 					</div>
 				</div>
 			</div>
@@ -53,6 +59,7 @@ class SimplyDonate extends Component {
 
 function mapStateToProps(state) {
 	return {
+		chargeButtonEnabled: state.chargeButtonEnabled,
 		selectedItems: state.selectedItems
 	}
 }

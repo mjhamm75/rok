@@ -118,6 +118,19 @@ export function clearCart() {
 	}
 }
 
+export function donate(token, total, email) {
+	return dispatch => {
+		axios.post('/donate', {
+			email,
+			token,
+			total
+		}).then(result => {
+			dispatch(chargeComplete(true));
+			dispatch(chargeButtonEnabled(true));
+		})
+	}
+}
+
 export function charge(token, amount, email, selectedItems) {
 	return (dispatch, state) => {
 		let svgTitle = state().svgTitle;
