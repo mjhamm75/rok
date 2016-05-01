@@ -3,6 +3,7 @@ import selectedItems from './glass';
 import token from './token';
 import username from './username';
 import toggleCart from './toggleCart';
+import clear from './clear';
 import charge from './charge';
 import paths from './paths';
 import popup from './popup';
@@ -14,6 +15,7 @@ import chargeButtonEnabled from './chargeButtonEnabled';
 const rootReducer = combineReducers({
 	charge,
 	chargeButtonEnabled,
+	clear,
 	selectedItems,
 	paths,
 	popup,

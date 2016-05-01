@@ -1,6 +1,13 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, CHARGE_BUTTON_ENABLED, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, CLEAR_CART, REMOVE_SELECTED_GLASS, UPDATE_PATHS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME, OPEN_CART, UPDATE_SVG_NAME } from '../constants/ActionTypes';
+import { ADD_SELECTED_GLASS, CHARGE_BUTTON_ENABLED, CLEAR_DONATION_FORM, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, CLEAR_CART, REMOVE_SELECTED_GLASS, UPDATE_PATHS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME, OPEN_CART, UPDATE_SVG_NAME } from '../constants/ActionTypes';
+
+export function clearDonationForm(shouldClear) {
+	return {
+		type: CLEAR_DONATION_FORM,
+		shouldClear
+	}
+}
 
 export function chargeButtonEnabled(isEnabled) {
 		return {
@@ -127,6 +134,7 @@ export function donate(token, total, email) {
 		}).then(result => {
 			dispatch(chargeComplete(true));
 			dispatch(chargeButtonEnabled(true));
+			dispatch(clearDonationForm(true));
 		})
 	}
 }

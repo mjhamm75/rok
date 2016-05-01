@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import className from 'classnames';
 import Nav from './Nav';
 import bag from './../imgs/shopping.bag.black.png';
-import { donate, chargeButtonEnabled } from '../actions/GlassActions';
+import { clearDonationForm, donate, chargeButtonEnabled } from '../actions/GlassActions';
 
 require('!style!css!sass!./../sass/simply.donate.scss');
 
@@ -20,6 +20,15 @@ class SimplyDonate extends Component {
 			}
 		});
 	}
+
+	componentWillReceiveProps(nextProps) {
+		if(nextProps.clear) {
+			this.refs.total.value = "";
+			this.refs.email.value = "";
+			this.props.dispatch(clearDonationForm(false));
+		}
+	}
+
 	checkout() {
 		this.props.dispatch(chargeButtonEnabled(false));
 		this.handler.open({
@@ -60,6 +69,7 @@ class SimplyDonate extends Component {
 function mapStateToProps(state) {
 	return {
 		chargeButtonEnabled: state.chargeButtonEnabled,
+		clear: state.clear,
 		selectedItems: state.selectedItems
 	}
 }
