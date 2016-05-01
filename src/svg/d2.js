@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class d2 extends Component {
   render() {
     return (
-      <svg version="1.1" x="0px" y="0px" viewBox="0 0 2566 1706" enable-background="new 0 0 2566 1706" class="">
+      <svg version="1.1" x="0px" y="0px" viewBox="0 0 2566 1706" enable-background="new 0 0 2566 1706" class="" onClick={this.props.click}>
         <image display="block" overflow="visible" width="2568" height="1701" xlinkHref="/D-2.jpg" transform="matrix(1 0 0 1 -2 3)">
         </image>
         <polygon fill="none" stroke="#000000" stroke-width="0.5724" stroke-miterlimit="10" points="2557.9,1705.8 1,1705.8 1,1704.9
