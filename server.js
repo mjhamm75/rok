@@ -6,11 +6,14 @@ var jwt = require('jsonwebtoken');
 var path = require('path');
 var async = require('async');
 var knexLogger = require('knex-logger');
-var secret = require('./db/stripe-secret.js');
-var stripe = require('stripe')(secret());
+
 var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
+var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
+console.log('TEST: ' + secret);
+var stripe = require('stripe')(secret);
+
 var PORT = process.env.PORT || 3000;
 
 var knex = require('./config.js').knex;
