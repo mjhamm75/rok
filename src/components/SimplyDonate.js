@@ -4,15 +4,17 @@ import className from 'classnames';
 import Nav from './Nav';
 import bag from './../imgs/shopping.bag.black.png';
 import { clearDonationForm, donate, chargeButtonEnabled } from '../actions/GlassActions';
+import publish from '../../db/stripe-publish.js';
 
 require('!style!css!sass!./../sass/simply.donate.scss');
 
 class SimplyDonate extends Component {
 	constructor(props) {
 		super(props)
+		console.log(publish())
 		var that = this;
 		this.handler = StripeCheckout.configure({
-			key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+			key: publish(),
 			image: '/rok-logo.png',
 			locale: 'auto',
 			token: function(token) {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import className from 'classnames';
 import bag from './../imgs/shopping.bag.black.png'
 import numeral from 'numeral';
+import publish from '../../db/stripe-publish.js';
 
 require('!style!css!sass!./../sass/cart.scss');
 
@@ -13,7 +14,7 @@ class Cart extends Component {
 		}
 		var that = this;
 		this.handler = StripeCheckout.configure({
-			key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+			key: publish(),
 			image: '/rok-logo.png',
 			locale: 'auto',
 			token: function(token) {

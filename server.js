@@ -6,8 +6,8 @@ var jwt = require('jsonwebtoken');
 var path = require('path');
 var async = require('async');
 var knexLogger = require('knex-logger');
-
-var stripe = require('stripe')("sk_test_ckJgTbiJKpW0CRNr8kSPnKIW");
+var secret = require('./db/stripe-secret.js');
+var stripe = require('stripe')(secret());
 var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
