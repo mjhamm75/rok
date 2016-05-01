@@ -19,7 +19,6 @@ var knex = require('./config.js').knex;
 var validate = require('./db/validate')(jwt, app);
 var q = require('./db/queries.js')(knex);
 
-app.use(knexLogger(knex));
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(express.static('images'));
@@ -29,6 +28,7 @@ app.use(bodyParser.urlencoded({limit: '5mb'}));
 
 if(isDevelopment) {
   console.log("DEV");
+  app.use(knexLogger(knex));
   var webpack = require('webpack');
   var config = require('./webpack.config.js');
   var compiler = webpack(config);
