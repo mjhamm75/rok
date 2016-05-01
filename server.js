@@ -11,7 +11,6 @@ var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
-console.log('TEST: ' + secret);
 var stripe = require('stripe')(secret);
 
 var PORT = process.env.PORT || 3000;
