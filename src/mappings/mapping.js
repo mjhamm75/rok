@@ -16,6 +16,10 @@ import d1 from '../svg/d1.js';
 import d2 from '../svg/d2.js';
 import d3 from '../svg/d3.js';
 
+import e1 from '../svg/e1.js';
+import e2 from '../svg/e2.js';
+import e3 from '../svg/e3.js';
+
 module.exports = {
 	null: Null,
 	a1,
@@ -29,5 +33,8 @@ module.exports = {
 	c3,
 	d1,
 	d2,
-	d3
+	d3,
+	e1,
+	e2,
+	e3
 }
