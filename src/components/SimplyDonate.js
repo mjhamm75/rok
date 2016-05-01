@@ -11,7 +11,6 @@ require('!style!css!sass!./../sass/simply.donate.scss');
 class SimplyDonate extends Component {
 	constructor(props) {
 		super(props)
-		console.log(publish())
 		var that = this;
 		this.handler = StripeCheckout.configure({
 			key: publish(),
