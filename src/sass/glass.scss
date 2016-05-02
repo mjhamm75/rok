@@ -26,9 +26,12 @@
 	.glass {
 		.image {
 			display: block;
-
-			img {
-				margin-bottom: 15px;
+			> div {
+				> img {
+					margin: 0 auto;
+					margin-bottom: 15px;
+					width: 90vw;
+				}				
 			}
 		}
 	}
