@@ -20,6 +20,18 @@ import e1 from '../svg/e1.js';
 import e2 from '../svg/e2.js';
 import e3 from '../svg/e3.js';
 
+import f1 from '../svg/f1.js';
+import f2 from '../svg/f2.js';
+import f3 from '../svg/f3.js';
+
+import g1 from '../svg/g1.js';
+import g2 from '../svg/g2.js';
+import g3 from '../svg/g3.js';
+
+import h1 from '../svg/h1.js';
+import h2 from '../svg/h2.js';
+import h3 from '../svg/h3.js';
+
 module.exports = {
 	null: Null,
 	a1,
@@ -36,5 +48,14 @@ module.exports = {
 	d3,
 	e1,
 	e2,
-	e3
+	e3,
+	f1,
+	f2,
+	f3,
+	g1,
+	g2,
+	g3,
+	h1,
+	h2,
+	h3,
 }
