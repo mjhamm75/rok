@@ -6,9 +6,6 @@ class a1 extends Component {
       <svg version="1.1" x="0px" y="0px" viewBox="0 0 3145.3 2785.1" enable-background="new 0 0 3145.3 2785.1" onClick={this.props.click}>
       	<image display="block" overflow="visible" width="3030" height="2645" xlinkHref="/A-3.jpg" transform="matrix(1 0 0 1 74.4754 67.6056)">
       	</image>
-      	<polygon display="none" fill="none" stroke="#010101" strokeWidth="0.25" stroke-miterlimit="10" points="3069.9,2716.4
-      		87.7,2710.4 87.7,2709.6 86.9,2709.6 86.9,54.2 87.7,54.2 87.7,53.4 3069.9,16.4 3069.9,17.2 3070.7,17.2 3070.7,2715.6
-      		3069.9,2715.6 " id="1"></polygon>
       	<path fill="none" stroke="#010101" strokeWidth="0.25" stroke-miterlimit="10" d="M2995.1,2706.8h74V2347
       		c-19-11.6-33.4-13.9-45-15.7c-15.5-2.4-26.7-4.2-38.8-24.2c-76,61.2-149.6,125.9-220.3,193.4L2995.1,2706.8z" id="2"></path>
       	<path fill="none" stroke="#010101" strokeWidth="0.25" stroke-miterlimit="10" d="M2765.6,2713.8h227.1l-229.1-212.1
