@@ -12,7 +12,7 @@ GRANT ALL PRIVILEGES ON SEQUENCE svg_id_seq TO rok;
 CREATE TABLE PATH(id serial, svg_id integer references svg(id), path_id integer, amount decimal(12, 2), customer varchar(50));
 GRANT ALL PRIVILEGES ON TABLE path TO rok;
 GRANT ALL PRIVILEGES ON SEQUENCE path_id_seq TO rok;
-CREATE TABLE DONATION(id serial, email varchar(125), amount decimal(12, 2));
+CREATE TABLE DONATION(id serial, email varchar(125), amount decimal(12, 2), TIMESTAMP TIMESTAMP default current_timestamp);
 GRANT ALL PRIVILEGES ON TABLE donation TO rok;
 GRANT ALL PRIVILEGES ON SEQUENCE donation_id_seq TO rok;
 

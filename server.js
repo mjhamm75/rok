@@ -10,7 +10,8 @@ var knexLogger = require('knex-logger');
 var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
-var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
+// var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
+var secret = 'sk_test_RnzoumriAJCdG8l6PoYSFH0H';
 var stripe = require('stripe')(secret);
 
 var PORT = process.env.PORT || 3000;
@@ -98,11 +99,13 @@ app.post('/donate', function(req, res) {
   var email = req.body.email;
   var token = req.body.token;
   var charge = stripe.charges.create({
-    total: total,
+    amount: total,
     currency: "usd",
     source: token,
     description: "Donation"
   }, function(err, charge) {
+    console.log(err);
+    console.log(charge);
     if (err && err.type === 'StripeCardError') {
       res.json({
         charged: false
