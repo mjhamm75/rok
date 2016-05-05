@@ -112,7 +112,16 @@ class Pick extends Component {
 	}
 
 	showAlreadySponsored(glass, x, y) {
-		let popup = document.querySelectorAll('.popup')
+		let popup = document.querySelectorAll('.popup.sponsored')
+		this.showPopup(popup, glass, x, y);
+	}
+
+	showUnavailable(glass, x, y) {
+		let popup = document.querySelectorAll('.popup.unavailable')
+		this.showPopup(popup, glass, x, y);
+	}
+
+	showPopup(popup, glass, x, y) {
 		popup[0].style.display = 'inline';
 		popup[0].style.left = x - 100;
 		popup[0].style.top = y - 25;
@@ -131,6 +140,10 @@ class Pick extends Component {
 		let glassPath = this.props.paths.find(path => path.path_id === parseInt(e.target.id));
 		if(glassPath.customer) {
 			this.showAlreadySponsored(glassPath, e.pageX, e.pageY);
+			return;
+		}
+		if(!glassPath || parseFloat(glassPath.amount) === 0) {
+			this.showUnavailable(glassPath, e.pageX, e.pageY);
 			return;
 		}
 		this.addPiece(this.state.glassName, glassPath.path_id, glassPath.amount || 0);
@@ -162,7 +175,8 @@ class Pick extends Component {
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
-			<span className="popup">This piece has been sponsored</span>
+			<span className="popup sponsored">This piece has been sponsored</span>
+			<span className="popup unavailable">This piece is currently unavailable	</span>
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false)}
