@@ -142,7 +142,7 @@ class Pick extends Component {
 			this.showAlreadySponsored(glassPath, e.pageX, e.pageY);
 			return;
 		}
-		if(!glassPath || parseFloat(glassPath.amount) === 0) {
+		if(!glassPath || parseFloat(glassPath.amount) === 0 || isNaN(parseFloat(glassPath.amount))) {
 			this.showUnavailable(glassPath, e.pageX, e.pageY);
 			return;
 		}
