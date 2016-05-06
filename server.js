@@ -99,19 +99,17 @@ app.post('/donate', function(req, res) {
   var email = req.body.email;
   var token = req.body.token;
   var charge = stripe.charges.create({
-    amount: total,
+    amount: parseFloat(total),
     currency: "usd",
     source: token,
     description: "Donation"
   }, function(err, charge) {
-    console.log(err);
-    console.log(charge);
-    if (err && err.type === 'StripeCardError') {
+    if (err) {
       res.json({
         charged: false
       })
     } else {
-      q.donate(email, total)
+      q.donate(email, total, charge.id)
         .then(function(result) {
           res.json({
             charge: true
@@ -128,17 +126,17 @@ app.post('/charge', function(req, res) {
   var selectedItems = req.body.selectedItems;
   var svgTitle = req.body.svgTitle;
   var charge = stripe.charges.create({
-    amount: amount, // amount in cents, again
+    amount: (amount/100),
     currency: "usd",
     source: token,
     description: "Sponser Glass"
   }, function(err, charge) {
-    if (err && err.type === 'StripeCardError') {
+    if (err) {
       res.json({
         charged: false
       })
     } else {
-      q.updateSvgPathsPurchaser(selectedItems, email)
+      q.updateSvgPathsPurchaser(selectedItems, email, charge.id)
         .then(update => {
           res.json({
             charged: true

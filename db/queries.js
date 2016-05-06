@@ -1,8 +1,9 @@
 module.exports = function(knex) {
-	function donate(email, amount) {
+	function donate(email, amount, transactionId) {
 		return knex.table('donation').insert({
 			email: email,
-			amount: amount
+			amount: (amount/100),
+			transaction_id: transactionId
 		})
 	}
 	function getEmailAddress() {
@@ -61,7 +62,7 @@ module.exports = function(knex) {
 		}))
 	}
 
-	function updateSvgPathsPurchaser(selectedItems, email) {
+	function updateSvgPathsPurchaser(selectedItems, email, transactionId) {
 		return Promise.all(selectedItems.map(function(item) {
 			getSvgByTitle(item.name)
 				.then(function(svg) {
@@ -71,7 +72,9 @@ module.exports = function(knex) {
 							'svg_id': svg[0].id
 						})
 						.update({
-							customer: email
+							customer: email,
+							transaction_id: transactionId,
+							purchase_date: new Date()
 						})
 				})
 		}))
