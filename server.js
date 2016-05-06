@@ -10,8 +10,8 @@ var knexLogger = require('knex-logger');
 var app = express();
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
-// var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
-var secret = 'sk_test_RnzoumriAJCdG8l6PoYSFH0H';
+var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
+// var secret = 'sk_test_RnzoumriAJCdG8l6PoYSFH0H';
 var stripe = require('stripe')(secret);
 
 var PORT = process.env.PORT || 3000;
