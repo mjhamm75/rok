@@ -4,7 +4,7 @@ class f2 extends Component {
   render() {
     return (
       <svg version="1.1" x="0px" y="0px" viewBox="0 0 4589 3051" enable-background="new 0 0 4589 3051" onClick={this.props.click}>
-        <image display="block" overflow="visible" width="4589" height="3051" xlinkHref="F-2.jpg">
+        <image display="block" overflow="visible" width="4589" height="3051" xlinkHref="/F-2.jpg">
         </image>
         <path fill="none" stroke="#000000" stroke-miterlimit="10" d="M4474.3,3051h114.6v-209.5c-13.3,0.1-18.9,6.6-25.3,14.1
         	c-6.2,7.2-13.1,15.4-28.2,16.9c-11.4,1.2-21.8,20.9-25.2,48.1c-1.6,13-10.1,22-19.8,32.4c-9.3,9.9-19.9,21.1-26.3,38.3
