@@ -126,7 +126,7 @@ app.post('/charge', function(req, res) {
   var selectedItems = req.body.selectedItems;
   var svgTitle = req.body.svgTitle;
   var charge = stripe.charges.create({
-    amount: (amount/100),
+    amount: parseFloat(amount),
     currency: "usd",
     source: token,
     description: "Sponser Glass"
