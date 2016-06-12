@@ -4,6 +4,8 @@ var express = require('express');
 var favicon = require('serve-favicon');
 var jwt = require('jsonwebtoken');
 var path = require('path');
+var templatesDir = path.join(__dirname, 'templates')
+var emailTemplates = require('email-templates');
 var async = require('async');
 var knexLogger = require('knex-logger');
 
@@ -119,6 +121,7 @@ app.post('/donate', function(req, res) {
   });
 })
 
+var sendHtmlEmail = require('./db/helper.js').sendHtmlEmail;
 app.post('/charge', function(req, res) {
   var amount = req.body.amount;
   var email = req.body.email;
@@ -138,9 +141,27 @@ app.post('/charge', function(req, res) {
     } else {
       q.updateSvgPathsPurchaser(selectedItems, email, charge.id)
         .then(update => {
-          res.json({
-            charged: true
-          })
+          emailTemplates(templatesDir, function(err, template) {
+
+            var locals = {
+              name: charge.source.name,
+              cardEnding: charge.source.last4,
+              expDate: charge.source.exp_month + '/' + charge.source.exp_year,
+              glass: selectedItems,
+              total: (amount/100).toFixed(2)
+            };
+
+            template('thank-you', locals, function(err, html, text) {
+              q.getEmailAddress().then(function(user) {
+                  sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', 'jasonhamm.me@gmail.com', html, function(err, result) {
+                    if(err) console.log(err);
+                    res.json({
+                      message: 'sent'
+                    })
+                  });
+              })
+            });
+          });
         })
     }
   });
