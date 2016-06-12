@@ -44,6 +44,6 @@ function comparePasswords(pw1, pw2) {
 
 module.exports = {
 	sendEmail: sendEmail,
-	sendHtmlEmail: sendHtmlEmail, 
+	sendHtmlEmail: sendHtmlEmail,
 	comparePasswords: comparePasswords
 }
