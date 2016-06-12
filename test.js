@@ -1,6 +1,9 @@
 var path = require('path')
 var templatesDir = path.join(__dirname, 'templates')
 var emailTemplates = require('email-templates');
+var knex = require('./config.js').knex;
+var q = require('./db/queries.js')(knex);
+var sendHtmlEmail = require('./db/helper.js').sendHtmlEmail;
 
 emailTemplates(templatesDir, function(err, template) {
 
@@ -20,6 +23,14 @@ emailTemplates(templatesDir, function(err, template) {
   };
 
   template('thank-you', locals, function(err, html, text) {
-    console.log(html)
+    q.getEmailAddress().then(function(user) {
+        sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', 'jasonhamm.me@gmail.com', html, function(err, result) {
+          if(err) console.log(err);
+          console.log(result);
+          // res.json({
+          //   message: 'sent'
+          // })
+        });
+    })
   });
 });
