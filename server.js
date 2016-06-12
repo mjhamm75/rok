@@ -113,9 +113,25 @@ app.post('/donate', function(req, res) {
     } else {
       q.donate(email, total, charge.id)
         .then(function(result) {
-          res.json({
-            charge: true
-          })
+          emailTemplates(templatesDir, function(err, template) {
+            var locals = {
+              name: charge.source.name,
+              cardEnding: charge.source.last4,
+              expDate: charge.source.exp_month + '/' + charge.source.exp_year,
+              total: (charge.amount/100).toFixed(2)
+            };
+
+            template('thank-you-donation', locals, function(err, html, text) {
+              q.getEmailAddress().then(function(user) {
+                  sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', 'jasonhamm.me@gmail.com', html, function(err, result) {
+                    if(err) console.log(err);
+                    res.json({
+                      charge: true
+                    })
+                  });
+              })
+            });
+          });
         })
     }
   });
