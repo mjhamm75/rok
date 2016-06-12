@@ -17,6 +17,7 @@ class Cart extends Component {
 			key: publish(),
 			image: '/rok-logo.png',
 			locale: 'auto',
+			'billing-address': true,
 			token: function(token) {
 				that.props.charge(token.id, that.getTotal() * 100, token.email, that.props.selectedItems);
 			},

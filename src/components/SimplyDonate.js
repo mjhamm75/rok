@@ -16,6 +16,7 @@ class SimplyDonate extends Component {
 			key: publish(),
 			image: '/rok-logo.png',
 			locale: 'auto',
+			'billing-address': true,
 			token: function(token) {
 				let total = parseFloat(that.refs.total.value) * 100;
 				that.props.dispatch(donate(token.id, total, token.email));
