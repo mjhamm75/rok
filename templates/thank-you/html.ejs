@@ -38,7 +38,7 @@
    </tr>
    <tr>
      <td style="padding-left: 20%;">
-      Donor: Jason Hamm
+      Donor: <%= name %>
      </td>
    </tr>
    <tr>
@@ -49,39 +49,27 @@
    <tr>
      <td style="padding-left: 20%;">
        <table width="80%">
-       <tr>
-        <td>Panel: A3</td>
-        <td>$150</td>
-       </tr>
-       <tr>
-        <td>Glass: 122</td>
-       </tr>
-       <tr>
-        <td>Panel: A3</td>
-        <td>$150</td>
-       </tr>
-       <tr>
-        <td>Glass: 122</td>
-       </tr>
-       <tr>
-        <td>Panel: A3</td>
-        <td>$150</td>
-       </tr>
-       <tr>
-        <td>Glass: 122</td>
-       </tr>
+       <% for(var i=0; i < glass.length; i++) {%>
+         <tr>
+          <td>Panel: <%= glass[i].panel %></td>
+          <td>$<%= glass[i].amount %></td>
+         </tr>
+         <tr>
+          <td>Glass: <%= glass[i].piece %></td>
+         </tr>
+       <% } %>
        <tr>
          <td>Total</td>
-         <td>$450</td>
+         <td>$<%= total %></td>
        </tr>
        <tr>
          <td>&nbsp;</td>
        </tr>
        <tr>
-         <td>Cardholder Name: Jason Hamm</td>
+         <td>Cardholder Name: <%= name %></td>
        </tr>
        <tr>
-         <td>Credit Card ending in 4367, exp 4/16</td>
+         <td>Credit Card ending in <%= cardEnding %>, exp <%= expDate %></td>
        </tr>
        <tr>
          <td>&nbsp;</td>
