@@ -12,6 +12,9 @@ class SimplyDonate extends Component {
 	constructor(props) {
 		super(props)
 		var that = this;
+		this.state = {
+			total: 0
+		}
 		this.handler = StripeCheckout.configure({
 			key: publish(),
 			image: '/rok-logo.png',
@@ -42,6 +45,12 @@ class SimplyDonate extends Component {
 		});
 	}
 
+	updateTotal() {
+		this.setState({
+			total: this.refs.total.value
+		})
+	}
+
 	render() {
 		let disabled = className({
 			disabled: !this.props.chargeButtonEnabled
@@ -54,10 +63,10 @@ class SimplyDonate extends Component {
 					<div className="title">Add your piece to the story</div>
 					<div className="inspire">Your donation will help inspire others with a masterpiece of epic size.</div>
 					<div className="amount">Donation Amount</div>
-					<input ref="total" placeholder=" $ USD"/>
+					<input ref="total" placeholder=" $ USD" onChange={this.updateTotal.bind(this)}/>
 					<div>
 						<div className="total">Total</div>
-						<div className="total-amount">$0.00</div>
+						<div className="total-amount">${this.state.total}</div>
 					</div>
 					<input className="email" ref="email" placeholder=" email address"/>
 					<div>
