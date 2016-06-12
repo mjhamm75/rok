@@ -18,10 +18,6 @@ function sendEmail(username, password, message, emailAddress, cb) {
 }
 
 function sendHtmlEmail(username, password, emailAddress, html, cb) {
-	console.log('username', username)
-	console.log('password', password)
-	console.log('emailAddress', emailAddress)
-	console.log('html', html)
 	email.server.connect({
 		user:    username,
 		password:password,
