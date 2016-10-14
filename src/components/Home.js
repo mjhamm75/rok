@@ -98,7 +98,7 @@ class Home extends Component {
 				<div className="facts">
 					<div>
 						<div>
-							<div>80,000+</div>
+							<div>60,000+</div>
 							<div>pieces of glass used to create 80 panels in the UVU Library.  Actual rock, fossils, coins, meteorite, and ivory are in the window as well.</div>
 						</div>
 						<div>
