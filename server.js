@@ -123,7 +123,7 @@ app.post('/donate', function(req, res) {
 
             template('thank-you-donation', locals, function(err, html, text) {
               q.getEmailAddress().then(function(user) {
-                  sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', 'jasonhamm.me@gmail.com', html, function(err, result) {
+                  sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', email, html, function(err, result) {
                     if(err) console.log(err);
                     res.json({
                       charge: true
@@ -169,7 +169,7 @@ app.post('/charge', function(req, res) {
 
             template('thank-you', locals, function(err, html, text) {
               q.getEmailAddress().then(function(user) {
-                  sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', 'jasonhamm.me@gmail.com', html, function(err, result) {
+                  sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', email, html, function(err, result) {
                     if(err) console.log(err);
                     res.json({
                       message: 'sent'
