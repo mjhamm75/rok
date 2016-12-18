@@ -183,6 +183,26 @@ app.post('/charge', function(req, res) {
   });
 })
 
+var nodemailer = require('nodemailer');
+app.get('/nodemailer', (req, res) => {
+  var transporter = nodemailer.createTransport('smtps://rootsofknowledgeproject%40gmail.com:rootsofknowledge@smtp.gmail.com');
+  var mailOptions = {
+    from: '"Tester Test 👥" <rootsofknowledgeproject@gmail.com>', // sender address
+    to: 'jasonhamm.me@gmail.com, mjhamm75@ldschurch.org', // list of receivers
+    subject: 'Hello ✔', // Subject line
+    text: 'Hello world 🐴', // plaintext body
+    html: '<b>Hello world 🐴</b>' // html body
+};
+
+// send mail with defined transport object
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
+});
+})
+
 app.get('/test-email', (req, res) => {
 
   emailTemplates(templatesDir, function(err, template) {
