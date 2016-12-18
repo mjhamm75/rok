@@ -183,6 +183,30 @@ app.post('/charge', function(req, res) {
   });
 })
 
+app.get('/test-email', (req, res) => {
+
+  emailTemplates(templatesDir, function(err, template) {
+    var amount = req.query.amount ? parseInt(req.query.amount) : 10000;
+    var locals = {
+      name: 'Test Tester',
+      cardEnding: 8899,
+      expDate: 9 + '/' + 10,
+      total: (amount/100).toFixed(2)
+    };
+
+    template('thank-you-donation', locals, function(err, html, text) {
+      q.getEmailAddress().then(function(user) {
+          sendHtmlEmail('rootsofknowledgeproject@gmail.com', 'rootsofknowledge', req.query.email, html, function(err, result) {
+            if(err) console.log(err);
+            res.json({
+              testComplete: true
+            })
+          });
+      })
+    });
+  });
+})
+
 app.get('/svgs', validate, function(req, res) {
   q.getSVGs().then(function(svgs) {
     res.json({
