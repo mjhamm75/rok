@@ -1,0 +1,10 @@
+.radio {
+  width: 20px;
+}
+.radioLabel {
+  margin-right: 10px;
+}
+.ul {
+  cursor: pointer;
+  list-style: none;
+}

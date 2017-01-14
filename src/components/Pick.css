@@ -1,0 +1,7 @@
+.button {
+  composes: button from './../styles/common.css';
+}
+.skyButton {
+  composes: button;
+  margin-bottom: 10px;
+}
