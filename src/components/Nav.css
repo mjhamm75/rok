@@ -1,0 +1,38 @@
+.navbar {
+  align-items: center;
+  background: #3a3a3a;
+  display: flex;
+  font-size: 13px;
+}
+.item {
+  padding: 10px;
+}
+.logo {
+  align-items: center;
+  display: flex;
+}
+.logoImage {
+  height: 41px;
+  margin-right: 10px;
+  width: 33px;
+}
+.placeholder {
+  composes: item;
+  margin-left: auto;
+  visibility: hidden;
+}
+.cart {
+  composes: item;
+  margin-left: auto;
+  position: relative;
+}
+.link {
+  text-decoration: none;
+  color: #a3a3a3;
+}
+@media(max-width: 600px) {
+    .toggle {
+      composes: link;
+      display: none;
+    }
+}
