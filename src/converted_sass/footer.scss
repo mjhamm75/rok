@@ -1,35 +1,35 @@
 .footer {
-	color: #a3a3a3;
-	font-weight: 100;
-	background: #3a3a3a;
-	display: flex;
-	justify-content: center;
-	font-size: 14px;
-	padding: 40px 0px;
+	// color: #a3a3a3;
+	// font-weight: 100;
+	// background: #3a3a3a;
+	// display: flex;
+	// justify-content: center;
+	// font-size: 14px;
+	// padding: 40px 0px;
 
 	> div {
-		margin: 0 25px;
-		display: flex;
-		flex-direction: column;
+		// margin: 0 25px;
+		// display: flex;
+		// flex-direction: column;
 	}
 
 	> div:last-child {
-		display: flex;
+		// display: flex;
 
 		> div {
 			> img {
-				width: auto;
-				float: left;
-				margin-right: 10px;
+				// width: auto;
+				// float: left;
+				// margin-right: 10px;
 			}
 			.instagram {
-				width: 17px;
+				// width: 17px;
 			}
 		}
 	}
 	a {
-		text-decoration: none;
-		color: #a3a3a3;
+		// text-decoration: none;
+		// color: #a3a3a3;
 	}
 }
 

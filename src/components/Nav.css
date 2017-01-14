@@ -27,8 +27,7 @@
   position: relative;
 }
 .link {
-  text-decoration: none;
-  color: #a3a3a3;
+  composes: link from './../styles/common.css';
 }
 @media(max-width: 600px) {
     .toggle {
