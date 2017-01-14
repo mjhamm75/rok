@@ -1,0 +1,38 @@
+.glass {
+	.image {
+		// margin-top: 75px;
+		// display: flex;
+		> div {
+			// display: flex;
+			// flex-direction: column;
+			// flex-shrink: 0;
+			> img {
+				// border: 3px solid #4A4A4A;;
+				// cursor: pointer;
+				// height: auto;
+				// width: 30vw;
+				// margin: 5px 5px;
+			}
+
+			> img:hover {
+				// border: 3px solid #4A90E2;
+				// cursor: hand;
+			}
+		}
+	}
+}
+
+@media(max-width: 730px) {
+	.glass {
+		.image {
+			display: block;
+			> div {
+				> img {
+					margin: 0 auto;
+					margin-bottom: 15px;
+					width: 90vw;
+				}
+			}
+		}
+	}
+}

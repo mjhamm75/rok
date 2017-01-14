@@ -36,7 +36,7 @@ import h3 from './../imgs/panel_thumbnails/H-3.jpg'
 
 import Nav from './Nav';
 
-require('!style!css!sass!./../sass/glass.scss');
+import s from './Glass.css';
 
 class Glass extends Component {
 	componentDidMount() {
@@ -50,48 +50,144 @@ class Glass extends Component {
 	}
 	render() {
 		return (
-			<div className="glass">
+			<div>
 				<Nav fixed="true"/>
-				<div className="image">
-					<div>
-						<img src={a1} onClick={this.updateOverlay.bind(this, 'a1')}/>
-						<img src={a2} onClick={this.updateOverlay.bind(this, 'a2')}/>
-						<img src={a3} onClick={this.updateOverlay.bind(this, 'a3')}/>
+				<div className={s.images}>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'a1')}
+							src={a1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'a2')}
+							src={a2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'a3')}
+							src={a3}
+						/>
 					</div>
-					<div>
-						<img src={b1} onClick={this.updateOverlay.bind(this, 'b1')}/>
-						<img src={b2} onClick={this.updateOverlay.bind(this, 'b2')}/>
-						<img src={b3} onClick={this.updateOverlay.bind(this, 'b3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'b1')}
+							src={b1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'b2')}
+							src={b2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'b3')}
+							src={b3}
+						/>
 					</div>
-					<div>
-						<img src={c1} onClick={this.updateOverlay.bind(this, 'c1')}/>
-						<img src={c2} onClick={this.updateOverlay.bind(this, 'c2')}/>
-						<img src={c3} onClick={this.updateOverlay.bind(this, 'c3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'c1')}
+							src={c1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'c2')}
+							src={c2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'c3')}
+							src={c3}
+						/>
 					</div>
-					<div>
-						<img src={d1} onClick={this.updateOverlay.bind(this, 'd1')}/>
-						<img src={d2} onClick={this.updateOverlay.bind(this, 'd2')}/>
-						<img src={d3} onClick={this.updateOverlay.bind(this, 'd3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'd1')}
+							src={d1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'd2')}
+							src={d2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'd3')}
+							src={d3}
+						/>
 					</div>
-					<div>
-						<img src={e1} onClick={this.updateOverlay.bind(this, 'e1')}/>
-						<img src={e2} onClick={this.updateOverlay.bind(this, 'e2')}/>
-						<img src={e3} onClick={this.updateOverlay.bind(this, 'e3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'e1')}
+							src={e1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'e2')}
+							src={e2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'e3')}
+							src={e3}
+						/>
 					</div>
-					<div>
-						<img src={f1} onClick={this.updateOverlay.bind(this, 'f1')}/>
-						<img src={f2} onClick={this.updateOverlay.bind(this, 'f2')}/>
-						<img src={f3} onClick={this.updateOverlay.bind(this, 'f3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'f1')}
+							src={f1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'f2')}
+							src={f2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'f3')}
+							src={f3}
+						/>
 					</div>
-					<div>
-						<img src={g1} onClick={this.updateOverlay.bind(this, 'g1')}/>
-						<img src={g2} onClick={this.updateOverlay.bind(this, 'g2')}/>
-						<img src={g3} onClick={this.updateOverlay.bind(this, 'g3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'g1')}
+							src={g1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'g2')}
+							src={g2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'g3')}
+							src={g3}
+						/>
 					</div>
-					<div>
-						<img src={h1} onClick={this.updateOverlay.bind(this, 'h1')}/>
-						<img src={h2} onClick={this.updateOverlay.bind(this, 'h2')}/>
-						<img src={h3} onClick={this.updateOverlay.bind(this, 'h3')}/>
+					<div className={s.columns}>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'h1')}
+							src={h1}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'h2')}
+							src={h2}
+						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'h3')}
+							src={h3}
+						/>
 					</div>
 				</div>
 			</div>
