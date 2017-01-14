@@ -5,6 +5,8 @@ let close = require('./../imgs/x.close.png');
 
 require('!style!css!sass!./../sass/info.scss');
 
+import s from './Info.css';
+
 class Info extends Component {
 	render() {
 		let showInfo = className('pick-info', {

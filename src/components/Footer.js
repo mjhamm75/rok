@@ -6,8 +6,6 @@ let twitter = require('./../imgs/twitter.png');
 let facebook = require('./../imgs/facebook.png');
 let instagram = require('./../imgs/instagram.png');
 
-require('!style!css!sass!./../sass/footer.scss');
-
 import s from './Footer.css';
 
 class Footer extends Component {
