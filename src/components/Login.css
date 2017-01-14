@@ -1,0 +1,19 @@
+.login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: center;
+}
+
+.item {
+  margin-top: 20px;
+}
+.button {
+  composes: button from './../styles/common.css';
+  composes: item;
+  font-size: 17px;
+  margin-top: 20px auto;
+  padding: 12px 30px;
+  width: 100px;
+}

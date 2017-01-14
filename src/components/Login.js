@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import { login } from './../actions/GlassActions';
 
 require('!style!css!sass!./../sass/login.scss');
+import s from './Login.css';
 
 class Login extends Component {
 	render() {
 		return (
-			<div className="login">
-				<input ref="username" placeholder=" Username"/>
-				<input ref="password" placeholder=" Password"/>
-				<a onClick={this.submitLogin.bind(this)}>Login</a>
+			<div className={s.login}>
+				<input className={s.item} ref="username" placeholder=" Username"/>
+				<input className={s.item} ref="password" placeholder=" Password"/>
+				<a className={s.button} onClick={this.submitLogin.bind(this)}>Login</a>
 			</div>
 		)
 	}
@@ -24,7 +25,7 @@ class Login extends Component {
 
 function mapStateToProps(state) {
 	return {
-		
+
 	}
 }
 
