@@ -1,0 +1,15 @@
+.admin {
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.content {
+  display: flex;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  composes: button from './../styles/common.css';
+  margin-top: 10px;
+}
