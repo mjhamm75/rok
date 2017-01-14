@@ -1,0 +1,18 @@
+.wrapper {
+  cursor: pointer;
+  position: relative;
+}
+.circle {
+  background: #4A90E2;
+  border-radius: 50%;
+  color: white;
+  height: 20px;
+  position: absolute;
+  text-align: center;
+  width: 20px;
+}
+.bag {
+  height: auto;
+  margin-left: 10px;
+  width: 55%;
+}

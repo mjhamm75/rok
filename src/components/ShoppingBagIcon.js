@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import bag from './../imgs/shopping-bag.png'
-require('!style!css!sass!./../sass/shopping.bag.scss');
+
+import s from './ShoppingBagIcon.css';
 
 class ShoppingBagIcon extends Component {
 	render() {
@@ -9,9 +10,9 @@ class ShoppingBagIcon extends Component {
 		} : null;
 
 		return (
-			<div className="bag-wrapper" onClick={this.props.onClick}>
-				<div style={hideBag} className="circle">{this.props.selectedItems && this.props.selectedItems.length}</div>
-				<img className="bag" src={bag}/>
+			<div className={s.wrapper} onClick={this.props.onClick}>
+				<div style={hideBag} className={s.circle}>{this.props.selectedItems && this.props.selectedItems.length}</div>
+				<img className={s.bag} src={bag}/>
 			</div>
 		)
 	}
