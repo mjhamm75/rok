@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from './../actions/GlassActions';
 
-require('!style!css!sass!./../sass/login.scss');
 import s from './Login.css';
 
 class Login extends Component {

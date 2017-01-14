@@ -14,6 +14,5 @@
   composes: item;
   font-size: 17px;
   margin-top: 20px auto;
-  padding: 12px 30px;
   width: 100px;
 }
