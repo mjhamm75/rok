@@ -19,6 +19,8 @@ let rootsMediaIcon = require('./../imgs/roots-media-icon.png');
 require('!style!css!sass!./../sass/about.scss');
 require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
+import s from './About.css';
+
 class About extends Component {
 	componentDidMount() {
 		this.scrollToHash(window.location.hash.substr(1));
@@ -38,7 +40,7 @@ class About extends Component {
 				if(anchorElement) {
 					window.scrollTo(0, offset);
 				}
-			}			
+			}
 		}, 250);
 	}
 
