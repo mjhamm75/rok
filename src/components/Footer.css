@@ -1,0 +1,3 @@
+.link {
+  composes: link from './../styles/common.css';
+}
