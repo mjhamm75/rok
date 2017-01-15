@@ -17,11 +17,9 @@ let holdmanIcon = require('./../imgs/holdman-icon.png');
 let uvuIcon = require('./../imgs/uvu-icon.png');
 let rootsMediaIcon = require('./../imgs/roots-media-icon.png');
 
-require('!style!css!sass!./../sass/about.scss');
 require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
 import s from './About.css';
-import m from './../styles/materialize.css';
 
 class About extends Component {
 	componentDidMount() {
