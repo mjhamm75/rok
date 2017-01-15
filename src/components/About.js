@@ -21,6 +21,7 @@ require('!style!css!sass!./../sass/about.scss');
 require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
 
 import s from './About.css';
+import m from './../styles/materialize.css';
 
 class About extends Component {
 	componentDidMount() {
@@ -48,7 +49,7 @@ class About extends Component {
 	render() {
 		let headerClass = classnames();
 		return (
-			<div className="about">
+			<div className={s.about}>
 				<Nav fixed="true"/>
 				<h1 className={s.title}>About the Roots of Knowledge Project</h1>
 				<div className="container">
@@ -80,8 +81,8 @@ class About extends Component {
 				    	</div>
 				    </div>
 				    <div id="uvu" className="row">
-				    	<div className="col l8 offset-l2 header">
-				    		Utah Valley University
+				    	<div className="col l8 offset-l2">
+				    		<span className={s.header}>Utah Valley University</span>
 				    	</div>
 				    </div>
 					<div className="row">
@@ -97,8 +98,8 @@ class About extends Component {
 						</div>
 					</div>
 					<div id="artists" className="row">
-						<div className="col l8 offset-l2 header">
-							Holdman Studios
+						<div className="col l8 offset-l2">
+							<span className={s.header}>Holdman Studios</span>
 						</div>
 					</div>
 					<div className="row">
@@ -134,8 +135,8 @@ Cameron Oscarson, also a native of Utah, developed his skills as an artist at a 
 						</div>
 					</div>
 					<div className="row">
-						<div className="col l8 offset-l2 header">
-							Roots Media
+						<div className="col l8 offset-l2">
+							<span className={s.header}>Roots Media</span>
 						</div>
 					</div>
 					<div className="row">
