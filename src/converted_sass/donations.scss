@@ -1,0 +1,58 @@
+.donations {
+	// align-items: center;
+	// background-image: url('./../imgs/wall-exterior.png');
+	// background-repeat: no-repeat;
+	// background-attachment: fixed;
+	// background-size: cover;
+	// display: flex;
+	// height: 100%;
+	// justify-content: center;
+	.hero {
+		// min-width: 275px;
+		// max-width: 400px;
+		// min-height: 290px;
+		// background: white;
+		// height: 40%;
+		// width: 40%;
+		// padding: 2% 2%;
+		// display: flex;
+		// flex-direction: column;
+
+		> div:first-child {
+			// margin-top: 40px;
+			// font-size: 32px;
+			// font-family: Georgia;
+			// text-align: center;
+		}
+		>div:nth-child(2) {
+			// margin-top: 25px;
+			// font-size: 18px;
+			// text-align: center;
+		}
+
+		a {
+			// color: white;
+			// background: #a3be5f;
+			// box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+			// display: table;
+			// font-size: 17px;
+			// margin: 0 auto;
+			// padding: 15px 30px;
+			// text-align: center;
+			// text-decoration: none;
+			// margin-top: 30px;
+		}
+		a:hover {
+			// background: #829B43;
+		}
+		a:active {
+			// box-shadow: none;
+		}
+	}
+}
+@media(max-width: 600px) {
+	.donations {
+		// background-position-y: -150px;
+		// background-position-x: -130px;
+	}
+}
