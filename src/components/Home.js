@@ -20,6 +20,8 @@ let c5r2 = require('./../imgs/col5-2.png');
 
 require('!style!css!sass!./../sass/home.scss');
 
+import s from './Home.css';
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -67,7 +69,10 @@ class Home extends Component {
 							<div>
 								<div>
 									<div className="text">The Roots of Knowledge art glass window showcases humanity's pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
-									<Link to="donations">Sponsor a piece of glass</Link>
+									<Link
+										className={s.sponsorButton}
+										to="donations"
+									>Sponsor a piece of glass</Link>
 								</div>
 							</div>
 						</div>
@@ -94,7 +99,7 @@ class Home extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="factsTitle">ROOTS OF KNOWLEDGE FACTS</div>
+				<div className={s.factsTitle}>ROOTS OF KNOWLEDGE FACTS</div>
 				<div className="facts">
 					<div>
 						<div>
@@ -147,7 +152,10 @@ class Home extends Component {
 						<img src={c3r1} />
 						<div>
 							<div>Add your piece to the story.</div>
-							<Link to="donations">Sponsor a piece of glass</Link>
+							<Link
+								className={s.bottomSponsorButton}
+								to="donations"
+							>Sponsor a piece of glass</Link>
 						</div>
 						<img src={c3r2} />
 					</div>
