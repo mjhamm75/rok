@@ -4,44 +4,43 @@ body {
     margin: 0;
 }
 .home {
-    position: relative;
     display: flex;
     flex-direction: column;
     .navimage {
-        width: 100%;
-        height: auto;
-        background-image: url('./../imgs/hand.png');
-        background-size: cover;
+        // width: 100%;
+        // height: auto;
+        // background-image: url('./../imgs/hand.png');
+        // background-size: cover;
         .navhero {
-            padding: 40px 0;
+            // padding: 40px 0;
             .heroflex {
-                background: rgba(255,255,255, .7);
-                display: flex;
-                flex-direction: column;
-                font-weight: lighter;
-                margin: 0 auto;
-                width: 425px;
+                // background: rgba(255,255,255, .7);
+                // display: flex;
+                // flex-direction: column;
+                // font-weight: lighter;
+                // margin: 0 auto;
+                // width: 425px;
                 > div {
-                    align-self: center;
+                    // align-self: center;
                 }
                 > div:first-child {
-                    margin-top: 35px;
+                    // margin-top: 35px;
                 }
                 > div:nth-child(2) {
-                    margin-top: 14px;
+                    // margin-top: 14px;
                 }
                 > div:last-child {
-                    margin-top: 22px;
-                    margin-bottom: 20px;
+                    // margin-top: 22px;
+                    // margin-bottom: 20px;
                     > div {
-                        background-color: white;
-                        width: 90%;
-                        margin: 0 auto;
-                        padding-bottom: 20px;
+                        // background-color: white;
+                        // width: 90%;
+                        // margin: 0 auto;
+                        // padding-bottom: 20px;
                         .text {
-                            margin: 0 22px;
-                            padding: 15px 0;
-                            font-weight: lighter;
+                            // margin: 0 22px;
+                            // padding: 15px 0;
+                            // font-weight: lighter;
                         }
                         a {
                             // color: white;
@@ -65,22 +64,22 @@ body {
                 }
             }
             @media(max-width: 600px) {
-                .heroflex {
-                    width: 100%;
-                }
+                // .heroflex {
+                //     width: 100%;
+                // }
             }
         }
         .link {
             a {
-                color: #4A90E2;
-                display: block;
-                font-family: OpenSans-Semibold;
-                font-size: 14px;
-                letter-spacing: 1.39px;
-                line-height: 19px;
-                padding-bottom: 30px;
-                text-align: center;
-                text-shadow: 0 1px 5px rgba(0,0,0,0.25);
+                // color: #4A90E2;
+                // display: block;
+                // font-family: OpenSans-Semibold;
+                // font-size: 14px;
+                // letter-spacing: 1.39px;
+                // line-height: 19px;
+                // padding-bottom: 30px;
+                // text-align: center;
+                // text-shadow: 0 1px 5px rgba(0,0,0,0.25);
             }
         }
     }

@@ -1,3 +1,48 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.heroBlurb {
+  margin: 0 22px;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: lighter;
+}
+.heroContainer {
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 90%;
+}
+.heroWrapper {
+  margin-top: 22px;
+  margin-bottom: 20px;
+}
+.heroTitle {
+  align-self: center;
+  margin-top: 14px;
+}
+.heroLogo {
+  align-self: center;
+  margin-top: 35px;
+}
+.heroFlex {
+  background: rgba(255,255,255, .7);
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+  margin: 0 auto;
+  width: 425px;
+}
+.navHero {
+  padding: 40px 0;
+}
+.navImage {
+  background-image: url('./../imgs/hand.png');
+  background-size: cover;
+  height: auto;
+  width: 100%;
+}
 .button {
   composes: button from './../styles/common.css';
 }
@@ -11,9 +56,6 @@
   composes: button;
   font-size: 17px;
 }
-.hero {
-
-}
 .right5{
   margin-right: 5px;
 }
@@ -25,9 +67,23 @@
   padding-top: 20px;
   padding-left: 30px;
 }
+.simplyDonate {
+  color: #4A90E2;
+  display: block;
+  font-family: OpenSans-Semibold;
+  font-size: 14px;
+  letter-spacing: 1.39px;
+  line-height: 19px;
+  padding-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.25);
+}
 @media(max-width: 600px) {
     .bottomSponsorButton {
         margin-bottom: 45px;
+    }
+    .heroflex {
+        width: 100%;
     }
 }
 @media(min-width: 1200px) {

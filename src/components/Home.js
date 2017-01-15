@@ -57,18 +57,18 @@ class Home extends Component {
 		} : null;
 		return (
 			<div className="home">
-				<div className="navimage">
-					<div className="navhero">
-						<div className="heroflex">
-							<div>
+				<div className={s.navImage}>
+					<div className={s.navHero}>
+						<div className={s.heroFlex}>
+							<div className={s.heroLogo}>
 								<img src={rokLogo} />
 							</div>
-							<div>
+							<div className={s.heroTitle}>
 								<img src={rokTitle} />
 							</div>
-							<div>
-								<div>
-									<div className="text">The Roots of Knowledge art glass window showcases humanity's pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
+							<div className={s.heroWrapper}>
+								<div className={s.heroContainer}>
+									<div className={s.heroBlurb}>The Roots of Knowledge art glass window showcases humanity's pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
 									<Link
 										className={s.sponsorButton}
 										to="donations"
@@ -77,8 +77,10 @@ class Home extends Component {
 							</div>
 						</div>
 			    	</div>
-			    	<div className="link">
-			    		<Link to="simply-donate">OR SIMPLY DONATE</Link>
+			    	<div>
+			    		<Link
+								className={s.simplyDonate}
+								to="simply-donate">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
 				<Nav />
