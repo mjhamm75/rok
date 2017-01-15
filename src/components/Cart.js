@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import className from 'classnames';
+import classnames from 'classnames';
 import bag from './../imgs/shopping.bag.black.png'
 import numeral from 'numeral';
 import publish from '../../db/stripe-publish.js';
 
-require('!style!css!sass!./../sass/cart.scss');
+import s from './Cart.css';
 
 class Cart extends Component {
 	constructor(props) {
@@ -44,38 +44,41 @@ class Cart extends Component {
 		let selectedItems = this.renderSelectedItems(this.props.selectedItems);
 		let total = this.getTotal();
 
-		let cart = className('cart', {
-			'open': this.state.show
+		let cart = classnames(s.cart, {
+			[s.open]: this.state.show
 		})
 
 		let hideItemTotal = this.props.selectedItems.length === 0 ? {
 			display: 'none'
 		} : null;
 
-		let donateButton = className('donate-button', {
+		let donateButton = classnames(s.button, {
 			'disabled': !this.props.chargeButtonEnabled
 		})
 
+		let totalBorder = classnames(s.border, {
+			[s.hideBorder]: this.props.selectedItems.length === 0
+		});
+
 		return (
 			<div className={cart}>
-				<div className="close" onClick={() => this.props.closeCart() }>close</div>
-				<img className="bag" src={bag}/>
-				<div className="header">Add your piece to the story</div>
-				<div className="blurb">Your donation will help inspire others with a masterpiece of epic size.</div>
+				<div className={s.close} onClick={() => this.props.closeCart() }>close</div>
+				<img className={s.bag} src={bag}/>
+				<div className={s.header}>Add your piece to the story</div>
+				<div className={s.blurb}>Your donation will help inspire others with a masterpiece of epic size.</div>
 					{selectedItems}
-				<div className="border" style={hideItemTotal}></div>
-				<div className="item" style={hideItemTotal}>
-					<div>
-						<div>
+				<div className={totalBorder}/>
+				<div style={hideItemTotal}></div>
+				<div className={s.item} style={hideItemTotal}>
+					<div className={s.itemWidth}>
+						<div className={s.itemName}>
 							Total
 						</div>
 					</div>
-					<div>
-						<div>
-							{numeral(total).format('$0,00')}
-						</div>
+					<div className={s.itemAmount}>
+						{numeral(total).format('$0,00')}
 					</div>
-					<div></div>
+					<div className={s.removeItem}></div>
 				</div>
 				<a className={donateButton} onClick={this.checkout.bind(this)}>Donate</a>
 			</div>
@@ -96,17 +99,18 @@ class Cart extends Component {
 	renderSelectedItems(selectedItems) {
 		return selectedItems.map((item, index) => {
 			return (
-				<div className="item" key={index}>
-					<div>
-						<div>{item.name}</div>
-						<div className="piece-id">Piece {item.id}</div>
+				<div className={s.item} key={index}>
+					<div className={s.itemWidth}>
+						<div className={s.itemName}>{item.name}</div>
+						<div className={s.itemId}>Piece {item.id}</div>
 					</div>
-					<div>
-						<div className="piece-amount">
-							{numeral(item.amount).format('$0,00')}
-						</div>
+					<div className={s.itemAmount}>
+						{numeral(item.amount).format('$0,00')}
 					</div>
-					<div onClick={() => this.props.removePiece(item.name, item.id)}>x</div>
+					<div
+						className={s.removeItem}
+						onClick={() => this.props.removePiece(item.name, item.id)}
+					>x</div>
 				</div>
 			)
 		});

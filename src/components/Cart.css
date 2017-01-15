@@ -1,0 +1,96 @@
+.cart {
+  background: white;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  right: -350px;
+  top: 0;
+  transition: right 0.5s;
+  width: 350px;
+  z-index: 2;
+}
+.button {
+  composes: button from './../styles/common.css';
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
+.bag {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 7%;
+}
+.total {
+  border-bottom: solid 1px #EFEFEF;
+  display: flex;
+  margin: 15px auto 0;
+  width: 250px;
+}
+.blurb {
+  border-bottom: solid 1px #EFEFEF;
+  font-size: 13px;
+  font-weight: lighter;
+  margin: 15px auto;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 250px;
+}
+.header {
+  color: #3A3A3A;
+  font-family: Georgia;
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: center;
+}
+.close {
+  color: #9B9B9B;
+  cursor: pointer;
+  margin: 10px;
+  text-align: right;
+}
+.open {
+  right: 0 !important;
+  transition: right 0.5s;
+}
+.item {
+  display: flex;
+  margin-bottom: 15px;
+}
+.itemWidth {
+  flex-basis: 50%;
+}
+.itemName {
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 30px;
+}
+.itemId {
+  font-size: 12px;
+  font-weight: lighter;
+  padding-left: 30px;
+}
+.itemAmount {
+  flex-basis: 40%;
+  font-size: 14px;
+  font-weight: 100;
+  padding-right: 25px;
+  text-align: right;
+}
+.removeItem {
+  cursor: pointer;
+  flex-basis: 10%;
+  font-size: 14px;
+  font-weight: 100;
+  padding-right: 5px;
+}
+.border {
+  border-top: 1px solid #efefef;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 250px;
+}
+.hideBorder {
+  display: none;
+}
