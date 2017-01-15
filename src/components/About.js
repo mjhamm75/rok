@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Nav from './Nav';
 import Copywrite from './Copywrite';
 import Footer from './Footer';
+import classnames from 'classnames';
 
 let library = require('./../imgs/library.png');
 let libraryExt = require('./../imgs/library-exterior.png');
@@ -45,10 +46,11 @@ class About extends Component {
 	}
 
 	render() {
+		let headerClass = classnames();
 		return (
 			<div className="about">
 				<Nav fixed="true"/>
-				<h1>About the Roots of Knowledge Project</h1>
+				<h1 className={s.title}>About the Roots of Knowledge Project</h1>
 				<div className="container">
 					<div className="row">
 						<div className="col l8 offset-l2">
@@ -73,7 +75,7 @@ class About extends Component {
 				    <div className="row">
 				    	<div className="col l10 offset-l2">
 				    		<div className="defer-image image-ratio:16x9">
-				    			<img className="library" src={library} />
+				    			<img className={s.library} src={library} />
 				    		</div>
 				    	</div>
 				    </div>
@@ -116,7 +118,7 @@ class About extends Component {
 							<img src={tholdman} />
 						</div>
 						<div className="col l8">
-							<span className="bold">Thomas E. Holdman</span>: Stained Glass Artist, Holdman Studios CEO
+							<span className={s.bold}>Thomas E. Holdman</span>: Stained Glass Artist, Holdman Studios CEO
 							<br />
 As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parents’ garage. He has since created stained glass displayed in all 50 states and worldwide for commercial buildings, private residences, and public art features. Tom’s creations are also found in many religious institutions including 40 LDS temples, and Catholic and Protestant Sanctuaries. Mr. Holdman is the recipient of The Best of State Statue Award, the Governor’s Visual Artist Award, the Star award, etc. He and his art have been featured in the LDS Ensign Magazine, USA Today and the New York Times. He also founded The Art Institute at Thanksgiving Point.
 						</div>
@@ -126,7 +128,7 @@ As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parent
 							<img src={coscarson} />
 						</div>
 						<div className="col l8">
-							<span className="bold">R. Cameron Oscarson</span>: Head Artist, Holdman Studios
+							<span className={s.bold}>R. Cameron Oscarson</span>: Head Artist, Holdman Studios
 							<br />
 Cameron Oscarson, also a native of Utah, developed his skills as an artist at a young age and attended Dixie State College on scholarship, then Brigham Young University, receiving a BFA with an emphasis in painting and drawing. He joined Holdman Studios in 2003 and his natural artistic talent has been invaluable to the studios’ accomplishments and projects, including “Roots of Knowledge.” As an award-winning artist himself, Mr. Oscarson has worked on many of his own creative endeavors, including illustrations for children’s books and other commissioned works.
 						</div>
@@ -151,7 +153,7 @@ Cameron Oscarson, also a native of Utah, developed his skills as an artist at a 
 							<img src={lgroberg} />
 						</div>
 						<div className="col l8">
-							<span className="bold">Lee B. Groberg</span>: Executive Producer, Roots Media President & CEO
+							<span className={s.bold}>Lee B. Groberg</span>: Executive Producer, Roots Media President & CEO
 							<br />
 An award-winning filmmaker with over 20 years experience, producer-director Lee Groberg has an impressive filmography in the production of historical documentaries, including a growing list of accolades from the film and television industry. Mr. Groberg has developed long-term relationships with many national and international television networks and affiliates. He enjoys associations with leading historical scholars and authorities from around the world. Lee holds an MBA in international business management. Telly Award, Aurora Award, US International Film Festival, PEARL Award, George Washington Medal of Honor, CINE Golden Eagle, Houston International Film Festival, Special Jury Remi Award.
 						</div>
@@ -161,25 +163,37 @@ An award-winning filmmaker with over 20 years experience, producer-director Lee 
 							<img src={rwoffley} />
 						</div>
 						<div className="col l8">
-							<span className="bold">Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
+							<span className={s.bold}>Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
 							<br />
 For the past 20 years, Ross has served as COO and Corporate Counsel in the media and high/tech industry. He is an active member of the Utah State Bar, having received his Juris Doctorate from J. Reuben Clark Law School where he graduated Cum Laude. Ross served eight years in the United States Air Force and a T-37 instructor pilot and NATO F-111f fighter and instructor pilot. He worked for WordPerfect Corporation as Director of Marketing and Director of Channel Marketing.
 						</div>
 					</div>
 				</div>
-				<div className="icons">
-					<a target="_blank" href="http://holdmanstudios.com/">
+				<div className={s.icons}>
+					<a
+						className={s.icon}
+						href="http://holdmanstudios.com/"
+						target="_blank"
+					>
 						<img src={holdmanIcon} />
 					</a>
-					<a target="_blank" href="http://www.uvu.edu/oel/rootsofknowledge.html">
+					<a
+						className={s.icon}
+						href="http://www.uvu.edu/oel/rootsofknowledge.html"
+						target="_blank"
+					>
 						<img src={uvuIcon} />
 					</a>
-					<a target="_blank" href="http://grobergfilms.com">
+					<a
+						className={s.icon}
+						href="http://grobergfilms.com"
+						target="_blank"
+					>
 						<img src={rootsMediaIcon} />
 					</a>
 				</div>
-				<div className="tagline">Join in building the masterpiece of a lifetime.</div>
-				<Link className="link" to="donations">Sponsor a piece of glass</Link>
+				<div className={s.tagline}>Join in building the masterpiece of a lifetime.</div>
+				<Link className={s.button} to="donations">Sponsor a piece of glass</Link>
 				<Footer />
 			</div>
 		)

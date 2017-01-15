@@ -7,6 +7,12 @@
   text-align: center;
   text-decoration: none;
 }
+.button:hover {
+  background: #829B43;
+}
+.button:active {
+  box-shadow: none;
+}
 .link {
   text-decoration: none;
   color: #a3a3a3;
