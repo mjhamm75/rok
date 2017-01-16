@@ -32,6 +32,8 @@ import h1 from '../svg/h1.js';
 import h2 from '../svg/h2.js';
 import h3 from '../svg/h3.js';
 
+import i1 from '../svg/i1.js';
+
 module.exports = {
 	null: Null,
 	a1,
@@ -58,4 +60,5 @@ module.exports = {
 	h1,
 	h2,
 	h3,
+	i1
 }

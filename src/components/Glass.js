@@ -34,6 +34,8 @@ import h1 from './../imgs/panel_thumbnails/H-1.jpg'
 import h2 from './../imgs/panel_thumbnails/H-2.jpg'
 import h3 from './../imgs/panel_thumbnails/H-3.jpg'
 
+import i1 from './../imgs/panel_thumbnails/I-1.jpg'
+
 import Nav from './Nav';
 
 require('!style!css!sass!./../sass/glass.scss');
@@ -92,6 +94,9 @@ class Glass extends Component {
 						<img src={h1} onClick={this.updateOverlay.bind(this, 'h1')}/>
 						<img src={h2} onClick={this.updateOverlay.bind(this, 'h2')}/>
 						<img src={h3} onClick={this.updateOverlay.bind(this, 'h3')}/>
+					</div>
+					<div>
+						<img src={i1} onClick={this.updateOverlay.bind(this, 'i1')}/>
 					</div>
 				</div>
 			</div>
