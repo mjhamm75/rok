@@ -90,12 +90,12 @@ class Home extends Component {
 						<div>
 							<div className="hide"></div>
 							<div className="grow left">
-								<div>IGNITING THE FIRE</div>
-								<div>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depict humanity’s contributions to knowledge throughout recorded history. <Link to="donations">See the wall</Link></div>
+								<div className={s.storyHeader}>IGNITING THE FIRE</div>
+								<div className={s.storyContent}>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depict humanity’s contributions to knowledge throughout recorded history. <Link to="donations">See the wall</Link></div>
 							</div>
 							<div className="grow right">
-								<div>A NEW WAY TO LEARN</div>
-								<div>The artglass window and documentary series will inspire viewers the world over as the lessons of the past will, hopefully, inspire each of us to make a better future. <a href="https://vimeo.com/123640824">Watch now</a></div>
+								<div className={s.storyHeader}>A NEW WAY TO LEARN</div>
+								<div className={s.storyContent}>The artglass window and documentary series will inspire viewers the world over as the lessons of the past will, hopefully, inspire each of us to make a better future. <a href="https://vimeo.com/123640824">Watch now</a></div>
 							</div>
 							<div className="hide"></div>
 						</div>
