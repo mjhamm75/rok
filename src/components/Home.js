@@ -140,9 +140,9 @@ class Home extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="quote">
-					<div>“This is a project that I believe will set the world aflame, and the world will come to see this. We have got to make this happen. This is to be a central part of the University.”</div>
-					<div>UVU President Matthew Holland</div>
+				<div className={s.quoteWrapper}>
+					<div className={s.quote}>“This is a project that I believe will set the world aflame, and the world will come to see this. We have got to make this happen. This is to be a central part of the University.”</div>
+					<div className={s.quotee}>UVU President Matthew Holland</div>
 				</div>
 				<div className="addpiece">
 					<div className="iphonehide right5">

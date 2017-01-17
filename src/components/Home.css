@@ -185,6 +185,21 @@
   margin: 20px;
   width: 100%;
 }
+.quoteWrapper {
+  margin: 110px 0;
+  font-family: Georgia;
+}
+.quote {
+  font-size: 20px;
+  margin: 0 auto 30px;
+  text-align: center;
+  width: 50%;
+}
+.quotee {
+  font-size: 14px;
+  text-align: center;
+}
+
 @media(max-width: 600px) {
     .bottomSponsorButton {
         margin-bottom: 45px;
@@ -218,6 +233,12 @@
     .factColumn {
       flex-direction: column;
     }
+    .groupimage {
+        background-position-x: -255px;
+    }
+    .quote {
+        width: 80%;
+    }
 }
 @media(max-width: 992px) {
     .hide {
@@ -240,6 +261,12 @@
     .storyH1 {
         margin-left: 15px;
         margin-right: 15px;
+    }
+    .groupimage {
+        background-position-x: -165px;
+    }
+    .quote {
+        width: 75%;
     }
 }
 @media(min-width: 993px) {
