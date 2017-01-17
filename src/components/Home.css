@@ -87,6 +87,49 @@
   font-size: 14px;
   font-weight: 100;
 }
+.grow {
+  flex-basis: 350px;
+  line-height: 26px;
+}
+.left {
+  margin-right: 10px;
+}
+.right {
+  margin-left: 10px;
+}
+.growLeft {
+  composes: grow;
+  composes: left;
+}
+.growRight {
+  composes: grow;
+  composes: right;
+}
+.storyWrapper {
+  background: white;
+  height: 600px;
+}
+.story {
+  background-image: url('./../imgs/stainedglass-desktop-comp.jpg');
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+.storyH1 {
+  font-family: Georgia;
+  font-style: italic;
+  font-size: 32px;
+  margin-top: 45px;
+  text-align: center;
+}
+.storyMain {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25%;
+}
+.storyMainItem {
+  flex-basis: 145px;
+}
 @media(max-width: 600px) {
     .bottomSponsorButton {
         margin-bottom: 45px;
@@ -94,10 +137,71 @@
     .heroflex {
         width: 100%;
     }
+    .storyMain {
+        flex-direction: column;
+    }
+    .left {
+        flex-basis: 90px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .right {
+        flex-basis: 90px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .story {
+        background-image: url('./../imgs/stainedglass-mobile.png');
+        height: 300px;
+        background-position-y: 0;
+        background-position-x: 0;
+    }
+    .storyH1 {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+@media(max-width: 992px) {
+    .hide {
+        display: none;
+    }
+    .left {
+        margin-left: 25px;
+    }
+    .right {
+        margin-right: 25px;
+    }
+    .storyMain {
+      margin-top: 40%;
+    }
+    .story {
+        background-image: url('./../imgs/stainedglass-ipad.png');
+        background-position-y: -80px;
+        background-position-x: -40px;
+    }
+    .storyH1 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+@media(min-width: 993px) {
+  .story {
+    background-position-y: -25px;
+  }
 }
 @media(min-width: 1200px) {
   .factsTitle {
     padding-top: 35px;
     padding-left: 100px;
   }
+}
+@media(min-width: 1350px) {
+    .storyMain {
+        margin-top: 25%;
+    }
+}
+@media(min-width: 1650px) {
+    .storyMain {
+        margin-top: 22%;
+    }
 }
