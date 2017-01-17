@@ -130,6 +130,34 @@
 .storyMainItem {
   flex-basis: 145px;
 }
+.groupTitle {
+  margin: 50px 70px 25px;
+  font-family: Georgia;
+  font-size: 32px;
+  text-align: center;
+}
+.groupContent {
+  margin: 0 16%;
+}
+.groupLinkWrapper {
+  align-self: center;
+  color: rgba(74, 144, 226, 100);
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.groupLink {
+  font-weight: 100;
+}
+.hero {
+  align-self: center;
+  background-color: white;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  margin: 20px;
+  width: 100%;
+}
 @media(max-width: 600px) {
     .bottomSponsorButton {
         margin-bottom: 45px;
@@ -193,6 +221,9 @@
   .factsTitle {
     padding-top: 35px;
     padding-left: 100px;
+  }
+  .groupLink {
+    padding: 15px 30px;
   }
 }
 @media(min-width: 1350px) {

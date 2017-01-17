@@ -297,31 +297,31 @@ body {
                 flex-direction: column;
                 margin: 20px;
                 > div {
-                    align-self: center;
+                    // align-self: center;
                     a {
-                        font-weight: 100;
+                        // font-weight: 100;
                     }
 
                     @media(min-width: 1200px) {
                       a {
-                        padding: 15px 30px;
+                        // padding: 15px 30px;
                       }
                     }
                 }
                 > div:first-child {
-                    margin: 50px 70px 25px;
-                    font-family: Georgia;
-                    font-size: 32px;
-                    text-align: center;
+                    // margin: 50px 70px 25px;
+                    // font-family: Georgia;
+                    // font-size: 32px;
+                    // text-align: center;
                 }
                 > div:nth-child(2) {
-                    margin: 0 16%;
+                    // margin: 0 16%;
                 }
                 > div:last-child {
-                    color: rgba(74, 144, 226, 100);
-                    font-weight: bold;
-                    margin-top: 25px;
-                    margin-bottom: 20px;
+                    // color: rgba(74, 144, 226, 100);
+                    // font-weight: bold;
+                    // margin-top: 25px;
+                    // margin-bottom: 20px;
                 }
             }
             @media(max-width: 600px) {

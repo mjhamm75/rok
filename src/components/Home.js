@@ -126,13 +126,16 @@ class Home extends Component {
 				</div>
 				<div className="groupimage">
 					<div className="grouphero">
-						<div className="hero">
-							<div>Building the Window</div>
-							<div>
+						<div className={s.hero}>
+							<div className={s.groupTitle}>Building the Window</div>
+							<div className={s.groupContent}>
 								<div>Measuring an immense 10' by 200' in length, totaling eighty panels, this art glass will impact viewers through illustrating intimate moments of time on a grand scale.</div>
 							</div>
-							<div>
-								<a href="https://vimeo.com/123640824">Watch now</a>
+							<div className={s.groupLinkWrapper}>
+								<a
+									className={s.groupLink}
+									href="https://vimeo.com/123640824"
+								>Watch now</a>
 							</div>
 						</div>
 					</div>
