@@ -55,10 +55,10 @@ body {
                             // text-decoration: none;
                         }
 												a:hover {
-													background: #829B43;
+													// background: #829B43;
 												}
 												a:active {
-													box-shadow: none;
+													// box-shadow: none;
 												}
                     }
                 }
@@ -239,34 +239,34 @@ body {
     //   }
     // }
     .facts {
-        color: white;
-        background: #3a3a3a;
-        display: flex;
+        // color: white;
+        // background: #3a3a3a;
+        // display: flex;
         > div {
-            display: flex;
-            flex-basis: 300px;
-            flex-grow: 1;
-            flex-wrap: wrap;
+            // display: flex;
+            // flex-basis: 300px;
+            // flex-grow: 1;
+            // flex-wrap: wrap;
             > div {
-                flex-basis: 250px;
-                flex-grow: 1;
-                flex-wrap: wrap;
-                padding: 25px;
+                // flex-basis: 250px;
+                // flex-grow: 1;
+                // flex-wrap: wrap;
+                // padding: 25px;
                 > div:first-child {
-                    font-family: Merriweather;
-                    font-size: 34px;
-                    margin-bottom: 10px;
+                    // font-family: Merriweather;
+                    // font-size: 34px;
+                    // margin-bottom: 10px;
                 }
             }
         }
         @media(max-width: 600px) {
-            flex-direction: column;
+            // flex-direction: column;
         }
     }
     @media(min-width: 1200px) {
-      .facts {
-        padding: 0 75px;
-      }
+      // .facts {
+      //   padding: 0 75px;
+      // }
     }
     .groupimage {
         background-image: url('./../imgs/group-comp.jpg');

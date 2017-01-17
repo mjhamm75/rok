@@ -67,6 +67,33 @@
   padding-top: 20px;
   padding-left: 30px;
 }
+.factTitle {
+  font-family: Merriweather;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+.factContent {
+  font-size: 14px;
+  font-weight: 100;
+}
+.fact {
+  flex-basis: 250px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+.factColumn {
+  display: flex;
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+.facts {
+  color: white;
+  background: #3a3a3a;
+  display: flex;
+  padding: 0 75px;
+}
 .simplyDonate {
   color: #4A90E2;
   display: block;
@@ -188,6 +215,9 @@
         margin-right: 10px;
         margin-left: 10px;
     }
+    .factColumn {
+      flex-direction: column;
+    }
 }
 @media(max-width: 992px) {
     .hide {
@@ -224,6 +254,9 @@
   }
   .groupLink {
     padding: 15px 30px;
+  }
+  .facts {
+    padding: 0 75px;
   }
 }
 @media(min-width: 1350px) {

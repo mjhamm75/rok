@@ -102,25 +102,25 @@ class Home extends Component {
 					</div>
 				</div>
 				<div className={s.factsTitle}>ROOTS OF KNOWLEDGE FACTS</div>
-				<div className="facts">
-					<div>
-						<div>
-							<div>60,000+</div>
-							<div>pieces of glass used to create 80 panels in the UVU Library.  Actual rock, fossils, coins, meteorite, and ivory are in the window as well.</div>
+				<div className={s.facts}>
+					<div className={s.factColumn}>
+						<div className={s.fact}>
+							<div className={s.factTitle}>60,000+</div>
+							<div className={s.factContent}>pieces of glass used to create 80 panels in the UVU Library.  Actual rock, fossils, coins, meteorite, and ivory are in the window as well.</div>
 						</div>
-						<div>
-							<div>300+</div>
-							<div>UVU students have already participated in various elements of the Roots of Knowledge project.</div>
+						<div className={s.fact}>
+							<div className={s.factTitle}>300+</div>
+							<div className={s.factContent}>UVU students have already participated in various elements of the Roots of Knowledge project.</div>
 						</div>
 					</div>
-					<div>
-						<div>
-							<div>2400+</div>
-							<div>pieces of glass were used to make the Alexander & Bucephalus Mosaic.</div>
+					<div className={s.factColumn}>
+						<div className={s.fact}>
+							<div className={s.factTitle}>2400+</div>
+							<div className={s.factContent}>pieces of glass were used to make the Alexander & Bucephalus Mosaic.</div>
 						</div>
-						<div>
-							<div>$1.5 Million</div>
-							<div>has already been donated to the project by individually sponsored pieces of glass and donations.</div>
+						<div className={s.fact}>
+							<div className={s.factTitle}>$1.5 Million</div>
+							<div className={s.factContent}>has already been donated to the project by individually sponsored pieces of glass and donations.</div>
 						</div>
 					</div>
 				</div>
