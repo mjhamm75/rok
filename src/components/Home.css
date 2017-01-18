@@ -311,3 +311,11 @@
         margin-top: 22%;
     }
 }
+.iphone {
+  composes: iphonehide;
+  composes: right5;
+}
+.ipad {
+  composes: ipadhide;
+  composes: right5;
+}

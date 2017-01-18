@@ -145,7 +145,7 @@ class Home extends Component {
 					<div className={s.quotee}>UVU President Matthew Holland</div>
 				</div>
 				<div className="addpiece">
-					<div className="iphonehide right5">
+					<div className={s.iphone}>
 						<img src={c1r1} />
 						<img src={c1r2} className={s.top5}/>
 					</div>
@@ -164,11 +164,11 @@ class Home extends Component {
 						</div>
 						<img src={c3r2} />
 					</div>
-					<div className="ipadhide right5">
+					<div className={s.ipad}>
 						<img src={c4r1} />
 						<img src={c4r2} className={s.top5} />
 					</div>
-					<div className="iphonehide">
+					<div className={s.iphonehide}>
 						<img src={c5r1} />
 						<img src={c5r2} className={s.top5} />
 					</div>
