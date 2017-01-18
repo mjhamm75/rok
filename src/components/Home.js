@@ -147,11 +147,11 @@ class Home extends Component {
 				<div className="addpiece">
 					<div className="iphonehide right5">
 						<img src={c1r1} />
-						<img src={c1r2} className="top5"/>
+						<img src={c1r2} className={s.top5}/>
 					</div>
-					<div className="ipadhide right5">
+					<div className={s.addPieceHero}>
 						<img src={c2r1} />
-						<img src={c2r2} className="top5" />
+						<img src={c2r2} className={s.top5} />
 					</div>
 					<div className="hero right5">
 						<img src={c3r1} />
@@ -166,11 +166,11 @@ class Home extends Component {
 					</div>
 					<div className="ipadhide right5">
 						<img src={c4r1} />
-						<img src={c4r2} className="top5" />
+						<img src={c4r2} className={s.top5} />
 					</div>
 					<div className="iphonehide">
 						<img src={c5r1} />
-						<img src={c5r2} className="top5" />
+						<img src={c5r2} className={s.top5} />
 					</div>
 				</div>
 				<Footer />

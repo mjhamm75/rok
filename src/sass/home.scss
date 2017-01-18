@@ -375,14 +375,14 @@ body {
         }
         display: flex;
         @media(max-width: 992px) {
-            .ipadhide {
-                display: none;
-            }
+            // .ipadhide {
+            //     display: none;
+            // }
         }
         @media(max-width: 600px) {
-            .iphonehide {
-                display: none;
-            }
+            // .iphonehide {
+            //     display: none;
+            // }
         }
         .top5 {
             margin-top: 5px;
