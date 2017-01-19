@@ -18,8 +18,6 @@ let c4r2 = require('./../imgs/col4-2.png');
 let c5r1 = require('./../imgs/col5-1.png');
 let c5r2 = require('./../imgs/col5-2.png');
 
-require('!style!css!sass!./../sass/home.scss');
-
 import s from './Home.css';
 
 class Home extends Component {
