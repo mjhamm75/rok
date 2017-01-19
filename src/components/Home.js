@@ -153,10 +153,10 @@ class Home extends Component {
 						<img src={c2r1} className={s.addPieceImage}/>
 						<img src={c2r2} className={s.top5} />
 					</div>
-					<div className="hero right5">
+					<div className={s.addPieceHero}>
 						<img src={c3r1} className={s.addPieceImage}/>
-						<div>
-							<div>Add your piece to the story.</div>
+						<div className={s.addPieceHeroContent}>
+							<div className={s.addPieceHeroTitle}>Add your piece to the story.</div>
 							<Link
 								className={s.bottomSponsorButton}
 								to="donations"

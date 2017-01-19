@@ -215,7 +215,20 @@
   composes: addPieceImage;
   margin-top: 5px;
 }
-
+.addPieceHeroTitle {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.addPieceHeroContent {
+  flex-grow: 2;
+}
+.addPieceHero {
+  justify-content: space-between;
+  font-family: Georgia;
+  font-size: 32px;
+  margin-right: 5px;
+  text-align: center;
+}
 @media(max-width: 600px) {
     .bottomSponsorButton {
         margin-bottom: 45px;
@@ -257,6 +270,9 @@
     }
     .iphonehide {
         display: none;
+    }
+    .addPieceHeroTitle {
+      margin-top: 40px;
     }
 }
 @media(max-width: 992px) {

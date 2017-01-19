@@ -396,21 +396,21 @@ body {
         }
         .hero {
             > div {
-                flex-grow: 2;
+                // flex-grow: 2;
                 > div:first-child {
-                    margin-top: 10%;
-                    margin-bottom: 10%;
+                    // margin-top: 10%;
+                    // margin-bottom: 10%;
                 }
                 @media(max-width: 600px) {
                     > div:first-child {
-                        margin-top: 40px;
+                        // margin-top: 40px;
                     }
                 }
             }
-            justify-content: space-between;
-            font-family: Georgia;
-            font-size: 32px;
-            text-align: center;
+            // justify-content: space-between;
+            // font-family: Georgia;
+            // font-size: 32px;
+            // text-align: center;
             a {
                 // color: white;
                 // background: #a3be5f;
