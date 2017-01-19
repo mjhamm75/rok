@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateEmailCreds, createNewUser, checkUsername } from './../actions/GlassActions';
 import className from 'classnames';
-require('!style!css!sass!./../sass/config.scss');
 
 class Config extends Component {
 	constructor(props) {
@@ -85,7 +84,7 @@ class Config extends Component {
 			this.setState({
 				emailError: false
 			})
-			this.props.dispatch(updateEmailCreds(username, password));			
+			this.props.dispatch(updateEmailCreds(username, password));
 			this.refs.username.value = '';
 			this.refs.password.value = '';
 			this.refs.passwordValidation.value = '';
@@ -109,7 +108,7 @@ class Config extends Component {
 		this.setState({
 				userError: false
 		})
-		this.refs.newuser.value = '';	
+		this.refs.newuser.value = '';
 		this.refs.newpassword.value = '';
 		this.refs.newpasswordValidation.value = '';
 	}
