@@ -222,12 +222,42 @@
 .addPieceHeroContent {
   flex-grow: 2;
 }
+.addPieceItem {
+  display: flex;
+  flex-direction: column;
+}
 .addPieceHero {
+  composes: addPieceItem;
   justify-content: space-between;
   font-family: Georgia;
   font-size: 32px;
   margin-right: 5px;
   text-align: center;
+}
+.addPiece {
+  margin: 0 auto;
+  display: flex;
+}
+.groupHero {
+  background: rgba(255,255,255, .5);
+  height: auto;
+  width: 44%;
+  margin: 0 auto 200px;
+  display: flex;
+  justify-content: center;
+  min-width: 350px;
+  max-width: 475px;
+}
+.groupImage {
+  background-image: url('./../imgs/group-comp.jpg');
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  padding-top: 180px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
 }
 @media(max-width: 600px) {
     .bottomSponsorButton {
@@ -269,10 +299,16 @@
         width: 80%;
     }
     .iphonehide {
+        composes: addPieceItem;
         display: none;
     }
     .addPieceHeroTitle {
       margin-top: 40px;
+    }
+    .groupHero {
+      margin: 0 0 200px;
+      width: 100%;
+      max-width: 100%;
     }
 }
 @media(max-width: 992px) {
@@ -335,10 +371,12 @@
     }
 }
 .iphone {
+  composes: addPieceItem;
   composes: iphonehide;
   composes: right5;
 }
 .ipad {
+  composes: addPieceItem;
   composes: ipadhide;
   composes: right5;
 }

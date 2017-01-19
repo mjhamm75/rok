@@ -56,7 +56,7 @@ class Home extends Component {
 			marginTop: '45px'
 		} : null;
 		return (
-			<div className="home">
+			<div className={s.home}>
 				<div className={s.navImage}>
 					<div className={s.navHero}>
 						<div className={s.heroFlex}>
@@ -124,8 +124,8 @@ class Home extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="groupimage">
-					<div className="grouphero">
+				<div className={s.groupImage}>
+					<div className={s.groupHero}>
 						<div className={s.hero}>
 							<div className={s.groupTitle}>Building the Window</div>
 							<div className={s.groupContent}>
@@ -144,7 +144,7 @@ class Home extends Component {
 					<div className={s.quote}>“This is a project that I believe will set the world aflame, and the world will come to see this. We have got to make this happen. This is to be a central part of the University.”</div>
 					<div className={s.quotee}>UVU President Matthew Holland</div>
 				</div>
-				<div className="addpiece">
+				<div className={s.addPiece}>
 					<div className={s.iphone}>
 						<img src={c1r1} className={s.addPieceImage}/>
 						<img src={c1r2} className={s.top5}/>
