@@ -369,9 +369,9 @@ body {
     .addpiece {
         margin: 0 auto;
         img {
-            max-width: 100%;
-            height: auto;
-            overflow: hidden;
+            // max-width: 100%;
+            // height: auto;
+            // overflow: hidden;
         }
         display: flex;
         @media(max-width: 992px) {
@@ -385,10 +385,10 @@ body {
             // }
         }
         .top5 {
-            margin-top: 5px;
+            // margin-top: 5px;
         }
         .right5 {
-            margin-right: 5px;
+            // margin-right: 5px;
         }
         > div {
             display: flex;

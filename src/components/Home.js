@@ -146,15 +146,15 @@ class Home extends Component {
 				</div>
 				<div className="addpiece">
 					<div className={s.iphone}>
-						<img src={c1r1} />
+						<img src={c1r1} className={s.addPieceImage}/>
 						<img src={c1r2} className={s.top5}/>
 					</div>
 					<div className={s.addPieceHero}>
-						<img src={c2r1} />
+						<img src={c2r1} className={s.addPieceImage}/>
 						<img src={c2r2} className={s.top5} />
 					</div>
 					<div className="hero right5">
-						<img src={c3r1} />
+						<img src={c3r1} className={s.addPieceImage}/>
 						<div>
 							<div>Add your piece to the story.</div>
 							<Link
@@ -162,14 +162,14 @@ class Home extends Component {
 								to="donations"
 							>Sponsor a piece of glass</Link>
 						</div>
-						<img src={c3r2} />
+						<img src={c3r2} className={s.addPieceImage}/>
 					</div>
 					<div className={s.ipad}>
-						<img src={c4r1} />
+						<img src={c4r1} className={s.addPieceImage}/>
 						<img src={c4r2} className={s.top5} />
 					</div>
 					<div className={s.iphonehide}>
-						<img src={c5r1} />
+						<img src={c5r1} className={s.addPieceImage}/>
 						<img src={c5r2} className={s.top5} />
 					</div>
 				</div>
