@@ -82,6 +82,7 @@
   flex-basis: 250px;
   flex-grow: 1;
   flex-wrap: wrap;
+  font-family: 'Open Sans';
   padding: 25px;
 }
 .factColumn {
@@ -167,6 +168,8 @@
   text-align: center;
 }
 .groupContent {
+  font-family: 'Open Sans';
+  font-weight: 100;
   margin: 0 16%;
 }
 .groupLinkWrapper {
