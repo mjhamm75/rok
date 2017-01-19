@@ -149,7 +149,7 @@ class Home extends Component {
 						<img src={c1r1} className={s.addPieceImage}/>
 						<img src={c1r2} className={s.top5}/>
 					</div>
-					<div className={s.addPieceHero}>
+					<div className={s.ipad}>
 						<img src={c2r1} className={s.addPieceImage}/>
 						<img src={c2r2} className={s.top5} />
 					</div>
