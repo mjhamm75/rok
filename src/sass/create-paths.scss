@@ -1,113 +1,113 @@
 .button-container {
-	margin: 25px;
+	// margin: 25px;
 }
 .svg {
-	margin-left: 25px;
+	// margin-left: 25px;
 }
 
 .image-container {
-	margin: 50px 25px;
+	// margin: 50px 25px;
 }
 
 .input-container {
-	display: flex;
-	margin: 50px;
+	// display: flex;
+	// margin: 50px;
 
 	.cost-container {
-		float: left;
-		height: 228;
-		width: 100%;
-		overflow-y: scroll;
-		border: 1px solid #D6D6D6;
+		// float: left;
+		// height: 228;
+		// width: 100%;
+		// overflow-y: scroll;
+		// border: 1px solid #D6D6D6;
 	}
 
 	> div > textarea {
-		border: 1px solid #D6D6D6;
-		height: 18em;
-		margin-left: 25px;
-		width: 35em;
+		// border: 1px solid #D6D6D6;
+		// height: 18em;
+		// margin-left: 25px;
+		// width: 35em;
 	}
 
 	> div > input {
-		width: 101%;
+		// width: 101%;
 	}
 }
 
 .form {
-	align-items: center;
-	display: flex;
-	padding: 10px 5px;
-	width: 100%;
+	// align-items: center;
+	// display: flex;
+	// padding: 10px 5px;
+	// width: 100%;
 
 	> label {
-		margin-right: 10px;
-		width: 40px;
+		// margin-right: 10px;
+		// width: 40px;
 	}
 
 	> div > label {
-		margin-right: 10px;
+		// margin-right: 10px;
 	}
 }
 
-.form:hover {
-	background: #BBBBBB;
-}
+// .form:hover {
+// 	background: #BBBBBB;
+// }
 
-svg {
-	stroke-opacity: 0;
-}
-
-svg {
-	pointer-events: visible;
-	cursor: pointer;
-}
-svg img:hover {
-	backface-visibility: hidden;
-	opacity: 0;
-}
-
-svg path{
-	fill:none;
-  pointer-events:all;
-}
-
-svg path:hover {
-		stroke: #31C6FF;
-		stroke-width: 20px;
-		stroke-opacity: 1;
-    fill:  rgba(73,143,226,0.80);
-}
-
-svg rect:hover {
-		stroke: #31C6FF;
-		stroke-width: 20px;
-		stroke-opacity: 1;
-    fill:  rgba(73,143,226,0.80);
-}
-
-svg polygon:hover {
-		stroke: #31C6FF;
-		stroke-width: 20px;
-		stroke-opacity: 1;
-    fill:  rgba(73,143,226,0.80);
-}
+// svg {
+// 	stroke-opacity: 0;
+// }
+//
+// svg {
+// 	pointer-events: visible;
+// 	cursor: pointer;
+// }
+// svg img:hover {
+// 	backface-visibility: hidden;
+// 	opacity: 0;
+// }
+//
+// svg path{
+// 	fill:none;
+//   pointer-events:all;
+// }
+//
+// svg path:hover {
+// 		stroke: #31C6FF;
+// 		stroke-width: 20px;
+// 		stroke-opacity: 1;
+//     fill:  rgba(73,143,226,0.80);
+// }
+//
+// svg rect:hover {
+// 		stroke: #31C6FF;
+// 		stroke-width: 20px;
+// 		stroke-opacity: 1;
+//     fill:  rgba(73,143,226,0.80);
+// }
+//
+// svg polygon:hover {
+// 		stroke: #31C6FF;
+// 		stroke-width: 20px;
+// 		stroke-opacity: 1;
+//     fill:  rgba(73,143,226,0.80);
+// }
 
 .hover {
-	fill:  rgba(73,143,226,0.80);
+	// fill:  rgba(73,143,226,0.80);
 }
-.hover-red {
-	fill: rgba(255, 0, 0, 0.80);
-}
+// .hover-red {
+// 	fill: rgba(255, 0, 0, 0.80);
+// }
 .purchased {
-	stroke: #A3BE5F;
-	stroke-width: 10px;
-	stroke-opacity: 1;
-	cursor: default;
-	fill:  rgba(130,155,67,0.33);
-	pointer-events: none;
+	// stroke: #A3BE5F;
+	// stroke-width: 10px;
+	// stroke-opacity: 1;
+	// cursor: default;
+	// fill:  rgba(130,155,67,0.33);
+	// pointer-events: none;
 }
 .svg {
-	margin-top: 15px;
-	height: 18em;
-	width: 70vw;
+	// margin-top: 15px;
+	// height: 18em;
+	// width: 70vw;
 }

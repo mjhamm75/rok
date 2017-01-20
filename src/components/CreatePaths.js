@@ -5,6 +5,7 @@ import { saveSVG } from './../actions/GlassActions';
 import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/create-paths.scss');
+import s from './CreatePaths.css';
 
 class ValueGlass extends Component {
 	constructor(props) {
@@ -21,25 +22,35 @@ class ValueGlass extends Component {
 		var glass = "glass";
 		return (
 			<div>
-				<div className="button-container">
+				<div className={s.buttonContainer}>
 					<button onClick={this.highlight.bind(this)}>Highlight</button>
 					<button onClick={this.clear.bind(this)}>Clear</button>
 				</div>
-				<div className="svg" dangerouslySetInnerHTML={{__html: this.state.svg}}></div>
-				<div className="input-container">
+				<div
+					className={s.svg}
+					dangerouslySetInnerHTML={{__html: this.state.svg}}></div>
+				<div className={s.inputContainer}>
 					<div>
-						<input ref="glassTitle" placeholder="Glass title"/>
-						<div className="cost-container">
+						<input
+							className={s.input}
+							ref="glassTitle"
+							placeholder="Glass title"/>
+						<div className={s.costContainer}>
 							{cost}
 						</div>
 					</div>
 					<div>
-						<textarea ref="coords" placeholder="Enter coordinates here." onChange={this.updateCoords.bind(this)}></textarea>
+						<textarea
+							className={s.textArea}
+							onChange={this.updateCoords.bind(this)}
+							placeholder="Enter coordinates here."
+							ref="coords"
+						></textarea>
 					</div>
 				</div>
 				<button onClick={this.saveSVG.bind(this)}>Save Mapping</button>
 				<br />
-				<textarea className="svg" value={this.state.processedSvg}/>
+				<textarea className={s.svg} value={this.state.processedSvg}/>
 			</div>
 		)
 	}
@@ -73,10 +84,10 @@ class ValueGlass extends Component {
 	renderCostDOM(paths) {
 		return paths.map((coord, i) => {
 			return (
-				<div className="form" key={i} onMouseOver={this.mouseOver.bind(this, i)} onMouseOut={this.mouseOut.bind(this, i)}>
-					<label>{i + 1}</label>
+				<div className={s.form} key={i} onMouseOver={this.mouseOver.bind(this, i)} onMouseOut={this.mouseOut.bind(this, i)}>
+					<label className={s.label}>{i + 1}</label>
 					<div>
-						<label>Amount</label>
+						<label className={s.label}>Amount</label>
 						<input onChange={this.updateAmount.bind(this, i)}/>
 					</div>
 				</div>
@@ -94,13 +105,13 @@ class ValueGlass extends Component {
 	highlight() {
 		let pathWithId = document.querySelectorAll('[id]');
 		for(let i = 0; i < pathWithId.length; i++) {
-			pathWithId[i].setAttribute('class', 'hover');
+			pathWithId[i].setAttribute('class', s.hover);
 		}
 	}
 
 	mouseOver(index) {
 		var path = document.querySelectorAll(`[id='${index + 1}']`)[0];
-		path.setAttribute('class', 'hover');
+		path.setAttribute('class', s.hover);
 	}
 
 	mouseOut(index) {

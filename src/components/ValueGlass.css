@@ -8,3 +8,6 @@
   cursor: pointer;
   list-style: none;
 }
+.hover-red {
+	fill: rgba(255, 0, 0, 0.80);
+}
