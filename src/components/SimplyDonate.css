@@ -2,8 +2,9 @@
   composes: button from './../styles/common.css';
 }
 .row {
-  width: 300px;
+  margin-top: 15px;
   text-align: center;
+  width: 300px;
 }
 .input {
   height: 40px;
@@ -53,4 +54,8 @@
   flex-direction: column;
   margin-top: 105px;
   margin-bottom: 50px;
+}
+input {
+  height: 40px;
+  width: 250px;
 }

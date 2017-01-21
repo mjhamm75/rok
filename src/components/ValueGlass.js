@@ -7,6 +7,7 @@ import Skylight from './ReactSkylight';
 import { getSvgs } from '../actions/GlassActions';
 
 import s from './ValueGlass.css';
+require('!style!css!sass!./../styles/hover.scss');
 
 class ValueGlass extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class ValueGlass extends Component {
 
   onHoverListItem(id) {
     let el = document.querySelectorAll(`[id='${id}']`)[0];
-    let color = this.state.color === 'blue' ? [s.hover] : [s.hoverRed]
+    let color = this.state.color === 'blue' ? 'hover' : 'hover-red'
     el.setAttribute('class', color);
   }
 
@@ -97,27 +98,29 @@ class ValueGlass extends Component {
     }) : null;
     return (
       <div className={s.valueGlass}>
-        <div className="radios">
+        <div>
           <label>Highlight Color</label>
           <br/>
-          <input
-            className={s.radioInput}
-            checked={this.state.color === 'blue'}
-            name="color"
-            onChange={this.updateColor.bind(this, 'blue')}
-            type="radio"
-            value="blue"
-          />
-        <span className={s.radioLabel}>Blue</span>
-          <input
-            className={s.radioInput}
-            checked={this.state.color === 'red'}
-            name="color"
-            onChange={this.updateColor.bind(this, 'red')}
-            type="radio"
-            value="red"
-          />
-        <span className={s.radioLabel}>Red</span>
+          <div className={s.radios}>
+            <input
+              className={s.radioInput}
+              checked={this.state.color === 'blue'}
+              name="color"
+              onChange={this.updateColor.bind(this, 'blue')}
+              type="radio"
+              value="blue"
+            />
+            <span className={s.radioLabel}>Blue</span>
+            <input
+              className={s.radioInput}
+              checked={this.state.color === 'red'}
+              name="color"
+              onChange={this.updateColor.bind(this, 'red')}
+              type="radio"
+              value="red"
+            />
+            <span className={s.radioLabel}>Red</span>
+          </div>
         </div>
         <ul className={s.svgList}>
           {this.renderSvgs()}

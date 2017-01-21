@@ -8,6 +8,7 @@
 
 .item {
   margin-top: 20px;
+  width: 200px;
 }
 .button {
   composes: button from './../styles/common.css';

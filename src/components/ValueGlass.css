@@ -12,10 +12,14 @@
 	fill: rgba(255, 0, 0, 0.80);
 }
 .radioInput {
-  width: 20px;
+  width: 8px;
 }
 .radioSpan {
   margin-right: 10px;
+}
+.radios {
+  align-items: center;
+  display: flex;
 }
 .svgList {
   cursor: pointer;
