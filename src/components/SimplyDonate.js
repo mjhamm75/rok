@@ -6,7 +6,6 @@ import bag from './../imgs/shopping.bag.black.png';
 import { clearDonationForm, donate, chargeButtonEnabled } from '../actions/GlassActions';
 import publish from '../../db/stripe-publish.js';
 
-require('!style!css!sass!./../sass/simply.donate.scss');
 import s from './SimplyDonate.css';
 
 class SimplyDonate extends Component {
@@ -64,13 +63,18 @@ class SimplyDonate extends Component {
 					<div className={s.title}>Add your piece to the story</div>
 					<div className={s.inspire}>Your donation will help inspire others with a masterpiece of epic size.</div>
 					<div className={s.amount}>Donation Amount</div>
-					<input ref="total" placeholder=" $ USD" onChange={this.updateTotal.bind(this)}/>
-					<div>
+					<input
+						className={s.input}
+						onChange={this.updateTotal.bind(this)}
+						placeholder=" $ USD"
+						ref="total"
+					/>
+					<div className={s.totalWrapper}>
 						<div className={s.total}>Total</div>
 						<div className={s.totalAmount}>${this.state.total}</div>
 					</div>
 					<input className={s.email} ref="email" placeholder=" email address"/>
-					<div>
+					<div className={s.buttonWrapper}>
 						<a className={disabled} onClick={this.checkout.bind(this)}>Donate</a>
 					</div>
 				</div>

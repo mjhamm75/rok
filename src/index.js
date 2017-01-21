@@ -8,6 +8,8 @@ import DevTools from './containers/DevTools';
 
 const store = configureStore();
 
+require('!style!css!sass!./styles/common.scss');
+
 render(
 	<Provider store={store} >
 		<div>
