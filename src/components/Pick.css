@@ -5,3 +5,124 @@
   composes: button;
   margin-bottom: 10px;
 }
+.back {
+  background: #232323;
+  cursor: pointer;
+  float: left;
+  height: 25px;
+  margin-left: 20px;
+  padding: 3px;
+  padding-top: 4px;
+  width: 25px;
+}
+.checkboxWrapper {
+  float: right;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+.checkboxLabel {
+  color: #9b9b9b;
+  font-size: 14px;
+  font-weight: 100;
+  margin-right: 5px;
+}
+.checkbox {
+  color: #9B9B9B;
+
+  display:block;
+  -webkit-appearance: none;
+  ms--appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  border-radius:0;
+  border:1px solid #232323;
+  background-color:#4A4A4A;
+  height:20px;
+  width:20px;
+  float:left;
+  margin-right: 5px;
+  cursor:pointer;
+  margin-top: 0px;
+}
+.glass {
+  flex-basis: 85%;
+  min-width: 800px;
+}
+.info {
+  background: #232323;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 15px;
+  margin-right: 5%;
+  padding: 5px 8px;
+}
+.skyButton {
+  composes: button from './../styles/common.css';
+	display: table;
+	margin-bottom: 10px;
+}
+.pieces {
+  list-style: none;
+  padding: 0;
+}
+.piece {
+  text-align: center;
+}
+.amount {
+  font-weight: 600;
+}
+.checkout {
+  composes: button from './../styles/common.css';
+	background: #4A90E2;
+	display: table;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 130px;
+}
+.add {
+  composes: button from './../styles/common.css';
+	display: table;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	width: 130px;
+}
+.check {
+  height: auto;
+  margin: 0 auto;
+  width: 25px;;
+}
+.checkTitle {
+  font-size: 16px;
+  font-weight: 100;
+  margin: 12px 0;
+  text-align: center;
+}
+.checkWrapper {
+  display: flex;
+	flex-direction: column;
+}
+.pick {
+  background: rgb(74, 74, 74);
+  display: flex;
+  height: 100vh;
+  margin-top: 30px;
+}
+.popup {
+  background: white;
+  display: none;
+  padding: 3px;
+  position: absolute;
+}
+.popupSponsored {
+  composes: popup;
+}
+.popupUnavailable {
+  composes: popup;  
+}
+@media(max-width: 750px) {
+  .glass {
+    min-width: 500px;
+  }
+}

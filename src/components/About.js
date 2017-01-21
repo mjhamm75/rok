@@ -17,7 +17,7 @@ let holdmanIcon = require('./../imgs/holdman-icon.png');
 let uvuIcon = require('./../imgs/uvu-icon.png');
 let rootsMediaIcon = require('./../imgs/roots-media-icon.png');
 
-require('!style!css!sass!./../sass/materialize/sass/materialize.scss');
+require('!style!css!sass!./../styles/materialize/sass/materialize.scss');
 
 import s from './About.css';
 
