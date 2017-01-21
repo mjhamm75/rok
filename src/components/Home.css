@@ -266,66 +266,32 @@
   display: flex;
   flex-direction: column;
 }
-@media(max-width: 600px) {
-    .bottomSponsorButton {
-        margin-bottom: 45px;
-    }
-    .heroflex {
-        width: 100%;
-    }
+@media(min-width: 1650px) {
     .storyMain {
-        flex-direction: column;
+        margin-top: 22%;
     }
-    .left {
-        flex-basis: 90px;
-        margin-top: 25px;
-        margin-bottom: 15px;
+}
+@media(min-width: 1350px) {
+    .storyMain {
+        margin-top: 25%;
     }
-    .right {
-        flex-basis: 90px;
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-    .story {
-        background-image: url('./../imgs/stainedglass-mobile.png');
-        height: 300px;
-        background-position-y: 0;
-        background-position-x: 0;
-    }
-    .storyH1 {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
-    .factColumn {
-      flex-direction: column;
-    }
-    .fact {
-      flex-basis: 0;
-    }
-    .facts {
-      flex-direction: column;
-    }
-    .groupimage {
-        background-position-x: -255px;
-    }
-    .quote {
-        width: 80%;
-    }
-    .iphonehide {
-        composes: addPieceItem;
-        display: none;
-    }
-    .addPieceHeroTitle {
-      margin-top: 40px;
-    }
-    .groupHero {
-      margin: 0 0 200px;
-      width: 100%;
-      max-width: 100%;
-    }
-    .hero {
-      margin: 20px 0;
-    }
+}
+@media(max-width: 1200px) {
+  .facts {
+    padding: 0;
+  }
+}
+@media(min-width: 1200px) {
+  .factsTitle {
+    padding-top: 35px;
+    padding-left: 100px;
+  }
+  .groupLink {
+    padding: 15px 30px;
+  }
+  .facts {
+    padding: 0 75px;
+  }
 }
 @media(max-width: 992px) {
     .hide {
@@ -367,31 +333,68 @@
     background-position-y: -25px;
   }
 }
-@media(max-width: 1200px) {
-  .facts {
-    padding: 0;
-  }
-}
-@media(min-width: 1200px) {
-  .factsTitle {
-    padding-top: 35px;
-    padding-left: 100px;
-  }
-  .groupLink {
-    padding: 15px 30px;
-  }
-  .facts {
-    padding: 0 75px;
-  }
-}
-@media(min-width: 1350px) {
-    .storyMain {
-        margin-top: 25%;
+@media(max-width: 600px) {
+    .bottomSponsorButton {
+        margin-bottom: 45px;
     }
-}
-@media(min-width: 1650px) {
+    .heroFlex {
+        width: 100%;
+    }
     .storyMain {
-        margin-top: 22%;
+        flex-direction: column;
+    }
+    .left {
+        flex-basis: 90px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .right {
+        flex-basis: 90px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .story {
+        background-image: url('./../imgs/stainedglass-mobile.png');
+        height: 300px;
+        background-position-y: 0;
+        background-position-x: 0;
+    }
+    .storyH1 {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .factColumn {
+      flex-direction: column;
+    }
+    .fact {
+      flex-basis: 0;
+    }
+    .facts {
+      flex-direction: column;
+    }
+    .groupImage {
+        background-position-x: -255px;
+    }
+    .quote {
+        width: 80%;
+    }
+    .iphonehide {
+        composes: addPieceItem;
+        display: none;
+    }
+    .addPieceHeroTitle {
+      margin-top: 40px;
+    }
+    .groupHero {
+      margin: 0 0 200px;
+      width: 100%;
+      max-width: 100%;
+    }
+    .hero {
+      margin: 20px 0;
+    }
+    .navImage {
+      background-image: url('./../imgs/hand-mobile.png');
     }
 }
 .iphone {

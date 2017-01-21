@@ -28,3 +28,12 @@
   composes: column;
   display: flex;
 }
+@media(max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    padding: 0 25px;
+  }
+  .column {
+    margin: 15px 0;
+  }
+}
