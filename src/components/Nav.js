@@ -78,7 +78,10 @@ class Nav extends Component {
 		} : null;
 
 		return (
-			<div ref="navbar" style={fixedStyle}>
+			<div
+				className={s.nav}
+				ref="navbar"
+				style={fixedStyle}>
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false) }

@@ -348,6 +348,9 @@
     .ipadhide {
         display: none;
     }
+    .navImage {
+        margin-top: 47px;
+    }
 }
 @media(min-width: 993px) {
   .story {
