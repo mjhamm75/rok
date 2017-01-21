@@ -160,7 +160,7 @@ class Home extends Component {
 								to="donations"
 							>Sponsor a piece of glass</Link>
 						</div>
-						<img src={c3r2} className={s.addPieceImage}/>
+						<img style={{marginTop: '45px'}} src={c3r2} className={s.addPieceImage}/>
 					</div>
 					<div className={s.ipad}>
 						<img src={c4r1} className={s.addPieceImage}/>

@@ -57,6 +57,7 @@
 .bottomSponsorButton {
   composes: button;
   font-size: 17px;
+  margin-bottom: 45px;
 }
 .right5{
   margin-right: 5px;
@@ -298,6 +299,12 @@
     .factColumn {
       flex-direction: column;
     }
+    .fact {
+      flex-basis: 0;
+    }
+    .facts {
+      flex-direction: column;
+    }
     .groupimage {
         background-position-x: -255px;
     }
@@ -315,6 +322,9 @@
       margin: 0 0 200px;
       width: 100%;
       max-width: 100%;
+    }
+    .hero {
+      margin: 20px 0;
     }
 }
 @media(max-width: 992px) {
@@ -355,6 +365,11 @@
 @media(min-width: 993px) {
   .story {
     background-position-y: -25px;
+  }
+}
+@media(max-width: 1200px) {
+  .facts {
+    padding: 0;
   }
 }
 @media(min-width: 1200px) {
