@@ -4,7 +4,7 @@
   "description": "Beautiful donation app",
   "main": "server.js",
   "scripts": {
-    "postinstall": "NODE_ENV=production webpack --config webpack-production.config.js",
+    "postinstall": "webpack --config webpack-production.config.js",
     "start": "node server.js"
   },
   "repository": {
