@@ -12,6 +12,8 @@ var knexLogger = require('knex-logger');
 var app = express();
 
 var isDevelopment = (process.env.ENVIRONMENT !== 'production');
+console.log(process.env.ENVIRONMENT);
+console.log(isDevelopment);
 var secret = isDevelopment ? 'sk_test_RnzoumriAJCdG8l6PoYSFH0H' : process.env.stripe;
 // var secret = 'sk_test_RnzoumriAJCdG8l6PoYSFH0H';
 var stripe = require('stripe')(secret);
