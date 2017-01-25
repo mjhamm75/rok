@@ -35,6 +35,12 @@ import h2 from './../imgs/panel_thumbnails/H-2.jpg'
 import h3 from './../imgs/panel_thumbnails/H-3.jpg'
 
 import i1 from './../imgs/panel_thumbnails/I-1.jpg'
+import i2 from './../imgs/panel_thumbnails/I-2.jpg'
+import i3 from './../imgs/panel_thumbnails/I-3.jpg'
+
+import j1 from './../imgs/panel_thumbnails/J-1.jpg'
+import j2 from './../imgs/panel_thumbnails/J-2.jpg'
+import j3 from './../imgs/panel_thumbnails/J-3.jpg'
 
 import Nav from './Nav';
 
@@ -97,6 +103,13 @@ class Glass extends Component {
 					</div>
 					<div>
 						<img src={i1} onClick={this.updateOverlay.bind(this, 'i1')}/>
+						<img src={i2} onClick={this.updateOverlay.bind(this, 'i2')}/>
+						<img src={i3} onClick={this.updateOverlay.bind(this, 'i3')}/>
+					</div>
+					<div>
+						<img src={j1} onClick={this.updateOverlay.bind(this, 'j1')}/>
+						<img src={j2} onClick={this.updateOverlay.bind(this, 'j2')}/>
+						<img src={j3} onClick={this.updateOverlay.bind(this, 'j3')}/>
 					</div>
 				</div>
 			</div>

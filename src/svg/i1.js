@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class i1 extends Component {
   render() {
     return (
-      <svg version="1.1" xmlnsxlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2600 1160" enable-background="new 0 0 2600 1160" xmlSpace="preserve">
+      <svg version="1.1" xmlnsxlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2600 1160" enable-background="new 0 0 2600 1160" xmlSpace="preserve" onClick={this.props.click}>
       	<g display="block" opacity="0.82">
 
       			<image display="inline" overflow="visible" width="2600" height="1160" xlinkHref="/I-1.jpg" transform="matrix(1 0 0 1 -1 -1)">
