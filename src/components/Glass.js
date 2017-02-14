@@ -42,6 +42,30 @@ import j1 from './../imgs/panel_thumbnails/J-1.jpg'
 import j2 from './../imgs/panel_thumbnails/J-2.jpg'
 import j3 from './../imgs/panel_thumbnails/J-3.jpg'
 
+import t1 from './../imgs/panel_thumbnails/T-1.jpg'
+import t2 from './../imgs/panel_thumbnails/T-2.jpg'
+import t3 from './../imgs/panel_thumbnails/T-3.jpg'
+
+import u1 from './../imgs/panel_thumbnails/U-1.jpg'
+import u2 from './../imgs/panel_thumbnails/U-2.jpg'
+import u3 from './../imgs/panel_thumbnails/U-3.jpg'
+
+import v1 from './../imgs/panel_thumbnails/V-1.jpg'
+import v2 from './../imgs/panel_thumbnails/V-2.jpg'
+import v3 from './../imgs/panel_thumbnails/V-3.jpg'
+
+import w1 from './../imgs/panel_thumbnails/W-1.jpg'
+import w2 from './../imgs/panel_thumbnails/W-2.jpg'
+import w3 from './../imgs/panel_thumbnails/W-3.jpg'
+
+import x1 from './../imgs/panel_thumbnails/X-1.jpg'
+import x2 from './../imgs/panel_thumbnails/X-2.jpg'
+import x3 from './../imgs/panel_thumbnails/X-3.jpg'
+
+import y1 from './../imgs/panel_thumbnails/Y-1.jpg'
+import y2 from './../imgs/panel_thumbnails/Y-2.jpg'
+import y3 from './../imgs/panel_thumbnails/Y-3.jpg'
+
 import Nav from './Nav';
 
 require('!style!css!sass!./../sass/glass.scss');
@@ -110,6 +134,36 @@ class Glass extends Component {
 						<img src={j1} onClick={this.updateOverlay.bind(this, 'j1')}/>
 						<img src={j2} onClick={this.updateOverlay.bind(this, 'j2')}/>
 						<img src={j3} onClick={this.updateOverlay.bind(this, 'j3')}/>
+					</div>
+					<div>
+						<img src={t1} onClick={this.updateOverlay.bind(this, 't1')}/>
+						<img src={t2} onClick={this.updateOverlay.bind(this, 't2')}/>
+						<img src={t3} onClick={this.updateOverlay.bind(this, 't3')}/>
+					</div>
+					<div>
+						<img src={u1} onClick={this.updateOverlay.bind(this, 'u1')}/>
+						<img src={u2} onClick={this.updateOverlay.bind(this, 'u2')}/>
+						<img src={u3} onClick={this.updateOverlay.bind(this, 'u3')}/>
+					</div>
+					<div>
+						<img src={v1} onClick={this.updateOverlay.bind(this, 'v1')}/>
+						<img src={v2} onClick={this.updateOverlay.bind(this, 'v2')}/>
+						<img src={v3} onClick={this.updateOverlay.bind(this, 'v3')}/>
+					</div>
+					<div>
+						<img src={w1} onClick={this.updateOverlay.bind(this, 'w1')}/>
+						<img src={w2} onClick={this.updateOverlay.bind(this, 'w2')}/>
+						<img src={w3} onClick={this.updateOverlay.bind(this, 'w3')}/>
+					</div>
+					<div>
+						<img src={x1} onClick={this.updateOverlay.bind(this, 'x1')}/>
+						<img src={x2} onClick={this.updateOverlay.bind(this, 'x2')}/>
+						<img src={x3} onClick={this.updateOverlay.bind(this, 'x3')}/>
+					</div>
+					<div>
+						<img src={y1} onClick={this.updateOverlay.bind(this, 'y1')}/>
+						<img src={y2} onClick={this.updateOverlay.bind(this, 'y2')}/>
+						<img src={y3} onClick={this.updateOverlay.bind(this, 'y3')}/>
 					</div>
 				</div>
 			</div>
