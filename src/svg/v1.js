@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class j3 extends Component {
   render() {
     return (
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4463.9 1994.6" xmlSpace="preserve">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4463.9 1994.6" xmlSpace="preserve" onClick={this.props.click}>
       	<image display="block" width="1999" height="885" xlinkHref="/V-1.jpg" transform="matrix(2.232 0 0 2.2538 0 2.552)"></image>
       	<rect x="3629.3" y="1869.6" classname="st1" width="834.6" height="125" id="1" class=""></rect>
       	<polygon classname="st1" points="3094.3,1994.6 3625.9,1994.6 3622.6,1560.2 3094.3,1560.2 	" id="2" class=""></polygon>
