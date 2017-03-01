@@ -63,7 +63,7 @@ app.post('/log-in', function(req, res) {
   q.checkForUsername(req.body.username).then(function(user) {
     if(user && comparePasswords(req.body.password, user.password)) {
       var token = jwt.sign(user, app.get('superSecret'), {
-        expiresIn: 3600
+        expiresIn: 7200
       });
       res.json({
         token: token
