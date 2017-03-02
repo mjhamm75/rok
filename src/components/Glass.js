@@ -42,9 +42,9 @@ import j1 from './../imgs/panel_thumbnails/J-1.jpg'
 import j2 from './../imgs/panel_thumbnails/J-2.jpg'
 import j3 from './../imgs/panel_thumbnails/J-3.jpg'
 
-// import k1 from './../imgs/panel_thumbnails/K-1.jpg'
-// import k2 from './../imgs/panel_thumbnails/K-2.jpg'
-// import k3 from './../imgs/panel_thumbnails/K-3.jpg'
+import k1 from './../imgs/panel_thumbnails/K-1.jpg'
+import k2 from './../imgs/panel_thumbnails/K-2.jpg'
+import k3 from './../imgs/panel_thumbnails/K-3.jpg'
 
 import l1 from './../imgs/panel_thumbnails/L-1.jpg'
 import l2 from './../imgs/panel_thumbnails/L-2.jpg'
@@ -171,7 +171,11 @@ class Glass extends Component {
 						<img src={j2} onClick={this.updateOverlay.bind(this, 'j2')}/>
 						<img src={j3} onClick={this.updateOverlay.bind(this, 'j3')}/>
 					</div>
-					
+					<div>
+						<img src={k1} onClick={this.updateOverlay.bind(this, 'k1')}/>
+						<img src={k2} onClick={this.updateOverlay.bind(this, 'k2')}/>
+						<img src={k3} onClick={this.updateOverlay.bind(this, 'k3')}/>
+					</div>
 					<div>
 						<img src={l1} onClick={this.updateOverlay.bind(this, 'l1')}/>
 						<img src={l2} onClick={this.updateOverlay.bind(this, 'l2')}/>
