@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { saveSVG } from './../actions/GlassActions';
-import b1 from './../imgs/b1.jpg'
 
 require('!style!css!sass!./../sass/create-paths.scss');
 

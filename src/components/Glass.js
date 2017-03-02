@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import a1 from './../imgs/panel_thumbnails/A-1.jpg'
 import a2 from './../imgs/panel_thumbnails/A-2.jpg'
 import a3 from './../imgs/panel_thumbnails/A-3.jpg'
+import a4 from './../imgs/panel_thumbnails/A-4.jpg'
 
 import b1 from './../imgs/panel_thumbnails/B-1.jpg'
 import b2 from './../imgs/panel_thumbnails/B-2.jpg'
@@ -125,6 +126,7 @@ class Glass extends Component {
 						<img src={a1} onClick={this.updateOverlay.bind(this, 'a1')}/>
 						<img src={a2} onClick={this.updateOverlay.bind(this, 'a2')}/>
 						<img src={a3} onClick={this.updateOverlay.bind(this, 'a3')}/>
+						<img src={a4} onClick={this.updateOverlay.bind(this, 'a4')}/>
 					</div>
 					<div>
 						<img src={b1} onClick={this.updateOverlay.bind(this, 'b1')}/>
