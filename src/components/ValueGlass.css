@@ -1,0 +1,69 @@
+.radio {
+  width: 20px;
+}
+.radioLabel {
+  margin-right: 10px;
+}
+.ul {
+  cursor: pointer;
+  list-style: none;
+}
+.hoverRed {
+	fill: rgba(255, 0, 0, 0.80);
+}
+.radioInput {
+  width: 8px;
+}
+.radioSpan {
+  margin-right: 10px;
+}
+.radios {
+  align-items: center;
+  display: flex;
+}
+.svgList {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  overflow-x: scroll;
+  width: 80%;
+}
+.svgListItem {
+  font-size: 15px;
+  margin: 8px;
+}
+.flexPath {
+  align-items: center;
+  display: flex;
+  margin-bottom: 3px;
+}
+.flexPath:hover {
+  background: grey;
+}
+.resize {
+  height: auto;
+  width: 800px;
+}
+.pathList {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
+  list-style: none;
+  overflow-x: scroll;
+  width: 100%;
+}
+.hover {
+  background: grey;
+}
+.valueGlass {
+  margin-left: 25px;
+}
+.pathId {
+  margin-right: 5px;
+}
+input {
+  width: 50px;
+}

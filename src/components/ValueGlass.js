@@ -4,9 +4,10 @@ import { getPathInfo, saveAmounts } from '../actions/GlassActions';
 import mapping from '../mappings/mapping.js';
 import Spinner from 'react-spinkit';
 import Skylight from './ReactSkylight';
-
 import { getSvgs } from '../actions/GlassActions';
-require('!style!css!sass!./../sass/value-glass.scss');
+
+import s from './ValueGlass.css';
+require('!style!css!sass!./../styles/hover.scss');
 
 class ValueGlass extends Component {
   constructor(props) {
@@ -28,9 +29,13 @@ class ValueGlass extends Component {
   renderSvgs() {
     return this.props.svgs.map((svg, index) => {
       return (
-          <li
-            key={index}
-            onClick={this.getSvgAndPaths.bind(this, svg.title)}>{svg.title}</li>
+        <li
+          className={s.svgListItem}
+          key={index}
+          onClick={this.getSvgAndPaths.bind(this, svg.title)}
+        >
+          {svg.title}
+        </li>
       )
     });
   }
@@ -66,11 +71,11 @@ class ValueGlass extends Component {
       return (
         <li
           key={path.path_id}
-          className="flexPath"
+          className={s.flexPath}
           onMouseOut={this.onHoverOutListItem.bind(this, path.path_id)}
           onMouseOver={this.onHoverListItem.bind(this, path.path_id)}
         >
-          <div>{path.path_id}</div>
+          <div className={s.pathId}>{path.path_id}</div>
           <input
             value={path.amount}
             ref={path.path_id}
@@ -92,32 +97,38 @@ class ValueGlass extends Component {
       display: 'none'
     }) : null;
     return (
-      <div className="value-glass">
-        <div className="radios">
+      <div className={s.valueGlass}>
+        <div>
           <label>Highlight Color</label>
           <br/>
-          <input
-            checked={this.state.color === 'blue'}
-            name="color"
-            onChange={this.updateColor.bind(this, 'blue')}
-            type="radio"
-            value="blue"
-          /><span>Blue</span>
-          <input
-            checked={this.state.color === 'red'}
-            name="color"
-            onChange={this.updateColor.bind(this, 'red')}
-            type="radio"
-            value="red"
-          /><span>Red</span>
+          <div className={s.radios}>
+            <input
+              className={s.radioInput}
+              checked={this.state.color === 'blue'}
+              name="color"
+              onChange={this.updateColor.bind(this, 'blue')}
+              type="radio"
+              value="blue"
+            />
+            <span className={s.radioLabel}>Blue</span>
+            <input
+              className={s.radioInput}
+              checked={this.state.color === 'red'}
+              name="color"
+              onChange={this.updateColor.bind(this, 'red')}
+              type="radio"
+              value="red"
+            />
+            <span className={s.radioLabel}>Red</span>
+          </div>
         </div>
-        <ul className="svg-list">
+        <ul className={s.svgList}>
           {this.renderSvgs()}
         </ul>
-        <div className="resize">
+        <div className={s.resize}>
           <Svg />
         </div>
-        <ul className="path-list flex">
+        <ul className={s.pathList}>
           {this.renderPaths(this.props.paths)}
         </ul>
         <Skylight

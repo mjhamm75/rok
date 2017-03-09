@@ -1,0 +1,62 @@
+.about {
+  font-size: 14px;
+  font-weight: 100;
+  position: relative;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.icon {
+  margin-left: 15px;
+  margin-right: 15px;
+  width: auto;
+}
+.header {
+  font-size: 20px;
+}
+.title {
+  font-family: Georgia;
+  font-size: 32px;
+  font-weight: inherit;
+  margin-top: 90px;
+  text-align: center;
+}
+.library {
+  height: 35%;
+  width: auto;
+}
+.bold {
+  font-weight: 600;
+}
+.tagline {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 27px;
+  font-family: Merriweather;
+  font-weight: 100;
+}
+.button {
+  composes: button from './../styles/common.css';
+  display: table;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+@media(max-width: 600px) {
+  .icons {
+    align-items: center;
+    flex-direction: column;
+  }
+  .icon {
+    margin-top: 10px;
+  }
+  .library {
+    height: auto;
+    width: 100%
+  }
+  .tagline {
+    margin-top: 75px;
+  }
+}

@@ -8,7 +8,7 @@ import ShoppingBagIcon from './ShoppingBagIcon';
 import { charge, chargeButtonEnabled, openCheckout } from './../actions/GlassActions';
 import logo from './../imgs/rok-logo-white.png';
 
-require('!style!css!sass!./../sass/nav.scss');
+import s from './Nav.css';
 
 class Nav extends Component {
 	constructor(props) {
@@ -78,7 +78,10 @@ class Nav extends Component {
 		} : null;
 
 		return (
-			<div className="nav" ref="navbar" style={fixedStyle}>
+			<div
+				className={s.nav}
+				ref="navbar"
+				style={fixedStyle}>
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false) }
@@ -89,29 +92,31 @@ class Nav extends Component {
 					show={this.props.showCart}
 					thankyou={this.thankyou.bind(this)}
 				/>
-				<div className="navbar">
-					<div />
-					<div>
-						<Link to="/">
-							<div className="logo">
-								<img style={hideLogo} src={logo}/>
+				<div className={s.navbar}>
+					<div className={s.placeholder}/>
+					<div className={s.item}>
+						<Link to="/" className={s.link}>
+							<div className={s.logo}>
+								<img className={s.logoImage} style={hideLogo} src={logo}/>
 								<div>The Roots of Knowledge Project</div>
 							</div>
 						</Link>
 					</div>
-					<div>
-						<Link className="toggle" to="about">About the Project</Link>
+					<div className={s.item}>
+						<Link className={s.toggle} to="about">About the Project</Link>
 					</div>
-					<div>
-						<Link className="toggle" to="donations">Donate</Link>
+					<div className={s.item}>
+						<Link className={s.toggle} to="donations">Donate</Link>
 					</div>
-					<div>
-						<Link className="toggle" to="contact">Contact Us</Link>
+					<div className={s.item}>
+						<Link className={s.toggle} to="contact">Contact Us</Link>
 					</div>
-					<ShoppingBagIcon
-						onClick={() => this.showCart(true) }
-						selectedItems={this.props.selectedItems}
-					/>
+					<div className={s.cart}>
+						<ShoppingBagIcon
+							onClick={() => this.showCart(true) }
+							selectedItems={this.props.selectedItems}
+							/>
+					</div>
 				</div>
 			</div>
 		)

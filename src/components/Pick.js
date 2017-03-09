@@ -20,7 +20,7 @@ import info from './../mappings/pick.info.js';
 
 let check = require('./../imgs/check.png');
 
-require('!style!css!sass!./../sass/pick.scss');
+import s from './Pick.css';
 
 class Pick extends Component {
 	constructor(props) {
@@ -175,8 +175,8 @@ class Pick extends Component {
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
-			<span className="popup sponsored">This piece has been sponsored</span>
-			<span className="popup unavailable">This piece is currently unavailable	</span>
+			<span className={s.popup}>This piece has been sponsored</span>
+			<span className={s.popup}>This piece is currently unavailable	</span>
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false)}
@@ -192,40 +192,46 @@ class Pick extends Component {
 					showInfo={this.showInfo.bind(this)}
 					title={this.state.glassName}
 				/>
-				<div className="pick">
-					<img className="back" src={back} onClick={() => browserHistory.push('/glass')}></img>
-					<div className="glass">
-						<div className="checkbox ff-checkboxes">
-					    <label>Sponsored</label>
+			<div className={s.pick}>
+					<img
+						className={s.back}
+						onClick={() => browserHistory.push('/glass')}
+						src={back}
+					></img>
+					<div className={s.glass}>
+						<div className={s.checkboxWrapper}>
+					    <label
+								className={s.checkboxLabel}
+							>Sponsored</label>
 					    <input
 								type="checkbox"
 								id="checkbox-1-1"
-								className="ff-checkbox"
+								className={s.checkbox}
 								checked={this.state.showSponsered}
 								onClick={this.updateShowSponsered.bind(this)}
 							/>
 						</div>
 						<GlassComponent click={this.clickSvg.bind(this)}/>
 					</div>
-					<img className="info" src={infoIcon} onClick={() => this.setState({show: true})}/>
+					<img className={s.info} src={infoIcon} onClick={() => this.setState({show: true})}/>
 					<ShoppingBagIcon selectedItems={this.props.selectedItems} onClick={() => this.showCart(true) } />
 				</div>
 				<Skylight
 					ref="simpleDialog"
 					title="Tree of Knowledge"
 					hideOnOverlayClicked>
-					<ul className="pieces">
+					<ul className={s.pieces}>
 						{piecesDOM}
 					</ul>
-					<a className="sky-button" onClick={this.addPiece.bind(this)}>Add Piece</a>
+					<a className={s.skyButton} onClick={this.addPiece.bind(this)}>Add Piece</a>
 				</Skylight>
 				<Skylight
 					ref="continueDialog">
-					<div className="continue-wrapper">
-						<img className="check" src={check} />
-						<div>Added</div>
-						<a className="add" onClick={() => this.refs.continueDialog.hide()}>Add more pieces</a>
-						<a className="checkout" onClick={() => this.checkout()}>Checkout</a>
+					<div className={s.checkWrapper}>
+						<img className={s.check} src={check} />
+						<div className={s.checkTitle}>Added</div>
+						<a className={s.add} onClick={() => this.refs.continueDialog.hide()}>Add more pieces</a>
+						<a className={s.checkout} onClick={() => this.checkout()}>Checkout</a>
 					</div>
 				</Skylight>
 			</div>
@@ -234,9 +240,9 @@ class Pick extends Component {
 
 	renderSelectedGlass(piece) {
 		return (
-			<li className="piece">
-				<div className="name">{"test"} - {piece.id}</div>
-				<div className="amount">{numeral(piece.amount).format('$0')}</div>
+			<li className={s.piece}>
+				<div>{"test"} - {piece.id}</div>
+				<div className={s.amount}>{numeral(piece.amount).format('$0')}</div>
 			</li>
 		)
 	}

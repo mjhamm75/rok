@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-require('!style!css!sass!./../sass/copywrite.scss');
+import s from './Copywrite.css';
 
 export default function Copywrite({show}) {
 	var style = !show ? {
 		display: 'none'
 	} : null;
 	return (
-		<div style={style} className="copywrite">
+		<div style={style} className={s.copywrite}>
 			© 2016 Roots Media, LLC, & Holdman Studios, LLC, All Rights Reserved.
 		</div>
 	)

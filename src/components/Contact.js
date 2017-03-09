@@ -4,7 +4,7 @@ import Nav from './Nav';
 import axios from 'axios';
 import className from 'classnames';
 
-require('!style!css!sass!./../sass/contact.scss');
+import s from './Contact.css';
 
 class Contact extends Component {
 	constructor(props) {
@@ -15,7 +15,7 @@ class Contact extends Component {
 		}
 	}
 	render() {
-		let isDisabled = className({
+		let isDisabled = className(s.button, {
 			'disabled': this.state.buttonDisabled
 		});
 
@@ -23,18 +23,27 @@ class Contact extends Component {
 		return (
 			<div className="contact">
 				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
-				<div className="contact-form">
-					<div>Contact Us</div>
-					<div>Questions about the project? Looking for a way to donate at an executive level, or information for the press? Send us a note and we’ll get back to you soon.</div>
-					<div>801-766-4111</div>
-					<div>
+				<div className={s.form}>
+					<div className={s.title}>Contact Us</div>
+					<div className={s.formElement}>Questions about the project? Looking for a way to donate at an executive level, or information for the press? Send us a note and we’ll get back to you soon.</div>
+					<div className={s.formElement}>801-766-4111</div>
+					<div className={s.formElement}>
 						<div>Roots of Knowledge</div>
 						<div>3001 N Thanksgiving Way</div>
 						<div>Lehi, UT 840435</div>
 					</div>
-					<input ref="emailAddress" placeholder=" Email Address"/>
-					<textarea ref="message" rows="8" placeholder=" Message"/>
-					<div>
+					<input
+						className={s.input}
+						ref="emailAddress"
+						placeholder=" Email Address"
+					/>
+					<textarea
+						className={s.textarea}
+						ref="message"
+						rows="8"
+						placeholder=" Message"
+					/>
+					<div className={s.formElement}>
 						<a className={isDisabled} onClick={this.sendEmail.bind(this)}>{buttonText}</a>
 					</div>
 				</div>

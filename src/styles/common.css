@@ -1,0 +1,21 @@
+.button {
+  background: #a3be5f;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.24);
+  color: white;
+  cursor: pointer;
+  font-family: 'Open Sans';
+  font-weight: 100;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background: #829B43;
+}
+.button:active {
+  box-shadow: none;
+}
+.link {
+  text-decoration: none;
+  color: #a3a3a3;
+}

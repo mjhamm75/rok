@@ -6,14 +6,14 @@ let twitter = require('./../imgs/twitter.png');
 let facebook = require('./../imgs/facebook.png');
 let instagram = require('./../imgs/instagram.png');
 
-require('!style!css!sass!./../sass/footer.scss');
+import s from './Footer.css';
 
 class Footer extends Component {
 	render() {
 		return (
 			<div>
-				<div className="footer">
-						<div>
+				<div className={s.footer}>
+						<div className={s.column}>
 							<div>
 								<div>Contact Us:</div>
 								<div>801-766-4111</div>
@@ -24,32 +24,62 @@ class Footer extends Component {
 								<div>Lehi, UT 84043</div>
 							</div>
 						</div>
-						<div>
+						<div className={s.column}>
 							<div>
-								<Link to="about">About Us</Link>
+								<Link
+									className={s.link}
+									to="about"
+								>About Us</Link>
 							</div>
 							<div>
-								<Link to="about#artists">Meet the Artists</Link>
+								<Link
+									className={s.link}
+									to="about#artists"
+								>Meet the Artists</Link>
 							</div>
 							<div>
-								<Link to="about#uvu">Utah Valley University</Link>
+								<Link
+									className={s.link}
+									to="about#uvu"
+								>Utah Valley University</Link>
 							</div>
 							<div>
-								<Link to="donations">Donate</Link>
+								<Link
+									className={s.link}
+									to="donations"
+								>Donate</Link>
 							</div>
 						</div>
-						<div>
+						<div className={s.links}>
 							<div>
-								<img src={twitter}/>
-								<a href="https://twitter.com/roots_knowledge">Twitter</a>
+								<img
+									className={s.image}
+									src={twitter}
+								/>
+								<a
+									className={s.link}
+									href="https://twitter.com/roots_knowledge"
+								>Twitter</a>
 							</div>
 							<div>
-								<img src={facebook}/>
-								<a href="https://www.facebook.com/rootsofknowledge">Facebook</a>
+								<img
+									className={s.image}
+									src={facebook}
+								/>
+								<a
+									className={s.link}
+									href="https://www.facebook.com/rootsofknowledge"
+								>Facebook</a>
 							</div>
 							<div>
-								<img className="instagram" src={instagram}/>
-								<a href="https://www.instagram.com/roots_of_knowledge/">Instagram</a>
+								<img
+									className={s.instagram}
+									src={instagram}
+								/>
+								<a
+									className={s.link}
+									href="https://www.instagram.com/roots_of_knowledge/
+								">Instagram</a>
 							</div>
 						</div>
 					</div>

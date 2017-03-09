@@ -1,0 +1,82 @@
+.svg {
+  margin-top: 15px;
+  height: 18em;
+  margin-left: 25px;
+  width: 70vw;
+}
+.hover {
+	fill:  rgba(73,143,226,0.80);
+}
+.costContainer {
+  float: left;
+  height: 228;
+  width: 100%;
+  overflow-y: scroll;
+  border: 1px solid #D6D6D6;
+}
+.textArea {
+  border: 1px solid #D6D6D6;
+  height: 18em;
+  margin-left: 25px;
+  width: 35em;
+}
+.input {
+  width: 101%;
+}
+.label {
+  margin-right: 10px;
+}
+.form {
+  align-items: center;
+  display: flex;
+  padding: 10px 5px;
+  width: 100%;
+}
+.form:hover {
+	background: #BBBBBB;
+}
+.inputContainer {
+  display: flex;
+	margin: 50px;
+}
+.buttonContainer {
+  margin: 25px;
+}
+svg {
+	stroke-opacity: 0;
+}
+
+svg {
+	pointer-events: visible;
+	cursor: pointer;
+}
+svg img:hover {
+	backface-visibility: hidden;
+	opacity: 0;
+}
+
+svg path{
+	fill:none;
+  pointer-events:all;
+}
+
+svg path:hover {
+		stroke: #31C6FF;
+		stroke-width: 20px;
+		stroke-opacity: 1;
+    fill:  rgba(73,143,226,0.80);
+}
+
+svg rect:hover {
+		stroke: #31C6FF;
+		stroke-width: 20px;
+		stroke-opacity: 1;
+    fill:  rgba(73,143,226,0.80);
+}
+
+svg polygon:hover {
+		stroke: #31C6FF;
+		stroke-width: 20px;
+		stroke-opacity: 1;
+    fill:  rgba(73,143,226,0.80);
+}

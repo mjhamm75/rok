@@ -1,0 +1,409 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.heroBlurb {
+  font-family: 'Open Sans';
+  margin: 0 22px;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 1.5;
+}
+.heroContainer {
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 90%;
+}
+.heroWrapper {
+  margin-top: 22px;
+  margin-bottom: 20px;
+}
+.heroTitle {
+  align-self: center;
+  margin-top: 14px;
+}
+.heroLogo {
+  align-self: center;
+  margin-top: 35px;
+}
+.heroFlex {
+  background: rgba(255,255,255, .7);
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+  margin: 0 auto;
+  width: 425px;
+}
+.navHero {
+  padding: 40px 0;
+}
+.navImage {
+  background-image: url('./../imgs/hand.png');
+  background-size: cover;
+  height: auto;
+  width: 100%;
+}
+.button {
+  composes: button from './../styles/common.css';
+}
+.sponsorButton {
+  composes: button;
+  display: table;
+  font-family: Open Sans;
+  margin: 0 auto;
+}
+.bottomSponsorButton {
+  composes: button;
+  font-size: 17px;
+  margin-bottom: 45px;
+}
+.right5{
+  margin-right: 5px;
+}
+.factsTitle {
+  color: white;
+  background: #3a3a3a;
+  font-size: 14px;
+  font-weight: 100;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+.factTitle {
+  font-family: Merriweather;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+.factContent {
+  font-size: 14px;
+  font-weight: 100;
+}
+.fact {
+  flex-basis: 250px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  font-family: 'Open Sans';
+  padding: 25px;
+}
+.factColumn {
+  display: flex;
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+.facts {
+  color: white;
+  background: #3a3a3a;
+  display: flex;
+  padding: 0 75px;
+}
+.simplyDonate {
+  color: #4A90E2;
+  display: block;
+  font-family: OpenSans-Semibold;
+  font-size: 14px;
+  letter-spacing: 1.39px;
+  line-height: 19px;
+  padding-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.25);
+}
+.storyHeader {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.storyContent {
+  font-size: 14px;
+  font-weight: 100;
+}
+.grow {
+  flex-basis: 350px;
+  line-height: 26px;
+}
+.left {
+  margin-right: 10px;
+}
+.right {
+  margin-left: 10px;
+}
+.growLeft {
+  composes: grow;
+  composes: left;
+}
+.growRight {
+  composes: grow;
+  composes: right;
+}
+.storyWrapper {
+  background: white;
+  height: 600px;
+}
+.story {
+  background-image: url('./../imgs/stainedglass-desktop-comp.jpg');
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+.storyH1 {
+  font-family: Georgia;
+  font-style: italic;
+  font-size: 32px;
+  margin-top: 45px;
+  text-align: center;
+}
+.storyMain {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25%;
+}
+.storyMainItem {
+  flex-basis: 145px;
+}
+.groupTitle {
+  margin: 50px 70px 25px;
+  font-family: Georgia;
+  font-size: 32px;
+  text-align: center;
+}
+.groupContent {
+  font-family: 'Open Sans';
+  font-weight: 100;
+  margin: 0 16%;
+}
+.groupLinkWrapper {
+  align-self: center;
+  color: rgba(74, 144, 226, 100);
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.groupLink {
+  font-weight: 100;
+}
+.hero {
+  align-self: center;
+  background-color: white;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  margin: 20px;
+  width: 100%;
+}
+.quoteWrapper {
+  margin: 110px 0;
+  font-family: Georgia;
+}
+.quote {
+  font-size: 20px;
+  margin: 0 auto 30px;
+  text-align: center;
+  width: 50%;
+}
+.quotee {
+  font-size: 14px;
+  text-align: center;
+}
+.addPieceHero {
+  justify-content: space-between;
+  font-family: Georgia;
+  font-size: 32px;
+  margin-right: 5px;
+  text-align: center;
+}
+.addPieceImage {
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+.top5 {
+  composes: addPieceImage;
+  margin-top: 5px;
+}
+.addPieceHeroTitle {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.addPieceHeroContent {
+  flex-grow: 2;
+}
+.addPieceItem {
+  display: flex;
+  flex-direction: column;
+}
+.addPieceHero {
+  composes: addPieceItem;
+  justify-content: space-between;
+  font-family: Georgia;
+  font-size: 32px;
+  margin-right: 5px;
+  text-align: center;
+}
+.addPiece {
+  margin: 0 auto;
+  display: flex;
+}
+.groupHero {
+  background: rgba(255,255,255, .5);
+  height: auto;
+  width: 44%;
+  margin: 0 auto 200px;
+  display: flex;
+  justify-content: center;
+  min-width: 350px;
+  max-width: 475px;
+}
+.groupImage {
+  background-image: url('./../imgs/group-comp.jpg');
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  padding-top: 180px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+@media(min-width: 1650px) {
+    .storyMain {
+        margin-top: 22%;
+    }
+}
+@media(min-width: 1350px) {
+    .storyMain {
+        margin-top: 25%;
+    }
+}
+@media(max-width: 1200px) {
+  .facts {
+    padding: 0;
+  }
+}
+@media(min-width: 1200px) {
+  .factsTitle {
+    padding-top: 35px;
+    padding-left: 100px;
+  }
+  .groupLink {
+    padding: 15px 30px;
+  }
+  .facts {
+    padding: 0 75px;
+  }
+}
+@media(max-width: 992px) {
+    .hide {
+        display: none;
+    }
+    .left {
+        margin-left: 25px;
+    }
+    .right {
+        margin-right: 25px;
+    }
+    .storyMain {
+      margin-top: 40%;
+    }
+    .story {
+        background-image: url('./../imgs/stainedglass-ipad.png');
+        background-position-y: -80px;
+        background-position-x: -40px;
+    }
+    .storyH1 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .groupimage {
+        background-position-x: -165px;
+    }
+    .quote {
+        width: 75%;
+    }
+    .ipadhide {
+        display: none;
+    }
+    .navImage {
+        margin-top: 47px;
+    }
+}
+@media(min-width: 993px) {
+  .story {
+    background-position-y: -25px;
+  }
+}
+@media(max-width: 600px) {
+    .bottomSponsorButton {
+        margin-bottom: 45px;
+    }
+    .heroFlex {
+        width: 100%;
+    }
+    .storyMain {
+        flex-direction: column;
+    }
+    .left {
+        flex-basis: 90px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .right {
+        flex-basis: 90px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .story {
+        background-image: url('./../imgs/stainedglass-mobile.png');
+        height: 300px;
+        background-position-y: 0;
+        background-position-x: 0;
+    }
+    .storyH1 {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .factColumn {
+      flex-direction: column;
+    }
+    .fact {
+      flex-basis: 0;
+    }
+    .facts {
+      flex-direction: column;
+    }
+    .groupImage {
+        background-position-x: -255px;
+    }
+    .quote {
+        width: 80%;
+    }
+    .iphonehide {
+        composes: addPieceItem;
+        display: none;
+    }
+    .addPieceHeroTitle {
+      margin-top: 40px;
+    }
+    .groupHero {
+      margin: 0 0 200px;
+      width: 100%;
+      max-width: 100%;
+    }
+    .hero {
+      margin: 20px 0;
+    }
+    .navImage {
+      background-image: url('./../imgs/hand-mobile.png');
+    }
+}
+.iphone {
+  composes: addPieceItem;
+  composes: iphonehide;
+  composes: right5;
+}
+.ipad {
+  composes: addPieceItem;
+  composes: ipadhide;
+  composes: right5;
+}

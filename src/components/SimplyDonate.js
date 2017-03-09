@@ -6,7 +6,7 @@ import bag from './../imgs/shopping.bag.black.png';
 import { clearDonationForm, donate, chargeButtonEnabled } from '../actions/GlassActions';
 import publish from '../../db/stripe-publish.js';
 
-require('!style!css!sass!./../sass/simply.donate.scss');
+import s from './SimplyDonate.css';
 
 class SimplyDonate extends Component {
 	constructor(props) {
@@ -52,24 +52,29 @@ class SimplyDonate extends Component {
 	}
 
 	render() {
-		let disabled = className({
+		let disabled = className(s.button, {
 			disabled: !this.props.chargeButtonEnabled
 		})
 		return (
-			<div className="simply-donate">
+			<div>
 				<Nav fixed="true" selectedItems={this.props.selectedItems}/>
-				<div className="form">
-					<img className="black-bag" src={bag}/>
-					<div className="title">Add your piece to the story</div>
-					<div className="inspire">Your donation will help inspire others with a masterpiece of epic size.</div>
-					<div className="amount">Donation Amount</div>
-					<input ref="total" placeholder=" $ USD" onChange={this.updateTotal.bind(this)}/>
-					<div>
-						<div className="total">Total</div>
-						<div className="total-amount">${this.state.total}</div>
+				<div className={s.form}>
+					<img className={s.blackBag} src={bag}/>
+					<div className={s.title}>Add your piece to the story</div>
+					<div className={s.inspire}>Your donation will help inspire others with a masterpiece of epic size.</div>
+					<div className={s.amount}>Donation Amount</div>
+					<input
+						className={s.input}
+						onChange={this.updateTotal.bind(this)}
+						placeholder=" $ USD"
+						ref="total"
+					/>
+					<div className={s.totalWrapper}>
+						<div className={s.total}>Total</div>
+						<div className={s.totalAmount}>${this.state.total}</div>
 					</div>
-					<input className="email" ref="email" placeholder=" email address"/>
-					<div>
+					<input className={s.email} ref="email" placeholder=" email address"/>
+					<div className={s.buttonWrapper}>
 						<a className={disabled} onClick={this.checkout.bind(this)}>Donate</a>
 					</div>
 				</div>
