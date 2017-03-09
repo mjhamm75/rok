@@ -66,11 +66,11 @@ class Home extends Component {
 							</div>
 							<div className={s.heroWrapper}>
 								<div className={s.heroContainer}>
-									<div className={s.heroBlurb}>The Roots of Knowledge art glass window showcases humanity's pursuit of knowledge since the dawn of recorded time.  The documentary will transform the window into a live rendition of the journey of knowledge and will act as a megaphone to spread the message of the masterpiece to the world.</div>
+									<div className={s.heroBlurb}>Sponsor a piece of the window to help fund this educational documentary.  Help take the message of UVU and the Roots of Knowledge to the world.</div>
 									<Link
 										className={s.sponsorButton}
 										to="donations"
-									>Sponsor a piece of glass</Link>
+									>Donate now</Link>
 								</div>
 							</div>
 						</div>
@@ -103,22 +103,22 @@ class Home extends Component {
 				<div className={s.facts}>
 					<div className={s.factColumn}>
 						<div className={s.fact}>
-							<div className={s.factTitle}>60,000+</div>
-							<div className={s.factContent}>pieces of glass used to create 80 panels in the UVU Library.  Actual rock, fossils, coins, meteorite, and ivory are in the window as well.</div>
+							<div className={s.factTitle}>4,000+</div>
+							<div className={s.factContent}>The app being developed will help visitors understand the 4000+ elements in the window.</div>
 						</div>
 						<div className={s.fact}>
-							<div className={s.factTitle}>300+</div>
-							<div className={s.factContent}>UVU students have already participated in various elements of the Roots of Knowledge project.</div>
+							<div className={s.factTitle}>14,500</div>
+							<div className={s.factContent}>Over 14,500 (2.77 miles) of lead was used in the window.</div>
 						</div>
 					</div>
 					<div className={s.factColumn}>
 						<div className={s.fact}>
-							<div className={s.factTitle}>2400+</div>
-							<div className={s.factContent}>pieces of glass were used to make the Alexander & Bucephalus Mosaic.</div>
+							<div className={s.factTitle}>2600</div>
+							<div className={s.factContent}>2,600+ pieces of glass were used to complete Alexander& Bucephalus.  This mosaic was created with copper foil instead of lead.</div>
 						</div>
 						<div className={s.fact}>
-							<div className={s.factTitle}>$1.5 Million</div>
-							<div className={s.factContent}>has already been donated to the project by individually sponsored pieces of glass and donations.</div>
+							<div className={s.factTitle}>Real Fossils</div>
+							<div className={s.factContent}>rock, coins, paper money, meteorite, ivory, antler, a shark's tooth and arrowheads are all included in the window.</div>
 						</div>
 					</div>
 				</div>
