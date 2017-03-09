@@ -205,7 +205,6 @@ class Pick extends Component {
 							>Sponsored</label>
 					    <input
 								type="checkbox"
-								id="checkbox-1-1"
 								className={s.checkbox}
 								checked={this.state.showSponsered}
 								onClick={this.updateShowSponsered.bind(this)}
