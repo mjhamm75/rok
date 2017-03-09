@@ -274,7 +274,6 @@ export function saveAmounts(glassName, paths) {
 		}).then(res => {
 			dispatch(hideSpinner())
 			dispatch(amountsSavedToggle())
-			console.log(res);
 		})
 	}
 }
