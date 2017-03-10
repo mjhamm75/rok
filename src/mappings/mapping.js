@@ -101,6 +101,11 @@ import y1 from '../svg/y1.js';
 import y2 from '../svg/y2.js';
 import y3 from '../svg/y3.js';
 
+import z1 from '../svg/z1.js';
+import z2 from '../svg/z2.js';
+import z3 from '../svg/z3.js';
+import z4 from '../svg/z4.js';
+
 module.exports = {
 	null: Null,
 	a1,
@@ -179,4 +184,8 @@ module.exports = {
 	y1,
 	y2,
 	y3,
+	z1,
+	z2,
+	z3,
+	z4
 }

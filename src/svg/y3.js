@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class y3 extends Component {
   render() {
     return (
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4509.6 2548.8" xmlSpace="preserve" onClick={this.props.click}>
+      <svg version="1.1" x="0px" y="0px" viewBox="0 0 4509.6 2548.8" xmlSpace="preserve" onClick={this.props.click}>
       	<image display="block" width="2071" height="1171" xlinkHref="/Y-3.jpg" transform="matrix(2.1774 0 0 2.1774 0.4673 0)"></image>
       	<path classname="st1" d="M4222.8,2548.8l286.8,0l-0.3-78.6c-21.1,0.9-30.8,1-44.5,1.4c-56.4,1.4-63.6,1.6-103.5,27.1
       		c-16.4,10.4-31.9,11.9-51.5,13.7c-3.2,0.3-6.5,0.6-10,1c-14.7,1.5-21.6,0.5-28.8-0.5c-8.1-1.2-16.5-2.4-37.7,0.3

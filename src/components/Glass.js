@@ -37,6 +37,11 @@ class Glass extends Component {
 							onClick={this.updateOverlay.bind(this, 'a3')}
 							src='/thumbnails/A-3.jpg'
 						/>
+						<img
+							className={s.image}
+							onClick={this.updateOverlay.bind(this, 'a4')}
+							src='/thumbnails/A-4.jpg'
+						/>
 					</div>
 					<div className={s.columns}>
 						<img
@@ -394,6 +399,24 @@ class Glass extends Component {
 							className={s.image}
 							src='/thumbnails/Y-3.jpg'
 							onClick={this.updateOverlay.bind(this, 'y3')}/>
+					</div>
+					<div>
+						<img
+							className={s.image}
+							src='/thumbnails/Z-1.jpg'
+							onClick={this.updateOverlay.bind(this, 'z1')}/>
+						<img
+							className={s.image}
+							src='/thumbnails/Z-2.jpg'
+							onClick={this.updateOverlay.bind(this, 'z2')}/>
+						<img
+							className={s.image}
+							src='/thumbnails/Z-3.jpg'
+							onClick={this.updateOverlay.bind(this, 'z3')}/>
+							<img
+								className={s.image}
+								src='/thumbnails/Z-4.jpg'
+								onClick={this.updateOverlay.bind(this, 'z4')}/>
 					</div>
 				</div>
 			</div>
