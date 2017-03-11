@@ -49,43 +49,47 @@ class About extends Component {
 		return (
 			<div className={s.about}>
 				<Nav fixed="true"/>
-				<h1 className={s.title}>About the Roots of Knowledge Project</h1>
 				<div className="container">
+					<div className="row">
+						<div className="col l8 offset-l2">
+							<h1 className={s.title}>About The Roots of Knowledge Project</h1>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col l10 offset-l2">
+							<div className="defer-image image-ratio:16x9">
+								<img className={s.library} src={library} />
+							</div>
+						</div>
+					</div>
 					<div className="row">
 						<div className="col l8 offset-l2">
 							The Roots of Knowledge art glass window showcases humanity’s pursuit of knowledge since the dawn of recorded time. The influence these advancements have on our present day quest for knowledge reminds us that we too, can impact the learning process of future generations.
 						</div>
-				    </div>
-				    <div className="row">
+			    </div>
+			    <div className="row">
 						<div className="col l8 offset-l2">
 							This stained glass masterpiece not only serves as a stunning piece of art, but a tangible reminder that as a human race, we are undeniably connected. Each piece of glass is individually crafted and plays a vital role in the overall wonder of the window just as each person, no matter how insignificant they feel, adds beauty and purpose to this world.
 						</div>
-				    </div>
-				    <div className="row">
+			    </div>
+			    <div className="row">
 						<div className="col l8 offset-l2">
-							The development and completion of the project is enhanced by the collaborative efforts of Tom Holdman, his fellow artists at Holdman Studios, Roots Media, and educators and students at Utah Valley University. The interactive mobile app will spark the yearning for knowledge of the patrons who come to view the art glass window in person. The PBS/BBC documentary, directed by Lee Groberg, transforms the window into a live rendition of the journey of knowledge and acts as a megaphone to spread the message of this masterpiece beyond Utah Valley to the world.
+							Using digital technology, UVU visitors will be immersed in an interactive experience with the window through the ROK App.  This downloadable application will be available for iOS and Android handheld electronic devices and personal computers.
 						</div>
-				    </div>
-				    <div className="row">
+			    </div>
+			    <div className="row">
 						<div className="col l8 offset-l2">
-							As individuals from all different backgrounds behold this sophisticated work of art, they will feel connected to the past, be inspired to reach their own amazing potential in the present, and become committed to shape the world’s future.
+							The PBS/BBC documentary, directed by Lee Groberg, will ransform the window into a live rendition of the journey of knowledge and will spread the message of this masterpiece beyond Utah Valley to the world.  In addition to the complete documentary, individual video clips from the documentary will be used throughout the App.  Video clips will be added to UETN's online library, which already hosts more than 19,000 learning objects including the film of Ken Burns.  These ROK video clips will be invaluable in the development of teacher resources.
 						</div>
-				    </div>
-				    <div className="row">
-				    	<div className="col l10 offset-l2">
-				    		<div className="defer-image image-ratio:16x9">
-				    			<img className={s.library} src={library} />
-				    		</div>
-				    	</div>
-				    </div>
-				    <div id="uvu" className="row">
-				    	<div className="col l8 offset-l2">
-				    		<span className={s.header}>Utah Valley University</span>
-				    	</div>
-				    </div>
+			    </div>
+			    <div id="uvu" className="row">
+			    	<div className="col l8 offset-l2">
+			    		<span className={s.header}>Utah Valley University</span>
+			    	</div>
+			    </div>
 					<div className="row">
 				    	<div className="col l8 offset-l2">
-				    		UVU has become the largest university if the State of Utah with over 33,000 enrolled students and 1,800,000 alumni. UVU will educate through its “Roots of Knowledge” curriculum as well be home to this magnificent piece of art. This will fan the fire in the hearts of tens of thousands, both student and the public.
+				    		UVU became home to the Roots of Knowledge on 18 November 2016.  This masterpiece was unveiled as the culminating event of the 75th anniversary of the University.  Click here to view the unveiling.
 				    	</div>
 				    </div>
 					<div className="row">
