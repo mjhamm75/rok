@@ -50,9 +50,6 @@ class Home extends Component {
 		}
 	}
 	render() {
-		var style = this.state.spacer ? {
-			marginTop: '45px'
-		} : null;
 		return (
 			<div className={s.home}>
 				<div className={s.navImage}>
@@ -81,19 +78,45 @@ class Home extends Component {
 								to="simply-donate">OR SIMPLY DONATE</Link>
 			    	</div>
 				</div>
-				<Nav />
-				<div className={s.storyWrapper} style={style}>
+				<Nav fixed="true"/>
+				<div className={s.bullets}>
+					<div className={s.bullet}>
+						<div className={s.bulletTitle}>
+							ART GLASS UNVEILED
+						</div>
+						<div className={s.bulletBody}>
+							The Roots of Knowledge was unveiled at Utah Valley University on November 18, 2016.  The 10' x 200' masterpiece is a stained glass portrait of humanity's pursuit of knowledge since the dawn of recorded time. Successful fundraising efforts have been ongoing for the past few years to complete the funding for the window, ongoing ROK costs at UVU and a mobile app.
+						</div>
+					</div>
+					<div className={s.bullet}>
+						<div className={s.bulletTitle}>
+							FUNDING THE DOCUMENTARY
+						</div>
+						<div className={s.bulletBody}>
+							Now it is time, to fund the Roots of Knowledge documentary film series that will extend the considerable potential for global educational outreach of this monumental work of art.  The documentary will act as a megaphone to spread the message of the masterpiece to teh world and bring people to the Marc and Deborah Bingham Gallery located in the Fulton Library.
+						</div>
+					</div>
+					<div className={s.bullet}>
+						<div className={s.bulletTitle}>
+							EDUCATIONAL TOOL
+						</div>
+						<div className={s.bulletBody}>
+							In addition to telling the story of the window to the world, the documentary will provide significant educational resources supporting the development of social studies, science, math, language and fund arts curriculum.  Video clips from the documentary will be added to the Utah Education and Telehealth Network online library to further support development of teacher resources.
+						</div>
+					</div>
+				</div>
+				<div className={s.storyWrapper}>
 					<div className={s.story}>
 						<div className={s.storyH1}>Man's story told through the beauty of stained glass</div>
 						<div className={s.storyMain}>
 							<div className={s.hide}></div>
 							<div className={s.growLeft}>
 								<div className={s.storyHeader}>IGNITING THE FIRE</div>
-								<div className={s.storyContent}>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depict humanity’s contributions to knowledge throughout recorded history. <Link to="donations">Watch now</Link></div>
+								<div className={s.storyContent}>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depict humanity’s contributions to knowledge throughout recorded history. <Link to="donations" className={s.link}>Watch now</Link></div>
 							</div>
 							<div className={s.growRight}>
 								<div className={s.storyHeader}>A NEW WAY TO LEARN</div>
-								<div className={s.storyContent}>The documentary is an unparalleled opportunity to share the educational significance of "Roots of Knowledge."  Unless we do something to take the message to the world, this amazing artwork will remain virtually undiscovered!.  <a href="https://vimeo.com/123640824">Help sponsore the film</a></div>
+								<div className={s.storyContent}>The documentary is an unparalleled opportunity to share the educational significance of "Roots of Knowledge."  Unless we do something to take the message to the world, this amazing artwork will remain virtually undiscovered!.  <a className={s.link} href="https://vimeo.com/123640824">Help sponsor the film</a></div>
 							</div>
 							<div className={s.hide}></div>
 						</div>

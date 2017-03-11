@@ -1,6 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
+  padding-top: 61px;
 }
 .heroBlurb {
   font-family: 'Open Sans';
@@ -84,7 +85,7 @@
   flex-grow: 1;
   flex-wrap: wrap;
   font-family: 'Open Sans';
-  padding: 25px;
+  padding: 20px;
 }
 .factColumn {
   display: flex;
@@ -98,8 +99,12 @@
   display: flex;
   padding: 0 75px;
 }
-.simplyDonate {
+.link {
   color: #4A90E2;
+  text-decoration: none;
+}
+.simplyDonate {
+  composes: link;
   display: block;
   font-family: OpenSans-Semibold;
   font-size: 14px;
@@ -121,7 +126,7 @@
 }
 .grow {
   flex-basis: 350px;
-  line-height: 26px;
+  line-height: 21px;
 }
 .left {
   margin-right: 10px;
@@ -137,9 +142,34 @@
   composes: grow;
   composes: right;
 }
+.bullets {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 25px;
+  padding: 0 10px;
+}
+.bullet {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  width: 100%;
+}
+.bulletTitle {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+}
+.bulletBody {
+  line-height: 21px;
+  margin-top: 10px;
+}
 .storyWrapper {
   background: white;
   height: 600px;
+  margin-top: 0;
 }
 .story {
   background-image: url('./../imgs/stainedglass-desktop-comp.jpg');
@@ -181,6 +211,7 @@
   margin-bottom: 20px;
 }
 .groupLink {
+  composes: link;
   font-weight: 100;
 }
 .hero {
@@ -329,6 +360,9 @@
     }
 }
 @media(min-width: 993px) {
+  .storyWrapper {
+    margin-top: 45px;
+  }
   .story {
     background-position-y: -25px;
   }
@@ -406,4 +440,13 @@
   composes: addPieceItem;
   composes: ipadhide;
   composes: right5;
+}
+@media(min-width: 993px) {
+  .bullets {
+    flex-direction: row;
+    padding: 0 50px;
+  }
+  .bullet {
+    width: 33%;
+  }
 }
