@@ -16,7 +16,7 @@ class Footer extends Component {
 						<div className={s.column}>
 							<div>
 								<div>Contact Us:</div>
-								<div>801-766-4111</div>
+								<div>801-360-4042</div>
 							</div>
 							<br />
 							<div>
