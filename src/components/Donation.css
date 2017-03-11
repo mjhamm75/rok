@@ -7,7 +7,6 @@
   background: white;
   display: flex;
   flex-direction: column;
-  height: 40%;
   max-width: 400px;
   min-height: 290px;
   min-width: 275px;
@@ -21,7 +20,7 @@
   text-align: center;
 }
 .blurb {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 100;
   margin-top: 25px;
   text-align: center;
@@ -38,7 +37,10 @@
 }
 @media(max-width: 600px) {
 	.donations {
-		background-position-y: -150px;
+		background-position-y: 45px;
 		background-position-x: -130px;
 	}
+  .hero {
+    padding-bottom: 30px;
+  }
 }
