@@ -25,6 +25,7 @@
 }
 .library {
   height: 55%;
+  max-width: 100%;
   width: auto;
 }
 .bold {
@@ -44,6 +45,20 @@
   margin-top: 40px;
   margin-bottom: 100px;
 }
+@media(max-width: 1092px) {
+  .lgroberg {
+    margin-bottom: 15px;
+  }
+  .rwoffley {
+    margin-bottom: 15px;
+  }
+  .tholdman {
+    margin-bottom: 15px;
+  }
+  .coscarson {
+    margin-bottom: 15px;
+  }
+}
 @media(max-width: 600px) {
   .icons {
     align-items: center;
@@ -62,4 +77,13 @@
 }
 .space {
   height: 30px;
+}
+.libraryExt {
+  max-width: 100%;
+}
+.washington {
+  max-width: 100%;
+}
+.holdmanStudios {
+  max-width: 100%;
 }

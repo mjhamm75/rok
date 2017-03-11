@@ -51,7 +51,7 @@ class About extends Component {
 				<Nav fixed="true"/>
 				<div className="container">
 					<div className="row">
-						<div className="col l8 offset-l2">
+						<div className="col l9 offset-l2">
 							<h1 className={s.title}>About The Roots of Knowledge Project</h1>
 						</div>
 					</div>
@@ -89,14 +89,14 @@ class About extends Component {
 			    	</div>
 			    </div>
 					<div className="row">
-				    	<div className="col l6 offset-l2">
+				    	<div className="col l7 offset-l2">
 				    		UVU became home to the Roots of Knowledge on 18 November 2016.  This masterpiece was unveiled as the culminating event of the 75th anniversary of the University.  Click here to view the unveiling.
 				    	</div>
 				    </div>
 					<div className="row">
 						<div className="col l6 offset-l2">
 							<div className="defer-image image-ratio:16x9">
-								<img src={libraryExt} />
+								<img className={s.libraryExt} src={libraryExt} />
 							</div>
 						</div>
 					</div>
@@ -106,20 +106,20 @@ class About extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col l6 offset-l2">
+						<div className="col l7 offset-l2">
 							The Roots of Knowledge documentary film series intrigues us because of its message.  It is a unique opportunity to celebrate man's contributions to the knowledge of mankind and to acknowledge the reasons for these amazing accomplishments.  We are excited that the film series will provide an amazing educational opportunity for students, teachers, and anyone interested in history.  We applaud Utah Valley University for hosting this permanent world class exhibition and for leading the way in creative innovations in learning.  Watch now
 						</div>
 					</div>
 					<div className="row">
 						<div className="col l6 offset-l2">
-							<img src={washington} />
+							<img className={s.washington} src={washington} />
 						</div>
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img src={lgroberg} />
+							<img className={s.lgroberg} src={lgroberg} />
 						</div>
-						<div className="col l6">
+						<div className="col l7">
 							<span className={s.bold}>Lee B. Groberg</span>: Executive producer and president, Roots Media, LLC
 							<br />
 Lee has produced award-winning documentary films for 30 years.  His broadcast venues include PBS Television, the History Channel, BYU Broadcasting, America Public Television and a number of foreign networks through syndication of his documentary films.
@@ -130,9 +130,9 @@ His film awards include a bunch: George Washington Honor Medal; Freedoms Foundat
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img src={rwoffley} />
+							<img className={s.rwoffley} src={rwoffley} />
 						</div>
-						<div className="col l6">
+						<div className="col l7">
 							<span className={s.bold}>Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
 							<br />
 For the past 25+ years, Ross has served as COO and Corporate Counsel in the media and high tech industry. For the past four years, Ross has been an integral member of the Roots of Knowledge team helping to ensure the timley completion and installation of the window wall.  He is committed to helping take the message of the Roots of Knowledge to the world
@@ -147,22 +147,22 @@ Ross is an active member of the Utah State Bar, having received his Juris Doctor
 						</div>
 					</div>
 					<div className="row">
-						<div className="col l6 offset-l2">
+						<div className="col l7 offset-l2">
 							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” <Link to="donations">See the Wall</Link>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col l6 offset-l2">
 							<div className="defer-image image-ratio:16x9">
-								<img src={holdmanStudios} />
+								<img className={s.holdmanStudios} src={holdmanStudios} />
 							</div>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img src={tholdman} />
+							<img className={s.tholdman} src={tholdman} />
 						</div>
-						<div className="col l6">
+						<div className="col l7">
 							<span className={s.bold}>Thomas E. Holdman</span>: Stained Glass Artist, Holdman Studios CEO
 							<br />
 As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parents’ garage. He has since created stained glass displayed in all 50 states and worldwide for commercial buildings, private residences, and public art features. Tom’s creations are also found in many religious institutions including 40 LDS temples, and Catholic and Protestant Sanctuaries. Mr. Holdman is the recipient of The Best of State Statue Award, the Governor’s Visual Artist Award, the Star award, etc. He and his art have been featured in the LDS Ensign Magazine, USA Today and the New York Times. He also founded The Art Institute at Thanksgiving Point.
@@ -170,9 +170,9 @@ As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parent
 					</div>
 					<div className="row">
 						<div className="col l2">
-							<img src={coscarson} />
+							<img className={s.coscarson} src={coscarson} />
 						</div>
-						<div className="col l6">
+						<div className="col l7">
 							<span className={s.bold}>R. Cameron Oscarson</span>: Head Artist, Holdman Studios
 							<br />
 Cameron Oscarson, also a native of Utah, developed his skills as an artist at a young age and attended Dixie State College on scholarship, then Brigham Young University, receiving a BFA with an emphasis in painting and drawing. He joined Holdman Studios in 2003 and his natural artistic talent has been invaluable to the studios’ accomplishments and projects, including “Roots of Knowledge.” As an award-winning artist himself, Mr. Oscarson has worked on many of his own creative endeavors, including illustrations for children’s books and other commissioned works.
