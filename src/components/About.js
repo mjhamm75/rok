@@ -148,7 +148,7 @@ Ross is an active member of the Utah State Bar, having received his Juris Doctor
 					</div>
 					<div className="row">
 						<div className="col l7 offset-l2">
-							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” <Link classNmae={s.link} to="donations">See the Wall</Link>
+							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” <Link className={s.link} to="donations">See the Wall</Link>
 						</div>
 					</div>
 					<div className="row">
