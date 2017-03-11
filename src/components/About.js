@@ -99,6 +99,48 @@ class About extends Component {
 							</div>
 						</div>
 					</div>
+					<div className="row">
+						<div className="col l8 offset-l2">
+							<span className={s.header}>Roots Media</span>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col l8 offset-l2">
+							The Roots of Knowledge documentary film series intrigues us because of its message.  It is a unique opportunity to celebrate man's contributions to the knowledge of mankind and to acknowledge the reasons for these amazing accomplishments.  We are excited that the film series will provide an amazing educational opportunity for students, teachers, and anyone interested in history.  We applaud Utah Valley University for hosting this permanent world class exhibition and for leading the way in creative innovations in learning.  Watch now
+						</div>
+					</div>
+					<div className="row">
+						<div className="col l8 offset-l2">
+							<img src={washington} />
+						</div>
+					</div>
+					<div className="row">
+						<div className="col l2">
+							<img src={lgroberg} />
+						</div>
+						<div className="col l8">
+							<span className={s.bold}>Lee B. Groberg</span>: Executive producer and president, Roots Media, LLC
+							<br />
+Lee has produced award-winning documentary films for 30 years.  His broadcast venues include PBS Television, the History Channel, BYU Broadcasting, America Public Television and a number of foreign networks through syndication of his documentary films.
+							<br />
+							<br />
+His film awards include a bunch: George Washington Honor Medal; Freedoms Foundation at Valley Forge (twice), Cine Golden Eagle, new York Film Festival, Special Jury Remi Award; Worldfest Houston, Certificate of Creative Excellence; U.S. international Film Festival, Platinum Remi; Houston international Film Festival, Platinum Best of Show; First Place Silver Telly; First Place; Houston International Film Festival, First Place; Telly Awards, Gold Camera; U.S. International Film and Festival, New York, First place: U.S. International Film Festival and many more.
+						</div>
+					</div>
+					<div className="row">
+						<div className="col l2">
+							<img src={rwoffley} />
+						</div>
+						<div className="col l8">
+							<span className={s.bold}>Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
+							<br />
+For the past 25+ years, Ross has served as COO and Corporate Counsel in the media and high tech industry. For the past four years, Ross has been an integral member of the Roots of Knowledge team helping to ensure the timley completion and installation of the window wall.  He is committed to helping take the message of the Roots of Knowledge to the world
+							<br/>
+							<br/>
+He is an active member of the Utah State Bar, having received his Juris Doctorate from J. Reuben Clark Law School where he graduated Cum Laude. Ross served eight years in the United States Air Force and a T-37 instructor pilot and NATO F-111f fighter and instructor pilot.
+						</div>
+					</div>
+				</div>
 					<div id="artists" className="row">
 						<div className="col l8 offset-l2">
 							<span className={s.header}>Holdman Studios</span>
@@ -136,42 +178,6 @@ As an aspiring artist, Tom Holdman started Holdman Studios in 1988 in his parent
 Cameron Oscarson, also a native of Utah, developed his skills as an artist at a young age and attended Dixie State College on scholarship, then Brigham Young University, receiving a BFA with an emphasis in painting and drawing. He joined Holdman Studios in 2003 and his natural artistic talent has been invaluable to the studios’ accomplishments and projects, including “Roots of Knowledge.” As an award-winning artist himself, Mr. Oscarson has worked on many of his own creative endeavors, including illustrations for children’s books and other commissioned works.
 						</div>
 					</div>
-					<div className="row">
-						<div className="col l8 offset-l2">
-							<span className={s.header}>Roots Media</span>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col l8 offset-l2">
-							Renowned documentary filmmaker, Lee Groberg will spread the flame across  the world, reaching millions through the four episode series “The Roots of Knowledge, Man’s enduring Quest.” Though the medium of film, Lee will inspire the world with the story told through the art glass masterpiece. <a href="https://vimeo.com/123640824">Watch now</a>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col l8 offset-l2">
-							<img src={washington} />
-						</div>
-					</div>
-					<div className="row">
-						<div className="col l2">
-							<img src={lgroberg} />
-						</div>
-						<div className="col l8">
-							<span className={s.bold}>Lee B. Groberg</span>: Executive Producer, Roots Media President & CEO
-							<br />
-An award-winning filmmaker with over 20 years experience, producer-director Lee Groberg has an impressive filmography in the production of historical documentaries, including a growing list of accolades from the film and television industry. Mr. Groberg has developed long-term relationships with many national and international television networks and affiliates. He enjoys associations with leading historical scholars and authorities from around the world. Lee holds an MBA in international business management. Telly Award, Aurora Award, US International Film Festival, PEARL Award, George Washington Medal of Honor, CINE Golden Eagle, Houston International Film Festival, Special Jury Remi Award.
-						</div>
-					</div>
-					<div className="row">
-						<div className="col l2">
-							<img src={rwoffley} />
-						</div>
-						<div className="col l8">
-							<span className={s.bold}>Ross S. Wolfley</span>: COO – Corporate Counsel, Roots Media
-							<br />
-For the past 20 years, Ross has served as COO and Corporate Counsel in the media and high/tech industry. He is an active member of the Utah State Bar, having received his Juris Doctorate from J. Reuben Clark Law School where he graduated Cum Laude. Ross served eight years in the United States Air Force and a T-37 instructor pilot and NATO F-111f fighter and instructor pilot. He worked for WordPerfect Corporation as Director of Marketing and Director of Channel Marketing.
-						</div>
-					</div>
-				</div>
 				<div className={s.icons}>
 					<a
 						className={s.icon}
