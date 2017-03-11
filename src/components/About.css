@@ -45,6 +45,26 @@
   margin-top: 40px;
   margin-bottom: 100px;
 }
+.lgroberg {
+  float: right;
+  max-width: 120px;
+  width: 110%;
+}
+.rwoffley {
+  float: right;
+  max-width: 120px;
+  width: 110%;
+}
+.tholdman {
+  float: right;
+  max-width: 120px;
+  width: 110%;
+}
+.coscarson {
+  float: right;
+  max-width: 120px;
+  width: 110%;
+}
 @media(max-width: 1092px) {
   .lgroberg {
     margin-bottom: 15px;
