@@ -90,7 +90,7 @@ class About extends Component {
 			    </div>
 					<div className="row">
 				    	<div className="col l7 offset-l2">
-				    		UVU became home to the Roots of Knowledge on 18 November 2016.  This masterpiece was unveiled as the culminating event of the 75th anniversary of the University.  Click here to view the unveiling.
+				    		UVU became home to the Roots of Knowledge on 18 November 2016.  This masterpiece was unveiled as the culminating event of the 75th anniversary of the University.  <a href="#" className={s.link}>Click here to view the unveiling.</a>
 				    	</div>
 				    </div>
 					<div className="row">
@@ -107,7 +107,7 @@ class About extends Component {
 					</div>
 					<div className="row">
 						<div className="col l7 offset-l2">
-							The Roots of Knowledge documentary film series intrigues us because of its message.  It is a unique opportunity to celebrate man's contributions to the knowledge of mankind and to acknowledge the reasons for these amazing accomplishments.  We are excited that the film series will provide an amazing educational opportunity for students, teachers, and anyone interested in history.  We applaud Utah Valley University for hosting this permanent world class exhibition and for leading the way in creative innovations in learning.  Watch now
+							The Roots of Knowledge documentary film series intrigues us because of its message.  It is a unique opportunity to celebrate man's contributions to the knowledge of mankind and to acknowledge the reasons for these amazing accomplishments.  We are excited that the film series will provide an amazing educational opportunity for students, teachers, and anyone interested in history.  We applaud Utah Valley University for hosting this permanent world class exhibition and for leading the way in creative innovations in learning. <a href="https://vimeo.com/123640824" className={s.link}>Watch now</a>
 						</div>
 					</div>
 					<div className="row">
@@ -148,7 +148,7 @@ Ross is an active member of the Utah State Bar, having received his Juris Doctor
 					</div>
 					<div className="row">
 						<div className="col l7 offset-l2">
-							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” <Link to="donations">See the Wall</Link>
+							Tom Holdman and fellow artist, Cameron Oscarson are creating an art glass masterpiece. No matter what language an individual may speak, this beautiful artwork ignites the fire of the individual’s heart through the “language of art.” <Link classNmae={s.link} to="donations">See the Wall</Link>
 						</div>
 					</div>
 					<div className="row">
