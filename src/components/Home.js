@@ -89,11 +89,11 @@ class Home extends Component {
 							<div className={s.hide}></div>
 							<div className={s.growLeft}>
 								<div className={s.storyHeader}>IGNITING THE FIRE</div>
-								<div className={s.storyContent}>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depict humanity’s contributions to knowledge throughout recorded history. <Link to="donations">See the wall</Link></div>
+								<div className={s.storyContent}>The Roots of Knowledge, created in stained glass, uses extraordinary imagery to depict humanity’s contributions to knowledge throughout recorded history. <Link to="donations">Watch now</Link></div>
 							</div>
 							<div className={s.growRight}>
 								<div className={s.storyHeader}>A NEW WAY TO LEARN</div>
-								<div className={s.storyContent}>The artglass window and documentary series will inspire viewers the world over as the lessons of the past will, hopefully, inspire each of us to make a better future. <a href="https://vimeo.com/123640824">Watch now</a></div>
+								<div className={s.storyContent}>The documentary is an unparalleled opportunity to share the educational significance of "Roots of Knowledge."  Unless we do something to take the message to the world, this amazing artwork will remain virtually undiscovered!.  <a href="https://vimeo.com/123640824">Help sponsore the film</a></div>
 							</div>
 							<div className={s.hide}></div>
 						</div>
@@ -104,11 +104,11 @@ class Home extends Component {
 					<div className={s.factColumn}>
 						<div className={s.fact}>
 							<div className={s.factTitle}>4,000+</div>
-							<div className={s.factContent}>The app being developed will help visitors understand the 4000+ elements in the window.</div>
+							<div className={s.factContent}>The app being developed will help visitors understand the 4000+ elements in the window!</div>
 						</div>
 						<div className={s.fact}>
 							<div className={s.factTitle}>14,500</div>
-							<div className={s.factContent}>Over 14,500 (2.77 miles) of lead was used in the window.</div>
+							<div className={s.factContent}>Over 14,500 (2.77 miles) of lead was used in the window!</div>
 						</div>
 					</div>
 					<div className={s.factColumn}>
@@ -133,7 +133,7 @@ class Home extends Component {
 								<a
 									className={s.groupLink}
 									href="https://vimeo.com/123640824"
-								>Watch now</a>
+								>Watch the documentary</a>
 							</div>
 						</div>
 					</div>

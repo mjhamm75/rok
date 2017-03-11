@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class z3 extends Component {
   render() {
     return (
-      <svg version="1.1" x="0px" y="0px" viewBox="0 0 5989.3 4878" xml:space="preserve" onClick={this.props.click}>
+      <svg version="1.1" x="0px" y="0px" viewBox="0 0 5989.3 4878" xmlSpace="preserve" onClick={this.props.click}>
       	<image display="block" width="1604" height="1306" xlinkHref="/Z-3.jpg" transform="matrix(3.7351 0 0 3.7351 -1.744 7.301737e-05)"></image>
       	<path className="" d="M5973.1,4458.6c-19.8,73.1-22.5,84.5-31,120.7c-6.4,27.6-12.8,48.3-19,68.4c-6.8,21.9-13.1,42.7-18,68.3
       		c2.9,3.4,5.7,6.4,8.3,9.3c24,26.7,32.2,35.8,15.9,72.6c0.2,0.1,0.4,0.2,0.5,0.3c5.4,2.8,9.2,10.5,12.6,26
