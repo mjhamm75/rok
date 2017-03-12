@@ -9,6 +9,8 @@ import ShoppingBagIcon from './ShoppingBagIcon';
 import {
 	charge,
 	chargeButtonEnabled,
+	clearSvg,
+	clearImage,
 	getPathInfo,
 	openCheckout,
 	removeSelectedGlass,
@@ -36,7 +38,6 @@ class Pick extends Component {
 			amount: null,
 			continue: false,
 			glassName: this.props.routeParams.splat,
-			imageId: null,
 			info: info[this.props.routeParams.splat] || [],
 			showCart: false,
 			showSponsered: false
@@ -176,6 +177,11 @@ class Pick extends Component {
 		})
 	}
 
+	back() {
+		this.props.dispatch(clearSvg());
+		browserHistory.push('/glass')
+	}
+
 	render() {
 		if(this.props.glass === "") {
 			return null;
@@ -205,7 +211,7 @@ class Pick extends Component {
 			<div className={s.pick}>
 					<img
 						className={s.back}
-						onClick={() => browserHistory.push('/glass')}
+						onClick={() => this.back()}
 						src={back}
 					></img>
 					<div className={s.glass}>

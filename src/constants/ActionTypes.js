@@ -2,6 +2,7 @@ export const ADD_SELECTED_GLASS = Symbol();
 export const CHARGE = Symbol();
 export const CHARGE_BUTTON_ENABLED = Symbol();
 export const CLEAR_CART = Symbol();
+export const CLEAR_SVG = Symbol();
 export const CLEAR_DONATION_FORM = Symbol();
 export const EMAIL_UPDATED = Symbol();
 export const HIDE_SPINNER = Symbol();

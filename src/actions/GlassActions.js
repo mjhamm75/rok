@@ -6,6 +6,7 @@ import {
 	CLEAR_DONATION_FORM,
 	CHARGE,
 	CLEAR_CART,
+	CLEAR_SVG,
 	EMAIL_UDPATED,
 	HIDE_SPINNER,
 	LOGIN,
@@ -25,6 +26,12 @@ import {
 	USER_CREATED,
 	VALIDATE_USERNAME,
 } from '../constants/ActionTypes';
+
+export function clearSvg() {
+	return {
+		type: CLEAR_SVG
+	}
+}
 
 export function retrieveSvg(svgName) {
 	return dispatch => {

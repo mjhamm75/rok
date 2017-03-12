@@ -124,7 +124,7 @@ class ValueGlass extends Component {
           {this.renderSvgs()}
         </ul>
         <div className={s.resize}>
-          
+          /**<Svg /> **/
         </div>
         <ul className={s.pathList}>
           {this.renderPaths(this.props.paths)}
