@@ -27,6 +27,7 @@ var q = require('./db/queries.js')(knex);
 app.set('superSecret', 'thisismysecretpassword')
 app.use(favicon(__dirname + '/icon/favicon.ico'));
 app.use(express.static('images'));
+app.use('/svg-mapping', express.static('svg'));
 app.use('/assets', express.static('public'));
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({limit: '5mb'}));

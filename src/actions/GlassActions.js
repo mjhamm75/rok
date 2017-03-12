@@ -1,6 +1,41 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { ADD_SELECTED_GLASS, CHARGE_BUTTON_ENABLED, CLEAR_DONATION_FORM, POPUP_ON, POPUP_OFF, CHARGE, EMAIL_UDPATED, HIDE_SPINNER, LOGIN, CLEAR_CART, REMOVE_SELECTED_GLASS, UPDATE_PATHS, UPDATE_TOKEN, USER_CREATED, SHOW_THANK_YOU, SHOW_SPINNER, SVGS_RETRIEVED, SVG_SAVED, VALIDATE_USERNAME, OPEN_CART, UPDATE_SVG_NAME } from '../constants/ActionTypes';
+import {
+	ADD_SELECTED_GLASS,
+	CHARGE_BUTTON_ENABLED,
+	CLEAR_DONATION_FORM,
+	CHARGE,
+	CLEAR_CART,
+	EMAIL_UDPATED,
+	HIDE_SPINNER,
+	LOGIN,
+	OPEN_CART,
+	POPUP_ON,
+	POPUP_OFF,
+	REMOVE_SELECTED_GLASS,
+	RETRIEVE_SVG,
+	SET_SVG,
+	SVGS_RETRIEVED,
+	SVG_SAVED,
+	SHOW_SPINNER,
+	SHOW_THANK_YOU,
+	UPDATE_PATHS,
+	UPDATE_SVG_NAME,
+	UPDATE_TOKEN,
+	USER_CREATED,
+	VALIDATE_USERNAME,
+} from '../constants/ActionTypes';
+
+export function retrieveSvg(svgName) {
+	return dispatch => {
+		axios(`/svg-mapping/${svgName}.svg`).then(res => {
+			dispatch({
+				type: SET_SVG,
+				svg: res.data
+			});
+		})
+	}
+}
 
 export function clearDonationForm(shouldClear) {
 	return {

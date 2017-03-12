@@ -6,19 +6,26 @@ import Info from './Info';
 import Cart from './Cart';
 import Nav from './Nav';
 import ShoppingBagIcon from './ShoppingBagIcon';
-import { charge, chargeButtonEnabled, getPathInfo, removeSelectedGlass, updateSelectedGlass, openCheckout, showThankYou } from './../actions/GlassActions';
+import {
+	charge,
+	chargeButtonEnabled,
+	getPathInfo,
+	openCheckout,
+	removeSelectedGlass,
+	retrieveSvg,
+	showThankYou,
+	updateSelectedGlass,
+} from './../actions/GlassActions';
 import numeral from 'numeral';
 import logo from './../imgs/rok-logo.png';
 import fb from './../imgs/facebook.png';
 
 import back from './../imgs/back.arrow.png'
 import infoIcon from './../imgs/info.png'
-
-import mapping from './../mappings/mapping';
+import check from './../imgs/check.png';
 
 import info from './../mappings/pick.info.js';
 
-let check = require('./../imgs/check.png');
 
 import s from './Pick.css';
 
@@ -28,7 +35,6 @@ class Pick extends Component {
 		this.state = {
 			amount: null,
 			continue: false,
-			glass: mapping[this.props.routeParams.splat],
 			glassName: this.props.routeParams.splat,
 			imageId: null,
 			info: info[this.props.routeParams.splat] || [],
@@ -38,6 +44,7 @@ class Pick extends Component {
 		this.checkout = this.checkout.bind(this);
 		this.showCart = this.showCart.bind(this);
 		this.props.dispatch(getPathInfo(this.props.routeParams.splat));
+		this.props.dispatch(retrieveSvg(this.props.routeParams.splat));
 	}
 
 	disableDonateButton() {
@@ -170,6 +177,9 @@ class Pick extends Component {
 	}
 
 	render() {
+		if(this.props.glass === "") {
+			return null;
+		}
 		let piece = this.state.selectedGlass;
 		let piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		let GlassComponent = this.state.glass;
@@ -210,7 +220,7 @@ class Pick extends Component {
 								onClick={this.updateShowSponsered.bind(this)}
 							/>
 						</div>
-						<GlassComponent click={this.clickSvg.bind(this)}/>
+						<div dangerouslySetInnerHTML={{__html: this.props.glass}} onClick={e => this.clickSvg(e)}></div>
 					</div>
 					<img className={s.info} src={infoIcon} onClick={() => this.setState({show: true})}/>
 					<ShoppingBagIcon selectedItems={this.props.selectedItems} onClick={() => this.showCart(true) } />
@@ -275,9 +285,10 @@ class Pick extends Component {
 function mapStateToProps(state) {
 	return {
 		chargeButtonEnabled: state.chargeButtonEnabled,
+		glass: state.svgMapping,
 		paths: state.paths,
 		selectedItems: state.selectedItems,
-		showCart: state.toggleCart
+		showCart: state.toggleCart,
 	}
 }
 
