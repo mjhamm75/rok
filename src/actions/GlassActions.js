@@ -267,7 +267,9 @@ export function getSvgs() {
 			}
 		})
 		.then(svgs => {
-			dispatch(svgsRetrieved(svgs.data.svgs));
+			if(svgs.data.svgs && svgs.data.svgs.length > 0) {
+				dispatch(svgsRetrieved(svgs.data.svgs));
+			}
 		})
 	}
 }

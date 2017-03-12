@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getPathInfo, saveAmounts } from '../actions/GlassActions';
+import {
+  getPathInfo,
+  retrieveSvg,
+  saveAmounts
+} from '../actions/GlassActions';
 import Spinner from 'react-spinkit';
 import Skylight from './ReactSkylight';
 import { getSvgs } from '../actions/GlassActions';
@@ -23,6 +27,7 @@ class ValueGlass extends Component {
       svg: title
     })
     this.props.dispatch(getPathInfo(title));
+    this.props.dispatch(retrieveSvg(title));
   }
 
   renderSvgs() {
@@ -61,7 +66,9 @@ class ValueGlass extends Component {
     if(newProps.popup) {
       this.refs.success.show();
     } else {
-      this.refs.success.hide();
+      if(this.refs.success) {
+        this.refs.success.hide();
+      }
     }
   }
 
@@ -124,7 +131,7 @@ class ValueGlass extends Component {
           {this.renderSvgs()}
         </ul>
         <div className={s.resize}>
-          /**<Svg /> **/
+          <div dangerouslySetInnerHTML={{__html: this.props.svg}}></div>
         </div>
         <ul className={s.pathList}>
           {this.renderPaths(this.props.paths)}
@@ -161,6 +168,7 @@ function mapStateToProps(state) {
   return {
     popup: state.popup,
     paths: state.paths,
+    svg: state.svgMapping,
     svgs: state.svgs,
     showSpinner: state.spinner
   }
