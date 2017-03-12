@@ -5,6 +5,7 @@ import username from './username';
 import toggleCart from './toggleCart';
 import clear from './clear';
 import charge from './charge';
+import panels from './panels';
 import paths from './paths';
 import popup from './popup';
 import spinner from './spinner';
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
 	chargeButtonEnabled,
 	clear,
 	selectedItems,
+	panels,
 	paths,
 	popup,
 	spinner,

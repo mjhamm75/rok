@@ -13,6 +13,7 @@ import Admin from './../components/Admin';
 import Pick from './../components/Pick';
 import CreatePaths from './../components/CreatePaths';
 import ValueGlass from './../components/ValueGlass';
+import PanelsRemainingPieces from './../components/PanelsRemainingPieces';
 import Config from './../components/Config';
 
 const routes = (
@@ -30,6 +31,7 @@ const routes = (
       <Route path="config" component={Config} />
       <Route path="create-paths" component={CreatePaths} />
       <Route path="value-glass" component={ValueGlass} />
+      <Route path="panels-remaining" component={PanelsRemainingPieces} />
     </Route>
   </Route>
 )

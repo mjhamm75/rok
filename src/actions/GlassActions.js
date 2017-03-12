@@ -15,6 +15,7 @@ import {
 	POPUP_OFF,
 	REMOVE_SELECTED_GLASS,
 	RETRIEVE_SVG,
+	SET_PANELS,
 	SET_SVG,
 	SVGS_RETRIEVED,
 	SVG_SAVED,
@@ -319,5 +320,17 @@ export function saveAmounts(glassName, paths) {
 			dispatch(hideSpinner())
 			dispatch(amountsSavedToggle())
 		})
+	}
+}
+
+export function getPanelsInfo() {
+	return dispatch => {
+		axios('/panels-info')
+			.then(res => {
+				dispatch({
+					type: 'SET_PANELS',
+					panels: res.data.result
+				})
+			})
 	}
 }

@@ -14,6 +14,7 @@ export default class Admin extends Component {
 								<Link className={s.button} to="/admin/config">Config</Link>
 								<Link className={s.button} to="/admin/create-paths">Create Paths</Link>
 								<Link className={s.button} to="/admin/value-glass">Value Glass</Link>
+								<Link className={s.button} to="/admin/panels-remaining">Panels Remaining Pieces</Link>
 							</div>
 							{this.props.children}
 						</div>

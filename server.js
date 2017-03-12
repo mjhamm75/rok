@@ -273,6 +273,22 @@ app.post('/paths/:svgTitle', validate, function(req, res) {
     })
 })
 
+app.get('/panels-info', (req, res) => {
+  q.getPanelsInfo()
+    .then(panels => {
+      var result = panels.reduce((acc, curr) => {
+        acc[curr.title] = {
+          count: curr.count,
+          sum: curr.sum
+        }
+        return acc;
+      }, {})
+      res.json({
+        result
+      })
+    })
+})
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

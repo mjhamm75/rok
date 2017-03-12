@@ -117,6 +117,15 @@ module.exports = function(knex) {
 			});
 	}
 
+	function getPanelsInfo() {
+		return knex('svg')
+			.join('path', 'svg.id', 'path.svg_id')
+			.count('path.*')
+			.sum('path.amount')
+			.select('svg.title')
+			.groupBy('svg.title')
+	}
+
 	return {
 		getEmailAddress: getEmailAddress,
 		checkForUsername: checkForUsername,
@@ -126,6 +135,7 @@ module.exports = function(knex) {
 		insertSvgPaths: insertSvgPaths,
 		getSVG: getSVG,
 		getSVGs: getSVGs,
+		getPanelsInfo: getPanelsInfo,
 		getPaths: getPaths,
 		getSvgByTitle: getSvgByTitle,
 		updateSvgPath: updateSvgPath,

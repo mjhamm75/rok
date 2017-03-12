@@ -12,6 +12,7 @@ export const POPUP_ON = Symbol();
 export const POPUP_OFF = Symbol();
 export const REMOVE_SELECTED_GLASS = Symbol();
 export const RETRIEVE_SVG = Symbol();
+export const SET_PANELS = SET_PANELS;
 export const SET_SVG = Symbol();
 export const SHOW_SPINNER = Symbol();
 export const SVG_SAVED = Symbol();
