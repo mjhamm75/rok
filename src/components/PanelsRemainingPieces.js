@@ -11,7 +11,7 @@ class PanelsRemainingPieces extends Component {
   }
 
   renderPanels(panels) {
-    return Object.entries(panels).map(
+    return Object.entries(panels).sort().map(
       ([key, value]) => {
         return (
           <tr>
