@@ -32,7 +32,16 @@ class PanelsRemainingPieces extends Component {
       return (
         <div className={s.panels}>
           <table>
-            {this.renderPanels(this.props.panels)}
+            <thead>
+              <tr>
+                <th>Panel</th>
+                <th>Unpurchased Pieces</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.renderPanels(this.props.panels)}
+            </tbody>
           </table>
         </div>
       )
