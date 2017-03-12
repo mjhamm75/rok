@@ -273,7 +273,7 @@ app.post('/paths/:svgTitle', validate, function(req, res) {
     })
 })
 
-app.get('/panels-info', (req, res) => {
+app.get('/panels-info', validate, (req, res) => {
   q.getPanelsInfo()
     .then(panels => {
       var result = panels.reduce((acc, curr) => {
