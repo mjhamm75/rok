@@ -1,5 +1,9 @@
+gzip bundle
+Show 50% of $25 pieces for sale as already purchased
+
+DONE
+
 Update images
 Update text
-Show 50% of $25 pieces for sale as already purchased
 Update logos
 Update thumbnails location
