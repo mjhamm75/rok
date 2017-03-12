@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPathInfo, saveAmounts } from '../actions/GlassActions';
-import mapping from '../mappings/mapping.js';
 import Spinner from 'react-spinkit';
 import Skylight from './ReactSkylight';
 import { getSvgs } from '../actions/GlassActions';
@@ -92,7 +91,6 @@ class ValueGlass extends Component {
   }
 
   render() {
-    let Svg = mapping[this.state.svg];
     let showSpinner = !this.props.showSpinner ? ({
       display: 'none'
     }) : null;
@@ -126,7 +124,7 @@ class ValueGlass extends Component {
           {this.renderSvgs()}
         </ul>
         <div className={s.resize}>
-          <Svg />
+          
         </div>
         <ul className={s.pathList}>
           {this.renderPaths(this.props.paths)}
