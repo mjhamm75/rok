@@ -71,7 +71,7 @@ class Pick extends Component {
 			let el = document.querySelectorAll(`[id='${id}']`);
 			el[0].setAttribute('class', '');
 		}
-		if(newProps.paths.length > 0 && this.state.fakePurchasedPieces.length === 0) {
+		if(newProps.paths.length > 0 && this.state.fakePurchasedPieces.length === 0 && this.props.glass) {
 			let unpurchasedPieces = newProps.paths.filter(path => {
 				return !path.customer && path.amount === "25.00";
 			})
@@ -97,7 +97,7 @@ class Pick extends Component {
 			});
 		}
 
-		if(this.props.paths.length > 0 && this.state.showSponsered) {
+		if(this.props.paths.length > 0 && this.state.showSponsered && this.props.glass) {
 			this.props.paths.filter(path => {
 				return path.customer !== null;
 			}).forEach(glass => {
