@@ -71,15 +71,14 @@ class Pick extends Component {
 			let el = document.querySelectorAll(`[id='${id}']`);
 			el[0].setAttribute('class', '');
 		}
-		if(newProps.paths.length > 0 && this.state.fakePurchasedPieces.length === 0 && this.props.glass) {
+		if(newProps.paths.length > 0 && this.state.fakePurchasedPieces.length === 0) {
 			let unpurchasedPieces = newProps.paths.filter(path => {
 				return !path.customer && path.amount === "25.00";
 			})
 			let randomArr = unpurchasedPieces.sort(() => 0.5 - Math.random());
 			let fakePurchasedPieces = randomArr.slice(0, randomArr.length/2);
-			fakePurchasedPieces.forEach(glass => {
-				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
-				el[0].setAttribute('class', 'purchased');
+			this.setState({
+				fakePurchasedPieces
 			});
 		}
 	}
@@ -95,6 +94,11 @@ class Pick extends Component {
 				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
 				el[0].setAttribute('class', '');
 			});
+
+			this.state.fakePurchasedPieces.forEach(glass => {
+				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
+				el[0].setAttribute('class', '');
+			})
 		}
 
 		if(this.props.paths.length > 0 && this.state.showSponsered && this.props.glass) {
@@ -104,7 +108,13 @@ class Pick extends Component {
 				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
 				el[0].setAttribute('class', 'purchased');
 			});
+
+			this.state.fakePurchasedPieces.forEach(glass => {
+				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
+				el[0].setAttribute('class', 'purchased');
+			})
 		}
+
 		if(this.props.selectedItems.length > 0) {
 			let selectedGlass = this.props.selectedItems.filter(item => item.name === this.state.glassName);
 			selectedGlass.forEach(glass => {
