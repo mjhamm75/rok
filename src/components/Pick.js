@@ -86,11 +86,9 @@ class Pick extends Component {
 		}
 
 		if(this.props.paths.length > 0 && this.state.showSponsered) {
-			let purchasedGlass = this.props.paths.filter(path => {
+			this.props.paths.filter(path => {
 				return path.customer !== null;
-			})
-
-			purchasedGlass.forEach(glass => {
+			}).forEach(glass => {
 				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
 				el[0].setAttribute('class', 'purchased');
 			});

@@ -19,3 +19,11 @@ input:-moz-placeholder {
 	font-size: 14px;
 	font-weight: 100;
 }
+.purchased {
+  stroke: #A3BE5F;
+  stroke-width: 10px;
+  stroke-opacity: 1;
+  cursor: default;
+  fill:  rgba(130,155,67,0.33);
+  pointer-events: none;
+}
