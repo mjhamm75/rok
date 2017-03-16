@@ -39,6 +39,7 @@ class Pick extends Component {
 			continue: false,
 			glassName: this.props.routeParams.splat,
 			info: info[this.props.routeParams.splat] || [],
+			fakePurchasedPieces: [],
 			showCart: false,
 			showSponsered: false
 		}
@@ -69,6 +70,17 @@ class Pick extends Component {
 			let id = diff[0].id
 			let el = document.querySelectorAll(`[id='${id}']`);
 			el[0].setAttribute('class', '');
+		}
+		if(newProps.paths.length > 0 && this.state.fakePurchasedPieces.length === 0) {
+			let unpurchasedPieces = newProps.paths.filter(path => {
+				return !path.customer && path.amount === "25.00";
+			})
+			let randomArr = unpurchasedPieces.sort(() => 0.5 - Math.random());
+			let fakePurchasedPieces = randomArr.slice(0, randomArr.length/2);
+			fakePurchasedPieces.forEach(glass => {
+				let el = document.querySelectorAll(`[id='${glass.path_id}']`);
+				el[0].setAttribute('class', 'purchased');
+			});
 		}
 	}
 
