@@ -86,7 +86,7 @@ class Pick extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		var that = this;
-		if(!this.state.showSponsered) {
+		if(!this.state.showSponsered && this.props.glass) {
 			let purchasedGlass = this.props.paths.filter(path => {
 				return path.customer !== null;
 			})
