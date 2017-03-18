@@ -4,6 +4,26 @@
 table td, table th {
   padding: 10px;
 }
+table tr {
+  height: 58px;
+  width: 720px;
+}
 tbody tr:nth-child(odd) {
-   background-color: #ccc;
+   background-color: #f1f1f1;
+}
+tbody tr:hover {
+  background-color: #ddd;
+}
+tbody tr a {
+  display: none;
+}
+tbody tr:hover a {
+  display: block;
+}
+.button {
+  composes: button from './../styles/common.css';
+  font-size: 17px;
+  margin-top: 20px auto;
+  padding: 10px 30px;
+  width: 100px;
 }

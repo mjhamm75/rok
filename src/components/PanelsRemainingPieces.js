@@ -19,6 +19,7 @@ class PanelsRemainingPieces extends Component {
             <td>{value.count}</td>
             <td>{value.totalCount - value.count}</td>
             <td>{value.sum}</td>
+            <td><a className={s.button}>Purchase</a></td>
           </tr>
         )
       }
@@ -38,7 +39,8 @@ class PanelsRemainingPieces extends Component {
                 <th>Panel</th>
                 <th>Unpurchased Pieces</th>
                 <th>Purchased Pieces</th>
-                <th>Total</th>
+                <th>Remaining Cost</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
