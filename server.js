@@ -61,7 +61,7 @@ app.post('/email', function(req, res) {
 
 var comparePasswords = require('./db/helper.js').comparePasswords;
 app.post('/log-in', function(req, res) {
-  q.checkForUsername(req.body.username).then(function(user) {
+  q.checkForUsername(req.body.username).then(function(user) {    
     if(user && comparePasswords(req.body.password, user.password)) {
       var token = jwt.sign(user, app.get('superSecret'), {
         expiresIn: 7200

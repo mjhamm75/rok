@@ -75,11 +75,13 @@ class Pick extends Component {
 			let unpurchasedPieces = newProps.paths.filter(path => {
 				return !path.customer && path.amount === "25.00";
 			})
-			let randomArr = unpurchasedPieces.sort(() => 0.5 - Math.random());
-			let fakePurchasedPieces = randomArr.slice(0, randomArr.length/2);
-			this.setState({
-				fakePurchasedPieces
-			});
+			if(unpurchasedPieces.length > 50) {
+				let randomArr = unpurchasedPieces.sort(() => 0.5 - Math.random());
+				let fakePurchasedPieces = randomArr.slice(0, randomArr.length/2);
+				this.setState({
+					fakePurchasedPieces
+				});	
+			}
 		}
 	}
 

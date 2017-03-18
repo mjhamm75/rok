@@ -324,8 +324,15 @@ export function saveAmounts(glassName, paths) {
 }
 
 export function getPanelsInfo() {
-	return dispatch => {
-		axios('/panels-info')
+	return (dispatch, state) => {
+		var token = localStorage['token'];
+		axios({
+			url: '/panels-info',
+			method: 'GET',
+			headers: {
+				'x-access-token': token
+			}
+		})
 			.then(res => {
 				dispatch({
 					type: 'SET_PANELS',
