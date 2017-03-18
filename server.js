@@ -61,7 +61,7 @@ app.post('/email', function(req, res) {
 
 var comparePasswords = require('./db/helper.js').comparePasswords;
 app.post('/log-in', function(req, res) {
-  q.checkForUsername(req.body.username).then(function(user) {    
+  q.checkForUsername(req.body.username).then(function(user) {
     if(user && comparePasswords(req.body.password, user.password)) {
       var token = jwt.sign(user, app.get('superSecret'), {
         expiresIn: 7200
@@ -274,17 +274,29 @@ app.post('/paths/:svgTitle', validate, function(req, res) {
 })
 
 app.get('/panels-info', validate, (req, res) => {
-  q.getPanelsInfo()
-    .then(panels => {
-      var result = panels.reduce((acc, curr) => {
+  Promise.all([q.getUnpurchasedPiecesInfo(), q.getTotalPiecesPerPanel()])
+    .then(values => {
+      var unpurchased = values[0].reduce((acc, curr) => {
         acc[curr.title] = {
           count: curr.count,
           sum: curr.sum
         }
         return acc;
       }, {})
+
+      var purchased = values[1].reduce((acc, curr) => {
+        acc[curr.title] = {
+          totalCount: curr.count
+        }
+        return acc;
+      }, {})
+
+      for (const key of Object.keys(purchased)) {
+        unpurchased[key].totalCount = purchased[key].totalCount;
+      }
+
       res.json({
-        result
+        result: unpurchased
       })
     })
 })

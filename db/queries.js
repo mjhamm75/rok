@@ -117,7 +117,17 @@ module.exports = function(knex) {
 			});
 	}
 
-	function getPanelsInfo() {
+	function getUnpurchasedPiecesInfo() {
+		return knex('svg')
+			.join('path', 'svg.id', 'path.svg_id')
+			.count('path.*')
+			.where('path.purchase_date', null)
+			.sum('path.amount')
+			.select('svg.title')
+			.groupBy('svg.title')
+	}
+
+	function getTotalPiecesPerPanel() {
 		return knex('svg')
 			.join('path', 'svg.id', 'path.svg_id')
 			.count('path.*')
@@ -135,7 +145,8 @@ module.exports = function(knex) {
 		insertSvgPaths: insertSvgPaths,
 		getSVG: getSVG,
 		getSVGs: getSVGs,
-		getPanelsInfo: getPanelsInfo,
+		getTotalPiecesPerPanel: getTotalPiecesPerPanel,
+		getUnpurchasedPiecesInfo: getUnpurchasedPiecesInfo,
 		getPaths: getPaths,
 		getSvgByTitle: getSvgByTitle,
 		updateSvgPath: updateSvgPath,
