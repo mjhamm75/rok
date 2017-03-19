@@ -94,7 +94,7 @@ class PanelsRemainingPieces extends Component {
               </tbody>
             </table>
             <Skylight
-              marginTop="-800px"
+              marginTop="-4500px"
               height="300px"
               title={`Panel ${this.state.panelTitle}`}
               width="450px"
