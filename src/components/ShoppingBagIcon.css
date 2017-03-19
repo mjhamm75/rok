@@ -6,10 +6,12 @@
   background: #4A90E2;
   border-radius: 50%;
   color: white;
+  font-size: 13px;
   height: 20px;
+  padding-top: 3px;
   position: absolute;
   text-align: center;
-  width: 20px;
+  width: 18px;
 }
 .bag {
   height: auto;
