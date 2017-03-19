@@ -80,7 +80,7 @@ class Pick extends Component {
 				let fakePurchasedPieces = randomArr.slice(0, randomArr.length/2);
 				this.setState({
 					fakePurchasedPieces
-				});	
+				});
 			}
 		}
 	}
@@ -168,7 +168,8 @@ class Pick extends Component {
 	clickSvg(e) {
 		if(!e.target.id) return;
 		let glassPath = this.props.paths.find(path => path.path_id === parseInt(e.target.id));
-		if(glassPath.customer) {
+		let fakePath = this.state.fakePurchasedPieces.find(fake => fake.path_id === parseInt(e.target.id));
+		if(glassPath.customer || fakePath) {
 			this.showAlreadySponsored(glassPath, e.pageX, e.pageY);
 			return;
 		}
