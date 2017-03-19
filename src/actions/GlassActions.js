@@ -28,6 +28,27 @@ import {
 	VALIDATE_USERNAME,
 } from '../constants/ActionTypes';
 
+export function purchaseAll(title, purchaserName) {
+	return dispatch => {
+		var token = localStorage['token'];
+		axios({
+			url: `/purchase-all`,
+			method: 'POST',
+			data: {
+				title,
+				purchaserName
+			},
+			headers: {
+				'x-access-token': token
+			}
+		}).then(res => {
+			if(res.status === 200) {
+				dispatch(getPanelsInfo());
+			}
+		})
+	}
+}
+
 export function clearSvg() {
 	return {
 		type: CLEAR_SVG
@@ -336,7 +357,7 @@ export function getPanelsInfo() {
 			.then(res => {
 				dispatch({
 					type: 'SET_PANELS',
-					panels: res.data.result
+					panels: res.data.panels
 				})
 			})
 	}

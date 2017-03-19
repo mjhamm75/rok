@@ -78,7 +78,7 @@ class SkyLight extends React.Component {
 
   render() {
     var overlay;
-    var dialogStyles = {};
+    var dialogStyles = this.props.dialogStyles;
     var overlayStyles = {};
 
     if (this.state.isVisible) {

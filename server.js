@@ -8,6 +8,7 @@ var templatesDir = path.join(__dirname, 'templates')
 var emailTemplates = require('email-templates');
 var async = require('async');
 var knexLogger = require('knex-logger');
+var uuid = require('node-uuid');
 
 var app = express();
 
@@ -274,31 +275,47 @@ app.post('/paths/:svgTitle', validate, function(req, res) {
 })
 
 app.get('/panels-info', validate, (req, res) => {
-  Promise.all([q.getUnpurchasedPiecesInfo(), q.getTotalPiecesPerPanel()])
+  Promise.all([q.getTotalPiecesPerPanel(), q.getUnpurchasedPiecesInfo() ])
     .then(values => {
-      var unpurchased = values[0].reduce((acc, curr) => {
+      let totals = values[0].reduce((acc, curr) => {
         acc[curr.title] = {
-          count: curr.count,
-          sum: curr.sum
+          totalPieces: curr.count
         }
         return acc;
-      }, {})
+      }, {});
 
-      var purchased = values[1].reduce((acc, curr) => {
+      let unpurchased = values[1].reduce((acc, curr) => {
         acc[curr.title] = {
-          totalCount: curr.count
+          unpurchasedPieces: curr.count,
+          unpurchasedAmount: curr.sum
         }
         return acc;
-      }, {})
+      }, {});
 
-      for (const key of Object.keys(purchased)) {
-        unpurchased[key].totalCount = purchased[key].totalCount;
+      for (const key of Object.keys(totals)) {
+        if(unpurchased[key]) {
+          totals[key].unpurchasedPieces = unpurchased[key].unpurchasedPieces,
+          totals[key].unpurchasedAmount = unpurchased[key].unpurchasedAmount || 0
+        } else {
+          totals[key].unpurchasedPieces = 0,
+          totals[key].unpurchasedAmount = 0
+        }
       }
 
       res.json({
-        result: unpurchased
-      })
+        panels: totals
+      });
     })
+})
+
+app.post('/purchase-all', validate, (req, res) => {
+  let transactionId = uuid.v1();
+  q.purchaseAll(req.body.title, req.body.purchaserName, transactionId)
+    .then(result => {
+      res.json({
+        is: 'purchased'
+      });
+    });
 })
 
 app.get('*', function(req, res) {

@@ -1,4 +1,18 @@
 module.exports = function(knex) {
+	function purchaseAll(title, purchaserName, transactionId) {
+			return knex.table('path')
+				.update({
+					customer: purchaserName,
+					transaction_id: transactionId,
+					purchase_date: new Date()
+				})
+				.whereIn('svg_id', function() {
+					this.select('id')
+						.from('svg')
+						.where('title', title);
+				});
+	}
+
 	function donate(email, amount, transactionId) {
 		return knex.table('donation').insert({
 			email: email,
@@ -124,14 +138,13 @@ module.exports = function(knex) {
 			.where('path.purchase_date', null)
 			.sum('path.amount')
 			.select('svg.title')
-			.groupBy('svg.title')
+			.groupBy('svg.title');
 	}
 
 	function getTotalPiecesPerPanel() {
 		return knex('svg')
 			.join('path', 'svg.id', 'path.svg_id')
 			.count('path.*')
-			.sum('path.amount')
 			.select('svg.title')
 			.groupBy('svg.title')
 	}
@@ -149,6 +162,7 @@ module.exports = function(knex) {
 		getUnpurchasedPiecesInfo: getUnpurchasedPiecesInfo,
 		getPaths: getPaths,
 		getSvgByTitle: getSvgByTitle,
+		purchaseAll: purchaseAll,
 		updateSvgPath: updateSvgPath,
 		updateSvgPaths: updateSvgPaths,
 		updateSvgPathsPurchaser: updateSvgPathsPurchaser
