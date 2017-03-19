@@ -209,13 +209,19 @@ class Pick extends Component {
 		if(this.props.glass === "") {
 			return null;
 		}
+		let popupStyle = {
+			background: 'white',
+			display: 'none',
+			padding: '3px',
+			position: 'absolute'
+		}
 		let piece = this.state.selectedGlass;
 		let piecesDOM = piece ? this.renderSelectedGlass(piece) : null
 		let GlassComponent = this.state.glass;
 		return (
 			<div>
-			<span className={s.popup}>This piece has been sponsored</span>
-			<span className={s.popup}>This piece is currently unavailable	</span>
+			<span style={popupStyle} className="popup sponsored">This piece has been sponsored</span>
+			<span style={popupStyle} className="popup unavailable">This piece is currently unavailable	</span>
 				<Cart
 					charge={this.charge.bind(this)}
 					closeCart={() => this.showCart(false)}
