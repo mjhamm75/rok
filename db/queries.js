@@ -145,6 +145,7 @@ module.exports = function(knex) {
 		return knex('svg')
 			.join('path', 'svg.id', 'path.svg_id')
 			.count('path.*')
+			.sum('path.amount')
 			.select('svg.title')
 			.groupBy('svg.title')
 	}

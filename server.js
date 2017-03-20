@@ -279,7 +279,8 @@ app.get('/panels-info', validate, (req, res) => {
     .then(values => {
       let totals = values[0].reduce((acc, curr) => {
         acc[curr.title] = {
-          totalPieces: curr.count
+          totalPieces: curr.count,
+          totalAmount: curr.sum
         }
         return acc;
       }, {});
